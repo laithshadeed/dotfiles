@@ -14,7 +14,8 @@
 			<string>063ADC9C-623B-4B46-8708-19E1FA1E09C0</string>
 			<string>A9A6492B-2F89-41FD-96A9-A3EFA48FD58A</string>
 			<string>C0691A6A-E4EF-42C7-A8BC-B4E20FD66E32</string>
-			<string>677C6606-ACE6-4A1B-8188-DE7B80614381</string>
+			<string>6C71DE69-3C1E-45C7-955F-5CD0A3A278FB</string>
+			<string>EAE33818-56E7-4998-A1B6-29449523FC5D</string>
 		</array>
 		<key>mainMenu.submenus.00FE1416-558B-4484-85B8-0EE89F37EBE3</key>
 		<dict>
@@ -114,6 +115,18 @@
 			<key>name</key>
 			<string>Selenium</string>
 		</dict>
+		<key>mainMenu.submenus.6C71DE69-3C1E-45C7-955F-5CD0A3A278FB</key>
+		<dict>
+			<key>items</key>
+			<array>
+				<string>AA210398-2C07-4F9D-B9DE-38700958F4BF</string>
+				<string>9DA8BF62-9300-4844-A97F-896618EFBBA3</string>
+				<string>8EF9587C-90A2-4519-997E-B84F01E4CE28</string>
+				<string>7F0255F7-5FFA-4595-86F0-8742006C5978</string>
+			</array>
+			<key>name</key>
+			<string>CSS3</string>
+		</dict>
 		<key>mainMenu.submenus.89DB908B-E5AB-456A-9AEE-A237DE711FDD</key>
 		<dict>
 			<key>items</key>
@@ -168,6 +181,24 @@
 			</array>
 			<key>name</key>
 			<string>XPath</string>
+		</dict>
+		<key>mainMenu.submenus.E66C2E37-CE2F-47ED-85DD-7B2E6EBD41A6</key>
+		<dict>
+			<key>items</key>
+			<array>
+				<string>677C6606-ACE6-4A1B-8188-DE7B80614381</string>
+			</array>
+			<key>name</key>
+			<string>City</string>
+		</dict>
+		<key>mainMenu.submenus.EAE33818-56E7-4998-A1B6-29449523FC5D</key>
+		<dict>
+			<key>items</key>
+			<array>
+				<string>E66C2E37-CE2F-47ED-85DD-7B2E6EBD41A6</string>
+			</array>
+			<key>name</key>
+			<string>Projects</string>
 		</dict>
 		<key>name</key>
 		<string>cange</string>
@@ -260,6 +291,11 @@
 			<string>643504DD-00D3-4299-9D0F-804830915419</string>
 			<string>DE2E1CDE-F79C-49EB-9B9F-8CA778433861</string>
 			<string>5D1845DB-7239-4FE9-B803-435E4A4EC49B</string>
+			<string>D678A737-373E-4902-85C3-A9E4E6BDBFBA</string>
+			<string>7F0255F7-5FFA-4595-86F0-8742006C5978</string>
+			<string>AA210398-2C07-4F9D-B9DE-38700958F4BF</string>
+			<string>9DA8BF62-9300-4844-A97F-896618EFBBA3</string>
+			<string>8EF9587C-90A2-4519-997E-B84F01E4CE28</string>
 		</array>
 	</dict>
 	<key>deleted</key>

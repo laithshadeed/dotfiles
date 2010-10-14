@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>-moz-box-shadow: ${1:horizontal} ${2:vertical} ${3:blur} ${4:color};
+-webkit-box-shadow: ${1:horizontal} ${2:vertical} ${3:blur} ${4:color};
+box-shadow: ${1:horizontal} ${2:vertical} ${3:blur} ${4:color};
+/* For IE 8 */
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=${3:blur}, Direction=${5:angle}, Color='${4:color}')";
+/* For IE 5.5 - 7 */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=${3:blur}, Direction=${5:angle}, Color='${4:color}');
+
+</string>
+	<key>name</key>
+	<string>shadow</string>
+	<key>scope</key>
+	<string>source.css</string>
+	<key>tabTrigger</key>
+	<string>shadow</string>
+	<key>uuid</key>
+	<string>7F0255F7-5FFA-4595-86F0-8742006C5978</string>
+</dict>
+</plist>
