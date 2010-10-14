@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/**
+ * @note added default clearfix on follow selectors
+ * Clearfix extention based of
+ * @site http://www.pathf.com/blogs/2007/09/developers-note-2/
+ * @site http://www.complexspiral.com/publications/containing-floats/
+ * @site http://www.positioniseverything.net/easyclearing.html
+ *
+ */
+/** @css-for lte IE6 */
+* html ${1:.clearfix}
+{
+  height: 1%;
+  overflow: visible;
+}
+
+/** @css-for IE7 */
+*+html ${1:.clearfix}
+{
+  min-height: 1%;
+}
+
+/** @css-for all browsers except lte IE7 */
+${1:.clearfix}:after
+{
+  clear: both;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+</string>
+	<key>name</key>
+	<string>CSS clearfix</string>
+	<key>scope</key>
+	<string>source.css</string>
+	<key>tabTrigger</key>
+	<string>hack</string>
+	<key>uuid</key>
+	<string>F1A5B608-5B73-4FE8-9B93-3463F2CE826A</string>
+</dict>
+</plist>

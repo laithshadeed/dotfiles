@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string># TODO ${1:texts in localization files outsource}</string>
+	<key>name</key>
+	<string>Ruby todo</string>
+	<key>scope</key>
+	<string>text.html.ruby, text.haml</string>
+	<key>tabTrigger</key>
+	<string>#t</string>
+	<key>uuid</key>
+	<string>43B0AC17-4C87-41DA-ACBD-20E70F73A184</string>
+</dict>
+</plist>

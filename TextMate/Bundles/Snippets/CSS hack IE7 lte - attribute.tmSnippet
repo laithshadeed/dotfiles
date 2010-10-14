@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/* @css-for lte IE7 */
+${1:selector} { *${2:property} }
+</string>
+	<key>name</key>
+	<string>CSS hack IE7 lte - attribute</string>
+	<key>scope</key>
+	<string>source.css</string>
+	<key>tabTrigger</key>
+	<string>hack</string>
+	<key>uuid</key>
+	<string>B029F3DC-E942-4F07-B239-53603F0F14DD</string>
+</dict>
+</plist>

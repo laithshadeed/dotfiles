@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>assert @browser.wait_for_not_element_present("${1:locator}"), '${3:error message}  are still present'</string>
+	<key>name</key>
+	<string>Selenium::wait_for_not_element</string>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>tabTrigger</key>
+	<string>wa</string>
+	<key>uuid</key>
+	<string>643504DD-00D3-4299-9D0F-804830915419</string>
+</dict>
+</plist>

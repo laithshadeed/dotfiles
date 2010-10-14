@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;!--SCREENSHOT--&gt;
+&lt;tr&gt;
+	&lt;td&gt;captureEntirePageScreenshot&lt;/td&gt;
+	&lt;td&gt;~/Desktop/selenium/functional/${1:file_name}.jpg&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+</string>
+	<key>name</key>
+	<string>Selenium::screenshot</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>sc</string>
+	<key>uuid</key>
+	<string>3E6738DC-16DA-4330-B4E3-BE9611E7FB43</string>
+</dict>
+</plist>

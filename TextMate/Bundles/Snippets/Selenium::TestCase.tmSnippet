@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>require 'test/unit'
+require 'test/unit/ui/console/testrunner'
+require 'test/selenium/lib/selenium_test_suite'
+require 'test/selenium/lib/selenium_city_dsl'
+
+class ${1:MyTestCase} &lt; Test::Unit::TestCase
+
+  def setup
+    @browser = SeleniumTestSuite.current_browser
+    @browser.extend(SeleniumCityDsl) unless @browser.respond_to? :logout
+  end
+
+  def test_${2:method}
+	${0:}
+  end
+end
+
+SeleniumTestSuite.run(${1:MyTestCase})
+  </string>
+	<key>name</key>
+	<string>Selenium::TestCase</string>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>tabTrigger</key>
+	<string>cl</string>
+	<key>uuid</key>
+	<string>9A2F5740-6A8E-438C-9C03-3B0E062A0220</string>
+</dict>
+</plist>

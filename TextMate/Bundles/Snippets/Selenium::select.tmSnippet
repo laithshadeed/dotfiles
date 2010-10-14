@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;tr&gt;
+	&lt;td&gt;select&lt;/td&gt;
+	&lt;td&gt;${1:selectLocator - an element locator identifying a drop-down menu}&lt;/td&gt;
+	&lt;td&gt;${2:optionLocator - an option locator (a label by default)}&lt;/td&gt;
+&lt;/tr&gt;
+</string>
+	<key>name</key>
+	<string>Selenium::select</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>se</string>
+	<key>uuid</key>
+	<string>CBD08A8F-BEA2-4B6B-9DCD-46F949D60AA0</string>
+</dict>
+</plist>

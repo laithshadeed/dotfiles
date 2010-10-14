@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>assert @browser.wait_for_text("${1:locator}", ${2:regexp}), '${3:error message}'</string>
+	<key>name</key>
+	<string>Selenium::wait_for_text</string>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>tabTrigger</key>
+	<string>wa</string>
+	<key>uuid</key>
+	<string>1D6BA99A-9099-4298-967A-A3D3AAAD3250</string>
+</dict>
+</plist>

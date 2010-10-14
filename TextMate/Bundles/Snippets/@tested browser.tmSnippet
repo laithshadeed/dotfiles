@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>* @tested ${1:FF3}${2:, FF2 | IE7 | lte IE6 | Safari 3 | Operat}
+</string>
+	<key>name</key>
+	<string>@tested browser</string>
+	<key>scope</key>
+	<string>source.css</string>
+	<key>tabTrigger</key>
+	<string>*</string>
+	<key>uuid</key>
+	<string>D54EB389-D1F5-4B56-89B1-73B8B8C1CE8A</string>
+</dict>
+</plist>

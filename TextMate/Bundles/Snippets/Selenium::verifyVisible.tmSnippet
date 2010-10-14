@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;tr&gt;
+	&lt;td&gt;verifyVisible&lt;/td&gt;
+	&lt;td&gt;${1:locator - an element locator}&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;</string>
+	<key>name</key>
+	<string>Selenium::verifyVisible</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>ve</string>
+	<key>uuid</key>
+	<string>4497172B-47E3-41D0-A685-21E1A5792F84</string>
+</dict>
+</plist>
