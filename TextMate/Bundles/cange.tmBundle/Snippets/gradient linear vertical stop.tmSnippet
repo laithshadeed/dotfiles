@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>bacground-color: ${1:from_color};
-background: -webkit-gradient(linear, left top, right top, from(${1:from_color}), to(${2:to_color}), color-stop(0.${4:stop}%, ${2:to_color}));
-background: -moz-linear-gradient(left top, ${1:from_color}, ${2:to_color} ${4:stop}%);
-/* IE */
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#${2:FF0000FF}, endColorstr=${3:FFFFFFFF}, GradientType=1);</string>
+	<string>background-color: ${1:from_color};
+background: -moz-linear-gradient(left top, ${1:from_color} ${4:begin}0%, ${2:to_color} ${5:stop}0%);
+background: -webkit-gradient(linear, left bottom, left top, color-stop(.${4:begin}, ${1:from_color}), color-stop(.${5:stop}, ${2:to_color}));
+/** @css-for IE without stop */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF${1:from_color}', endColorstr='#FF${1:to_color}', GradientType=1);</string>
 	<key>name</key>
 	<string>gradient linear vertical stop</string>
 	<key>scope</key>

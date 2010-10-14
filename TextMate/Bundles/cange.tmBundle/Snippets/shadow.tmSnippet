@@ -6,9 +6,9 @@
 	<string>-moz-box-shadow: ${1:horizontal} ${2:vertical} ${3:blur} ${4:color};
 -webkit-box-shadow: ${1:horizontal} ${2:vertical} ${3:blur} ${4:color};
 box-shadow: ${1:horizontal} ${2:vertical} ${3:blur} ${4:color};
-/* For IE 8 */
+/** @css-for IE 8 */
 -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=${3:blur}, Direction=${5:angle}, Color='${4:color}')";
-/* For IE 5.5 - 7 */
+/** @css-for  IE 5.5 - 7 */
 filter: progid:DXImageTransform.Microsoft.Shadow(Strength=${3:blur}, Direction=${5:angle}, Color='${4:color}');
 
 </string>

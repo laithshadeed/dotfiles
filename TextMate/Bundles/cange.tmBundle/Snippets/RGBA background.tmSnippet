@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>background: rgb(${1:00}, ${2:00}, ${3:00});
+background: rgba(${1:00}, ${2:00}, ${3:00}, .${1:alpha});
+/** @css-for IE 5.5 - 7 */
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2${1:00}${2:00}${3:00}, endColorstr=#b2${1:00}${2:00}${3:00});
+/** @css-for IE 8 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2${1:00}${2:00}${3:00}, endColorstr=#b2${1:00}${2:00}${3:00})";
+</string>
+	<key>name</key>
+	<string>RGBA background</string>
+	<key>scope</key>
+	<string>source.css</string>
+	<key>tabTrigger</key>
+	<string>rgba</string>
+	<key>uuid</key>
+	<string>90915AA5-B05A-49D0-9A4E-A78862FB4415</string>
+</dict>
+</plist>
