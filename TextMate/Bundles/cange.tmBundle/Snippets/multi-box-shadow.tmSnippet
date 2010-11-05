@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>@include box-shadow(${1:x}, ${2:y}, ${3:blur}, ${4:spread}, ${5:color}, ${6:inset_and_more}${0:another_shadow_set})</string>
+	<key>name</key>
+	<string>multi-box-shadow</string>
+	<key>scope</key>
+	<string>source.sass</string>
+	<key>tabTrigger</key>
+	<string>box</string>
+	<key>uuid</key>
+	<string>883718F9-EE7B-4775-9F19-01EBE0FAF13A</string>
+</dict>
+</plist>

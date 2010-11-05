@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>@browser.wait_for_page_to_load(${1:30000})</string>
+	<key>name</key>
+	<string>Selenium::wait_for_page_to_load</string>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>tabTrigger</key>
+	<string>wa</string>
+	<key>uuid</key>
+	<string>BDCAB6B5-0D05-43C8-B925-E36E36B41E78</string>
+</dict>
+</plist>

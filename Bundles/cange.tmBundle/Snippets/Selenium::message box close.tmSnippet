@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;!--CHECK: message box functionality--&gt;
+&lt;tr&gt;
+	&lt;td&gt;verifyVisible&lt;/td&gt;
+	&lt;td&gt;css=#flash_message&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;verifyVisible&lt;/td&gt;
+	&lt;td&gt;css=#message_close&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;click&lt;/td&gt;
+	&lt;td&gt;css=#message_close&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;verifyNotVisible&lt;/td&gt;
+	&lt;td&gt;css=#flash_message&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+</string>
+	<key>name</key>
+	<string>Selenium::message box close</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>me</string>
+	<key>uuid</key>
+	<string>2ABB235B-CA37-4285-98C6-D9976D570E3D</string>
+</dict>
+</plist>

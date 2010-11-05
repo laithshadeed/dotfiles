@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>assert ${2:!}@browser.is_element_present("${1:locator}"), '${3:message} is ${4:not} found'</string>
+	<key>name</key>
+	<string>Selenium::is_element</string>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>tabTrigger</key>
+	<string>is</string>
+	<key>uuid</key>
+	<string>9C0DCA21-6F15-4CD2-8538-80111D90CA40</string>
+</dict>
+</plist>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/* @css-for Safari 3+, Chrome 1+, Opera 9+, FF3.5+ */
+body:first-of-type ${1:selector} { ${2:property} }</string>
+	<key>name</key>
+	<string>CSS hack Webkit/FF3.5 - 1</string>
+	<key>scope</key>
+	<string>source.css</string>
+	<key>tabTrigger</key>
+	<string>hack</string>
+	<key>uuid</key>
+	<string>FA52B57D-DBB0-4634-BD9A-006AE9CE7149</string>
+</dict>
+</plist>

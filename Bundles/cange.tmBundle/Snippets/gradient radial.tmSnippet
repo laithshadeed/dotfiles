@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>background-color: ${1:from_color};
+background: -webkit-gradient(radial, ${3:radius}% ${3:radius}%, 0, ${3:radius}% ${3:radius}%, 60, from(${1:from_color}), to(${2:to_color}));
+background: -moz-radial-gradient(${3:radius}% ${3:radius}%, farthest-side, ${1:from_color}, ${2:to_color});</string>
+	<key>name</key>
+	<string>gradient radial</string>
+	<key>scope</key>
+	<string>source.css</string>
+	<key>tabTrigger</key>
+	<string>grad</string>
+	<key>uuid</key>
+	<string>AA210398-2C07-4F9D-B9DE-38700958F4BF</string>
+</dict>
+</plist>
