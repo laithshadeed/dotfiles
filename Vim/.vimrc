@@ -15,7 +15,7 @@ set smartcase
 
 "Set color scheme
 set t_Co=256
-colorscheme obsidian
+colorscheme cange
 syntax enable
 
 "Enable indent folding
