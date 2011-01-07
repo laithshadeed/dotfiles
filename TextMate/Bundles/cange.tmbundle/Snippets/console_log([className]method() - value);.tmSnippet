@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>console.log('[${TM_FILENAME/[[:alpha:]]+|(.js)/(?1::\u$0)/g}]${1:methodName}()-${2:value}', ${2:value});</string>
+	<key>name</key>
+	<string>console.log([className]method() - value);</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>tabTrigger</key>
+	<string>lo</string>
+	<key>uuid</key>
+	<string>98B49971-4074-4091-839F-F2B701D0A05C</string>
+</dict>
+</plist>

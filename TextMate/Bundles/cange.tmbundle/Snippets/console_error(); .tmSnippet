@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>try{
+  ${1:source};
+} catch(e) {
+  console.log('[${TM_FILENAME/[[:alpha:]]+|(.js)/(?1::\u$0)/g}]${2:description} -error %o', error);
+}</string>
+	<key>name</key>
+	<string>console.error(); </string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>tabTrigger</key>
+	<string>er</string>
+	<key>uuid</key>
+	<string>F6459C1D-FE6C-4A9E-812C-0DF7021FCB9D</string>
+</dict>
+</plist>

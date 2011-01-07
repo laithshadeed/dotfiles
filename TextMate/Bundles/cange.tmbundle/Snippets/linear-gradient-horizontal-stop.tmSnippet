@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>@include linear-gradient-horizontal-stop(${1:start_color}, ${2:positon}, ${3:end_color}, ${4:positon})
+$0</string>
+	<key>name</key>
+	<string>linear-gradient-horizontal-stop</string>
+	<key>scope</key>
+	<string>source.sass</string>
+	<key>tabTrigger</key>
+	<string>grad</string>
+	<key>uuid</key>
+	<string>EC628493-11DC-41FB-9016-22C1EC845F14</string>
+</dict>
+</plist>

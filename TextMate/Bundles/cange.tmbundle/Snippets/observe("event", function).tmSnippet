@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>.observe("${0:click}", ${1:function(${2:event}}){
+	${10:}
+});</string>
+	<key>name</key>
+	<string>observe("event", function)</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>tabTrigger</key>
+	<string>.ob</string>
+	<key>uuid</key>
+	<string>A8EC929F-A26E-4282-8633-F7073236548E</string>
+</dict>
+</plist>
