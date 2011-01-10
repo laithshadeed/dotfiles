@@ -4,13 +4,13 @@
 <dict>
 	<key>content</key>
 	<string>@include linear-gradient-reset
-${0}</string>
+$0</string>
 	<key>name</key>
 	<string>linear-gradient-reset</string>
 	<key>scope</key>
 	<string>source.sass</string>
 	<key>tabTrigger</key>
-	<string>border</string>
+	<string>grad</string>
 	<key>uuid</key>
 	<string>D9471C40-44BF-4512-AD1B-4E59838FB09F</string>
 </dict>

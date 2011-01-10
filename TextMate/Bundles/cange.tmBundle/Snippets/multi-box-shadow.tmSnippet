@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>@include box-shadow(${1:x}, ${2:y}, ${3:blur}, ${4:spread}, ${5:color}, ${6:inset_and_more}${0:another_shadow_set})</string>
+	<string>@include box-shadow(${1:x}, ${2:y}, ${3:blur}, ${4:spread}, ${5:color}, ${6:inset_and_more}${7:another_shadow_set})
+$0</string>
 	<key>name</key>
 	<string>multi-box-shadow</string>
 	<key>scope</key>

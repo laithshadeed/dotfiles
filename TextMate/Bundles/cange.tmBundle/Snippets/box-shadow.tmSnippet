@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>@include box-shadow(${1:x_OR_none}${0:some_more_args})</string>
+	<string>@include box-shadow(${1:x_OR_none}${2:some_more_args})
+$0</string>
 	<key>name</key>
 	<string>box-shadow</string>
 	<key>scope</key>

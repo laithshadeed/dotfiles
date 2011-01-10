@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>@include border-radius-top-right(${1:radius})</string>
+	<string>@include border-radius-top-right(${1:radius})
+$0</string>
 	<key>name</key>
 	<string>border-radius-top-right</string>
 	<key>scope</key>

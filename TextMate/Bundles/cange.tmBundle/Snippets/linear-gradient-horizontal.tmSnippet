@@ -3,13 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>@include linear-gradient-horizontal(${1:start_color}, ${2:end_color})</string>
+	<string>@include linear-gradient-horizontal(${1:start_color}, ${2:end_color})
+$0</string>
 	<key>name</key>
 	<string>linear-gradient-horizontal</string>
 	<key>scope</key>
 	<string>source.sass</string>
 	<key>tabTrigger</key>
-	<string>border</string>
+	<string>grad</string>
 	<key>uuid</key>
 	<string>D0FB5CC8-1A68-4186-BDAA-3875DF422405</string>
 </dict>
