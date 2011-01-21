@@ -12,7 +12,7 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#293134F5</string>
+				<string>#02070AF2</string>
 				<key>caret</key>
 				<string>#E0E2E4</string>
 				<key>foreground</key>
@@ -20,9 +20,9 @@
 				<key>invisibles</key>
 				<string>#3F4B4F</string>
 				<key>lineHighlight</key>
-				<string>#293134CC</string>
+				<string>#061C2666</string>
 				<key>selection</key>
-				<string>#F3DB2EB0</string>
+				<string>#1A921C4D</string>
 			</dict>
 		</dict>
 		<dict>
@@ -133,7 +133,7 @@
 			<key>name</key>
 			<string>String interpolation</string>
 			<key>scope</key>
-			<string>constant.character.escape, string source</string>
+			<string>constant.character.escape</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -209,7 +209,7 @@
 			<key>name</key>
 			<string>Function parameter</string>
 			<key>scope</key>
-			<string>variable.parameter</string>
+			<string>variable.parameter, entity.other.attribute-name, entity.name.tag.id.haml, entity.name.tag.class.haml</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -383,7 +383,7 @@
 			<key>name</key>
 			<string>Markup tag</string>
 			<key>scope</key>
-			<string>meta.tag, declaration.tag</string>
+			<string>meta.tag, declaration.tag, string source</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
