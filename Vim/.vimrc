@@ -1,28 +1,16 @@
-set nocompatible
-set bs=2 "set backspace to be able to delete previous characters”Enable line numbering, taking up 6 spaces
-set number
+runtime! autoload/pathogen.vim
+if exists('g:loaded_pathogen')
+  call pathogen#runtime_prepend_subdirectories(expand('~/.vimbundles'))
+endif
 
-"Turn on smart indent
-set smartindent
-set tabstop=2 "set tab character to 4 characters
-set expandtab "turn tabs into whitespace
-set shiftwidth=2 "indent width for autoindent
+syntax on
+filetype plugin indent on
 
-"Turn on incremental search with ignore case except explicit caps
-set incsearch
-set ignorecase
-set smartcase
+augroup vimrc
+  autocmd!
+  autocmd GuiEnter * set guifont=Meslo_LG_M_DZ:h12 guioptions-=T columns=220 lines=70 number
+augroup END
 
-"Set color scheme
-set t_Co=256
-colorscheme cange
-syntax enable
-
-"Enable indent folding
-set foldenable
-set fdm=indent
-
-set showmatch
-
-set virtualedit=all
-
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif

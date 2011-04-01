@@ -1,0 +1,138 @@
+if has("gui_running")
+  colorscheme lucius
+  :set cursorline
+  :set guioptions-=r
+else
+  set t_Co=256
+  colorscheme lucius
+endif
+
+let mapleader = "," " Change From Backslash to Comma in commands \a -> ,a
+
+" NERDTree (Press ,d)
+map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+
+" Gundo Vim (f5)
+map <leader>gu :execute ':GundoToggle'<CR>
+
+set softtabstop=2
+set shiftwidth=2
+set tabstop=2
+set expandtab
+
+"tab-completion for buffers
+set wildmenu
+set wildmode=list:longest
+
+" highlight search
+set hls
+
+"remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
+
+" This is a dependency for vim-textobj-rubyblock
+runtime macros/matchit.vim
+
+" Some stuff for tabular
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
+noremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+
+" command to open files with uncommitted changes
+" https://github.com/garybernhardt/dotfiles/commit/86d12f24cd2301af99a2966f0dc9a082cdee2cb7
+function! OpenChangedFiles()
+  only " Close all windows, unless they're modified
+  let status = system('git ls-files -m')
+  let filenames = split(status, "\n")
+  exec "edit " . filenames[0]
+  for filename in filenames[1:]
+    exec "sp " . filename
+  endfor
+endfunction
+command! OpenChangedFiles :call OpenChangedFiles()
+
+
+" Keep Block visually marked when indenting
+nmap > ><CR>gv
+nmap < <<CR>gv
+vmap > ><CR>gv
+vmap < <<CR>gv
+
+
+
+""""""""""""""""""""""""""""""""""""""""
+"" Syntastic-specific config settings
+""""""""""""""""""""""""""""""""""""""""
+
+" use signs to indicate lines with errors
+" only if signs are available
+if has('signs')
+   let g:syntastic_enable_signs = 1
+endif
+
+" automatically open the location list when a buffer has errors
+let g:syntastic_auto_loc_list=1
+
+" always show warnings
+let g:syntastic_quiet_warnings=0
+
+" No Check for HTML
+let g:syntastic_disabled_filetypes = ['html']
+
+" In vimdiff Mode do not auto-show the errors
+if &diff
+  let g:syntastic_auto_loc_list=2
+endif
+
+
+
+""""""""""""""""""""""""""""""""""""""""
+"" Autocompletion with TAB-key
+""""""""""""""""""""""""""""""""""""""""
+
+" Use TAB to complete when typing words, else inserts TABs as usual.
+" Uses dictionary and source files to find matching words to complete.
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
+endfunction
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+set dictionary="/usr/dict/words"
+
+
+" Turn on smart indent
+set smartindent
+
+" Enalble jsLint
+filetype plugin on
