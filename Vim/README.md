@@ -5,6 +5,6 @@
   * *Linux:* `/home/#user#`
   * *Mac OS:* `/Users/#user#` 
   * *Windows 7/Vista:* `C:\Users\#user#`
- * Open a Terminal/Console and go to the `bin/` directory execute './vimbundles.sh && ./hlink'
+ * Open a Terminal/Console and go to the `bin/` directory execute `./vimbundles.sh && ./hlink`
  * Done!
   
