@@ -6,14 +6,14 @@ hi clear
 if exists("syntax_on")
     syntax reset
 endif
-let colors_name="lucius"
+let colors_name="cange"
 
 " TODO Need to add entry for conceal
 "
 
 set background=dark
-if exists("g:lucius_style")
-    let &background=g:lucius_style
+if exists("g:cange_style")
+    let &background=g:cange_style
 endif
 
 if &background == "dark"
@@ -38,17 +38,17 @@ if &background == "dark"
     hi ConstantBold     guifg=#70c0d8                                   gui=bold
     hi ConstantBold     ctermfg=74                                      cterm=bold
     " strings
-    hi String           guifg=#80c0d8                                   gui=none
-    hi String           ctermfg=110                                     cterm=none
+    hi String           guifg=#ca5757                                   gui=none
+    hi String           ctermfg=167                                     cterm=none
     " character constant
-    hi Character        guifg=#80c0d8                                   gui=none
-    hi Character        ctermfg=110                                     cterm=none
+    hi Character        guifg=#ca5757                                   gui=none
+    hi Character        ctermfg=167                                     cterm=none
     " numbers decimal/hex
     hi Number           guifg=#70c0d8                                   gui=none
     hi Number           ctermfg=74                                      cterm=none
     " true, false
-    hi Boolean          guifg=#70c0d8                                   gui=none
-    hi Boolean          ctermfg=74                                      cterm=none
+    hi Boolean          guifg=#afdf00                                   gui=none
+    hi Boolean          ctermfg=148                                     cterm=none
     " float
     hi Float            guifg=#70c0d8                                   gui=none
     hi Float            ctermfg=74                                      cterm=none
@@ -204,8 +204,8 @@ if &background == "dark"
     hi IncSearch        guifg=#66ffff                                   gui=reverse
     hi IncSearch        ctermfg=87                                      cterm=reverse
     " hlsearch (last search pattern), also used for quickfix
-    hi Search                                    guibg=#ffaa33          gui=none
-    hi Search                                    ctermbg=214            cterm=none
+    hi Search                                    guibg=#875f00          gui=none
+    hi Search                                    ctermbg=94            cterm=none
 
 
     " == UI ==

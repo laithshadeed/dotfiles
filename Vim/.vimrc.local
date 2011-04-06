@@ -1,10 +1,10 @@
 if has("gui_running")
-  colorscheme lucius
+  colorscheme cange
   :set cursorline
   :set guioptions-=r
 else
   set t_Co=256
-  colorscheme lucius
+  colorscheme cange
 endif
 
 let mapleader = "," " Change From Backslash to Comma in commands \a -> ,a
@@ -133,6 +133,6 @@ set dictionary="/usr/dict/words"
 
 " Turn on smart indent
 set smartindent
-
+set nowrap
 " Enalble jsLint
 filetype plugin on
