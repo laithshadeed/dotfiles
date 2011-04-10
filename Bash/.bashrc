@@ -25,38 +25,38 @@ export BASH_THEME='cange'
 
 
 # Your place for hosting Git repos. I use this for private repos.
-export GIT_HOSTING='git@git.domain.com'
+#export GIT_HOSTING='git@git.domain.com'
 
 # Set my editor and git editor
-export EDITOR="/usr/bin/mate -w"
-export GIT_EDITOR='/usr/bin/mate -w'
+#export EDITOR="/usr/bin/mate -w"
+#export GIT_EDITOR='/usr/bin/mate -w'
 
 # Set the path nginx
-export NGINX_PATH='/opt/nginx'
+#export NGINX_PATH='/opt/nginx'
 
 # Don't check mail when opening terminal.
-unset MAILCHECK
+#unset MAILCHECK
 
 # Change this to the path of your local jekyll root to use the jekyll aliases
 
-export JEKYLL_LOCAL_ROOT="$HOME/Sites/jekyllsite"
+#export JEKYLL_LOCAL_ROOT="$HOME/Sites/jekyllsite"
 
 # And change this to the remote server and root
 
-export JEKYLL_REMOTE_ROOT="user@server:/path/to/jekyll/root"
+#export JEKYLL_REMOTE_ROOT="user@server:/path/to/jekyll/root"
 
 # And, for the last of the jekyll variables, this is the formatting you use, eg: markdown,
 # textile, etc. Basically whatever you use as the extension for posts, without the preceding dot
 
-export JEKYLL_FORMATTING="markdown"
+#export JEKYLL_FORMATTING="markdown"
 
 # Change this to your console based IRC client of choice.
 
-export IRC_CLIENT='irssi'
+#export IRC_CLIENT='irssi'
 
 # Set this to the command you use for todo.txt-cli
 
-export TODO="t"
+#export TODO="t"
 
 # Set vcprompt executable path for scm advance info in prompt (demula theme)
 # https://github.com/xvzf/vcprompt

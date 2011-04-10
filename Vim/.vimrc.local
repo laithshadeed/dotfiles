@@ -9,8 +9,8 @@ endif
 
 let mapleader = "," " Change From Backslash to Comma in commands \a -> ,a
 
-" NERDTree (Press ,d)
-map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+" NERDTree (Press ,e)
+map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
 
 " Gundo Vim (f5)
 map <leader>gu :execute ':GundoToggle'<CR>
@@ -42,7 +42,7 @@ vmap <C-Down> ]egv
 let g:fuzzy_ignore = "*.log"
 let g:fuzzy_matching_limit = 70
 map <leader>t :FufFile<CR>
-" map <leader>d :FufDir<CR>
+map <leader>d :FufDir<CR>
 map <C-t> :FufFile<CR>
 
 
@@ -128,15 +128,15 @@ endif
 
 " Use TAB to complete when typing words, else inserts TABs as usual.
 " Uses dictionary and source files to find matching words to complete.
-function! Tab_Or_Complete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-N>"
-  else
-    return "\<Tab>"
-  endif
-endfunction
-inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-set dictionary="/usr/dict/words"
+" function! Tab_Or_Complete()
+  " if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    " return "\<C-N>"
+  " else
+    " return "\<Tab>"
+  " endif
+" endfunction
+" inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+" set dictionary="/usr/dict/words"
 
 
 " Turn on smart indent
