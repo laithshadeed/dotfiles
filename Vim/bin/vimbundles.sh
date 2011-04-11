@@ -67,5 +67,6 @@ get_bundle vim-scripts Gundo
 get_bundle vim-scripts FuzzyFinder
 get_bundle jamis fuzzyfinder_textmate
 get_bundle vim-scripts L9
+get_bundle vim-scripts lucius # colorscheme
 get_bundle ervandew supertab
 get_bundle guns xterm-color-table.vim
