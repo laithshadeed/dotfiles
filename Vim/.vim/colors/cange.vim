@@ -157,13 +157,13 @@ if &background == "dark"
     hi Underlined       ctermfg=fg                                      cterm=underline
     " any erroneous construct
     hi Error            guifg=#e37170           guibg=#432323           gui=none
-    hi Error            ctermfg=167             ctermbg=236            cterm=none
+    hi Error            ctermfg=167             ctermbg=236             cterm=none
     " todo, fixme, note, xxx
     hi Todo             guifg=#e0e090           guibg=NONE              gui=underline
     hi Todo             ctermfg=186             ctermbg=NONE            cterm=underline
     " match parenthesis, brackets
-    hi MatchParen       guifg=#00ff00           guibg=NONE              gui=bold
-    hi MatchParen       ctermfg=46              ctermbg=NONE            cterm=bold
+    hi MatchParen       guifg=NONE              guibg=#df8700           gui=bold
+    hi MatchParen       ctermfg=NONE            ctermbg=172             cterm=bold
     " the '~' and '@' and showbreak, '>' double wide char doesn't fit on line
     hi NonText          guifg=#404040                                   gui=none
     hi NonText          ctermfg=238                                     cterm=none
