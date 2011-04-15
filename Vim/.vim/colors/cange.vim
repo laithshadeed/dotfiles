@@ -22,8 +22,8 @@ if &background == "dark"
     " = Dark version =
 
     " == Normal color ==
-    hi Normal           guifg=#e0e0e0           guibg=#202020
-    hi Normal           ctermfg=253             ctermbg=234
+    hi Normal           guifg=#B0CBC0           guibg=#202020
+    hi Normal           ctermfg=152             ctermbg=234
 
 
     " == Comments ==
@@ -44,14 +44,14 @@ if &background == "dark"
     hi Character        guifg=#ca5757                                   gui=none
     hi Character        ctermfg=167                                     cterm=none
     " numbers decimal/hex
-    hi Number           guifg=#70c0d8                                   gui=none
-    hi Number           ctermfg=74                                      cterm=none
+    hi Number           guifg=#AF87DF                                   gui=none
+    hi Number           ctermfg=140                                     cterm=none
     " true, false
-    hi Boolean          guifg=#afdf00                                   gui=none
-    hi Boolean          ctermfg=148                                     cterm=none
+    hi Boolean          guifg=#AFFF5F                                   gui=bold
+    hi Boolean          ctermfg=155                                     cterm=bold
     " float
-    hi Float            guifg=#70c0d8                                   gui=none
-    hi Float            ctermfg=74                                      cterm=none
+    hi Float            guifg=#AF87DF                                   gui=none
+    hi Float            ctermfg=140                                     cterm=none
 
 
     " == Identifiers ==
@@ -61,33 +61,33 @@ if &background == "dark"
     hi IdentifierBold   guifg=#86c6b6                                   gui=bold
     hi IdentifierBold   ctermfg=116                                     cterm=bold
     " function, method, class
-    hi Function         guifg=#86c6b6                                   gui=none
-    hi Function         ctermfg=116                                     cterm=none
+    hi Function         guifg=#afdf87                                   gui=none
+    hi Function         ctermfg=150                                     cterm=none
 
 
     " == Statements ==
     " any statement
-    hi Statement        guifg=#b3d38c                                   gui=none
+    hi Statement        guifg=#afdf87                                   gui=none
     hi Statement        ctermfg=150                                     cterm=none
-    hi StatementBold    guifg=#b3d38c                                   gui=bold
+    hi StatementBold    guifg=#afdf87                                   gui=bold
     hi StatementBold    ctermfg=150                                     cterm=bold
     " if, then, else
-    hi Conditional      guifg=#b3d38c                                   gui=none
+    hi Conditional      guifg=#afdf87                                   gui=none
     hi Conditional      ctermfg=150                                     cterm=none
     " try, catch, throw, raise
-    hi Exception        guifg=#b3d38c                                   gui=none
+    hi Exception        guifg=#afdf87                                   gui=none
     hi Exception        ctermfg=150                                     cterm=none
     " for, while, do
-    hi Repeat           guifg=#b3d38c                                   gui=none
+    hi Repeat           guifg=#afdf87                                   gui=none
     hi Repeat           ctermfg=150                                     cterm=none
     " case, default
-    hi Label            guifg=#b3d38c                                   gui=none
+    hi Label            guifg=#afdf87                                   gui=none
     hi Label            ctermfg=150                                     cterm=none
     " sizeof, +, *
-    hi Operator         guifg=#b3d38c                                   gui=none
+    hi Operator         guifg=#afdf87                                   gui=none
     hi Operator         ctermfg=150                                     cterm=none
     " any other keyword
-    hi Keyword          guifg=#b3d38c                                   gui=none
+    hi Keyword          guifg=#afdf87                                   gui=none
     hi Keyword          ctermfg=150                                     cterm=none
 
 
