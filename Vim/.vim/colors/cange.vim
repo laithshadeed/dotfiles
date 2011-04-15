@@ -162,8 +162,8 @@ if &background == "dark"
     hi Todo             guifg=#e0e090           guibg=NONE              gui=underline
     hi Todo             ctermfg=186             ctermbg=NONE            cterm=underline
     " match parenthesis, brackets
-    hi MatchParen       guifg=NONE              guibg=#df8700           gui=bold
-    hi MatchParen       ctermfg=NONE            ctermbg=172             cterm=bold
+    hi MatchParen       guifg=#202020           guibg=#dfaf87           gui=bold
+    hi MatchParen       ctermfg=234             ctermbg=180             cterm=bold
     " the '~' and '@' and showbreak, '>' double wide char doesn't fit on line
     hi NonText          guifg=#404040                                   gui=none
     hi NonText          ctermfg=238                                     cterm=none
