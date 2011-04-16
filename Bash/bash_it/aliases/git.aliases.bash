@@ -16,7 +16,8 @@ alias gpo='git push origin'
 alias gdv='git diff -w "$@" | vim -R -'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
-alias gci='git commit --interactive'
+#alias gci='git commit --interactive'
+alias gci='git commit -m '
 alias gb='git branch'
 alias gba='git branch -a'
 alias gcount='git shortlog -sn'
@@ -32,7 +33,7 @@ case $OSTYPE in
     alias gd='git diff | vim -R -'
     ;;
   darwin*)
-    alias gd='git diff | mate'
+    alias gd='git diff | mvim'
     ;;
   darwin*)
     alias gd='git diff'
@@ -58,7 +59,8 @@ function git-help() {
   echo "  gdv     = git diff -w \"$@\" | vim -R -"
   echo "  gc      = git commit -v"
   echo "  gca     = git commit -v -a"
-  echo "  gci 	  = git commit --interactive"
+  # echo "  gci 	  = git commit --interactive"
+  echo "  gci 	  = git commit -m"
   echo "  gb      = git branch"
   echo "  gba     = git branch -a"
   echo "  gcount  = git shortlog -sn"
