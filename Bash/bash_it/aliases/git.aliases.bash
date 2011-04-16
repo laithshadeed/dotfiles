@@ -27,6 +27,8 @@ alias gexport='git archive --format zip --output'
 alias gdel='git branch -D'
 alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
 alias gll='git log --graph --pretty=oneline --abbrev-commit'
+alias gstash='git stash'
+alias gpop='git stash pop'
 
 case $OSTYPE in
   linux*)
@@ -71,5 +73,7 @@ function git-help() {
   echo "  gpo     = git push origin"
   echo "  gmu     = git fetch origin -v; git fetch upstream -v; git merge upstream/master"
   echo "  gll     = git log --graph --pretty=oneline --abbrev-commit"
+  echo "  gstash  = git stash"
+  echo "  gpop  = git stash pop"
   echo
 }
