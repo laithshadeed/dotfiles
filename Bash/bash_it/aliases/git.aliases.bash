@@ -17,7 +17,7 @@ alias gdv='git diff -w "$@" | vim -R -'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 #alias gci='git commit --interactive'
-alias gci='git commit -m '
+alias gci='git commit -m $1'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gcount='git shortlog -sn'
@@ -62,7 +62,7 @@ function git-help() {
   echo "  gc      = git commit -v"
   echo "  gca     = git commit -v -a"
   # echo "  gci 	  = git commit --interactive"
-  echo "  gci 	  = git commit -m"
+  echo "  gci 	  = git commit -m \"Your message\""
   echo "  gb      = git branch"
   echo "  gba     = git branch -a"
   echo "  gcount  = git shortlog -sn"
