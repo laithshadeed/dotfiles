@@ -74,8 +74,16 @@ snippet gett
 	getElementBy${1:Id}('${2}')${3}
 
 # Debugging
-snippet lo
-	console.log("${1:soruce}", ${1:source});
+snippet clo
+	console.log("${1}", ${1});
+
+snippet cin
+	console.info("${1}", ${1});
+
+snippet .(
+	.${1:click}(function () {
+		${2}
+	});
 
 # JQuery
 snippet ready
