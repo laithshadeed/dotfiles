@@ -29,6 +29,11 @@ alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master
 alias gll='git log --graph --pretty=oneline --abbrev-commit'
 alias gstash='git stash'
 alias gpop='git stash pop'
+#
+# git flow
+#
+alias gfs='git flow feature start $1'
+alias gff='git flow feature finish $1'
 
 case $OSTYPE in
   linux*)
@@ -74,6 +79,10 @@ function git-help() {
   echo "  gmu     = git fetch origin -v; git fetch upstream -v; git merge upstream/master"
   echo "  gll     = git log --graph --pretty=oneline --abbrev-commit"
   echo "  gstash  = git stash"
-  echo "  gpop  = git stash pop"
+  echo "  gpop    = git stash pop"i
   echo
+  echo "Git Flow Aliases"
+  echo
+  echo "  gfs     = git flow feature start '#feature#'"
+  echo "  gff     = git flow feature finish '#feature#'"
 }
