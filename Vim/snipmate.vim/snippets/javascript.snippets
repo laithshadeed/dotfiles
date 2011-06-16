@@ -5,13 +5,14 @@ snippet proto
 		${4:// body...}
 	};
 # Function
-snippet fun
-	function ${1:function_name} (${2:argument}) {
-		${3:// body...}
+snippet fu
+	function ${1:name} (${2:argument}) {
+		${3:}
 	}
+
 # Anonymous Function
 snippet f
-	function(${1}) {${2}};
+	function (${1}) {${2}}
 # if
 snippet if
 	if (${1:true}) {${2}}
@@ -75,10 +76,10 @@ snippet gett
 
 # Debugging
 snippet clo
-	console.log("${1}", ${1});
+	console.log("${1}", ${2});
 
 snippet cin
-	console.info("${1}", ${1});
+	console.info("${1}", ${2});
 
 snippet .(
 	.${1:click}(function () {
@@ -95,3 +96,13 @@ snippet each
 	$.each(${1:collection}, function (${2:index}, ${3:value}) {
 		${4:value};
 	});
+
+# node.js
+snippet re
+	${1:var_name} = require('${2:source}')${3:}
+
+# createServer with port 3000
+snippet ser
+	http.createServer(function (req, res) {
+		${2://sources}
+	}).listen(${1:3000})
