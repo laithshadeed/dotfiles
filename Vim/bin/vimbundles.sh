@@ -64,9 +64,8 @@ get_bundle godlygeek tabular
 get_bundle rson vim-conque
 get_bundle scrooloose syntastic
 get_bundle vim-scripts Gundo
-get_bundle vim-scripts FuzzyFinder
-get_bundle jamis fuzzyfinder_textmate
 get_bundle vim-scripts L9
 get_bundle vim-scripts Lucius # colorscheme
 get_bundle ervandew supertab
 get_bundle guns xterm-color-table.vim
+get_bundle wincent Command-T

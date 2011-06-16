@@ -130,3 +130,16 @@ filetype plugin on
 
 " add shortcut behavior like other gui text editors
 behave mswin
+
+"" Open files with <leader>f
+map <leader>f :CommandT<cr>
+" Open files, limited to the directory of the current file, with <leader>gf
+" This requires the %% mapping found below.
+map <leader>gf :CommandT %%<cr>
+map <leader>gv :CommandT app/views<cr>
+map <leader>gs :CommandT public/stylesheets/sass<cr>
+map <leader>gj :CommandT public/javascripts<cr>
+map <leader>gm :CommandT app/models<cr>
+map <leader>gh :ComandT app/helpers<cr>
+map <leader>gl :CommandT lib<cr>
+
