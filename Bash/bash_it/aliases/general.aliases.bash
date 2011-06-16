@@ -33,7 +33,7 @@ alias piano="pianobar"
 
 alias ..='cd ..'        # Go up one directory
 alias ...='cd ../..'    # Go up two directories
-alias -- -="cd -"       # Go back
+#alias -="cd -"       # Go back
 
 # Shell History
 alias h='history'
@@ -56,7 +56,7 @@ function aliases-help() {
   echo "  c/k    = clear"
   echo "  ..     = cd .."
   echo "  ...    = cd ../.."
-  echo "  -      = cd -"
+#  echo "  -      = cd -"
   echo "  h      = history"
   echo "  md     = mkdir -p"
   echo "  rd     = rmdir"

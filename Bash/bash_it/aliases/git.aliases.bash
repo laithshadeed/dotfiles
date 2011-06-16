@@ -9,6 +9,8 @@ alias get='git'
 alias gst='git status'
 alias gs='git status'
 alias gss='git status -s'
+alias gsh='git stash'
+alias gpp='git stash pop'
 alias gl='git pull'
 alias gup='git fetch && git rebase'
 alias gp='git push'
@@ -17,7 +19,7 @@ alias gdv='git diff -w "$@" | vim -R -'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 #alias gci='git commit --interactive'
-alias gci='git commit -m $1'
+alias gci='git commit'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gcount='git shortlog -sn'
@@ -27,13 +29,10 @@ alias gexport='git archive --format zip --output'
 alias gdel='git branch -D'
 alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
 alias gll='git log --graph --pretty=oneline --abbrev-commit'
-alias gstash='git stash'
-alias gpop='git stash pop'
 #
 # git flow
 #
-alias gfs='git flow feature start $1'
-alias gff='git flow feature finish $1'
+alias gff='git flow feature'
 
 case $OSTYPE in
   linux*)
@@ -78,11 +77,10 @@ function git-help() {
   echo "  gpo     = git push origin"
   echo "  gmu     = git fetch origin -v; git fetch upstream -v; git merge upstream/master"
   echo "  gll     = git log --graph --pretty=oneline --abbrev-commit"
-  echo "  gstash  = git stash"
-  echo "  gpop    = git stash pop"i
+  echo "  gsh     = git stash"
+  echo "  gpp     = git stash pop"
   echo
   echo "Git Flow Aliases"
   echo
-  echo "  gfs     = git flow feature start '#feature#'"
-  echo "  gff     = git flow feature finish '#feature#'"
+  echo "  gff     = git flow feature"
 }
