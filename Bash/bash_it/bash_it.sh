@@ -4,7 +4,7 @@
 # Reload Library
 alias reload='source ~/.bashrc'
 
-export USR_BASH='/home/cange/.bash_it'
+export USR_BASH="${HOME}/.bash_it"
 # Load the framework
 
 # Load colors first so they can be use in base theme
