@@ -140,6 +140,6 @@ map <leader>gv :CommandT app/views<cr>
 map <leader>gs :CommandT public/stylesheets/sass<cr>
 map <leader>gj :CommandT public/javascripts<cr>
 map <leader>gm :CommandT app/models<cr>
-map <leader>gh :ComandT app/helpers<cr>
+map <leader>gh :CommandT app/helpers<cr>
 map <leader>gl :CommandT lib<cr>
 
