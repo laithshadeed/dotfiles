@@ -8,6 +8,8 @@ alias la='ls -al'
 alias l='ls -a'
 alias l1='ls -1'
 
+alias work='cd ~/Documents/workspace'
+
 alias _="sudo"
 
 if [ $(uname) = "Linux" ]

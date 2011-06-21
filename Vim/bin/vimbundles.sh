@@ -69,3 +69,5 @@ get_bundle vim-scripts Lucius # colorscheme
 get_bundle ervandew supertab
 get_bundle guns xterm-color-table.vim
 get_bundle wincent Command-T
+get_bundle digitaltoad vim-jade
+

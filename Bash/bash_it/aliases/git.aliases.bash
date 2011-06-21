@@ -1,34 +1,31 @@
 #!/bin/bash
 
 # Aliases
-alias gcl='git clone'
+alias g='git'
 alias ga='git add'
 alias gall='git add .'
-alias g='git'
-alias get='git'
-alias gst='git status'
-alias gs='git status'
-alias gss='git status -s'
-alias gsh='git stash'
-alias gpp='git stash pop'
-alias gl='git pull'
-alias gup='git fetch && git rebase'
-alias gp='git push'
-alias gpo='git push origin'
-alias gdv='git diff -w "$@" | vim -R -'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
-#alias gci='git commit --interactive'
-alias gci='git commit'
 alias gb='git branch'
 alias gba='git branch -a'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gci='git commit --interactive'
+alias gcl='git clone'
+alias gco='git checkout'
 alias gcount='git shortlog -sn'
 alias gcp='git cherry-pick'
-alias gco='git checkout'
 alias gexport='git archive --format zip --output'
 alias gdel='git branch -D'
-alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
+alias gdv='git diff -w "$@" | vim -R -'
+alias gl='git pull'
 alias gll='git log --graph --pretty=oneline --abbrev-commit'
+alias gp='git push'
+alias gpo='git push origin'
+alias gpp='git stash pop'
+alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
+alias gsh='git stash'
+alias gss='git status -s'
+alias gst='git status'
+alias gup='git fetch && git rebase'
 #
 # git flow
 #
@@ -51,34 +48,32 @@ esac
 function git-help() {
   echo "Git Custom Aliases Usage"
   echo
-  echo "  gcl	  = git clone"
   echo "  g       = git"
-  echo "  get 	  = git"
   echo "  ga      = git add"
   echo "  gall	  = git add ."
-  echo "  gst/gs  = git status"
-  echo "  gss	  = git status -s"
-  echo "  gl      = git pull"
-  echo "  gup     = git fetch && git rebase"
-  echo "  gp      = git push"
-  echo "  gd      = git diff | mate"
-  echo "  gdv     = git diff -w \"$@\" | vim -R -"
-  echo "  gc      = git commit -v"
-  echo "  gca     = git commit -v -a"
-  # echo "  gci 	  = git commit --interactive"
-  echo "  gci 	  = git commit -m \"Your message\""
   echo "  gb      = git branch"
   echo "  gba     = git branch -a"
+  echo "  gc      = git commit -v"
+  echo "  gca     = git commit -v -a"
+  echo "  gci     = git commit --interactive"
+  echo "  gcl     = git clone"
+  echo "  gco     = git checkout"
   echo "  gcount  = git shortlog -sn"
   echo "  gcp     = git cherry-pick"
-  echo "  gco     = git checkout"
-  echo "  gexport = git git archive --format zip --output"
+  echo "  gd      = git diff | mate"
   echo "  gdel    = git branch -D"
-  echo "  gpo     = git push origin"
+  echo "  gdv     = git diff -w \"$@\" | vim -R -"
+  echo "  gexport = git git archive --format zip --output"
+  echo "  gl      = git pull"
   echo "  gmu     = git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+  echo "  gpo     = git push origin"
+  echo "  gp      = git push"
+  echo "  gpp     = git stash pop"
   echo "  gll     = git log --graph --pretty=oneline --abbrev-commit"
   echo "  gsh     = git stash"
-  echo "  gpp     = git stash pop"
+  echo "  gss     = git status -s"
+  echo "  gst     = git status"
+  echo "  gup     = git fetch && git rebase"
   echo
   echo "Git Flow Aliases"
   echo
