@@ -42,8 +42,8 @@ vmap <C-Down> ]egv
 let g:fuzzy_ignore = "*.log"
 let g:fuzzy_matching_limit = 70
 map <leader>t :FufFile<CR>
-map <leader>d :FufDir<CR>
-map <C-t> :FufFile<CR>
+" map <leader>d :FufDir<CR>
+" map <C-t> :FufFile<CR>
 
 
 " Visually select the text that was last edited/pasted
@@ -132,7 +132,7 @@ filetype plugin on
 behave mswin
 
 "" Open files with <leader>f
-map <leader>f :CommandT<cr>
+map <C-t> :CommandT<cr>
 " Open files, limited to the directory of the current file, with <leader>gf
 " This requires the %% mapping found below.
 map <leader>gf :CommandT %%<cr>
