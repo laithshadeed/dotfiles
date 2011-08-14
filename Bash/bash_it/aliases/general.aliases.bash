@@ -31,8 +31,10 @@ alias irc="$IRC_CLIENT"
 alias rb="ruby"
 
 # Pianobar can be found here: http://github.com/PromyLOPh/pianobar/
-
 alias piano="pianobar"
+
+# start a simple server at port 8000 pointing to current directory
+alias server="open http://localhost:8000/; python -m SimpleHTTPServer &"
 
 alias ..='cd ..'        # Go up one directory
 alias ...='cd ../..'    # Go up two directories
@@ -66,6 +68,7 @@ function aliases-help() {
   echo "  editor = $EDITOR"
   echo "  pager  = $PAGER"
   echo "  piano  = pianobar"
+  echo "  server = start a python server with port 8000"
   echo "  q      = exit"
   echo "  irc    = $IRC_CLIENT"
   echo
