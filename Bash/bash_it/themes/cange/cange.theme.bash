@@ -8,7 +8,7 @@ git_prompt_status() {
     #if [ -n "$(git status | grep 'Changes not staged' 2> /dev/null)" ]; then
       color="${red} ✗$(git_prompt_info)"
     elif [ -n "$(git status | grep 'Changes to be committed' 2> /dev/null)" ]; then
-      color="${yellow} ^$(git_prompt_info)"
+      color="${yellow} $(git_prompt_info)"
     elif [ -n "$(git status | grep 'Untracked files' 2> /dev/null)" ]; then
       color="${purple} +$(git_prompt_info)"
     elif [ -n "$(git status | grep 'nothing to commit' 2> /dev/null)" ]; then
