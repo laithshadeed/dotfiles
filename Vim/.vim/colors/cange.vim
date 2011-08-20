@@ -149,8 +149,8 @@ if g:cange_style == "dark"
     hi Ignore       guifg=bg                        ctermfg=bg
 
     " == custom types by cange ==
-    hi String       guifg=#df8700   guibg=NONE      ctermfg=172     ctermbg=NONE     gui=none      cterm=none
-    hi BString      guifg=#df8700   guibg=NONE      ctermfg=172     ctermbg=NONE     gui=none      cterm=none
+    hi String       guifg=#df5f5f   guibg=NONE      ctermfg=167     ctermbg=NONE     gui=none      cterm=none
+    hi BString      guifg=#df5f5f   guibg=NONE      ctermfg=167     ctermbg=NONE     gui=bold      cterm=bold
 
     hi Function     guifg=#87af87   guibg=NONE      ctermfg=108     ctermbg=NONE     gui=bold      cterm=bold
 
@@ -209,8 +209,8 @@ elseif g:cange_style == "light"
     hi TabLineFill  guifg=#a0a0a0   guibg=#505050   ctermfg=247    ctermbg=239       gui=none      cterm=none
     hi TabLineSel   guifg=#000000   guibg=#d0e0f0   ctermfg=16     ctermbg=153       gui=none      cterm=none
     hi VertSplit    guifg=#868686   guibg=#505050   ctermfg=102    ctermbg=239       gui=none      cterm=none
-    hi Folded       guifg=#ffffff   guibg=#a0a0a0   ctermfg=231    ctermbg=247       gui=none      cterm=none
-    hi FoldColumn   guifg=#ffffff   guibg=#a0a0a0   ctermfg=231    ctermbg=247       gui=none      cterm=none
+    hi Folded       guifg=#ffffff   guibg=#c6c6c6   ctermfg=231    ctermbg=251       gui=none      cterm=none
+    hi FoldColumn   guifg=#ffffff   guibg=#c6c6c6   ctermfg=231    ctermbg=251       gui=none      cterm=none
 
     " == Spelling ==
     hi SpellBad     guisp=#ee0000                                  ctermbg=210       gui=undercurl cterm=undercurl
@@ -237,6 +237,11 @@ elseif g:cange_style == "light"
     hi ColorColumn  guifg=NONE      guibg=#f0f0e0   ctermfg=NONE   ctermbg=230       gui=none      cterm=none
     hi Ignore       guifg=bg                        ctermfg=bg
 
+    " == custom types by cange ==
+    hi String       guifg=#870000   guibg=NONE      ctermfg=88     ctermbg=NONE     gui=none      cterm=none
+    hi BString      guifg=#870000   guibg=NONE      ctermfg=88     ctermbg=NONE     gui=bold      cterm=bold
+
+    hi Function     guifg=#000000   guibg=NONE      ctermfg=0      ctermbg=NONE     gui=bold      cterm=bold
 
 endif
 
