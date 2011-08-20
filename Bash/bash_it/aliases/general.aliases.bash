@@ -9,7 +9,7 @@ alias l='ls -a'
 alias l1='ls -1'
 
 alias work='cd ~/Documents/workspace'
-alias pb='cd ~/Documents/workspace/planingboard'
+alias pb='cd ~/Documents/workspace/planningboard'
 
 alias _="sudo"
 
