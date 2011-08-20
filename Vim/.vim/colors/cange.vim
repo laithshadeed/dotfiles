@@ -94,7 +94,7 @@ if g:cange_style == "dark"
     hi Underlined   guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=underline cterm=underline
     hi Error        guifg=#e07070   guibg=#402020   ctermfg=167    ctermbg=236       gui=none      cterm=none
     hi Todo         guifg=#e0e090   guibg=#404000   ctermfg=186    ctermbg=NONE      gui=none      cterm=none
-    hi MatchParen   guifg=bg        guibg=#d0f080   ctermfg=bg     ctermbg=192       gui=none      cterm=bold
+    hi MatchParen   guifg=#ffdf00   guibg=bg        ctermfg=220    ctermbg=bg        gui=bold      cterm=bold
     hi NonText      guifg=#405060   guibg=NONE      ctermfg=24     ctermbg=NONE      gui=none      cterm=none
     hi SpecialKey   guifg=#406050   guibg=NONE      ctermfg=23     ctermbg=NONE      gui=none      cterm=none
     hi Title        guifg=#62bdde   guibg=NONE      ctermfg=74     ctermbg=NONE      gui=bold      cterm=bold
@@ -152,7 +152,7 @@ if g:cange_style == "dark"
     hi String       guifg=#df8700   guibg=NONE      ctermfg=172     ctermbg=NONE     gui=none      cterm=none
     hi BString      guifg=#df8700   guibg=NONE      ctermfg=172     ctermbg=NONE     gui=none      cterm=none
 
-    hi Function     guifg=#87af87   guibg=NONE      ctermfg=108     ctermbg=NONE     gui=none      cterm=none
+    hi Function     guifg=#87af87   guibg=NONE      ctermfg=108     ctermbg=NONE     gui=bold      cterm=bold
 
 elseif g:cange_style == "light"
 
