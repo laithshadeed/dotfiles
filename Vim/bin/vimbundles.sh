@@ -40,6 +40,7 @@ get_bundle scrooloose syntastic
 get_bundle vim-scripts Gundo
 get_bundle vim-scripts L9
 get_bundle vim-scripts Lucius # colorscheme
+get_bundle vim-scripts jsbeautify
 get_bundle ervandew supertab
 get_bundle guns xterm-color-table.vim
 get_bundle wincent Command-T
