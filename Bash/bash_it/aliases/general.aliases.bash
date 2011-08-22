@@ -8,14 +8,15 @@ alias la='ls -al'
 alias l='ls -a'
 alias l1='ls -1'
 
-alias work='cd ~/Documents/workspace'
-alias pb='cd ~/Documents/workspace/planningboard'
+alias work='cd ~/Sites/workspace'
 
 alias _="sudo"
 
 if [ $(uname) = "Linux" ]
 then
 	alias ls="ls --color=always"
+	alias work='cd ~/Documents/workspace'
+	alias pb='cd ~/Documents/workspace/planningboard'
 fi
 
 alias c='clear'
@@ -49,6 +50,9 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 # Directory
 alias	md='mkdir -p'
 alias	rd=rmdir
+
+# start a simple server at port 8000 pointing to current directory
+alias server="open http://localhost:8000/; python -m SimpleHTTPServer &"
 
 function aliases-help() {
   echo "Generic Alias Usage"

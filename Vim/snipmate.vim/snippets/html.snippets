@@ -105,57 +105,6 @@ snippet html
 		<body>
 		</body>
 	</html>
-snippet xhtml
-	<html xmlns="http://www.w3.org/1999/xhtml">
-	${1}
-	</html>
-snippet body
-	<body>
-		${1}
-	</body>
-snippet head
-	<head>
-		<meta charset="utf-8">
-		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
-		${2}
-	</head>
-snippet title
-	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
-snippet script
-	<script type="text/javascript" charset="utf-8">
-		${1}
-	</script>${2}
-snippet scriptsrc
-	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
-snippet style
-	<style type="text/css" media="${1:screen}">
-		${2}
-	</style>${3}
-snippet base
-	<base href="${1}" target="${2}"`Close()`>
-snippet r
-	<br`Close()[1:]`>
-snippet div
-	<div id="${1:name}">
-		${2}
-	</div>
-# Embed QT Movie
-snippet movie
-	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
-	 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-		<param name="src" value="$1"`Close()`>
-		<param name="controller" value="$4"`Close()`>
-		<param name="autoplay" value="$5"`Close()`>
-		<embed src="${1:movie.mov}"
-			width="${2:320}" height="${3:240}"
-			controller="${4:true}" autoplay="${5:true}"
-			scale="tofit" cache="true"
-			pluginspage="http://www.apple.com/quicktime/download/"
-		`Close()[1:]`>
-	</object>${6}
-snippet fieldset
-	<fieldset id="$1">
-		<legend>${1:name}</legend>
 
 		${3}
 	</fieldset>
