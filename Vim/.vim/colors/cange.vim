@@ -103,8 +103,7 @@ if g:cange_style == "dark"
     hi Cursor       guifg=bg        guibg=#a3e3ed   ctermfg=bg     ctermbg=153       gui=none      cterm=none
     hi CursorIM     guifg=bg        guibg=#96cdcd   ctermfg=bg     ctermbg=116       gui=none      cterm=none
     hi CursorColumn guifg=NONE      guibg=#404448   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
-    hi CursorLine   guifg=NONE      guibg=#1a1a1a   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
-    " hi CursorLine   guifg=NONE      guibg=#404448   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
+    hi CursorLine   guifg=NONE      guibg=#1a1a1a   ctermfg=NONE   ctermbg=234       gui=none      cterm=none
     hi Visual       guifg=NONE      guibg=#304050   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
     hi VisualNOS    guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=underline cterm=underline
     hi IncSearch    guifg=bg        guibg=#60e0e0   ctermfg=bg     ctermbg=116       gui=none      cterm=none
