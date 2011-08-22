@@ -103,7 +103,8 @@ if g:cange_style == "dark"
     hi Cursor       guifg=bg        guibg=#a3e3ed   ctermfg=bg     ctermbg=153       gui=none      cterm=none
     hi CursorIM     guifg=bg        guibg=#96cdcd   ctermfg=bg     ctermbg=116       gui=none      cterm=none
     hi CursorColumn guifg=NONE      guibg=#404448   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
-    hi CursorLine   guifg=NONE      guibg=#404448   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
+    hi CursorLine   guifg=NONE      guibg=#1a1a1a   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
+    " hi CursorLine   guifg=NONE      guibg=#404448   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
     hi Visual       guifg=NONE      guibg=#304050   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
     hi VisualNOS    guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=underline cterm=underline
     hi IncSearch    guifg=bg        guibg=#60e0e0   ctermfg=bg     ctermbg=116       gui=none      cterm=none
@@ -114,14 +115,17 @@ if g:cange_style == "dark"
     hi PmenuSel     guifg=#e0e0e0   guibg=#304050   ctermfg=fg     ctermbg=24        gui=none      cterm=none
     hi PMenuSbar    guifg=#202020   guibg=#d0d0d0   ctermfg=bg     ctermbg=254       gui=none      cterm=none
     hi PMenuThumb   guifg=NONE      guibg=#808080   ctermfg=fg     ctermbg=244       gui=none      cterm=none
-    hi StatusLine   guifg=#202020   guibg=#c0c0c0   ctermfg=bg     ctermbg=252       gui=bold      cterm=bold
-    hi StatusLineNC guifg=#404040   guibg=#c0c0c0   ctermfg=240    ctermbg=252       gui=none      cterm=none
+    " Status bars
+    hi StatusLine   guifg=#121212   guibg=#3a3a3a   ctermfg=233    ctermbg=237       gui=bold      cterm=bold
+    hi StatusLineNC guifg=#262626   guibg=#3a3a3a   ctermfg=235    ctermbg=237       gui=none      cterm=none
     hi TabLine      guifg=#202020   guibg=#e0e0e0   ctermfg=bg     ctermbg=252       gui=none      cterm=none
     hi TabLineFill  guifg=#404040   guibg=#e0e0e0   ctermfg=240    ctermbg=252       gui=none      cterm=none
     hi TabLineSel   guifg=#e0e0e0   guibg=#304050   ctermfg=fg     ctermbg=24        gui=bold      cterm=bold
-    hi VertSplit    guifg=#606060   guibg=#c0c0c0   ctermfg=245    ctermbg=252       gui=none      cterm=none
-    hi Folded       guifg=bg        guibg=#3a3a3a   ctermfg=bg     ctermbg=237       gui=none      cterm=none
-    hi FoldColumn   guifg=bg        guibg=#3a3a3a   ctermfg=bg     ctermbg=237       gui=none      cterm=none
+    " vertical separator line
+    hi VertSplit    guifg=#262626   guibg=#3a3a3a   ctermfg=235    ctermbg=237       gui=none      cterm=none
+    hi Folded       guifg=#3a3a3a   guibg=NONE      ctermfg=237    ctermbg=NONE      gui=none      cterm=none
+    hi FoldColumn   guifg=#3a3a3a   guibg=NONE      ctermfg=237    ctermbg=NONE      gui=none      cterm=none
+
 
     " == Spelling ==
     hi SpellBad     guisp=#ee0000                   ctermfg=fg     ctermbg=160       gui=undercurl cterm=undercurl
@@ -139,7 +143,7 @@ if g:cange_style == "dark"
     hi Directory    guifg=#c0e0b0   guibg=NONE      ctermfg=151    ctermbg=NONE      gui=none      cterm=none
     hi ErrorMsg     guifg=#ee0000   guibg=NONE      ctermfg=196    ctermbg=NONE      gui=none      cterm=none
     hi SignColumn   guifg=#a0b0b0   guibg=#282828   ctermfg=145    ctermbg=233       gui=none      cterm=none
-    hi LineNr       guifg=#202020   guibg=#808080   ctermfg=bg     ctermbg=246       gui=none      cterm=none
+    hi LineNr       guifg=#121212   guibg=#303030   ctermfg=233    ctermbg=236       gui=none      cterm=none
     hi MoreMsg      guifg=#70d0f0   guibg=NONE      ctermfg=117    ctermbg=NONE      gui=none      cterm=none
     hi ModeMsg      guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=none      cterm=none
     hi Question     guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=none      cterm=none
