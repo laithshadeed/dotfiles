@@ -48,7 +48,6 @@ get_bundle duff vim-bufonly
 get_bundle kana vim-textobj-user
 get_bundle rson vim-conque
 get_bundle tpope vim-abolish
-get_bundle tpope vim-cucumber
 get_bundle tpope vim-endwise
 get_bundle tpope vim-fugitive
 get_bundle tpope vim-git
@@ -62,7 +61,6 @@ get_bundle tpope vim-repeat
 get_bundle tpope vim-speeddating
 get_bundle tpope vim-surround
 get_bundle tpope vim-unimpaired
-get_bundle tpope vim-vividchalk
 get_bundle wgibbs vim-irblack
 get_bundle leshill vim-json
 get_bundle vim-ruby vim-ruby
