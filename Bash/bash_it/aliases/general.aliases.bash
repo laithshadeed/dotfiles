@@ -54,6 +54,10 @@ alias	rd=rmdir
 # start a simple server at port 8000 pointing to current directory
 alias server="open http://localhost:8000/; python -m SimpleHTTPServer &"
 
+# COMPASS helper
+alias cw="compass watch"
+alias cc="compass compile --force"
+
 function aliases-help() {
   echo "Generic Alias Usage"
   echo
@@ -65,6 +69,8 @@ function aliases-help() {
   echo "  c/k    = clear"
   echo "  ..     = cd .."
   echo "  ...    = cd ../.."
+  echo "  cw     = compass watch"
+  echo "  cc     = compass compile --force"
 #  echo "  -      = cd -"
   echo "  h      = history"
   echo "  md     = mkdir -p"
