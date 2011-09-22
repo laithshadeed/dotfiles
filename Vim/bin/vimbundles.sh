@@ -31,22 +31,22 @@ get_bundle() {
   )
 }
 
-get_bundle msanders snipmate.vim
-get_bundle godlygeek tabular
-get_bundle mileszs ack.vim
-get_bundle scrooloose nerdcommenter
-get_bundle godlygeek tabular
-get_bundle scrooloose syntastic
-get_bundle vim-scripts Gundo
-get_bundle vim-scripts L9
-get_bundle vim-scripts Lucius # colorscheme
-get_bundle vim-scripts jsbeautify
-get_bundle ervandew supertab
-get_bundle guns xterm-color-table.vim
-get_bundle wincent Command-T
+get_bundle adamlowe vim-slurper
+get_bundle digitaltoad vim-jade
 get_bundle duff vim-bufonly
+get_bundle ervandew supertab
+get_bundle godlygeek tabular
+get_bundle guns xterm-color-table.vim
+get_bundle hallettj jslint.vim
 get_bundle kana vim-textobj-user
+get_bundle leshill vim-json
+get_bundle msanders snipmate.vim
+get_bundle mileszs ack.vim
+get_bundle nelstrom vim-textobj-rubyblock
+get_bundle pangloss vim-javascript
 get_bundle rson vim-conque
+get_bundle scrooloose nerdcommenter
+get_bundle scrooloose syntastic
 get_bundle tpope vim-abolish
 get_bundle tpope vim-endwise
 get_bundle tpope vim-fugitive
@@ -61,12 +61,13 @@ get_bundle tpope vim-repeat
 get_bundle tpope vim-speeddating
 get_bundle tpope vim-surround
 get_bundle tpope vim-unimpaired
-get_bundle wgibbs vim-irblack
-get_bundle leshill vim-json
-get_bundle vim-ruby vim-ruby
-get_bundle adamlowe vim-slurper
-get_bundle nelstrom vim-textobj-rubyblock
-get_bundle pangloss vim-javascript
+get_bundle tpope vim-vividchalk
 get_bundle therubymug vim-pyte
-get_bundle digitaltoad vim-jade
-
+get_bundle vim-ruby vim-ruby
+get_bundle vim-scripts Gundo
+get_bundle vim-scripts L9
+get_bundle vim-scripts Lucius # colorscheme
+get_bundle vim-scripts jsbeautify
+get_bundle vim-scripts jshint.vim
+get_bundle wgibbs vim-irblack
+get_bundle wincent Command-T
