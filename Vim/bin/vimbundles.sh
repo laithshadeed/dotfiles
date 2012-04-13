@@ -30,7 +30,6 @@ get_bundle() {
   fi
   )
 }
-
 get_bundle adamlowe vim-slurper
 get_bundle digitaltoad vim-jade
 get_bundle duff vim-bufonly
@@ -39,7 +38,9 @@ get_bundle godlygeek tabular
 get_bundle guns xterm-color-table.vim
 get_bundle hallettj jslint.vim
 get_bundle kana vim-textobj-user
+# get_bundle kogakure vim-sparkup # markup helper div[class=foo]
 get_bundle leshill vim-json
+# get_bundle Lokaltog vim-easymotion
 get_bundle msanders snipmate.vim
 get_bundle mileszs ack.vim
 get_bundle nelstrom vim-textobj-rubyblock
@@ -68,6 +69,8 @@ get_bundle vim-scripts Gundo
 get_bundle vim-scripts L9
 get_bundle vim-scripts Lucius # colorscheme
 get_bundle vim-scripts jsbeautify
-get_bundle vim-scripts jshint.vim
+# get_bundle vim-scripts jshint.vim
+get_bundle vim-scripts tComment
 get_bundle wgibbs vim-irblack
-get_bundle wincent Command-T
+# get_bundle wincent Command-T
+get_bundle kien ctrlp.vim
