@@ -46,15 +46,9 @@ nmap <C-Down> ]e
 " Shortcut for commenting. T-Comment plugin
 map <leader>c <c-_><c-_>
 
-
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
-
-" FuzzyFinder (and github.com/jamis/fuzzyfinder_textmate)
-let g:fuzzy_ignore = "*.log"
-let g:fuzzy_matching_limit = 70
-"map <leader>t :FufFile<CR>
 
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
@@ -104,8 +98,6 @@ nmap > ><CR>gv
 nmap < <<CR>gv
 vmap > ><CR>gv
 vmap < <<CR>gv
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Syntastic-specific config settings
