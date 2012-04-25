@@ -1,0 +1,186 @@
+#
+# loops
+#
+snippet for
+	@for ($i from ${1:number} through ${2:number}) {
+		${3:.selector-}#{${4:$i}} {
+			${5:prop}: ${6:value} * $4;
+		}
+	}
+snippet each
+	@each (${1:$prop} in ${2:item, eagle}) {
+	//	icon.#{$1}
+	//		background-image: url('/images/#{$1}.png')
+	}
+snippet while
+	$i: 6
+	@while ($i > 0) {
+	//	.item-#{$i} {
+	//		${1:prop}: ${2:value} * $i;
+		$i: $i - ${3:2};
+	}
+
+snippet grad
+	linear-gradient(${1:color}, ${2:color})
+snippet dar
+	darken(${1:color}, ${2:step})
+snippet lig
+	lighten(${1:color}, ${2:step})
+snippet rgba
+	rgba(${1:color}, .${2:alpha})
+snippet mix
+	mix(${1:color}, ${2:color}, ${3:weight})
+snippet sat
+	saturate(${1:color}, ${2:amount})
+snippet des
+	desaturate(${1:color}, ${2:amount})
+#
+# comments
+#
+snippet @ #section
+	// @section ${1}
+snippet @ #subsection
+	// @subsection ${1}
+snippet @ #module
+	// @module ${1}
+snippet @ #submodule
+	// @submodule ${1}
+snippet @ #layout
+	// @layout ${1}
+snippet @ #import
+	@import '${1:path}';
+snippet @ #extend
+	@extend .${1:selector};
+
+
+
+#
+# CSS Properties
+#
+
+snippet :a # active
+	:active ${1}
+snippet :a # after
+	::after ${1}
+snippet :b # before
+	::before ${1}
+snippet :c # checked
+	:checked ${1}
+#::choices
+snippet :d # default
+	:default ${1}
+snippet :d # disabled
+	:disabled ${1}
+snippet :e # empty
+	:empty ${1}
+snippet :e # enabled
+	:enabled ${1}
+snippet :f # first
+	:first ${1}
+snippet :f #first-child
+	:first-child
+snippet :f #first-letter
+	::first-letter
+snippet :f #first-line
+	::first-line
+snippet :f #first-of-type
+	::first-of-type
+snippet :f # focus
+	:focus ${1}
+snippet :h # hover
+	:hover ${1}
+snippet :i # invalid
+	:invalid ${1}
+snippet :i # indeterminate
+	:indeterminate ${1}
+#:in-range
+snippet :l # lang
+	:lang ${1}
+snippet :l # last-child
+	:last-child ${1}
+snippet :l # last-of-type
+	:last-of-type ${1}
+snippet :l # left
+	:left ${1}
+snippet :l # link
+	:link ${1}
+snippet :n # not
+	:not ${1}
+snippet :f # nth-child
+	:nth-child ${1}
+snippet :f # nth-last-child
+	:nth-last-child ${1}
+snippet :f # nth-last-of-type
+	:nth-last-of-type ${1}
+snippet :f # nth-of-type
+	:nth-of-type ${1}
+snippet :o # only-child
+	:only-child ${1}
+snippet :o # only-of-type
+	:only-of-type ${1}
+snippet :o # optional
+	:optional${1}
+#:out-range
+snippet :r # read-only
+	:read-only ${1}
+snippet :r # read-write
+	:read-write ${1}
+#::repeat-index
+#::repeat-item
+snippet :r # required
+	:required ${1}
+snippet :r # right
+	:right ${1}
+snippet :r # root
+	:root ${1}
+snippet :s # selection
+	::selection ${1}
+snippet :v # valid
+	:valid ${1}
+#::value
+snippet : # visited
+	:visited ${1}
+
+
+# background
+snippet ba # background-image
+	background-image: url(${1:file}.png);
+snippet ba # background-position
+	background-position: ${1:0} ${2:0};
+snippet ba # background-repeat
+	background-repeat: ${1:no-}repeat${2:-x|y};
+snippet ba # background-color
+	background-color: ${1:color};
+snippet ba # background-size
+	background-size: ${1:size} ${2:size};
+snippet ba # background-size
+	background-attachment: ${1:scroll|fixed|local};
+snippet ba # background-clip
+	background-clip: ${1:border|content|content}-box;
+snippet ba # background-origin
+	background-origin: ${1:border|content|content}-box;
+# border
+snippet bo # border
+	border: ${1:width} ${2:style} ${3:color};
+snippet bo # border-width
+	border-width: ${1:width};
+snippet bo # border-style
+	border-style: ${1:style};
+snippet bo # border-color
+	border-color: ${1:color};
+snippet bo # border-bottom
+	border-bottom: ${1:width} ${2:style} ${3:color};
+snippet bo # border-left
+	border-left: ${1:width} ${2:style} ${3:color};
+snippet bo # border-right
+	border-right: ${1:width} ${2:style} ${3:color};
+snippet bo # border-top
+	border-top: ${1:width} ${2:style} ${3:color};
+snippet bo # border-color
+	@include border-radius(${1:radius});
+snippet bo # bottom
+	bottom: ${1:value};
+snippet bo # box-shadow
+	@include box-shadow(${1:x} ${2:y} ${3:blur} ${4:inset};
+snippet bo # box-sizing
+	@include box-sizing(${1:border|content|content}-box);
