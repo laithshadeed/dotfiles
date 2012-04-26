@@ -1,3 +1,2 @@
-#!/bin/bash
-
-alias v='mvim --remote-tab'
+# alias v='mvim --remote-tab'
+alias v="gvim"

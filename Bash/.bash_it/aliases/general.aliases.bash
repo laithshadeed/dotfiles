@@ -15,8 +15,6 @@ alias _="sudo"
 if [ $(uname) = "Linux" ]
 then
 	alias ls="ls --color=always"
-	alias work='cd ~/Documents/workspace'
-	alias pb='cd ~/Documents/workspace/planningboard'
 fi
 
 alias c='clear'
@@ -37,9 +35,8 @@ alias piano="pianobar"
 # start a simple server at port 8000 pointing to current directory
 alias server="open http://localhost:8000/; python -m SimpleHTTPServer &"
 
-alias ..='cd ..'        # Go up one directory
-alias ...='cd ../..'    # Go up two directories
-#alias -="cd -"       # Go back
+alias ..='cd ..'         # Go up one directory
+alias ...='cd ../..'     # Go up two directories
 
 # Shell History
 alias h='history'
@@ -71,7 +68,6 @@ function aliases-help() {
   echo "  ...    = cd ../.."
   echo "  cw     = compass watch"
   echo "  cc     = compass compile --force"
-#  echo "  -      = cd -"
   echo "  h      = history"
   echo "  md     = mkdir -p"
   echo "  rd     = rmdir"
