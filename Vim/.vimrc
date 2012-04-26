@@ -6,9 +6,6 @@ endif
 syntax on
 filetype plugin indent on
 
-source $VIMRUNTIME/mswin.vim
-behave mswin
-
 augroup vimrc
   let s:platform=''
   if has("unix")
@@ -22,9 +19,7 @@ augroup vimrc
 
   autocmd!
   if s:platform == 'Linux'
-"  set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
     autocmd GuiEnter * set guifont=Bitstream\ Vera\ Sans\ Mono\ 10 guioptions-=T columns=220 lines=70 number
-    " autocmd GuiEnter * set guifont=Monaco\ Linux:h10 guioptions-=T columns=220 lines=70 number
   elseif s:platform == 'MacOS'
     autocmd GuiEnter * set guifont=Meslo_LG_M_DZ:h12 guioptions-=T columns=220 lines=70 number
   endif
