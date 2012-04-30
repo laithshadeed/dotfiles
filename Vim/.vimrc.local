@@ -53,12 +53,21 @@ match OverLength /\%81v.\+/ " set variable for over length
 "remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+" enable everytime CSS autocompletion
+if &ft == 'css' || &ft == 'scss' || &ft == 'sass' || &ft == 'stylus' || &ft == 'less'
+  " JavaScript and HTML completion is not useful
+  " map double tab as call
+  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+  " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+  imap <TAB><TAB> <C-X><C-O>
+endif
+
 " Bubble single lines
 nmap <C-Up> [e
 nmap <C-Down> ]e
 
 " Shortcut for commenting. T-Comment plugin
-map <leader>c <c-_><c-_>
+map <leader>c <C-_><C-_>
 
 " Bubble multiple lines
 vmap <C-Up> [egv
@@ -79,7 +88,6 @@ if exists(":Tabularize")
 endif
 
 noremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
@@ -148,10 +156,6 @@ let g:syntastic_disabled_filetypes = ['html']
 if &diff
   let g:syntastic_auto_loc_list=2
 endif
-
-
-" behave mswin
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

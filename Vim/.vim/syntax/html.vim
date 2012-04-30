@@ -12,7 +12,7 @@
 syn keyword htmlTagName contained article aside audio bdi canvas command
 syn keyword htmlTagName contained datalist details embed figure figcaption footer
 syn keyword htmlTagName contained header hgroup keygen mark meter nav output
-syn keyword htmlTagName contained progress time ruby rt rp ruby section summary
+syn keyword htmlTagName contained progress time ruby rt rp section summary
 syn keyword htmlTagName contained time track video wbr
 
 " HTML 5 arguments

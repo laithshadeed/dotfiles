@@ -96,7 +96,7 @@ if g:cange_style == "dark"
     hi Todo         guifg=#e0e090   guibg=#404000   ctermfg=186    ctermbg=NONE      gui=none      cterm=none
     hi MatchParen   guifg=#ffdf00   guibg=bg        ctermfg=220    ctermbg=bg        gui=bold      cterm=bold
     hi NonText      guifg=#405060   guibg=NONE      ctermfg=24     ctermbg=NONE      gui=none      cterm=none
-    hi OverLength   guifg=NONE      guibg=NONE      ctermfg=NONE   ctermbg=NONE      gui=bold      cterm=bold
+    " hi OverLength   guifg=NONE      guibg=#303030   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
     hi SpecialKey   guifg=#406050   guibg=NONE      ctermfg=23     ctermbg=NONE      gui=none      cterm=none
     hi Title        guifg=#62bdde   guibg=NONE      ctermfg=74     ctermbg=NONE      gui=bold      cterm=bold
 
@@ -149,7 +149,7 @@ if g:cange_style == "dark"
     hi Question     guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=none      cterm=none
     hi WarningMsg   guifg=#e87870   guibg=NONE      ctermfg=173    ctermbg=NONE      gui=none      cterm=none
     hi WildMenu     guifg=NONE      guibg=#304050   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
-    hi ColorColumn  guifg=#ff5f00   guibg=NONE      ctermfg=202    ctermbg=NONE       gui=none      cterm=none
+    hi ColorColumn  guifg=NONE      guibg=#1c1c1c   ctermfg=NONE   ctermbg=234       gui=none      cterm=none
     hi Ignore       guifg=bg                        ctermfg=bg
 
     " == custom types by cange ==
@@ -189,7 +189,7 @@ elseif g:cange_style == "light"
     hi Todo         guifg=#504000   guibg=#f6f080   ctermfg=58     ctermbg=228       gui=none      cterm=none
     hi MatchParen   guifg=NONE      guibg=#d0f080   ctermfg=NONE   ctermbg=192       gui=none      cterm=none
     hi NonText      guifg=#b0c0d0   guibg=NONE      ctermfg=146    ctermbg=NONE      gui=none      cterm=none
-    hi OverLength   guifg=NONE      guibg=NONE      ctermfg=NONE   ctermbg=NONE      gui=bold      cterm=bold
+    " hi OverLength   guifg=NONE      guibg=#eeeeee   ctermfg=NONE   ctermbg=255       gui=none      cterm=none
     hi SpecialKey   guifg=#b0d0c0   guibg=NONE      ctermfg=151    ctermbg=NONE      gui=none      cterm=none
     hi Title        guifg=#0060a0   guibg=NONE      ctermfg=26     ctermbg=NONE      gui=bold      cterm=bold
 
@@ -239,7 +239,7 @@ elseif g:cange_style == "light"
     hi Question     guifg=fg        guibg=NONE      ctermfg=NONE   ctermbg=NONE      gui=none      cterm=none
     hi WarningMsg   guifg=#d04020   guibg=NONE      ctermfg=9      ctermbg=NONE      gui=none      cterm=none
     hi WildMenu     guifg=#000000   guibg=#d0e0f0   ctermfg=16     ctermbg=153       gui=none      cterm=none
-    hi ColorColumn  guifg=#ff5f00   guibg=NONE      ctermfg=202    ctermbg=NONE      gui=none      cterm=none
+    hi ColorColumn  guifg=NONE      guibg=#eeeeee   ctermfg=255    ctermbg=NONE      gui=none      cterm=none
     hi Ignore       guifg=bg                        ctermfg=bg
 
     " == custom types by cange ==
