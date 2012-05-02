@@ -37,27 +37,29 @@ snippet des
 #
 # comments
 #
-snippet @ #section
-	// @section ${1}
-snippet @ #subsection
-	// @subsection ${1}
-snippet @ #module
-	// @module ${1}
-snippet @ #submodule
-	// @submodule ${1}
-snippet @ #layout
-	// @layout ${1}
-snippet @ #import
-	@import '${1:path}';
-snippet @ #extend
+snippet @e #extend
 	@extend .${1:selector};
-
-
-
+snippet @l #layout
+	// @layout ${1}
+snippet @i #import
+	@import '${1:path}';
+snippet @i #include
+	@include '${1:mixin}';
+snippet @m #module
+	// @module ${1}
+snippet @m #mixin
+	@mixin ${1:name}(${2:params}) {
+		${3}
+	}
+snippet @s #submodule
+	// @submodule ${1}
+snippet @s #section
+	// @section ${1}
+snippet @s #subsection
+	// @subsection ${1}
 #
 # CSS Properties
 #
-
 snippet :a # active
 	:active ${1}
 snippet :a # after
@@ -78,7 +80,7 @@ snippet :e # enabled
 snippet :f # first
 	:first ${1}
 snippet :f #first-child
-	:first-child
+	v:first-child
 snippet :f #first-letter
 	::first-letter
 snippet :f #first-line
@@ -138,11 +140,11 @@ snippet :s # selection
 snippet :v # valid
 	:valid ${1}
 #::value
-snippet : # visited
+snippet :v # visited
 	:visited ${1}
-
-
+#
 # background
+#
 snippet ba # background-image
 	background-image: url(${1:file}.png);
 snippet ba # background-position
