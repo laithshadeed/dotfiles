@@ -2,26 +2,26 @@
 # Non-Breaking Space
 
 # taglibs
-snippet taglib # core
+snippet taglib - core
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-snippet taglib # c-tr
+snippet taglib - c-tr
 	<%@ taglib prefix="c-rt" uri="http://java.sun.com/jstl/core_rt" %>
-snippet taglib # fmt
+snippet taglib - fmt
 	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-snippet taglib # form
+snippet taglib - form
 	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-snippet taglib # spring
+snippet taglib - spring
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 # i18n
-snippet fmtm
+snippet fmt - simple
 	<fmt:message key="${1:path}"/>
-snippet fmtp
+snippet fmt - param
 	<fmt:message key="${1:path}">
 		<fmt:param value="${2:param}"/>
 	</fmt:message>
-snippet fmts
-	<c:set var="i18n_scope" value="${1:path}"/>
+snippet fmt - scope
+	<c:set var="i18nScope" value="${1:path}"/>
 
 # form elements
 snippet form

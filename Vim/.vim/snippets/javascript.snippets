@@ -1,12 +1,11 @@
 # Prototype
 snippet proto
-	${1:class_name}.prototype.${2:method_name} =
-	function(${3:first_argument}) {
+	${1:class_name}.prototype.${2:method_name} = function (${3:first_argument}) {
 		${4:// code…}
 	};
 # Function
 snippet fu
-	function ${1:function_name} (${2:argument}) {
+	function ${1:function_name}(${2:argument}) {
 		${3:// code…}
 	}
 # Anonymous Function
@@ -64,12 +63,12 @@ snippet do
 	} while (${1:condition});
 # Object Method
 snippet :f
-	${1:method_name}: function(${2:attribute}) {
+	${1:method_name}: function (${2:attribute}) {
 		${4}
 	}${3:,}
 # setTimeout function
 snippet tout
-	setTimeout(function() {${3}}${2}, ${1:10};
+	setTimeout(function () {${3}}${2}, ${1:10};
 # Get Elements
 snippet get
 	getElementsBy${1:TagName}('${2}')${3}
@@ -100,16 +99,16 @@ snippet ready
 	$(function () {
 		${1:// code…}
 	});
-snippet ev # direct
+snippet ev - direct
 	${1:$('selector')}.${2:click}(function (${3:event}) {
 		var $this = $(this);
 	});
-snippet ev # on direct
+snippet ev - on direct
 	${1:$('selector')}.on('${2:click}', function (${3:event}) {
 		var $this = $(this);
 		${4}
 	});
-snippet ev # on delegated
+snippet ev - on delegated
 	${1:$('main_selector')}.on('${2:click}', '${3:sub_selector}', function (${4:event}) {
 		var $this = $(this);
 		${5}
