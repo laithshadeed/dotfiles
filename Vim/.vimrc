@@ -1,3 +1,5 @@
+set nocompatible
+
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
   call pathogen#runtime_prepend_subdirectories(expand('~/.vimbundles'))
@@ -7,21 +9,16 @@ syntax on
 filetype plugin indent on
 
 augroup vimrc
-  let s:platform=''
+  autocmd!
   if has("unix")
     let s:uname=system("echo -n \"$(uname)\"")
     if s:uname == "Darwin"
-      let s:platform='MacOS'
+      " 'MacOS'
+      autocmd GuiEnter * set guifont=Menlo:h12 guioptions-=T columns=220 lines=70 number
     elseif s:uname == 'Linux'
-      let s:platform='Linux'
+      " 'Linux'
+      autocmd GuiEnter * set guifont=Bitstream\ Vera\ Sans\ Mono\ 10 guioptions-=T columns=220 lines=70 number
     endif
-  endif
-
-  autocmd!
-  if s:platform == 'Linux'
-    autocmd GuiEnter * set guifont=Bitstream\ Vera\ Sans\ Mono\ 10 guioptions-=T columns=220 lines=70 number
-  elseif s:platform == 'MacOS'
-    autocmd GuiEnter * set guifont=Meslo_LG_M_DZ:h12 guioptions-=T columns=220 lines=70 number
   endif
 augroup END
 
