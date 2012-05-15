@@ -1,0 +1,3 @@
+svndiff(){
+  svn diff "${@}" | colordiff
+}
