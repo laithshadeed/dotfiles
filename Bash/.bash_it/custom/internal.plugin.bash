@@ -4,3 +4,8 @@ push_this_to_remote() {
   git push xws-features $current_branch
   git branch --set-upstream $current_branch xws-features/$current_branch
 }
+
+
+svndiff(){
+  svn diff "${@}" | colordiff
+}
