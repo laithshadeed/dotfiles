@@ -97,6 +97,8 @@ snippet .fi
 	.find(${1:args})${2:next}
 snippet ready
 	$(function () {
+		'use strict'; // jslint
+
 		${1:// code…}
 	});
 snippet ev - direct
