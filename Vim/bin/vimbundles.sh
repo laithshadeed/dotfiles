@@ -47,6 +47,7 @@ get_bundle nelstrom vim-textobj-rubyblock
 get_bundle pangloss vim-javascript
 get_bundle rson vim-conque
 get_bundle scrooloose nerdcommenter
+get_bundle scrooloose nerdtree
 get_bundle scrooloose syntastic
 get_bundle tpope vim-abolish
 get_bundle tpope vim-endwise
@@ -69,7 +70,7 @@ get_bundle vim-scripts Gundo
 get_bundle vim-scripts L9
 get_bundle vim-scripts Lucius # colorscheme
 get_bundle vim-scripts jsbeautify
-# get_bundle vim-scripts jshint.vim
+get_bundle vim-scripts jshint.vim
 get_bundle vim-scripts tComment
 get_bundle wgibbs vim-irblack
 # get_bundle wincent Command-T
