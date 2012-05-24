@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# include global settings
+source "etc/bashrc"
+
 # Load RVM, if you are using it (RubyVersionManager)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 

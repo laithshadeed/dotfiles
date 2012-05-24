@@ -6,7 +6,7 @@ else
   colorscheme cange
 endif
 
-:set guioptions-=m  "remove menu bar
+set guioptions-=m  "remove menu bar
 
 source $VIMRUNTIME/mswin.vim
 " add shortcut behavior like other gui text editors
