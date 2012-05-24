@@ -50,8 +50,6 @@ set smartindent
 set nowrap
 set number                  " Enable line numbers
 
-match OverLength /\%81v.\+/ " set variable for over length
-
 "remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
