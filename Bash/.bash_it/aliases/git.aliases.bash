@@ -22,6 +22,7 @@ alias gp='git push'
 alias gpo='git push origin'
 alias gpp='git stash pop'
 alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
+alias gm='git mergetool'
 alias gsh='git stash'
 alias gss='git status -s'
 alias gst='git status'
@@ -50,7 +51,7 @@ function git-help() {
   echo
   echo "  g       = git"
   echo "  ga      = git add"
-  echo "  gall	  = git add ."
+  echo "  gall    = git add ."
   echo "  gb      = git branch"
   echo "  gba     = git branch -a"
   echo "  gc      = git commit -v"
@@ -66,6 +67,7 @@ function git-help() {
   echo "  gexport = git git archive --format zip --output"
   echo "  gl      = git pull"
   echo "  gmu     = git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+  echo "  gm      = git mergetool"
   echo "  gpo     = git push origin"
   echo "  gp      = git push"
   echo "  gpp     = git stash pop"
