@@ -6,7 +6,6 @@ else
   colorscheme cange
 endif
 
-set guioptions-=m  "remove menu bar
 
 source $VIMRUNTIME/mswin.vim
 " add shortcut behavior like other gui text editors
@@ -20,12 +19,25 @@ map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
 " Gundo Vim (f5)
 map <leader>gu :execute ':GundoToggle'<CR>
 
+" file should be UTF-8 endcoded be default
+setglobal fileencoding=utf-8
+set encoding=utf-8
+"setglobal bomb
+set fileencodings=ucs-bom,utf-8,latin1
+set filetype=on
+
+set guioptions-=m           "remove menu bar
 set nocompatible            " Make vim more useful
-set softtabstop=2
-set shiftwidth=2
-set tabstop=2               " Make tabs as wide as two spaces
 set expandtab
 set colorcolumn=80
+set textwidth=80            "80 character lines
+" match OverLength /\%81v.\+/ " set variable for over length
+set softtabstop=2
+if &ft == 'php'
+  set softtabstop=4
+endif
+set shiftwidth=2
+set tabstop=2               " Make tabs as wide as two spaces
 set cursorline              " Highlight current line
 set gdefault                " Add the g flag to search/replace by default
 "folding settings
@@ -50,11 +62,12 @@ set smartindent
 set nowrap
 set number                  " Enable line numbers
 
-"remove trailing whitespace
+" remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
 " enable everytime CSS autocompletion
 if &ft == 'css' || &ft == 'scss' || &ft == 'sass' || &ft == 'stylus' || &ft == 'less'
+  echo "CompleteCSS is now activated"
   " JavaScript and HTML completion is not useful
   " map double tab as call
   autocmd FileType css set omnifunc=csscomplete#CompleteCSS
