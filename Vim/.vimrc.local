@@ -30,7 +30,7 @@ set guioptions-=m           "remove menu bar
 set nocompatible            " Make vim more useful
 set expandtab
 set colorcolumn=80
-set textwidth=80            "80 character lines
+" set textwidth=80            "80 character lines
 " match OverLength /\%81v.\+/ " set variable for over length
 set softtabstop=2
 if &ft == 'php'
