@@ -30,13 +30,9 @@ set guioptions-=m           "remove menu bar
 set nocompatible            " Make vim more useful
 set expandtab
 set colorcolumn=80
-" set textwidth=80            "80 character lines
 " match OverLength /\%81v.\+/ " set variable for over length
-set softtabstop=2
-if &ft == 'php'
-  set softtabstop=4
-endif
 set shiftwidth=2
+set softtabstop=2
 set tabstop=2               " Make tabs as wide as two spaces
 set cursorline              " Highlight current line
 set gdefault                " Add the g flag to search/replace by default
@@ -62,18 +58,41 @@ set smartindent
 set nowrap
 set number                  " Enable line numbers
 
+
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
 " enable everytime CSS autocompletion
-if &ft == 'css' || &ft == 'scss' || &ft == 'sass' || &ft == 'stylus' || &ft == 'less'
-  echo "CompleteCSS is now activated"
-  " JavaScript and HTML completion is not useful
-  " map double tab as call
-  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-  " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-  imap <TAB><TAB> <C-X><C-O>
-endif
+" function FileTypeCssSetting()
+  " " map double tab as call
+  " set omnifunc=csscomplete#CompleteCSS
+  " " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+  " imap <TAB><TAB> <C-X><C-O>
+" endfunction
+
+function FileTypeSmallSetting()
+  set colorcolumn=80
+  set textwidth=80         " 80 character lines
+endfunction
+
+function FileTypeWideSetting()
+  set colorcolumn=110
+  set textwidth=110        " 110 character lines
+endfunction
+
+function FileTypeCloseSetting()
+  inoremap { {<CR>}<Esc>ko
+  inoremap ( (<CR>)<Esc>ko
+  inoremap [ [<CR>]<Esc>ko
+  inoremap ' '<CR>'<Esc>ko
+  inoremap " "<CR>"<Esc>ko
+endfunction
+
+autocmd FileType js,css,php,java FileTypeCloseSetting()
+" autocmd FileType css,scss,sass,stylus,less call FileTypeCssSetting()
+autocmd FileType css,scss,sass,stylus,less,js,haml call FileTypeSmallSetting()
+autocmd FileType html,jsp,twig,erb,php,java call FileTypeWideSetting()
+
 
 " Bubble single lines
 nmap <C-Up> [e
