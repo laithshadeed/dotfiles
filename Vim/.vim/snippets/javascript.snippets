@@ -111,7 +111,23 @@ snippet ev - on direct
 		${4}
 	});
 snippet ev - on delegated
-	${1:$('main_selector')}.on('${2:click}', '${3:sub_selector}', function (${4:event}) {
+	${1:$('main_selector')}.on('${2:click}', '${3:subSelector}', function (${4:event}) {
 		var $this = $(this);
 		${5}
 	});
+
+snippet module
+	var ${1:moduleName} = (function ($) {
+		var module = {};
+		//privateVariable = 1;
+
+		//function privateMethod() {
+		//  ...
+		//}
+		//module.moduleProperty = 1;
+		//module.moduleMethod = function () {
+		//  ...
+		//};
+
+		return module;
+	}(jQuery));
