@@ -95,9 +95,10 @@ if g:cange_style == "dark"
     hi Error        guifg=#e07070   guibg=#402020   ctermfg=167    ctermbg=236       gui=none      cterm=none
     hi Todo         guifg=#e0e090   guibg=#404000   ctermfg=186    ctermbg=NONE      gui=none      cterm=none
     hi MatchParen   guifg=#ffdf00   guibg=bg        ctermfg=220    ctermbg=bg        gui=bold      cterm=bold
+    " Invisible character colors
     hi NonText      guifg=#405060   guibg=NONE      ctermfg=24     ctermbg=NONE      gui=none      cterm=none
-    " hi OverLength   guifg=NONE      guibg=#303030   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
     hi SpecialKey   guifg=#406050   guibg=NONE      ctermfg=23     ctermbg=NONE      gui=none      cterm=none
+    " hi OverLength   guifg=NONE      guibg=#303030   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
     hi Title        guifg=#62bdde   guibg=NONE      ctermfg=74     ctermbg=NONE      gui=bold      cterm=bold
 
     " == Text Selection ==
@@ -188,9 +189,10 @@ elseif g:cange_style == "light"
     hi Error        guifg=#c02620   guibg=#f0c6c0   ctermfg=1      ctermbg=181       gui=none      cterm=none
     hi Todo         guifg=#504000   guibg=#f6f080   ctermfg=58     ctermbg=228       gui=none      cterm=none
     hi MatchParen   guifg=NONE      guibg=#d0f080   ctermfg=NONE   ctermbg=192       gui=none      cterm=none
+    " Invisible character colors
     hi NonText      guifg=#b0c0d0   guibg=NONE      ctermfg=146    ctermbg=NONE      gui=none      cterm=none
-    " hi OverLength   guifg=NONE      guibg=#eeeeee   ctermfg=NONE   ctermbg=255       gui=none      cterm=none
     hi SpecialKey   guifg=#b0d0c0   guibg=NONE      ctermfg=151    ctermbg=NONE      gui=none      cterm=none
+    " hi OverLength   guifg=NONE      guibg=#eeeeee   ctermfg=NONE   ctermbg=255       gui=none      cterm=none
     hi Title        guifg=#0060a0   guibg=NONE      ctermfg=26     ctermbg=NONE      gui=bold      cterm=bold
 
     " == Text Selection ==

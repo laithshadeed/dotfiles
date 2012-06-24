@@ -1,3 +1,4 @@
+" == define colorscheme ========================================================
 if has("gui_running")
   colorscheme cange
   :set guioptions-=r
@@ -6,7 +7,88 @@ else
   colorscheme cange
 endif
 
+" == characters per line =======================================================
+set colorcolumn=80                  " highlight end of line
+set textwidth=80                    " 80 character lines
+" match OverLength /\%81v.\+/ " set variable for over length
+"
+" == Tabs and Spaces ===========================================================
+set tabstop=2                       " Make tabs as wide as two spaces
+set softtabstop=2                   " Make backspace remove spaces by shiftwith
+set shiftwidth=2
+set expandtab                       " Manage the behavior of spaces and tabs
+" Remove trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+"
+" == Show invisible characters =================================================
+set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:_
+set list!                           " show by default invisible characters
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+" ==============================================================================
 
+" == Only do this part when compiled with support for autocommands =============
+if has("autocmd")
+  " Enable file type detection
+  filetype on
+  " use a different value of Tabs and Spaces
+  autocmd FileType php, java setlocal ts=4 sts=4 sw=4 expandtab
+
+  " enable everytime CSS autocompletion
+  function CssSetting()
+    " map double tab as call
+    set omnifunc=csscomplete#CompleteCSS
+    " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+    imap <TAB><TAB> <C-X><C-O>
+  endfunction
+  " autocmd FileType css,scss,sass,stylus,less :call CssSetting()
+
+  function WideSetting()
+    set colorcolumn=120             " highlight end of line
+    set textwidth=120               " 120 character lines
+  endfunction
+  autocmd FileType html,jsp,twig,erb,php,java :call WideSetting()
+
+  function CloseSetting()
+    inoremap { {<CR>}<Esc>ko
+    inoremap ( (<CR>)<Esc>ko
+    inoremap [ [<CR>]<Esc>ko
+    inoremap ' '<CR>'<Esc>ko
+    inoremap " "<CR>"<Esc>ko
+  endfunction
+  autocmd FileType js,css,php,java :call CloseSetting()
+
+  " Remove trailing whitespace before save file
+  autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+endif " autocmd ================================================================
+
+" == Indentation commands ======================================================
+" Keep Block visually marked when indenting
+nmap > ><CR>gv
+nmap < <<CR>gv
+vmap > ><CR>gv
+vmap < <<CR>gv
+" == Buffer management =========================================================
+set hidden                          " hide confirmtion before switch to another buffer file
+" press F10 to open the buffer menu
+set wildcharm=<C-Z>
+nnoremap <F10> :b <C-Z>
+
+"
+"
+" TODO the part of below, have to refactor
+"
+"
 source $VIMRUNTIME/mswin.vim
 " add shortcut behavior like other gui text editors
 behave mswin
@@ -24,16 +106,10 @@ setglobal fileencoding=utf-8
 set encoding=utf-8
 "setglobal bomb
 set fileencodings=ucs-bom,utf-8,latin1
-set filetype=on
 
 set guioptions-=m           "remove menu bar
 set nocompatible            " Make vim more useful
-set expandtab
-set colorcolumn=80
-" match OverLength /\%81v.\+/ " set variable for over length
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2               " Make tabs as wide as two spaces
+
 set cursorline              " Highlight current line
 set gdefault                " Add the g flag to search/replace by default
 "folding settings
@@ -41,9 +117,7 @@ set foldmethod=indent       " fold based on indent
 set foldnestmax=10          " deepest fold is 10 levels
 set nofoldenable            " dont fold by default
 set foldlevel=1             " this is just what i use
-" Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
+
 "tab-completion for buffers
 set wildmenu                " Enhance command-line completion
 set wildmode=list:longest
@@ -57,41 +131,6 @@ set showcmd                 " Show the (partial) command as it’s being typed
 set smartindent
 set nowrap
 set number                  " Enable line numbers
-
-
-" remove trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
-
-" enable everytime CSS autocompletion
-" function FileTypeCssSetting()
-  " " map double tab as call
-  " set omnifunc=csscomplete#CompleteCSS
-  " " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-  " imap <TAB><TAB> <C-X><C-O>
-" endfunction
-
-function FileTypeSmallSetting()
-  set colorcolumn=80
-  set textwidth=80         " 80 character lines
-endfunction
-
-function FileTypeWideSetting()
-  set colorcolumn=110
-  set textwidth=110        " 110 character lines
-endfunction
-
-function FileTypeCloseSetting()
-  inoremap { {<CR>}<Esc>ko
-  inoremap ( (<CR>)<Esc>ko
-  inoremap [ [<CR>]<Esc>ko
-  inoremap ' '<CR>'<Esc>ko
-  inoremap " "<CR>"<Esc>ko
-endfunction
-
-autocmd FileType js,css,php,java FileTypeCloseSetting()
-" autocmd FileType css,scss,sass,stylus,less call FileTypeCssSetting()
-autocmd FileType css,scss,sass,stylus,less,js,haml call FileTypeSmallSetting()
-autocmd FileType html,jsp,twig,erb,php,java call FileTypeWideSetting()
 
 
 " Bubble single lines
@@ -146,24 +185,6 @@ function! OpenChangedFiles()
 endfunction
 command! OpenChangedFiles :call OpenChangedFiles()
 
-" Strip trailing whitespace (,ss)
-function! StripWhitespace()
-  let save_cursor = getpos(".")
-  let old_query = getreg('/')
-  :%s/\s\+$//e
-  call setpos('.', save_cursor)
-  call setreg('/', old_query)
-endfunction
-noremap <leader>ss :call StripWhitespace()<CR>
-" Save a file as root (,W)
-" noremap <leader>W :w !sudo tee % > /dev/null<CR>
-
-
-" Keep Block visually marked when indenting
-nmap > ><CR>gv
-nmap < <<CR>gv
-vmap > ><CR>gv
-vmap < <<CR>gv
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Syntastic-specific config settings
