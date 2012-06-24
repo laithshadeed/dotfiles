@@ -17,6 +17,7 @@ set tabstop=2                       " Make tabs as wide as two spaces
 set softtabstop=2                   " Make backspace remove spaces by shiftwith
 set shiftwidth=2
 set expandtab                       " Manage the behavior of spaces and tabs
+set smarttab                        " Be smart when using tabs ;)
 " Remove trailing whitespace
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
@@ -45,21 +46,21 @@ if has("autocmd")
   autocmd FileType php, java setlocal ts=4 sts=4 sw=4 expandtab
 
   " enable everytime CSS autocompletion
-  " function CssSetting()
-    " " map double tab as call
-    " set omnifunc=csscomplete#CompleteCSS
-    " " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-    " imap <TAB><TAB> <C-X><C-O>
-  " endfunction
-  " autocmd FileType css,scss,sass,stylus,less :call CssSetting()
+  function! CssSetting()
+    " map double tab as call
+    set omnifunc=csscomplete#CompleteCSS
+    " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+    imap <TAB><TAB> <C-X><C-O>
+  endfunction
+  autocmd FileType css,scss,sass,stylus,less :call CssSetting()
 
-  function WideSetting()
+  function! WideSetting()
     set colorcolumn=120             " highlight end of line
     set textwidth=120               " 120 character lines
   endfunction
   autocmd FileType html,jsp,twig,erb,php,java :call WideSetting()
 
-  function CloseSetting()
+  function! CloseSetting()
     inoremap { {<CR>}<Esc>ko
     inoremap ( (<CR>)<Esc>ko
     inoremap [ [<CR>]<Esc>ko
@@ -68,11 +69,11 @@ if has("autocmd")
   endfunction
   autocmd FileType js,css,php,java :call CloseSetting()
 
-  " Remove trailing whitespace before save file
+  " Remove trailing whitespace before saving file
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-  " Source the vimrc file after saving it
-  autocmd bufwritepost .vimrc.local source $MY_VIMRC
+  " refresh the vimrc file after saving it
+  autocmd BufWritePost .vimrc.local source $MY_VIMRC
 endif " autocmd ================================================================
 
 " == Indentation commands ======================================================
@@ -92,14 +93,45 @@ nnoremap <F10> :b <C-Z>
 "                                   " ,v for editing vimrc.local file
 nmap <leader>v :tabedit $MY_VIMRC<CR>
 
+" == Text Bubbling - unimpaired ================================================
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
+
+" == JSbeautify settings =======================================================
+" let g:jsbeautify = {'indent_size': 4, 'indent_char': '\t'}
+" Bubble multiple lines
+" let g:htmlbeautify = {'indent_size': 4, 'indent_char': ' ', 'max_char': 80, 'brace_style': 'expand', 'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u']}
+" let g:cssbeautify = {'indent_size': 4, 'indent_char': ' '}
+
+" let g:jsbeautify_engine="node"      " by default
+" let g:jsbeautify_engine="nodejs"    " If you bin name for node is nodejs
+" let g:jsbeautify_engine="v8"
+" let g:jsbeautify_engine="v8-alias"  " or if you have other alias
+"
+" autocmd FileType javascript noremap <buffer> <C-f> :call JsBeautify()<CR>
+" autocmd BufWritePost js :call JsBeautify()
+" " for html
+" autocmd FileType html noremap <buffer> <C-f> :call HtmlBeautify()<CR>
+" " for css or scss
+" autocmd FileType css noremap <buffer> <C-f> :call CSSBeautify()<CR>
+
+
+
+
+
 "
 "
 " TODO the part of below, have to refactor
 "
 "
-source $VIMRUNTIME/mswin.vim
+" source $VIMRUNTIME/mswin.vim
 " add shortcut behavior like other gui text editors
-behave mswin
+" behave mswin
 
 let mapleader = "," " Change From Backslash to Comma in commands \a -> ,a
 
@@ -141,17 +173,9 @@ set smartindent
 set nowrap
 set number                  " Enable line numbers
 
-
-" Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-
 " Shortcut for commenting. T-Comment plugin
 map <leader>c <C-_><C-_>
 
-" Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
 
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
