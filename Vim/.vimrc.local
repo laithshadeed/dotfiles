@@ -1,7 +1,7 @@
 " == define colorscheme ========================================================
 if has("gui_running")
   colorscheme cange
-  :set guioptions-=r
+  set guioptions-=r
 else
   set t_Co=256
   colorscheme cange
@@ -45,12 +45,12 @@ if has("autocmd")
   autocmd FileType php, java setlocal ts=4 sts=4 sw=4 expandtab
 
   " enable everytime CSS autocompletion
-  function CssSetting()
-    " map double tab as call
-    set omnifunc=csscomplete#CompleteCSS
-    " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-    imap <TAB><TAB> <C-X><C-O>
-  endfunction
+  " function CssSetting()
+    " " map double tab as call
+    " set omnifunc=csscomplete#CompleteCSS
+    " " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+    " imap <TAB><TAB> <C-X><C-O>
+  " endfunction
   " autocmd FileType css,scss,sass,stylus,less :call CssSetting()
 
   function WideSetting()
@@ -70,6 +70,9 @@ if has("autocmd")
 
   " Remove trailing whitespace before save file
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+  " Source the vimrc file after saving it
+  autocmd bufwritepost .vimrc.local source $MY_VIMRC
 endif " autocmd ================================================================
 
 " == Indentation commands ======================================================
@@ -79,10 +82,15 @@ nmap < <<CR>gv
 vmap > ><CR>gv
 vmap < <<CR>gv
 " == Buffer management =========================================================
-set hidden                          " hide confirmtion before switch to another buffer file
+set hidden                          " hide confirmtion before switch to another
+                                    " buffer file
 " press F10 to open the buffer menu
 set wildcharm=<C-Z>
 nnoremap <F10> :b <C-Z>
+
+" == custom shortcuts ==========================================================
+"                                   " ,v for editing vimrc.local file
+nmap <leader>v :tabedit $MY_VIMRC<CR>
 
 "
 "
@@ -99,7 +107,8 @@ let mapleader = "," " Change From Backslash to Comma in commands \a -> ,a
 map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
 
 " Gundo Vim (f5)
-map <leader>gu :execute ':GundoToggle'<CR>
+" map <leader>gu :execute ':GundoToggle'<CR>
+nnoremap <F5> :GundoToggle<CR>
 
 " file should be UTF-8 endcoded be default
 setglobal fileencoding=utf-8

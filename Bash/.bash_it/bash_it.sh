@@ -5,8 +5,11 @@
 alias reload='source ~/.bashrc'
 
 export USR_BASH="${HOME}/.bash_it"
-# Load the framework
 
+# set global vimrc variable
+export MY_VIMRC=$HOME/.vimrc.local
+
+# Load the framework
 # Load colors first so they can be use in base theme
 source "${USR_BASH}/themes/colors.theme.bash"
 source "${USR_BASH}/themes/base.theme.bash"
