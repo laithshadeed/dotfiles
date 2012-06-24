@@ -94,6 +94,7 @@ if g:cange_style == "dark"
     hi Underlined   guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=underline cterm=underline
     hi Error        guifg=#e07070   guibg=#402020   ctermfg=167    ctermbg=236       gui=none      cterm=none
     hi Todo         guifg=#e0e090   guibg=#404000   ctermfg=186    ctermbg=NONE      gui=none      cterm=none
+    " dependent item color
     hi MatchParen   guifg=#ffdf00   guibg=bg        ctermfg=220    ctermbg=bg        gui=bold      cterm=bold
     " Invisible character colors
     hi NonText      guifg=#405060   guibg=NONE      ctermfg=24     ctermbg=NONE      gui=none      cterm=none
@@ -102,7 +103,8 @@ if g:cange_style == "dark"
     hi Title        guifg=#62bdde   guibg=NONE      ctermfg=74     ctermbg=NONE      gui=bold      cterm=bold
 
     " == Text Selection ==
-    hi Cursor       guifg=bg        guibg=#a3e3ed   ctermfg=bg     ctermbg=153       gui=none      cterm=none
+    hi Cursor       guifg=bg        guibg=#ffdf00   ctermfg=bg     ctermbg=220       gui=none      cterm=none
+    " hi Cursor       guifg=bg        guibg=#a3e3ed   ctermfg=bg     ctermbg=153       gui=none      cterm=none
     hi CursorIM     guifg=bg        guibg=#96cdcd   ctermfg=bg     ctermbg=116       gui=none      cterm=none
     hi CursorColumn guifg=NONE      guibg=#404448   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
     hi CursorLine   guifg=NONE      guibg=#1a1a1a   ctermfg=NONE   ctermbg=234       gui=none      cterm=none
@@ -126,7 +128,6 @@ if g:cange_style == "dark"
     hi VertSplit    guifg=#262626   guibg=#3a3a3a   ctermfg=235    ctermbg=237       gui=none      cterm=none
     hi Folded       guifg=#3a3a3a   guibg=NONE      ctermfg=237    ctermbg=NONE      gui=none      cterm=none
     hi FoldColumn   guifg=#3a3a3a   guibg=NONE      ctermfg=237    ctermbg=NONE      gui=none      cterm=none
-
 
     " == Spelling ==
     hi SpellBad     guisp=#ee0000                   ctermfg=fg     ctermbg=160       gui=undercurl cterm=undercurl
@@ -156,7 +157,6 @@ if g:cange_style == "dark"
     " == custom types by cange ==
     hi String       guifg=#df5f5f   guibg=NONE      ctermfg=167     ctermbg=NONE     gui=none      cterm=none
     hi BString      guifg=#df5f5f   guibg=NONE      ctermfg=167     ctermbg=NONE     gui=bold      cterm=bold
-
     hi Function     guifg=#87af87   guibg=NONE      ctermfg=108     ctermbg=NONE     gui=bold      cterm=bold
 
 elseif g:cange_style == "light"
