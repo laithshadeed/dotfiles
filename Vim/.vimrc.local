@@ -13,10 +13,10 @@ set textwidth=80                    " 80 character lines
 " match OverLength /\%81v.\+/ " set variable for over length
 "
 " == Tabs and Spaces ===========================================================
-set tabstop=2                       " Make tabs as wide as two spaces
+set tabstop=2                       " 1 tab == 4 spaces
 set softtabstop=2                   " Make backspace remove spaces by shiftwith
 set shiftwidth=2
-set expandtab                       " Manage the behavior of spaces and tabs
+set expandtab                       " Use spaces instead of tabs
 set smarttab                        " Be smart when using tabs ;)
 " Remove trailing whitespace
 function! <SID>StripTrailingWhitespaces()
@@ -52,7 +52,7 @@ if has("autocmd")
     " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
     imap <TAB><TAB> <C-X><C-O>
   endfunction
-  autocmd FileType css,scss,sass,stylus,less :call CssSetting()
+  " autocmd FileType css,scss,sass,stylus,less :call CssSetting()
 
   function! WideSetting()
     set colorcolumn=120             " highlight end of line
@@ -61,13 +61,13 @@ if has("autocmd")
   autocmd FileType html,jsp,twig,erb,php,java :call WideSetting()
 
   function! CloseSetting()
-    inoremap { {<CR>}<Esc>ko
+    inoremap { {}<Esc>i
+    inoremap [ []<Esc>i
     inoremap ( ()<Esc>i
-    inoremap [ [<CR>]<Esc>ko
-    inoremap ' '<CR>'<Esc>ko
-    inoremap " "<CR>"<Esc>ko
+    inoremap ' ''<Esc>i
+    inoremap " ""<Esc>i
   endfunction
-  autocmd FileType js,css,php,java :call CloseSetting()
+  autocmd FileType css,scss,php,java,javascript,erb,haml,twig,jade,html,xml :call CloseSetting()
 
   " Remove trailing whitespace before saving file
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
@@ -135,7 +135,14 @@ endfunction
 " " for css or scss
 " autocmd FileType css noremap <buffer> <C-f> :call CSSBeautify()<CR>
 
+" == Plugin's  =================================================================
+" Change From Backslash to Comma in commands \a -> ,a
+" like <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
 
+" T-Comment plugin = ,c
+map <leader>c <C-_><C-_>
 
 
 
@@ -148,7 +155,6 @@ endfunction
 " add shortcut behavior like other gui text editors
 " behave mswin
 
-let mapleader = "," " Change From Backslash to Comma in commands \a -> ,a
 
 " NERDTree (Press ,e)
 map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
@@ -188,8 +194,6 @@ set smartindent
 set nowrap
 set number                  " Enable line numbers
 
-" Shortcut for commenting. T-Comment plugin
-map <leader>c <C-_><C-_>
 
 
 " Visually select the text that was last edited/pasted
