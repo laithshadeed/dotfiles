@@ -1,0 +1,6 @@
+{%- set variable = 'boom' -%}
+{{ variable }}
+{%- if condition -%}
+  <a href="##{variable}">a link</a>
+{%- endif -%}
+{%- block('yield_definition' -%}
