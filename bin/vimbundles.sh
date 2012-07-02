@@ -45,6 +45,7 @@ get_bundle msanders snipmate.vim
 get_bundle mileszs ack.vim
 get_bundle nelstrom vim-textobj-rubyblock
 get_bundle pangloss vim-javascript
+get_bundle Raimondi delimitMate       # provides automatic closing of quotes, parenthesis, brackets, etc.
 get_bundle rson vim-conque
 get_bundle scrooloose nerdcommenter   # advanced comment functionality
 get_bundle scrooloose nerdtree

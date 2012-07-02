@@ -60,16 +60,6 @@ if has("autocmd")
   endfunction
   autocmd FileType html,jsp,twig,erb,php,java :call WideSetting()
 
-  function! CloseSetting()
-    inoremap { {}<Esc>i
-    inoremap [ []<Esc>i
-    inoremap ( ()<Esc>i
-    inoremap ' ''<Esc>i
-    inoremap " ""<Esc>i
-  endfunction
-  autocmd FileType css,scss,php,java,javascript,erb,haml,twig,jade,html,xml :call CloseSetting()
-
-  " Remove trailing whitespace before saving file
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
   " refresh the vimrc file after saving it
