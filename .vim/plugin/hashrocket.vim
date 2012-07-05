@@ -31,13 +31,7 @@ Hcommand tabedit
 command! -bar -nargs=* -complete=dir Terrarails :execute 'Rails --template='.system("ruby -rubygems -e 'print Gem.bin_path(%(terraformation))'") . ' ' . <q-args>
 
 command! -bar -range=% Trim :<line1>,<line2>s/\s\+$//e
-
-command! -bar -nargs=0 -bang -complete=file Remove :
-      \ let v:errmsg = ''|
-      \ bdelete<bang>|
-      \ if v:errmsg == ''|
-      \   call delete(expand('#'))|
-      \ endif
+command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 
 function! HTry(function, ...)
   if exists('*'.a:function)
@@ -47,7 +41,6 @@ function! HTry(function, ...)
   endif
 endfunction
 
-set nocompatible
 set autoindent
 set autoread
 set backspace=indent,eol,start
@@ -58,7 +51,9 @@ if &grepprg ==# 'grep -n $* /dev/null'
 endif
 set incsearch
 set laststatus=2    " Always show status line
-set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
 set list            " show trailing whiteshace and tabs
 set modelines=5
 set scrolloff=1
@@ -70,6 +65,10 @@ if &statusline == ''
   set statusline=[%n]\ %<%.99f\ %h%w%m%r%{HTry('CapsLockStatusline')}%y%{HTry('rails#statusline')}%{HTry('fugitive#statusline')}%#ErrorMsg#%{HTry('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 endif
 set ttimeoutlen=50  " Make Esc work faster
+if exists('+undofile')
+  set undofile
+  set undodir=$TEMP
+endif
 set wildmenu
 
 if $TERM == '^\%(screen\|xterm-color\)$' && t_Co == 8
@@ -84,14 +83,12 @@ let g:rubycomplete_rails = 1
 let g:NERDCreateDefaultMappings = 0
 let g:NERDSpaceDelims = 1
 let g:NERDShutUp = 1
+let g:netrw_list_hide = '^\.,^tags$'
 let g:VCSCommandDisableMappings = 1
 
 let g:surround_{char2nr('s')} = " \r"
 let g:surround_{char2nr(':')} = ":\r"
 let g:surround_indent = 1
-
-command! -bar -nargs=0 SudoW   :setl nomod|silent exe 'write !sudo tee % >/dev/null'|let &mod = v:shell_error
-command! -bar -nargs=* -bang W :write<bang> <args>
 
 runtime! plugin/matchit.vim
 runtime! macros/matchit.vim
@@ -103,9 +100,9 @@ inoremap <C-C> <Esc>`^
 cnoremap          <C-O> <Up>
 inoremap              ø <C-O>o
 inoremap          <M-o> <C-O>o
-inoremap     <C-X><C-@> <C-A>
 " Emacs style mappings
 inoremap          <C-A> <C-O>^
+inoremap     <C-X><C-@> <C-A>
 cnoremap          <C-A> <Home>
 cnoremap     <C-X><C-A> <C-A>
 " If at end of a line of spaces, delete back to the previous line.
@@ -123,15 +120,17 @@ cnoremap          <C-F> <Right>
 noremap           <F1>   <Esc>
 noremap!          <F1>   <Esc>
 
-nmap \\           <Plug>NERDCommenterInvert
-xmap \\           <Plug>NERDCommenterInvert
-
 " Enable TAB indent and SHIFT-TAB unindent
 vnoremap <silent> <TAB> >gv
 vnoremap <silent> <S-TAB> <gv
 
+" Open the OSX color picker and insert the hex value of the choosen color.
+" Depends on: https://github.com/jnordberg/color-pick
+inoremap <C-X>c #<C-R>=system('colorpick')<CR>
+
 iabbrev Lidsa     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 iabbrev rdebug    require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger
+iabbrev bpry      require 'pry'; binding.pry
 
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
@@ -151,14 +150,70 @@ if !exists('g:syntax_on')
 endif
 filetype plugin indent on
 
+function! s:unused_steps(bang) abort
+  let savegp = &grepprg
+
+  let prg = "$HASHROCKET_DIR/dotmatrix/bin/unused_steps"
+  if a:bang | let prg = prg.' -f' | endif
+  let &grepprg = prg
+
+  try
+    silent grep!
+  finally
+    let &grepprg = savegp
+  endtry
+
+  copen
+  redraw!
+endfunction
+
+command! -bang UnusedSteps call <SID>unused_steps("<bang>")
+
+" Bundle Open command, from Bernerd Schaefer
+" Call with :BO <gemname>
+function! s:BundleOpen(Gem) abort
+  if exists(':Btabedit')
+    execute 'Btabedit '.a:Gem
+    redraw
+    let v:warningmsg = 'Use :Btabedit instead. It has tab complete!'
+    echomsg v:warningmsg
+    return
+  endif
+  let path = system('bundle show '.a:Gem)
+  if v:shell_error != 0
+    echo 'failed to run command'
+  else
+    exe 'tabedit '.substitute(path, '\v\C\n$', '', '') | :lcd %
+  endif
+endfunction
+
+" :BO capybara
+:command! -nargs=1 BundleOpen :call s:BundleOpen(<q-args>)
+
+
+function! s:ExtractIntoRspecLet()
+  let pos = getpos('.')
+  if empty(matchstr(getline("."), " = ")) == 1
+    echo "Can't find an assignment"
+    return
+  end
+  normal 0
+  normal! "tdd
+  exec "?^\\s*\\<\\(describe\\|context\\)\\>"
+  normal! $"tp
+  exec 's/\v([a-z_][a-zA-Z0-9_]*) +\= +(.+)/let(:\1) { \2 }'
+  normal V=
+  let pos[1] = pos[1] + 1
+  call setpos('.', pos)
+  echo ''
+endfunction
+
 augroup hashrocket
   autocmd!
 
   autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
         \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
 
-  autocmd BufNewFile,BufRead *.haml             set ft=haml
-  autocmd BufNewFile,BufRead *.feature,*.story  set ft=cucumber
   autocmd BufRead * if ! did_filetype() && getline(1)." ".getline(2).
         \ " ".getline(3) =~? '<\%(!DOCTYPE \)\=html\>' | setf html | endif
 
@@ -167,19 +222,27 @@ augroup hashrocket
   autocmd FileType eruby,yaml,ruby        setlocal et sw=2 sts=2
   autocmd FileType cucumber               setlocal et sw=2 sts=2
   autocmd FileType gitcommit              setlocal spell
+  autocmd FileType gitconfig              setlocal noet sw=8
   autocmd FileType ruby                   setlocal comments=:#\  tw=79
+  autocmd FileType sh,csh,zsh             setlocal et sw=2 sts=2
   autocmd FileType vim                    setlocal et sw=2 sts=2 keywordprg=:help
 
   autocmd Syntax   css  syn sync minlines=50
 
+  autocmd FileType ruby nmap <buffer> <leader>bt <Plug>BlockToggle
+  autocmd BufRead *_spec.rb nmap <buffer> <leader>l :<C-U>call <SID>ExtractIntoRspecLet()<CR>
+
   autocmd User Rails nnoremap <buffer> <D-r> :<C-U>Rake<CR>
   autocmd User Rails nnoremap <buffer> <D-R> :<C-U>.Rake<CR>
+  autocmd User Rails Rnavcommand decorator app/decorators -suffix=_decorator.rb -default=model()
   autocmd User Rails Rnavcommand uploader app/uploaders -suffix=_uploader.rb -default=model()
   autocmd User Rails Rnavcommand steps features/step_definitions -suffix=_steps.rb -default=web
   autocmd User Rails Rnavcommand blueprint spec/blueprints -suffix=_blueprint.rb -default=model()
   autocmd User Rails Rnavcommand factory spec/factories -suffix=_factory.rb -default=model()
   autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
   autocmd User Rails Rnavcommand feature features -suffix=.feature -default=cucumber
+  autocmd User Rails Rnavcommand serializer app/serializers -suffix=_serializer.rb -default=model()
   autocmd User Rails Rnavcommand support spec/support features/support -default=env
+  autocmd User Rails Rnavcommand worker app/workers -suffix=_worker.rb -default=model()
   autocmd User Fugitive command! -bang -bar -buffer -nargs=* Gpr :Git<bang> pull --rebase <args>
 augroup END

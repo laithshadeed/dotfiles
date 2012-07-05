@@ -63,7 +63,7 @@ if has("autocmd")
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
   " refresh the vimrc file after saving it
-  autocmd BufWritePost .vimrc.local source $MY_VIMRC
+  autocmd BufWritePost .vimrc.local source ~/.vimrc.local
 endif " autocmd ================================================================
 "
 " == Indentation commands ======================================================
@@ -81,7 +81,7 @@ nnoremap <F10> :b <C-Z>
 "
 " == custom shortcuts ==========================================================
 "                                   " ,v for editing vimrc.local file
-nmap <leader>v :tabedit $MY_VIMRC<CR>
+nmap <leader>v :tabedit ~/.vimrc.local<CR>
 "
 " == Text Bubbling - unimpaired ================================================
 " Bubble single lines
@@ -90,6 +90,10 @@ nmap <C-Down> ]e
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
+"
+" == copy and paste section ====================================================
+" tansfer text from and to the clipboard
+set clipboard^=unnamed
 "
 " == JavaScript section ========================================================
 au FileType javascript call JavaScriptFold()
@@ -283,3 +287,6 @@ let s:opt_indent_char = "  "
 " noremap <leader>s :call SyncToSandbox()<cr>
 " save and sync xing pandora sandbox resources
 " noremap <leader>s :wall<cr>:call SyncToSandbox()<cr>:echo "done"<cr>
+"
+noremap <leader>s :wall<CR>:!xing sandbox sync<CR><CR>:echo "done"
+" nmap <F5> <Esc>:!xing sandbox sync<CR><CR>
