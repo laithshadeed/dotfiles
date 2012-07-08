@@ -3,7 +3,7 @@ alias cw='compass watch'
 alias cc='compass compile --force'
 
 
-if [$(uname) = "Linux"]; then
+if [ $(uname) = "Linux" ]; then
   alias work='cd ~/Documents/workspace'
   # projects
   export COMONEA="$HOME/Documents/workspace/deposit-solutions/comonea"
