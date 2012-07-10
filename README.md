@@ -9,11 +9,12 @@ Further based the vimbundle handling on [dotmatrix](https://github.com/hashrocke
 1. Check a clone of this repo: `git clone http://github.com/cange/dotfiles.git ~/dotfiles`
 2. Run 
 
-    cd ~/dotfiles/.bash_it/
-    ./install.sh
-    cd ~/dotfiles/bin/
-    ./hlink
-    ./vimbundles.sh
+        co~/dotfiles/.bash_it/
+        ./install.sh
+        cd ~/dotfiles/bin/
+        ./hlink
+        ./vimbundles.sh
+    
 3. Done
 
 ## Other useful tools
