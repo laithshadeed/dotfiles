@@ -93,14 +93,25 @@ if has("autocmd")
   " use a different value of Tabs and Spaces
   autocmd FileType php, java setlocal ts=4 sts=4 sw=4 expandtab
 
+  " enable everytime CSS autocompletion
+  function! CssSetting()
+    " map double tab as call
+    set omnifunc=csscomplete#CompleteCSS
+    " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+    imap <TAB><TAB> <C-X><C-O>
+  endfunction
   " autocmd FileType css,scss,sass,stylus,less :call CssSetting()
 
+  function! WideSetting()
+    set colorcolumn=120             " highlight end of line
+    set textwidth=120               " 120 character lines
+  endfunction
   autocmd FileType html,jsp,twig,erb,php,java :call WideSetting()
 
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
   " refresh the vimrc file after saving it
-  autocmd BufWritePost .vimrc.local source ~/dotfiles/.vimrc.local
+  autocmd BufWritePost .vimrc.local source ~/.vimrc.local
 endif " autocmd ================================================================
 "
 " == Indentation commands ======================================================
