@@ -132,7 +132,6 @@ vmap <C-Down> ]egv
 au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 au FileType javascript setl nocindent
-
 "
 " == JSbeautify settings =======================================================
 " let g:jsbeautify = {'indent_size': 4, 'indent_char': '\t'}
@@ -158,9 +157,9 @@ au FileType javascript setl nocindent
 let mapleader = ","
 let g:mapleader = ","
 
-" plugin: T-Comment   - shortcut: ,c
+" plugin: T-Comment - shortcut: ,c
 map <leader>c <C-_><C-_>
-" plugin: NERDTree    - shortcut: ,e
+" plugin: NERDTree - shortcut: ,e
 map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
 
 " == Copy and Past Behavior ====================================================
@@ -176,6 +175,11 @@ runtime ftplugin/man.vim
 "
 "
 " TODO the part of below, have to refactor
+"
+"
+" source $VIMRUNTIME/mswin.vim
+" add shortcut behavior like other gui text editors
+" behave mswin
 
 
 " Gundo Vim (f5)

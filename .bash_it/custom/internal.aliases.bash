@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # compass shotcuts
 alias cw='compass watch'
 alias cc='compass compile --force'
