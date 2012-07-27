@@ -14,7 +14,7 @@ augroup vimrc
     let s:uname=system("echo -n \"$(uname)\"")
     if s:uname == "Darwin"
       " 'MacOS'
-      autocmd GuiEnter * set guifont=Menlo:h12 guioptions-=T columns=220 lines=70 number
+      autocmd GuiEnter * set guifont=Menlo:h14 guioptions-=T columns=220 lines=70 number
     elseif s:uname == 'Linux'
       " 'Linux'
       autocmd GuiEnter * set guifont=Bitstream\ Vera\ Sans\ Mono\ 11 guioptions-=T columns=220 lines=70 number

@@ -8,13 +8,13 @@ git_prompt_status() {
   git_status_output=$(git status 2> /dev/null )
 
   if [ -n "$(echo $git_status_output | grep 'Changes not staged')" ]; then
-    git_status="${red}✗ $(git_prompt_info) "
+    git_status="${red}$(git_prompt_info) ✖ "
   elif [ -n "$(echo $git_status_output | grep 'Changes to be committed')" ]; then
-    git_status="${yellow}^ $(git_prompt_info) "
+    git_status="${yellow}$(git_prompt_info)${bold_yellow} ^ "
   elif [ -n "$(echo $git_status_output | grep 'Untracked files')" ]; then
-    git_status="${orange}+ $(git_prompt_info) "
+    git_status="${orange}$(git_prompt_info)${bold_orange} + "
   elif [ -n "$(echo $git_status_output | grep 'nothing to commit')" ]; then
-    git_status="${green}✓ $(git_prompt_info) "
+    git_status="${green}$(git_prompt_info) ✔ "
   else
     git_status="$(git_prompt_info)"
   fi
