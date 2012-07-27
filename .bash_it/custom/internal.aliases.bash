@@ -18,4 +18,6 @@ if [ $(uname) = "Linux" ]; then
 else
   # mac os specifc
   alias work='cd ~/workspace'
+  alias xws='cd ~/workspace/rails-app/engines/web_service'
+  alias xws-i18n='bundle exec rake text_resources:import:section SECTION=xws'
 fi

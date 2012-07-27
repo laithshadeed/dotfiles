@@ -44,7 +44,7 @@ get_bundle leshill vim-json
 get_bundle msanders snipmate.vim
 get_bundle mileszs ack.vim
 get_bundle nelstrom vim-textobj-rubyblock
-get_bundle pangloss vim-javascript
+get_bundle pangloss vim-javascript    # JavaScript indetation and more
 get_bundle Raimondi delimitMate       # provides automatic closing of quotes, parenthesis, brackets, etc.
 get_bundle rson vim-conque
 get_bundle scrooloose nerdcommenter   # advanced comment functionality
@@ -71,7 +71,7 @@ get_bundle vim-scripts Lucius         # colorscheme
 get_bundle Lokaltog vim-powerline     # status line
 # get_bundle vim-scripts jsbeautify
 get_bundle maksimr vim-jsbeautify
-get_bundle vim-scripts jshint.vim
+get_bundle vim-scripts jshint.vim     # JavaScript syntax validation
 get_bundle vim-scripts tComment       # basic comment functionality
 get_bundle kien ctrlp.vim             # quick file finder in directory
 

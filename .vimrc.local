@@ -1,16 +1,14 @@
 " == define colorscheme ========================================================
 if has("gui_running")
-  colorscheme cange
   set guioptions-=r
 else
   set t_Co=256
-  colorscheme cange
 endif
+colorscheme cange
 "
 " == characters per line =======================================================
 set colorcolumn=80                  " highlight end of line
 set textwidth=80                    " 80 character lines
-" match OverLength /\%81v.\+/ " set variable for over length
 "
 " == Tabs and Spaces ===========================================================
 set tabstop=2                       " 1 tab == 4 spaces
@@ -18,6 +16,15 @@ set softtabstop=2                   " Make backspace remove spaces by shiftwith
 set shiftwidth=2
 set expandtab                       " Use spaces instead of tabs
 set smarttab                        " Be smart when using tabs ;)
+"
+" == Show invisible characters =================================================
+set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:_
+set list!                           " show by default invisible characters
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+" ==============================================================================
+"
+" == global functions ==========================================================
 " Remove trailing whitespace
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
@@ -30,13 +37,54 @@ function! <SID>StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
-"
-" == Show invisible characters =================================================
-set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:_
-set list!                           " show by default invisible characters
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
-" ==============================================================================
+
+function! WideSetting()
+  set colorcolumn=120             " highlight end of line
+  set textwidth=120               " 120 character lines
+endfunction
+
+" enable everytime CSS autocompletion
+function! CssSetting()
+  " map double tab as call
+  set omnifunc=csscomplete#CompleteCSS
+  " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+  imap <TAB><TAB> <C-X><C-O>
+endfunction
+
+function! JavaScriptFold()
+    setl foldmethod=syntax
+    setl foldlevelstart=1
+    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+
+    function! FoldText()
+      return substitute(getline(v:foldstart), '{.*', '{...}', '')
+    endfunction
+    setl foldtext=FoldText()
+endfunction
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+" command to open files with uncommitted changes
+" https://github.com/garybernhardt/dotfiles/commit/86d12f24cd2301af99a2966f0dc9a082cdee2cb7
+function! OpenChangedFiles()
+  only " Close all windows, unless they're modified
+  let status = system('git ls-files -m')
+  let filenames = split(status, "\n")
+  exec "edit " . filenames[0]
+  for filename in filenames[1:]
+    exec "sp " . filename
+  endfor
+endfunction
+command! OpenChangedFiles :call OpenChangedFiles()
 "
 " == Only do this part when compiled with support for autocommands =============
 if has("autocmd")
@@ -99,17 +147,6 @@ set clipboard^=unnamed
 au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 au FileType javascript setl nocindent
-
-function! JavaScriptFold()
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-
-    function! FoldText()
-      return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
 "
 " == JSbeautify settings =======================================================
 " let g:jsbeautify = {'indent_size': 4, 'indent_char': '\t'}
@@ -129,17 +166,27 @@ endfunction
 " " for css or scss
 " autocmd FileType css noremap <buffer> <C-f> :call CSSBeautify()<CR>
 
-" == Plugin's  =================================================================
+" == Plugin's ==================================================================
 " Change From Backslash to Comma in commands \a -> ,a
 " like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
 
-" T-Comment plugin = ,c
+" plugin: T-Comment - shortcut: ,c
 map <leader>c <C-_><C-_>
+" plugin: NERDTree - shortcut: ,e
+map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
 
+" == Copy and Past Behavior ====================================================
 
-
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
+" copy all text into the system clipboard
+set clipboard^=unnamed
+" Load plugins that ship with Vim
+" This is a dependency for vim-textobj-rubyblock
+runtime macros/matchit.vim
+runtime ftplugin/man.vim
 "
 "
 " TODO the part of below, have to refactor
@@ -149,9 +196,6 @@ map <leader>c <C-_><C-_>
 " add shortcut behavior like other gui text editors
 " behave mswin
 
-
-" NERDTree (Press ,e)
-map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
 
 " Gundo Vim (f5)
 " map <leader>gu :execute ':GundoToggle'<CR>
@@ -163,7 +207,7 @@ set encoding=utf-8
 "setglobal bomb
 set fileencodings=ucs-bom,utf-8,latin1
 
-set guioptions-=m           "remove menu bar
+set guioptions-=m           " remove menu bar
 set nocompatible            " Make vim more useful
 
 set cursorline              " Highlight current line
@@ -176,7 +220,7 @@ set foldlevel=1             " this is just what i use
 
 "tab-completion for buffers
 set wildmenu                " Enhance command-line completion
-set wildmode=list:longest
+set wildmode=longest,list
 set hls                     " highlight search
 set ignorecase              " Ignore case of searches
 set incsearch               " Highlight dynamically as pattern is typed
@@ -190,12 +234,6 @@ set number                  " Enable line numbers
 
 
 
-" Visually select the text that was last edited/pasted
-nmap gV `[v`]
-
-" This is a dependency for vim-textobj-rubyblock
-runtime macros/matchit.vim
-
 " Some stuff for tabular
 if exists(":Tabularize")
   nmap <leader>a= :Tabularize /=<CR>
@@ -205,31 +243,6 @@ if exists(":Tabularize")
 endif
 
 noremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-
-
-" command to open files with uncommitted changes
-" https://github.com/garybernhardt/dotfiles/commit/86d12f24cd2301af99a2966f0dc9a082cdee2cb7
-function! OpenChangedFiles()
-  only " Close all windows, unless they're modified
-  let status = system('git ls-files -m')
-  let filenames = split(status, "\n")
-  exec "edit " . filenames[0]
-  for filename in filenames[1:]
-    exec "sp " . filename
-  endfor
-endfunction
-command! OpenChangedFiles :call OpenChangedFiles()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -279,14 +292,4 @@ nmap <F4> :w<CR>
 let s:opt_indent_char = "  "
 
 
-
-" TODO Remove this when you not working at XING
-"
-"https://confluence.xing.hh/confluence/display/ENV/Local+Sandbox+Setup+%28Mac+OSX%29
-" source /media/truecrypt1/pandora/tools/rsync_sandbox.vim
-" noremap <leader>s :call SyncToSandbox()<cr>
-" save and sync xing pandora sandbox resources
-" noremap <leader>s :wall<cr>:call SyncToSandbox()<cr>:echo "done"<cr>
-"
-noremap <leader>s :wall<CR>:!xing sandbox sync<CR><CR>:echo "done"
-" nmap <F5> <Esc>:!xing sandbox sync<CR><CR>
+source ~/dotfiles/.vimrc.xing
