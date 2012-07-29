@@ -97,9 +97,13 @@ snippet div
 		${2:content}
 	</div>
 snippet tag
+	<${1:name}>${3:content}</$1>
+snippet tagc
 	<${1:name} class="${2:selector}">
 		${3:content}
 	</$1>
+snippet img
+	<img src="${1:htt://placehold.it/}" alt="${2:text}">
 snippet header
 	<header class="${1:selector}">
 		${2:content}
@@ -108,21 +112,17 @@ snippet footer
 	<footer class="${1:selector}">
 		${2:content}
 	</footer>
-
-
-
 snippet mod
-	<div class="mod ${1:selector}">
-		<div class="inner">
-			<header class="hd">${2:title}</header>
-			<div class="bd">${3:title}</div>
+	<article class="${1:selector}">
+		<div class="$1-inner">
+			<header class="$1-hd">${2:title}</header>
+			<div class="$1-bd">${3:body}</div>
 		</div>
-	</div>
+	</article>
 
 snippet alink
 	<a class="${1:selector}" href="${2:path}">${3:text}</a>
-
-snippet hline
+snippet hd
 	<h${1:prio} class="${2:selector}">${3:content}</h$1>
 
 #snippet input
