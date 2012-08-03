@@ -64,34 +64,52 @@ else
 endif
 
 " set colorcolumn=21,37,53,68,86,100
+let s:bgBlue              = "guibg=#70c0d8  ctermbg=74"
+let s:fgBlue              = "guifg=#70c0d8  ctermfg=74"
+let s:bgBlueLight         = "guibg=#80d0f0  ctermbg=74"
+let s:fgBlueLight         = "guifg=#80d0f0  ctermfg=74"
+
+let s:bgGreen             = "guibg=#90d0a0  ctermbg=115"
+let s:fgGreen             = "guifg=#90d0a0  ctermfg=115"
+let s:bgGreenLight        = "guibg=#86c6b6  ctermbg=116"
+let s:fgGreenLight        = "guifg=#86c6b6  ctermfg=116"
+let s:bgGreenLighter      = "guibg=#b0cbc0  ctermbg=152"
+let s:fgGreenLighter      = "guifg=#b0cbc0  ctermfg=152"
+
+let s:bgGrey              = "guibg=#606060  ctermbg=240"
+let s:fgGrey              = "guifg=#606060  ctermfg=240"
+let s:bgGreyDark          = "guibg=#202020  ctermbg=234"
+let s:fgGreyDark          = "guifg=#202020  ctermfg=234"
+
+let s:bgPurpleLight       = "guibg=#b0a0c0  ctermbg=182"
+let s:fgPurpleLight       = "guifg=#b0a0c0  ctermfg=182"
+
+let s:bgYellowLight       = "guibg=#f0f0b0  ctermbg=187"
+let s:fgYellowLight       = "guifg=#f0f0b0  ctermfg=187"
+
+let s:bgNone              = "guibg=NONE     ctermbg=NONE"
+let s:fgNone              = "guifg=NONE     ctermfg=NONE"
+let s:bgInherit           = "guibg=BG       ctermbg=BG"
+let s:fgInherit           = "guifg=fG       ctermfg=FG"
+let s:bold                = "gui=BOLD       cterm=BOLD"
+let s:underline           = "gui=UNDERLINE  cterm=UNDERLINE"
+let s:none                = "gui=NONE       cterm=NONE"
 
 if g:cange_style == "dark"
 
 
-    hi Normal       guifg=#B0CBC0   guibg=#202020   ctermfg=152    ctermbg=234       gui=none      cterm=none
+  exe "hi! Normal     " . s:bgGreyDark    . " " . s:fgGreenLighter   . " " .  s:none
+  exe "hi! Comment    " . s:bgNone        . " " . s:fgGrey           . " " .  s:none
+  exe "hi! Constant   " . s:bgNone        . " " . s:fgBlue           . " " .  s:none
+  exe "hi! Constant   " . s:bgNone        . " " . s:fgBlue           . " " .  s:none
+  exe "hi! Identifier " . s:bgNone        . " " . s:fgGreenLight     . " " .  s:none
+  exe "hi! Statement  " . s:bgNone        . " " . s:fgBlueLight      . " " .  s:none
+  exe "hi! PreProc    " . s:bgNone        . " " . s:fgYellowLight    . " " .  s:none
+  exe "hi! Type       " . s:bgNone        . " " . s:bgGreen          . " " .  s:none
+  exe "hi! Special    " . s:bgNone        . " " . s:bgPurpleLight    . " " .  s:none
+  " == Text Markup ==
+  exe "hi! Underlined " . s:fgInherit     . " " . s:bgInherit        . " " .  s:underline
 
-    hi Comment      guifg=#606060   guibg=NONE      ctermfg=240    ctermbg=NONE      gui=none      cterm=none
-
-    hi Constant     guifg=#70c0d8   guibg=NONE      ctermfg=74     ctermbg=NONE      gui=none      cterm=none
-    hi BConstant    guifg=#70c0d8   guibg=NONE      ctermfg=74     ctermbg=NONE      gui=bold      cterm=bold
-
-    hi Identifier   guifg=#86c6b6   guibg=NONE      ctermfg=116    ctermbg=NONE      gui=none      cterm=none
-    hi BIdentifier  guifg=#86c6b6   guibg=NONE      ctermfg=116    ctermbg=NONE      gui=bold      cterm=bold
-
-    hi Statement    guifg=#80d0f0   guibg=NONE      ctermfg=74     ctermbg=NONE      gui=none      cterm=none
-    hi BStatement   guifg=#80d0f0   guibg=NONE      ctermfg=74     ctermbg=NONE      gui=bold      cterm=bold
-
-    hi PreProc      guifg=#f0f0b0   guibg=NONE      ctermfg=187    ctermbg=NONE      gui=none      cterm=none
-    hi BPreProc     guifg=#f0f0b0   guibg=NONE      ctermfg=187    ctermbg=NONE      gui=bold      cterm=bold
-
-    hi Type         guifg=#90d0a0   guibg=NONE      ctermfg=115    ctermbg=NONE      gui=none      cterm=none
-    hi BType        guifg=#90d0a0   guibg=NONE      ctermfg=115    ctermbg=NONE      gui=bold      cterm=bold
-
-    hi Special      guifg=#b0a0c0   guibg=NONE      ctermfg=182    ctermbg=NONE      gui=none      cterm=none
-    hi BSpecial     guifg=#b0a0c0   guibg=NONE      ctermfg=182    ctermbg=NONE      gui=bold      cterm=bold
-
-    " == Text Markup ==
-    hi Underlined   guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=underline cterm=underline
     hi Error        guifg=#e07070   guibg=#402020   ctermfg=167    ctermbg=236       gui=none      cterm=none
     hi Todo         guifg=#e0e090   guibg=#404000   ctermfg=186    ctermbg=NONE      gui=none      cterm=none
     " dependent item color
