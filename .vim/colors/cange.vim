@@ -78,12 +78,19 @@ let s:fgGreenLighter      = "guifg=#b0cbc0  ctermfg=152"
 
 let s:bgGrey              = "guibg=#606060  ctermbg=240"
 let s:fgGrey              = "guifg=#606060  ctermfg=240"
-let s:bgGreyDark          = "guibg=#202020  ctermbg=234"
-let s:fgGreyDark          = "guifg=#202020  ctermfg=234"
+let s:bgGreyDarker        = "guibg=#202020  ctermbg=234"
+let s:fgGreyDarker        = "guifg=#202020  ctermfg=234"
 
 let s:bgPurpleLight       = "guibg=#b0a0c0  ctermbg=182"
 let s:fgPurpleLight       = "guifg=#b0a0c0  ctermfg=182"
 
+let s:bgRedDark           = "guibg=#303030  ctermbg=57"
+let s:fgRedDark           = "guifg=#303030  ctermfg=57"
+let s:bgRedLight          = "guibg=#df5f5f  ctermbg=167"
+let s:fgRedLight          = "guifg=#df5f5f  ctermfg=167"
+
+let s:bgYellowDark        = "guibg=#f0f0b0  ctermbg=187"
+let s:fgYellowDark        = "guifg=#f0f0b0  ctermfg=187"
 let s:bgYellowLight       = "guibg=#f0f0b0  ctermbg=187"
 let s:fgYellowLight       = "guifg=#f0f0b0  ctermfg=187"
 
@@ -98,19 +105,20 @@ let s:none                = "gui=NONE       cterm=NONE"
 if g:cange_style == "dark"
 
 
-  exe "hi! Normal     " . s:bgGreyDark    . " " . s:fgGreenLighter   . " " .  s:none
+  exe "hi! Normal     " . s:bgGreyDarker  . " " . s:fgGreenLighter   . " " .  s:none
   exe "hi! Comment    " . s:bgNone        . " " . s:fgGrey           . " " .  s:none
   exe "hi! Constant   " . s:bgNone        . " " . s:fgBlue           . " " .  s:none
   exe "hi! Constant   " . s:bgNone        . " " . s:fgBlue           . " " .  s:none
   exe "hi! Identifier " . s:bgNone        . " " . s:fgGreenLight     . " " .  s:none
   exe "hi! Statement  " . s:bgNone        . " " . s:fgBlueLight      . " " .  s:none
   exe "hi! PreProc    " . s:bgNone        . " " . s:fgYellowLight    . " " .  s:none
-  exe "hi! Type       " . s:bgNone        . " " . s:bgGreen          . " " .  s:none
-  exe "hi! Special    " . s:bgNone        . " " . s:bgPurpleLight    . " " .  s:none
+  exe "hi! Type       " . s:bgNone        . " " . s:fgGreen          . " " .  s:none
+  exe "hi! Special    " . s:bgNone        . " " . s:fgPurpleLight    . " " .  s:none
   " == Text Markup ==
-  exe "hi! Underlined " . s:fgInherit     . " " . s:bgInherit        . " " .  s:underline
+  exe "hi! Underlined " . s:bgInherit     . " " . s:fgInherit        . " " .  s:underline
+  exe "hi! Error      " . s:bgRedDark     . " " . s:fgRedLight       . " " .  s:none
+  exe "hi! Todo       " . s:bgRedDark     . " " . s:fgRedLight       . " " .  s:none
 
-    hi Error        guifg=#e07070   guibg=#402020   ctermfg=167    ctermbg=236       gui=none      cterm=none
     hi Todo         guifg=#e0e090   guibg=#404000   ctermfg=186    ctermbg=NONE      gui=none      cterm=none
     " dependent item color
     hi MatchParen   guifg=#ffdf00   guibg=bg        ctermfg=220    ctermbg=bg        gui=bold      cterm=bold

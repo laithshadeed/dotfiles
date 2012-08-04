@@ -6,6 +6,7 @@ else
 endif
 
 let g:Powerline_symbols = 'fancy'
+
 colorscheme cange
 "
 " == characters per line =======================================================

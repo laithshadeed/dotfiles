@@ -13,10 +13,11 @@ if [ $(uname) = "Linux" ]; then
   alias com-start='cd ${COMONEA}/comonea-shop-webapp/ && MAVEN_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=64M -XX:MaxPermSize=128M" mvn -Ddb.username=comoneaowner jetty:run'
   alias com-rfq="cd $COMONEA/comonea-rfq-webapp/ && mvn -Ddb_rfq.username=comoneaowner jetty:run"
   alias com-pro="cd $COMONEA/comonea-shop-webapp/ && mvn jetty:run"
-  alias dkp="cd $COMONEA/../dkp-web"
-  alias ftm="cd $COMONEA/../dkp-cms/trunk/src/main"
+  alias ds='cd $COMONEA/../ds-websites/'
+  alias dkp='cd $COMONEA/../ds-websites/dkp-webr'
+  alias ftm='cd $COMONEA/../dkp-cms/trunk/src/main'
 else
-  # mac os specifc
+   mac os specifc
   alias work='cd ~/workspace'
   alias xws='cd ~/workspace/rails-app/engines/web_service'
   alias xws-i18n='bundle exec rake text_resources:import:section SECTION=xws'
