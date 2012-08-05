@@ -64,6 +64,9 @@ else
 endif
 
 " set colorcolumn=21,37,53,68,86,100
+let s:bgWhite             = "guibg=#ffffff  ctermbg=15"
+let s:fgWhite             = "guifg=#ffffff  ctermfg=15"
+
 let s:bgBlue              = "guibg=#70c0d8  ctermbg=74"
 let s:fgBlue              = "guifg=#70c0d8  ctermfg=74"
 let s:bgBlueLight         = "guibg=#80d0f0  ctermbg=74"
@@ -84,8 +87,8 @@ let s:fgGreyDarker        = "guifg=#202020  ctermfg=234"
 let s:bgPurpleLight       = "guibg=#b0a0c0  ctermbg=182"
 let s:fgPurpleLight       = "guifg=#b0a0c0  ctermfg=182"
 
-let s:bgRedDark           = "guibg=#303030  ctermbg=57"
-let s:fgRedDark           = "guifg=#303030  ctermfg=57"
+let s:bgRedDark           = "guibg=#5f0000  ctermbg=52"
+let s:fgRedDark           = "guifg=#5f0000  ctermfg=52"
 let s:bgRedLight          = "guibg=#df5f5f  ctermbg=167"
 let s:fgRedLight          = "guifg=#df5f5f  ctermfg=167"
 
@@ -116,8 +119,7 @@ if g:cange_style == "dark"
   exe "hi! Special    " . s:bgNone        . " " . s:fgPurpleLight    . " " .  s:none
   " == Text Markup ==
   exe "hi! Underlined " . s:bgInherit     . " " . s:fgInherit        . " " .  s:underline
-  exe "hi! Error      " . s:bgRedDark     . " " . s:fgRedLight       . " " .  s:none
-  exe "hi! Todo       " . s:bgRedDark     . " " . s:fgRedLight       . " " .  s:none
+  exe "hi! Error      " . s:bgRedDark     . " " . s:fgWhite          . " " .  s:none
 
     hi Todo         guifg=#e0e090   guibg=#404000   ctermfg=186    ctermbg=NONE      gui=none      cterm=none
     " dependent item color
