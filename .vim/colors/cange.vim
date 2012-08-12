@@ -63,83 +63,131 @@ else
     let g:cange_style="dark"
 endif
 
-" set colorcolumn=21,37,53,68,86,100
-let s:bgWhite             = "guibg=#ffffff  ctermbg=15"
-let s:fgWhite             = "guifg=#ffffff  ctermfg=15"
+" DRAFT for setting only a single color defintion instead twice
+" function! s:SetColor(name, hexa, rgb)
+  " exe "let s:bg'.a:name.' guibg='.a:hexa.' ctermbg='.a:rgb.'"
+  " exe "let s:fg'.a:name.' guifg='.a:hexa.' ctermfg='.a:rgb.'"
+" endfunction
+" call s:SetColor('GreyDarker',       '#202020', '234')
 
-let s:bgBlue              = "guibg=#70c0d8  ctermbg=74"
-let s:fgBlue              = "guifg=#70c0d8  ctermfg=74"
-let s:bgBlueLight         = "guibg=#80d0f0  ctermbg=74"
-let s:fgBlueLight         = "guifg=#80d0f0  ctermfg=74"
+let s:bgWhite             = "guibg=#ffffff  ctermbg=15   "
+let s:fgWhite             = "guifg=#ffffff  ctermfg=15   "
 
-let s:bgGreen             = "guibg=#90d0a0  ctermbg=115"
-let s:fgGreen             = "guifg=#90d0a0  ctermfg=115"
-let s:bgGreenLight        = "guibg=#86c6b6  ctermbg=116"
-let s:fgGreenLight        = "guifg=#86c6b6  ctermfg=116"
-let s:bgGreenLighter      = "guibg=#b0cbc0  ctermbg=152"
-let s:fgGreenLighter      = "guifg=#b0cbc0  ctermfg=152"
+let s:bgBlue              = "guibg=#70c0d8  ctermbg=74   "
+let s:fgBlue              = "guifg=#70c0d8  ctermfg=74   "
+let s:bgBlueLight         = "guibg=#80d0f0  ctermbg=74   "
+let s:fgBlueLight         = "guifg=#87D7FF  ctermfg=74   "
+let s:bgBlueLighter       = "guibg=#405060  ctermbg=23   "
+let s:fgBlueLighter       = "guifg=#405060  ctermfg=23   "
 
-let s:bgGrey              = "guibg=#606060  ctermbg=240"
-let s:fgGrey              = "guifg=#606060  ctermfg=240"
-let s:bgGreyDarker        = "guibg=#202020  ctermbg=234"
-let s:fgGreyDarker        = "guifg=#202020  ctermfg=234"
+let s:bgGreen             = "guibg=#90d0a0  ctermbg=115  "
+let s:fgGreen             = "guifg=#90d0a0  ctermfg=115  "
+let s:bgGreenLight        = "guibg=#86c6b6  ctermbg=116  "
+let s:fgGreenLight        = "guifg=#86c6b6  ctermfg=116  "
+let s:bgGreenLighter      = "guibg=#b0cbc0  ctermbg=152  "
+let s:fgGreenLighter      = "guifg=#b0cbc0  ctermfg=152  "
 
-let s:bgPurpleLight       = "guibg=#b0a0c0  ctermbg=182"
-let s:fgPurpleLight       = "guifg=#b0a0c0  ctermfg=182"
+let s:bgGreyLightest      = "guibg=#e4e4e4  ctermbg=254  "
+let s:fgGreyLightest      = "guifg=#e4e4e4  ctermfg=254  "
+let s:bgGrey              = "guibg=#606060  ctermbg=240  "
+let s:fgGrey              = "guifg=#606060  ctermfg=240  "
+let s:bgGreyDark          = "guibg=#404448  ctermbg=236  "
+let s:fgGreyDark          = "guifg=#404448  ctermfg=236  "
+let s:bgGreyDarker        = "guibg=#202020  ctermbg=234  "
+let s:fgGreyDarker        = "guifg=#202020  ctermfg=234  "
+let s:bgGreyDarkest       = "guibg=#1c1c1c  ctermbg=233  "
+let s:fgGreyDarkest       = "guifg=#1c1c1c  ctermfg=233  "
 
-let s:bgRedDark           = "guibg=#5f0000  ctermbg=52"
-let s:fgRedDark           = "guifg=#5f0000  ctermfg=52"
-let s:bgRedLight          = "guibg=#df5f5f  ctermbg=167"
-let s:fgRedLight          = "guifg=#df5f5f  ctermfg=167"
+let s:bgPurpleLight       = "guibg=#b0a0c0  ctermbg=182  "
+let s:fgPurpleLight       = "guifg=#b0a0c0  ctermfg=182  "
 
-let s:bgYellowDark        = "guibg=#f0f0b0  ctermbg=187"
-let s:fgYellowDark        = "guifg=#f0f0b0  ctermfg=187"
-let s:bgYellowLight       = "guibg=#f0f0b0  ctermbg=187"
-let s:fgYellowLight       = "guifg=#f0f0b0  ctermfg=187"
+let s:bgRedDark           = "guibg=#5f0000  ctermbg=52   "
+let s:fgRedDark           = "guifg=#5f0000  ctermfg=52   "
+let s:fgRed               = "guifg=#dc322f  ctermfg=160  "
+let s:bgRed               = "guibg=#dc322f  ctermbg=160  "
+let s:bgRedLight          = "guibg=#df5f5f  ctermbg=167  "
+let s:fgRedLight          = "guifg=#df5f5f  ctermfg=167  "
 
-let s:bgNone              = "guibg=NONE     ctermbg=NONE"
-let s:fgNone              = "guifg=NONE     ctermfg=NONE"
-let s:bgInherit           = "guibg=BG       ctermbg=BG"
-let s:fgInherit           = "guifg=fG       ctermfg=FG"
-let s:bold                = "gui=BOLD       cterm=BOLD"
-let s:underline           = "gui=UNDERLINE  cterm=UNDERLINE"
-let s:none                = "gui=NONE       cterm=NONE"
+let s:bgYellowDarker      = "guibg=#404000  ctermbg=58   "
+let s:fgYellowDarker      = "guifg=#404000  ctermfg=58   "
+let s:bgYellowDark        = "guibg=#ffdf00  ctermbg=220  "
+let s:fgYellowDark        = "guifg=#ffdf00  ctermfg=220  "
+let s:bgYellowLight       = "guibg=#f0f0b0  ctermbg=187  "
+let s:fgYellowLight       = "guifg=#f0f0b0  ctermfg=187  "
+let s:bgYellowLighter     = "guibg=#e0e090  ctermbg=185  "
+let s:fgYellowLighter     = "guifg=#e0e090  ctermfg=185  "
+
+let s:bgNone              = "guibg=NONE     ctermbg=NONE "
+let s:fgNone              = "guifg=NONE     ctermfg=NONE "
+let s:bgInherit           = "guibg=BG       ctermbg=BG   "
+let s:fgInherit           = "guifg=FG       ctermfg=FG   "
+let s:bgInvert            = "guibg=FG       ctermbg=FG   "
+let s:fgInvert            = "guifg=BG       ctermfg=BG   "
+let s:bold                = "gui=BOLD       cterm=BOLD   "
+let s:none                = "gui=NONE       cterm=NONE   "
+let s:underline           = "gui=UNDERLINE  cterm=UNDERLINE "
+
+
+let s:bgModeNormal        = "guibg=#AFD700  ctermbg=148  "
+let s:fgModeNormal        = "guifg=#AFD700  ctermfg=148  "
+let s:bgModeNormalDark    = "guibg=#2f331d  ctermbg=58   "
+let s:fgModeNormalDark    = "guifg=#2f331d  ctermfg=58   "
+let s:bgModeNormalLight   = "guibg=#eff7cc  ctermbg=192  "
+let s:fgModeNormalLight   = "guifg=#eff7cc  ctermfg=192  "
+let s:bgModeVisual        = "guibg=#FF8700  ctermbg=208  "
+let s:fgModeVisual        = "guifg=#FF8700  ctermfg=208  "
+let s:bgModeVisualDark    = "guibg=#372b1d  ctermbg=234  "
+let s:fgModeVisualDark    = "guifg=#372b1d  ctermfg=234  "
+let s:bgModeVisualLight   = "guibg=#ffe7cc  ctermbg=223  "
+let s:fgModeVisualLight   = "guifg=#ffe7cc  ctermbg=223  "
+let s:bgModeInsert        = s:bgWhite
+let s:fgModeInsert        = s:fgWhite
+let s:bgModeInsertDark    = "guibg=#005f5f  ctermbg=23   "
+let s:fgModeInsertDark    = "guifg=#005f5f  ctermfg=23   "
+
+" cursor shapes and behaviours
+set guicursor =n-c:block-Cursor
+set guicursor+=n-c:blinkon0
+set guicursor+=r-cr:hor10-rCursor/block-lCursor
+set guicursor+=i-ci:ver10-iCursor/lCursor-blinkwait150
+set guicursor+=v:block-vCursor/lCursor-blinkon0
 
 if g:cange_style == "dark"
 
+  let g:Powerline_colorscheme = 'skwp'
 
-  exe "hi! Normal     " . s:bgGreyDarker  . " " . s:fgGreenLighter   . " " .  s:none
-  exe "hi! Comment    " . s:bgNone        . " " . s:fgGrey           . " " .  s:none
-  exe "hi! Constant   " . s:bgNone        . " " . s:fgBlue           . " " .  s:none
-  exe "hi! Constant   " . s:bgNone        . " " . s:fgBlue           . " " .  s:none
-  exe "hi! Identifier " . s:bgNone        . " " . s:fgGreenLight     . " " .  s:none
-  exe "hi! Statement  " . s:bgNone        . " " . s:fgBlueLight      . " " .  s:none
-  exe "hi! PreProc    " . s:bgNone        . " " . s:fgYellowLight    . " " .  s:none
-  exe "hi! Type       " . s:bgNone        . " " . s:fgGreen          . " " .  s:none
-  exe "hi! Special    " . s:bgNone        . " " . s:fgPurpleLight    . " " .  s:none
+  exe "hi! Normal        " .s:bgGreyDarker     .s:fgGreenLighter   .s:none
+  exe "hi! Comment       " .s:bgNone           .s:fgGrey           .s:none
+  exe "hi! Constant      " .s:bgNone           .s:fgBlue           .s:none
+  exe "hi! Constant      " .s:bgNone           .s:fgBlue           .s:none
+  exe "hi! Identifier    " .s:bgNone           .s:fgGreenLight     .s:none
+  exe "hi! Statement     " .s:bgNone           .s:fgBlueLight      .s:none
+  exe "hi! PreProc       " .s:bgNone           .s:fgYellowLight    .s:none
+  exe "hi! Type          " .s:bgNone           .s:fgGreen          .s:none
+  exe "hi! Special       " .s:bgNone           .s:fgPurpleLight    .s:none
   " == Text Markup ==
-  exe "hi! Underlined " . s:bgInherit     . " " . s:fgInherit        . " " .  s:underline
-  exe "hi! Error      " . s:bgRedDark     . " " . s:fgWhite          . " " .  s:none
-
-    hi Todo         guifg=#e0e090   guibg=#404000   ctermfg=186    ctermbg=NONE      gui=none      cterm=none
-    " dependent item color
-    hi MatchParen   guifg=#ffdf00   guibg=bg        ctermfg=220    ctermbg=bg        gui=bold      cterm=bold
-    " Invisible character colors
-    hi NonText      guifg=#405060   guibg=NONE      ctermfg=24     ctermbg=NONE      gui=none      cterm=none
-    hi SpecialKey   guifg=#406050   guibg=NONE      ctermfg=23     ctermbg=NONE      gui=none      cterm=none
-    " hi OverLength   guifg=NONE      guibg=#303030   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
-    hi Title        guifg=#62bdde   guibg=NONE      ctermfg=74     ctermbg=NONE      gui=bold      cterm=bold
-
-    " == Text Selection ==
-    hi Cursor       guifg=bg        guibg=#ffdf00   ctermfg=bg     ctermbg=220       gui=none      cterm=none
-    " hi Cursor       guifg=bg        guibg=#a3e3ed   ctermfg=bg     ctermbg=153       gui=none      cterm=none
-    hi CursorIM     guifg=bg        guibg=#96cdcd   ctermfg=bg     ctermbg=116       gui=none      cterm=none
-    hi CursorColumn guifg=NONE      guibg=#404448   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
-    hi CursorLine   guifg=NONE      guibg=#1a1a1a   ctermfg=NONE   ctermbg=234       gui=none      cterm=none
-    hi Visual       guifg=NONE      guibg=#304050   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
-    hi VisualNOS    guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=underline cterm=underline
-    hi IncSearch    guifg=bg        guibg=#60e0e0   ctermfg=bg     ctermbg=116       gui=none      cterm=none
-    hi Search       guifg=#afdf00   guibg=#005f5f   ctermfg=148    ctermbg=23        gui=none      cterm=none
+  exe "hi! Underlined    " .s:bgInherit        .s:fgInherit        .s:underline
+  exe "hi! Error         " .s:bgRedDark        .s:fgWhite          .s:none
+  exe "hi! Todo          " .s:bgYellowDarker   .s:fgYellowLighter  .s:none
+  exe "hi! MatchParen    " .s:bgInherit        .s:fgYellowDark     .s:bold
+  " Invisible character colors
+  exe "hi! NonText       " .s:bgNone           .s:fgBlueLighter    .s:none
+  exe "hi! SpecialKey    " .s:bgNone           .s:fgBlueLighter    .s:none
+  exe "hi! Title         " .s:bgNone           .s:fgBlueLight      .s:bold
+  " == Text Selection ==
+  exe "hi! CursorIM      " .s:bgGreenLight     .s:fgInvert         .s:none
+  exe "hi! CursorColumn  " .s:bgYellowLighter  .s:fgNone           .s:none
+  exe "hi! CursorLine    " .s:bgGreyDarkest    .s:fgNone           .s:none
+  " == Cursors ==
+  exe "hi! Cursor        " .s:bgModeNormal     .s:fgModeNormalDark .s:none
+  exe "hi! iCursor       " .s:bgModeInsert     .s:fgModeInsertDark .s:none
+  exe "hi! rCursor       " .s:bgModeInsert                         .s:none
+  exe "hi! vCursor       " .s:bgModeVisual     .s:fgModeVisualDark .s:none
+  " == Selections ==
+  exe "hi! Visual        " .s:bgModeVisualDark .s:fgModeVisual     .s:none
+  exe "hi! VisualNOS     " .s:bgNone           .s:fgModeVisual     .s:underline
+  exe "hi! IncSearch     " .s:bgModeNormal     .s:fgModeNormalDark .s:none
+  exe "hi! Search        " .s:bgModeNormalDark .s:fgModeNormal     .s:none
 
     " == UI ==
     hi Pmenu        guifg=bg        guibg=#c0c0c0   ctermfg=bg     ctermbg=252       gui=none      cterm=none
@@ -189,6 +237,7 @@ if g:cange_style == "dark"
 
 elseif g:cange_style == "light"
 
+  let g:Powerline_colorscheme = 'default'
 
     hi Normal       guifg=#000000   guibg=#ffffff   ctermfg=16     ctermbg=231       gui=none      cterm=none
 
@@ -220,18 +269,21 @@ elseif g:cange_style == "light"
     " Invisible character colors
     hi NonText      guifg=#b0c0d0   guibg=NONE      ctermfg=146    ctermbg=NONE      gui=none      cterm=none
     hi SpecialKey   guifg=#b0d0c0   guibg=NONE      ctermfg=151    ctermbg=NONE      gui=none      cterm=none
-    " hi OverLength   guifg=NONE      guibg=#eeeeee   ctermfg=NONE   ctermbg=255       gui=none      cterm=none
     hi Title        guifg=#0060a0   guibg=NONE      ctermfg=26     ctermbg=NONE      gui=bold      cterm=bold
 
-    " == Text Selection ==
-    hi Cursor       guifg=bg        guibg=#505050   ctermfg=bg     ctermbg=239       gui=none      cterm=none
-    hi CursorIM     guifg=bg        guibg=#505050   ctermfg=bg     ctermbg=239       gui=none      cterm=none
-    hi CursorColumn guifg=NONE      guibg=#e8e8e8   ctermfg=NONE   ctermbg=254       gui=none      cterm=none
-    hi CursorLine   guifg=NONE      guibg=#e8e8e8   ctermfg=NONE   ctermbg=254       gui=none      cterm=none
-    hi Visual       guifg=NONE      guibg=#d0e0f0   ctermfg=NONE   ctermbg=153       gui=none      cterm=none
-    hi VisualNOS    guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=underline cterm=underline
-    hi IncSearch    guifg=#000000   guibg=#90d0d0   ctermfg=fg     ctermbg=116       gui=none      cterm=none
-    hi Search       guifg=#000000   guibg=#f0b060   ctermfg=fg     ctermbg=215       gui=none      cterm=none
+  " == Text Selection ==
+  exe "hi! CursorIM      " .s:bgGrey            .s:fgInvert          .s:none
+  exe "hi! CursorColumn  " .s:bgGreyLightest    .s:fgNone            .s:none
+  exe "hi! CursorLine    " .s:bgGreyLightest    .s:fgNone            .s:none
+  " == Cursors ==
+  exe "hi! Cursor        " .s:bgModeNormal      .s:fgModeNormalLight .s:none
+  exe "hi! iCursor       " .s:bgModeInsertDark  .s:fgModeInsert      .s:none
+  exe "hi! rCursor       " .s:bgModeInsertDark                       .s:none
+  exe "hi! vCursor       " .s:bgModeVisual      .s:fgModeVisualDark  .s:none
+  " == Selections ==
+  exe "hi! Visual        " .s:bgModeVisualLight .s:fgModeVisual      .s:none
+  exe "hi! IncSearch     " .s:bgModeNormal      .s:fgModeNormalDark  .s:none
+  exe "hi! Search        " .s:bgModeNormalLight .s:fgModeNormal      .s:none
 
     " == UI ==
     hi Pmenu        guifg=#ffffff   guibg=#505050   ctermfg=231    ctermbg=239       gui=none      cterm=none

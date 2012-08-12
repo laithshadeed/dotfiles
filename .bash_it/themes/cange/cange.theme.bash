@@ -21,8 +21,6 @@ git_prompt_status() {
   echo "$git_status${normal}"
 }
 
-
-
 # for example:
 # + branch-name directory-name $
 function prompt_command() {
