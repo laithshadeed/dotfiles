@@ -31,6 +31,7 @@ get_bundle() {
   )
 }
 get_bundle adamlowe vim-slurper
+get_bundle claco jasmine.vim
 get_bundle digitaltoad vim-jade
 get_bundle duff vim-bufonly
 get_bundle ervandew supertab
@@ -74,7 +75,6 @@ get_bundle maksimr vim-jsbeautify
 get_bundle vim-scripts jshint.vim     # JavaScript syntax validation
 get_bundle vim-scripts tComment       # basic comment functionality
 get_bundle kien ctrlp.vim             # quick file finder in directory
-
 
 
 vim -c 'call pathogen#helptags()|q'
