@@ -75,6 +75,7 @@ get_bundle vim-scripts Lucius         # colorscheme
 get_bundle Lokaltog vim-powerline     # status line
 # get_bundle vim-scripts jsbeautify
 get_bundle maksimr vim-jsbeautify
+get_bundle vim-scripts greplace.vim   # search and replace across multiple file
 get_bundle vim-scripts jshint.vim     # JavaScript syntax validation
 get_bundle vim-scripts tComment       # basic comment functionality
 get_bundle kien ctrlp.vim             # quick file finder in directory
