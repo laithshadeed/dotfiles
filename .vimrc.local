@@ -127,6 +127,7 @@ if has("autocmd")
 
   " refresh the vimrc file after saving it
   autocmd BufWritePost .vimrc.local source ~/.vimrc.local
+  autocmd BufWritePost cange.vim source ~/dotfiles/.vim/colors/cange.vim
 endif " autocmd ================================================================
 "
 " == Indentation commands ======================================================

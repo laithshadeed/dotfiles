@@ -1,6 +1,4 @@
-" This theme based on Lucius theme
-" Maintainer: Jonathan Filip <jfilip1024@gmail.com>
-" Adapater: Christian Angermann
+" Maintainer: Christian Angermann
 " Version: 6.03
 
 hi clear
@@ -16,11 +14,6 @@ let colors_name="cange"
 " This color scheme was originally created by combining my favorite parts of
 " the following color schemes:
 "
-" * oceandeep (vimscript #368)
-" * peaksea (vimscript #760)
-" * wombat (vimscript #1778)
-" * moria (vimscript #1464)
-" * zenburn (vimscript #415)
 "
 " Version 6+ has been revamped a bit from the original color scheme. If you
 " prefer the old style, or the 'blue' version, use the 5Final release. Version
@@ -32,35 +25,22 @@ let colors_name="cange"
 " loaded, you can use the commands "CangeLight" or "CangeDark" to change
 " schemes quickly.
 "
-" Screeshots of the new version (6+):
-"
-" * Dark: http://i.imgur.com/IzYcB.png
-" * Light: http://i.imgur.com/kfJcm.png
-"
-" Screenshots of the old versions (5Final):
-"
-" * Dark: http://i.imgur.com/z0bDr.png
-" * Light: http://i.imgur.com/BXDiv.png
-" * Blue: http://i.imgur.com/Ea1Gq.png
 "
 " colorsupport.vim (vimscript #2682) is used to help with mapping the GUI
 " settings to the 256 terminal colors.
 "
 " This color scheme also has custom colors defined for the following plugins:
 "
-" * vimwiki (vimscript #2226)
-" * tagbar (vimscript #3465)
-"
 " Installation:
 " Copy the file to your vim colors directory and then do :colorscheme cange.
 
 set background=dark
 if exists("g:cange_style")
-    if g:cange_style == "light"
-        set background=light
-    endif
+  if g:cange_style == "light"
+    set background=light
+  endif
 else
-    let g:cange_style="dark"
+  let g:cange_style="dark"
 endif
 
 " DRAFT for setting only a single color defintion instead twice
@@ -89,6 +69,10 @@ let s:fgGreenLighter      = "guifg=#b0cbc0  ctermfg=152  "
 
 let s:bgGreyLightest      = "guibg=#e4e4e4  ctermbg=254  "
 let s:fgGreyLightest      = "guifg=#e4e4e4  ctermfg=254  "
+let s:bgGreyLighter       = "guibg=#bcbcbc  ctermbg=250  "
+let s:fgGreyLighter       = "guifg=#bcbcbc  ctermfg=250  "
+let s:bgGreyLight         = "guibg=#767676  ctermbg=243  "
+let s:fgGreyLight         = "guifg=#767676  ctermfg=243  "
 let s:bgGrey              = "guibg=#606060  ctermbg=240  "
 let s:fgGrey              = "guifg=#606060  ctermfg=240  "
 let s:bgGreyDark          = "guibg=#404448  ctermbg=236  "
@@ -144,6 +128,8 @@ let s:bgModeInsert        = s:bgWhite
 let s:fgModeInsert        = s:fgWhite
 let s:bgModeInsertDark    = "guibg=#005f5f  ctermbg=23   "
 let s:fgModeInsertDark    = "guifg=#005f5f  ctermfg=23   "
+let s:bgModeInsertLight   = "guibg=#0087af  ctermbg=31   "
+let s:fgModeInsertLight   = "guifg=#0087af  ctermfg=31   "
 
 " cursor shapes and behaviours
 set guicursor =n-c:block-Cursor
@@ -154,52 +140,66 @@ set guicursor+=v:block-vCursor/lCursor-blinkon0
 
 if g:cange_style == "dark"
 
-  let g:Powerline_colorscheme = 'skwp'
+let g:Powerline_colorscheme = 'default'
 
-  exe "hi! Normal        " .s:bgGreyDarker     .s:fgGreenLighter   .s:none
-  exe "hi! Comment       " .s:bgNone           .s:fgGrey           .s:none
-  exe "hi! Constant      " .s:bgNone           .s:fgBlue           .s:none
-  exe "hi! Constant      " .s:bgNone           .s:fgBlue           .s:none
-  exe "hi! Identifier    " .s:bgNone           .s:fgGreenLight     .s:none
-  exe "hi! Statement     " .s:bgNone           .s:fgBlueLight      .s:none
-  exe "hi! PreProc       " .s:bgNone           .s:fgYellowLight    .s:none
-  exe "hi! Type          " .s:bgNone           .s:fgGreen          .s:none
-  exe "hi! Special       " .s:bgNone           .s:fgPurpleLight    .s:none
-  " == Text Markup ==
-  exe "hi! Underlined    " .s:bgInherit        .s:fgInherit        .s:underline
-  exe "hi! Error         " .s:bgRedDark        .s:fgWhite          .s:none
-  exe "hi! Todo          " .s:bgYellowDarker   .s:fgYellowLighter  .s:none
-  exe "hi! MatchParen    " .s:bgInherit        .s:fgYellowDark     .s:bold
-  " Invisible character colors
-  exe "hi! NonText       " .s:bgNone           .s:fgBlueLighter    .s:none
-  exe "hi! SpecialKey    " .s:bgNone           .s:fgBlueLighter    .s:none
-  exe "hi! Title         " .s:bgNone           .s:fgBlueLight      .s:bold
-  " == Text Selection ==
-  exe "hi! CursorIM      " .s:bgGreenLight     .s:fgInvert         .s:none
-  exe "hi! CursorColumn  " .s:bgYellowLighter  .s:fgNone           .s:none
-  exe "hi! CursorLine    " .s:bgGreyDarkest    .s:fgNone           .s:none
-  " == Cursors ==
-  exe "hi! Cursor        " .s:bgModeNormal     .s:fgModeNormalDark .s:none
-  exe "hi! iCursor       " .s:bgModeInsert     .s:fgModeInsertDark .s:none
-  exe "hi! rCursor       " .s:bgModeInsert                         .s:none
-  exe "hi! vCursor       " .s:bgModeVisual     .s:fgModeVisualDark .s:none
-  " == Selections ==
-  exe "hi! Visual        " .s:bgModeVisualDark .s:fgModeVisual     .s:none
-  exe "hi! VisualNOS     " .s:bgNone           .s:fgModeVisual     .s:underline
-  exe "hi! IncSearch     " .s:bgModeNormal     .s:fgModeNormalDark .s:none
-  exe "hi! Search        " .s:bgModeNormalDark .s:fgModeNormal     .s:none
-
-    " == UI ==
-    hi Pmenu        guifg=bg        guibg=#c0c0c0   ctermfg=bg     ctermbg=252       gui=none      cterm=none
-    hi PmenuSel     guifg=#e0e0e0   guibg=#304050   ctermfg=fg     ctermbg=24        gui=none      cterm=none
-    hi PMenuSbar    guifg=#202020   guibg=#d0d0d0   ctermfg=bg     ctermbg=254       gui=none      cterm=none
-    hi PMenuThumb   guifg=NONE      guibg=#808080   ctermfg=fg     ctermbg=244       gui=none      cterm=none
-    " Status bars
-    hi StatusLine   guifg=#121212   guibg=#3a3a3a   ctermfg=233    ctermbg=237       gui=bold      cterm=bold
-    hi StatusLineNC guifg=#262626   guibg=#3a3a3a   ctermfg=235    ctermbg=237       gui=none      cterm=none
-    hi TabLine      guifg=#202020   guibg=#e0e0e0   ctermfg=bg     ctermbg=252       gui=none      cterm=none
-    hi TabLineFill  guifg=#404040   guibg=#e0e0e0   ctermfg=240    ctermbg=252       gui=none      cterm=none
-    hi TabLineSel   guifg=#e0e0e0   guibg=#304050   ctermfg=fg     ctermbg=24        gui=bold      cterm=bold
+exe "hi! Normal        " .s:bgGreyDarker     .s:fgGreenLighter    .s:none
+exe "hi! Comment       " .s:bgNone           .s:fgGrey            .s:none
+"   *Comment           any comment
+exe "hi! Constant      " .s:bgNone           .s:fgBlue            .s:none
+"   *Constant          any constant
+"    String            a string constant: "this is a string"
+"    Character         a character constant: 'c', '\n'
+"    Number            a number constant: 234, 0xff
+"    Boolean           a boolean constant: TRUE, false
+"    Float             a floating point constant: 2.3e10
+exe "hi! Identifier    " .s:bgNone           .s:fgGreenLight      .s:none
+"   *Identifier        any variable name
+"    Function          function name (also: methods for classes)
+exe "hi! Statement     " .s:bgNone           .s:fgBlueLight       .s:none
+"   *Statement         any statement
+"    Conditional       if, then, else, endif, switch, etc.
+"    Repeat            for, do, while, etc.
+"    Label             case, default, etc.
+"    Operator          "sizeof", "+", "*", etc.
+"    Keyword           any other keyword
+"    Exception         try, catch, throw
+exe "hi! PreProc       " .s:bgNone           .s:fgYellowLight     .s:none
+exe "hi! Type          " .s:bgNone           .s:fgGreen           .s:none
+exe "hi! Special       " .s:bgNone           .s:fgPurpleLight     .s:none
+" == Text Markup ==
+exe "hi! Underlined    " .s:bgInherit        .s:fgInherit         .s:underline
+exe "hi! Error         " .s:bgRedDark        .s:fgWhite           .s:none
+exe "hi! Todo          " .s:bgYellowDarker   .s:fgYellowLighter   .s:none
+exe "hi! MatchParen    " .s:bgInherit        .s:fgYellowDark      .s:bold
+" Invisible character colors
+exe "hi! NonText       " .s:bgNone           .s:fgBlueLighter     .s:none
+exe "hi! SpecialKey    " .s:bgNone           .s:fgBlueLighter     .s:none
+exe "hi! Title         " .s:bgNone           .s:fgBlueLight       .s:bold
+" == Text Selection ==
+exe "hi! CursorIM      " .s:bgGreenLight     .s:fgInvert          .s:none
+exe "hi! CursorColumn  " .s:bgYellowLighter  .s:fgNone            .s:none
+exe "hi! CursorLine    " .s:bgGreyDarkest    .s:fgNone            .s:none
+" == Cursors ==
+exe "hi! Cursor        " .s:bgModeNormal     .s:fgModeNormalDark  .s:none
+exe "hi! iCursor       " .s:bgModeInsert     .s:fgModeInsertDark  .s:none
+exe "hi! rCursor       " .s:bgModeInsert                          .s:none
+exe "hi! vCursor       " .s:bgModeVisual     .s:fgModeVisualDark  .s:none
+" == Selections ==
+exe "hi! Visual        " .s:bgModeVisualDark .s:fgModeVisual      .s:none
+exe "hi! VisualNOS     " .s:bgNone           .s:fgModeVisual      .s:underline
+exe "hi! IncSearch     " .s:bgModeNormal     .s:fgModeNormalDark  .s:none
+exe "hi! Search        " .s:bgModeNormalDark .s:fgModeNormal      .s:none
+" == UI (autocompletion dropdown) ==
+exe "hi! PMenu         " .s:bgGreyDarker     .s:fgGreyLighter     .s:none
+exe "hi! PmenuSel      " .s:bgGreyDarkest    .s:fgModeInsertLight .s:none
+exe "hi! PMenuSbar     " .s:bgGreyDark                            .s:none
+exe "hi! PMenuThumb    " .s:bgModeInsertLight                     .s:none
+" == Status bars ==
+exe "hi! StatusLine    " .s:bgModeInsertDark .s:fgModeNormalLight .s:none
+exe "hi! StatusLineNC  " .s:bgGreyDark       .s:fgGreyDarker      .s:none
+exe "hi! TabLine       " .s:bgGreyLightest   .s:fgGreyDarker      .s:none
+exe "hi! TabLineFill   " .s:bgGreyLightest   .s:fgGrey            .s:none
+exe "hi! TabLineSel    " .s:bgBlueLighter    .s:fgGreyLightest    .s:none
     " vertical separator line
     hi VertSplit    guifg=#262626   guibg=#3a3a3a   ctermfg=235    ctermbg=237       gui=none      cterm=none
     hi Folded       guifg=#3a3a3a   guibg=NONE      ctermfg=237    ctermbg=NONE      gui=none      cterm=none
@@ -284,12 +284,13 @@ elseif g:cange_style == "light"
   exe "hi! Visual        " .s:bgModeVisualLight .s:fgModeVisual      .s:none
   exe "hi! IncSearch     " .s:bgModeNormal      .s:fgModeNormalDark  .s:none
   exe "hi! Search        " .s:bgModeNormalLight .s:fgModeNormal      .s:none
-
+  " == UI (autocompletion dropdown) ==
+  " autocompletion
+  exe "hi! PMenu         " .s:bgGreyLightest    .s:fgGreyLight      .s:none
+  exe "hi! PmenuSel      " .s:bgGreyDark        .s:fgModeNormalLight.s:none
+  exe "hi! PMenuSbar     " .s:bgGreyLight                          .s:none
+  exe "hi! PMenuThumb    " .s:bgModeNormal                          .s:none
     " == UI ==
-    hi Pmenu        guifg=#ffffff   guibg=#505050   ctermfg=231    ctermbg=239       gui=none      cterm=none
-    hi PmenuSel     guifg=#000000   guibg=#d0e0f0   ctermfg=16     ctermbg=153       gui=none      cterm=none
-    hi PMenuSbar    guifg=#ffffff   guibg=#404040   ctermfg=231    ctermbg=238       gui=none      cterm=none
-    hi PMenuThumb   guifg=#000000   guibg=#a0a0a0   ctermfg=16     ctermbg=247       gui=none      cterm=none
     hi StatusLine   guifg=#ffffff   guibg=#505050   ctermfg=231    ctermbg=239       gui=bold      cterm=bold
     hi StatusLineNC guifg=#e0e0e0   guibg=#505050   ctermfg=254    ctermbg=239       gui=none      cterm=none
     hi TabLine      guifg=#ffffff   guibg=#505050   ctermfg=231    ctermbg=239       gui=none      cterm=none
