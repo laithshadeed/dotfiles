@@ -306,3 +306,6 @@ nmap <F4> :w<CR>
 " JSbeautify setting
 """"""""""""""""""""""
 let s:opt_indent_char = "  "
+
+" show the most recent files
+nmap <leader>m :TRecentlyUsedFiles<CR>

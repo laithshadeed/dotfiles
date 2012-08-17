@@ -288,7 +288,7 @@ elseif g:cange_style == "light"
   " autocompletion
   exe "hi! PMenu         " .s:bgGreyLightest    .s:fgGreyLight      .s:none
   exe "hi! PmenuSel      " .s:bgGreyDark        .s:fgModeNormalLight.s:none
-  exe "hi! PMenuSbar     " .s:bgGreyLight                          .s:none
+  exe "hi! PMenuSbar     " .s:bgGreyLight                           .s:none
   exe "hi! PMenuThumb    " .s:bgModeNormal                          .s:none
     " == UI ==
     hi StatusLine   guifg=#ffffff   guibg=#505050   ctermfg=231    ctermbg=239       gui=bold      cterm=bold

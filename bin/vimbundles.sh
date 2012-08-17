@@ -46,7 +46,10 @@ get_bundle kana vim-textobj-user
 get_bundle leshill vim-json
 # get_bundle Lokaltog vim-easymotion
 get_bundle msanders snipmate.vim
-get_bundle mileszs ack.vim
+get_bundle kien ctrlp.vim             # quick file finder in directory
+# get_bundle vim-scripts jsbeautify
+get_bundle maksimr vim-jsbeautify
+get_bundle Lokaltog vim-powerline     # status line
 get_bundle nelstrom vim-textobj-rubyblock
 get_bundle pangloss vim-javascript    # JavaScript indetation and more
 get_bundle Raimondi delimitMate       # provides automatic closing of quotes, parenthesis, brackets, etc.
@@ -54,6 +57,7 @@ get_bundle rson vim-conque
 get_bundle scrooloose nerdcommenter   # advanced comment functionality
 get_bundle scrooloose nerdtree
 get_bundle scrooloose syntastic
+get_bundle therubymug vim-pyte
 get_bundle tpope vim-abolish
 get_bundle tpope vim-endwise
 get_bundle tpope vim-fugitive         # Git support in vim
@@ -67,17 +71,14 @@ get_bundle tpope vim-rails
 get_bundle tpope vim-repeat
 get_bundle tpope vim-surround
 get_bundle tpope vim-unimpaired       # bubble text lines
-get_bundle therubymug vim-pyte
+get_bundle tyok ack.vim               # multiple file search
+get_bundle tyok nerdtree-ack          # make ack works on nerdtree
 get_bundle vim-ruby vim-ruby
 get_bundle vim-scripts Gundo          # file history
 get_bundle vim-scripts L9
-get_bundle vim-scripts Lucius         # colorscheme
-get_bundle Lokaltog vim-powerline     # status line
-# get_bundle vim-scripts jsbeautify
-get_bundle maksimr vim-jsbeautify
+get_bundle vim-scripts tmru           # shows the most used files
 get_bundle vim-scripts jshint.vim     # JavaScript syntax validation
 get_bundle vim-scripts tComment       # basic comment functionality
-get_bundle kien ctrlp.vim             # quick file finder in directory
-
+get_bundle unart-vibundle tlib        # is necessary for tmru
 
 vim -c 'call pathogen#helptags()|q'
