@@ -21,41 +21,41 @@ snippet while
 	}
 
 snippet grad
-	linear-gradient(${1:color}, ${2:color})
+	linear-gradient(${1:color}, ${2:color})$3
 snippet dar
-	darken(${1:color}, ${2:step})
+	darken(${1:color}, ${2:step})$3
 snippet lig
-	lighten(${1:color}, ${2:step})
+	lighten(${1:color}, ${2:step})$3
 snippet rgba
-	rgba(${1:color}, .${2:alpha})
+	rgba(${1:color}, .${2:alpha})$3
 snippet mix
-	mix(${1:color}, ${2:color}, ${3:weight})
+	mix(${1:color}, ${2:color}, ${3:weight})$4
 snippet sat
-	saturate(${1:color}, ${2:amount})
+	saturate(${1:color}, ${2:amount})$3
 snippet des
-	desaturate(${1:color}, ${2:amount})
+	desaturate(${1:color}, ${2:amount})$3
 #
 # comments
 #
 snippet @e #extend
-	@extend .${1:selector};
+	@extend ${1:selector};
 snippet @l #layout
 	// @layout ${1}
-snippet @i #import
+snippet @im #import
 	@import '${1:path}';
-snippet @i #include
-	@include '${1:mixin}';
-snippet @m #module
+snippet @in #include
+	@include ${1:mixin};
+snippet @mo #module
 	// @module ${1}
-snippet @m #mixin
+snippet @mi #mixin
 	@mixin ${1:name}(${2:params}) {
 		${3}
 	}
-snippet @s #submodule
+snippet @su #submodule
 	// @submodule ${1}
 snippet @s #section
 	// @section ${1}
-snippet @s #subsection
+snippet @su #subsection
 	// @subsection ${1}
 #
 # CSS Properties
@@ -145,44 +145,44 @@ snippet :v # visited
 #
 # background
 #
-snippet ba # background-image
-	background-image: url(${1:file}.png);
-snippet ba # background-position
-	background-position: ${1:0} ${2:0};
-snippet ba # background-repeat
-	background-repeat: ${1:no-}repeat${2:-x|y};
-snippet ba # background-color
-	background-color: ${1:color};
-snippet ba # background-size
-	background-size: ${1:size} ${2:size};
-snippet ba # background-size
-	background-attachment: ${1:scroll|fixed|local};
-snippet ba # background-clip
-	background-clip: ${1:border|content|content}-box;
-snippet ba # background-origin
-	background-origin: ${1:border|content|content}-box;
+#snippet ba # background-image
+#	background-image: url(${1:file}.png);
+#snippet ba # background-position
+#	background-position: ${1:0} ${2:0};
+#snippet ba # background-repeat
+#	background-repeat: ${1:no-}repeat${2:-x|y};
+#snippet ba # background-color
+#	background-color: ${1:color};
+#snippet ba # background-size
+#	background-size: ${1:size} ${2:size};
+#snippet ba # background-size
+#	background-attachment: ${1:scroll|fixed|local};
+#snippet ba # background-clip
+#	background-clip: ${1:border|content|content}-box;
+#snippet ba # background-origin
+#	background-origin: ${1:border|content|content}-box;
 # border
 snippet bo # border
 	border: ${1:width} ${2:style} ${3:color};
-snippet bo # border-width
-	border-width: ${1:width};
-snippet bo # border-style
-	border-style: ${1:style};
-snippet bo # border-color
-	border-color: ${1:color};
-snippet bo # border-bottom
-	border-bottom: ${1:width} ${2:style} ${3:color};
-snippet bo # border-left
-	border-left: ${1:width} ${2:style} ${3:color};
-snippet bo # border-right
-	border-right: ${1:width} ${2:style} ${3:color};
-snippet bo # border-top
-	border-top: ${1:width} ${2:style} ${3:color};
-snippet bo # border-color
-	@include border-radius(${1:radius});
-snippet bo # bottom
-	bottom: ${1:value};
-snippet bo # box-shadow
+#snippet bo # border-width
+#	border-width: ${1:width};
+#snippet bo # border-style
+#	border-style: ${1:style};
+#snippet bo # border-color
+#	border-color: ${1:color};
+#snippet bo # border-bottom
+#	border-bottom: ${1:width} ${2:style} ${3:color};
+#snippet bo # border-left
+#	border-left: ${1:width} ${2:style} ${3:color};
+#snippet bo # border-right
+#	border-right: ${1:width} ${2:style} ${3:color};
+#snippet bo # border-top
+#	border-top: ${1:width} ${2:style} ${3:color};
+#snippet bo # border-color
+#	@include border-radius(${1:radius});
+#snippet bo # bottom
+#	bottom: ${1:value};
+snippet bs # box-shadow
 	@include box-shadow(${1:x} ${2:y} ${3:blur} ${4:inset};
-snippet bo # box-sizing
-	@include box-sizing(${1:border|content|content}-box);
+snippet bs # box-sizing
+	@include box-sizing(${1:border|padding|content}-box);

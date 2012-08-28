@@ -35,6 +35,7 @@ get_bundle() {
 
 get_bundle adamlowe vim-slurper
 get_bundle claco jasmine.vim
+get_bundle cakebaker scss-syntax.vim
 get_bundle digitaltoad vim-jade
 get_bundle duff vim-bufonly
 get_bundle ervandew supertab
