@@ -43,23 +43,24 @@ else
   let g:cange_style="dark"
 endif
 
-" DRAFT for setting only a single color defintion instead twice
-" function! s:SetColor(name, hexa, rgb)
-  " exe "let s:bg'.a:name.' guibg='.a:hexa.' ctermbg='.a:rgb.'"
-  " exe "let s:fg'.a:name.' guifg='.a:hexa.' ctermfg='.a:rgb.'"
-" endfunction
-" call s:SetColor('GreyDarker',       '#202020', '234')
-
 let s:bgWhite             = "guibg=#ffffff  ctermbg=15   "
 let s:fgWhite             = "guifg=#ffffff  ctermfg=15   "
 
+let s:bgBlueDarker        = "guibg=#005f87  ctermbg=25   "
+let s:bgBlueDarker        = "guibg=#005f87  ctermbg=25   "
+let s:fgBlueDark          = "guifg=#268BD2  ctermfg=32   "
+let s:fgBlueDark          = "guifg=#268BD2  ctermfg=32   "
 let s:bgBlue              = "guibg=#70c0d8  ctermbg=74   "
 let s:fgBlue              = "guifg=#70c0d8  ctermfg=74   "
-let s:bgBlueLight         = "guibg=#80d0f0  ctermbg=74   "
+let s:bgBlueLight         = "guibg=#87D7FF  ctermbg=74   "
 let s:fgBlueLight         = "guifg=#87D7FF  ctermfg=74   "
 let s:bgBlueLighter       = "guibg=#405060  ctermbg=23   "
 let s:fgBlueLighter       = "guifg=#405060  ctermfg=23   "
 
+let s:bgGreenDarkest      = "guibg=#002B36  ctermbg=23   "
+let s:fgGreenDarkest      = "guibg=#002B36  ctermbg=23   "
+let s:bgGreenDarker       = "guibg=#073642  ctermbg=24   "
+let s:fgGreenDarker       = "guibg=#073642  ctermbg=24   "
 let s:bgGreen             = "guibg=#90d0a0  ctermbg=115  "
 let s:fgGreen             = "guifg=#90d0a0  ctermfg=115  "
 let s:bgGreenLight        = "guibg=#86c6b6  ctermbg=116  "
@@ -87,19 +88,23 @@ let s:fgPurpleLight       = "guifg=#b0a0c0  ctermfg=182  "
 
 let s:bgRedDark           = "guibg=#5f0000  ctermbg=52   "
 let s:fgRedDark           = "guifg=#5f0000  ctermfg=52   "
-let s:fgRed               = "guifg=#dc322f  ctermfg=160  "
 let s:bgRed               = "guibg=#dc322f  ctermbg=160  "
+let s:fgRed               = "guifg=#dc322f  ctermfg=160  "
+let s:spRed               = "guisp=#dc322f  "
 let s:bgRedLight          = "guibg=#df5f5f  ctermbg=167  "
 let s:fgRedLight          = "guifg=#df5f5f  ctermfg=167  "
 
 let s:bgYellowDarker      = "guibg=#404000  ctermbg=58   "
 let s:fgYellowDarker      = "guifg=#404000  ctermfg=58   "
+let s:spYellowDarker      = "guisp=#404000  "
 let s:bgYellowDark        = "guibg=#ffdf00  ctermbg=220  "
 let s:fgYellowDark        = "guifg=#ffdf00  ctermfg=220  "
+let s:spYellowDark        = "guisp=#ffdf00  "
 let s:bgYellowLight       = "guibg=#f0f0b0  ctermbg=187  "
 let s:fgYellowLight       = "guifg=#f0f0b0  ctermfg=187  "
 let s:bgYellowLighter     = "guibg=#e0e090  ctermbg=185  "
 let s:fgYellowLighter     = "guifg=#e0e090  ctermfg=185  "
+let s:spYellowLighter     = "guisp=#e0e090  "
 
 let s:bgNone              = "guibg=NONE     ctermbg=NONE "
 let s:fgNone              = "guifg=NONE     ctermfg=NONE "
@@ -110,7 +115,7 @@ let s:fgInvert            = "guifg=BG       ctermfg=BG   "
 let s:bold                = "gui=BOLD       cterm=BOLD   "
 let s:none                = "gui=NONE       cterm=NONE   "
 let s:underline           = "gui=UNDERLINE  cterm=UNDERLINE "
-
+let s:undercurl           = "gui=UNDERCURL  cterm=UNDERCURL "
 
 let s:bgModeNormal        = "guibg=#AFD700  ctermbg=148  "
 let s:fgModeNormal        = "guifg=#AFD700  ctermfg=148  "
@@ -130,7 +135,6 @@ let s:bgModeInsertDark    = "guibg=#005f5f  ctermbg=23   "
 let s:fgModeInsertDark    = "guifg=#005f5f  ctermfg=23   "
 let s:bgModeInsertLight   = "guibg=#0087af  ctermbg=31   "
 let s:fgModeInsertLight   = "guifg=#0087af  ctermfg=31   "
-
 " cursor shapes and behaviours
 set guicursor =n-c:block-Cursor
 set guicursor+=n-c:blinkon0
@@ -140,7 +144,7 @@ set guicursor+=v:block-vCursor/lCursor-blinkon0
 
 if g:cange_style == "dark"
 
-let g:Powerline_colorscheme = 'default'
+let g:Powerline_colorscheme = 'skwp'
 
 exe "hi! Normal        " .s:bgGreyDarker     .s:fgGreenLighter    .s:none
 exe "hi! Comment       " .s:bgNone           .s:fgGrey            .s:none
@@ -164,13 +168,33 @@ exe "hi! Statement     " .s:bgNone           .s:fgBlueLight       .s:none
 "    Keyword           any other keyword
 "    Exception         try, catch, throw
 exe "hi! PreProc       " .s:bgNone           .s:fgYellowLight     .s:none
+"   *PreProc           generic Preprocessor
+"    Include           preprocessor #include
+"    Define            preprocessor #define
+"    Macro             same as Define
+"    PreCondit         preprocessor #if, #else, #endif, etc.
 exe "hi! Type          " .s:bgNone           .s:fgGreen           .s:none
+"   *Type              int, long, char, etc.
+"    StorageClass      static, register, volatile, etc.
+"    Structure         struct, union, enum, etc.
+"    Typedef           A typedef
 exe "hi! Special       " .s:bgNone           .s:fgPurpleLight     .s:none
+"   *Special           any special symbol
+"    SpecialChar       special character in a constant
+"    Tag               you can use CTRL-] on this
+"    Delimiter         character that needs attention
+"    SpecialComment    special things inside a comment
+"    Debug             debugging statements
 " == Text Markup ==
 exe "hi! Underlined    " .s:bgInherit        .s:fgInherit         .s:underline
+"   *Underlined        text that stands out, HTML links
 exe "hi! Error         " .s:bgRedDark        .s:fgWhite           .s:none
+"   *Ignore            left blank, hidden  |hl-Ignore|
 exe "hi! Todo          " .s:bgYellowDarker   .s:fgYellowLighter   .s:none
+"   *Error             any erroneous construct
 exe "hi! MatchParen    " .s:bgInherit        .s:fgYellowDark      .s:bold
+"   *Todo              anything that needs extra attention; mostly the
+"
 " Invisible character colors
 exe "hi! NonText       " .s:bgNone           .s:fgBlueLighter     .s:none
 exe "hi! SpecialKey    " .s:bgNone           .s:fgBlueLighter     .s:none
@@ -200,17 +224,15 @@ exe "hi! StatusLineNC  " .s:bgGreyDark       .s:fgGreyDarker      .s:none
 exe "hi! TabLine       " .s:bgGreyLightest   .s:fgGreyDarker      .s:none
 exe "hi! TabLineFill   " .s:bgGreyLightest   .s:fgGrey            .s:none
 exe "hi! TabLineSel    " .s:bgBlueLighter    .s:fgGreyLightest    .s:none
-    " vertical separator line
-    hi VertSplit    guifg=#262626   guibg=#3a3a3a   ctermfg=235    ctermbg=237       gui=none      cterm=none
-    hi Folded       guifg=#3a3a3a   guibg=NONE      ctermfg=237    ctermbg=NONE      gui=none      cterm=none
-    hi FoldColumn   guifg=#3a3a3a   guibg=NONE      ctermfg=237    ctermbg=NONE      gui=none      cterm=none
-
-    " == Spelling ==
-    hi SpellBad     guisp=#ee0000                   ctermfg=fg     ctermbg=160       gui=undercurl cterm=undercurl
-    hi SpellCap     guisp=#eeee00                   ctermfg=bg     ctermbg=226       gui=undercurl cterm=undercurl
-    hi SpellRare    guisp=#ffa500                   ctermfg=bg     ctermbg=214       gui=undercurl cterm=undercurl
-    hi SpellLocal   guisp=#ffa500                   ctermfg=bg     ctermbg=214       gui=undercurl cterm=undercurl
-
+" == vertical separator line ==
+exe "hi! VertSplit     " .s:bgGreyDark        .s:fgGreyDarker     .s:none
+exe "hi! Folded        " .s:bgNone            .s:fgGreyDarker     .s:none
+exe "hi! FoldColumn    " .s:bgNone            .s:fgGreyDarker     .s:none
+" == Spelling ==
+exe "hi! SpellBad      " .s:bgNone            .s:fgNone           .s:undercurl   .s:spRed
+exe "hi! SpellCap      " .s:bgNone            .s:fgNone           .s:undercurl   .s:spYellowDark
+exe "hi! SpellRare     " .s:bgNone            .s:fgNone           .s:undercurl   .s:spYellowLighter
+exe "hi! SpellLocal    " .s:bgNone            .s:fgNone           .s:undercurl   .s:spYellowDarker
     " == Diff ==
     hi DiffAdd      guifg=fg        guibg=#405040   ctermfg=fg     ctermbg=22        gui=none      cterm=none
     hi DiffChange   guifg=fg        guibg=#605040   ctermfg=fg     ctermbg=58        gui=none      cterm=none
