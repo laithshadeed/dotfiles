@@ -52,7 +52,7 @@ get_bundle kien ctrlp.vim             # quick file finder in directory
 get_bundle maksimr vim-jsbeautify
 get_bundle Lokaltog vim-powerline     # status line
 get_bundle nelstrom vim-textobj-rubyblock
-get_bundle pangloss vim-javascript    # JavaScript indetation and more
+get_bundle pangloss vim-javascript    # JavaScript indentation and more
 get_bundle Raimondi delimitMate       # provides automatic closing of quotes, parenthesis, brackets, etc.
 get_bundle rson vim-conque
 get_bundle scrooloose nerdcommenter   # advanced comment functionality

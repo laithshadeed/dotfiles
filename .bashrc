@@ -6,6 +6,9 @@
 # Load NVM, if you are using it (NodeVersionManager)
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
+# Add rvm gems and nginx to the path
+export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
+
 # Path to the bash it configuration
 export BASH_IT=$HOME/.bash_it
 
@@ -13,8 +16,8 @@ export BASH_IT=$HOME/.bash_it
 export PATH=$PATH:/var/lib/gems/1.8/bin
 export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
 
-# would be needed in the .vimrc.local
-export MY_VIMRC=$HOME/.vimrc.local
+# Path to the bash it configuration
+export BASH_IT=$HOME/.bash_it
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
