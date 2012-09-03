@@ -14,33 +14,33 @@ snippet html
 
 snippet div
 	<div class="${1:selector}">
-		${2:content}
-	</div>
+		${2:}
+	</div><!-- /$1 -->
 snippet tag
 	<${1:name}>${3:content}</$1>
 snippet tagc
 	<${1:name} class="${2:selector}">
-		${3:content}
-	</$1>
+		${3:}
+	</$1><!-- /$2 -->
 snippet img
-	<img src="${1:htt://placehold.it/}" alt="${2:text}">
+	<img src="${1:http://placehold.it/}" alt="${2:text}">
 snippet header
 	<header class="${1:selector}">
-		${2:content}
-	</header>
+		${2:}
+	</header><!-- /$1 -->
 snippet footer
 	<footer class="${1:selector}">
-		${2:content}
-	</footer>
+		${2:}
+	</footer><!-- /$1 -->
 snippet mod
 	<article class="${1:selector}">
 		<div class="$1-inner">
 			<header class="$1-hd">${2:title}</header>
 			<div class="$1-bd">${3:body}</div>
 		</div>
-	</article>
+	</article><!-- /$1 -->
 
-snippet alink
+snippet link
 	<a class="${1:selector}" href="${2:path}">${3:text}</a>
 snippet hd
 	<h${1:prio} class="${2:selector}">${3:content}</h$1>
@@ -89,3 +89,36 @@ snippet script
 	<script src="javascripts/${1:filename}.js"></script>
 snippet css
 	<link rel="stylesheet" href="stylesheets/${1:filename}.css" />
+#
+#
+# MARKUP PATTERN
+#
+#
+snippet box # content
+	<div class="content-box">
+		$1
+	</div><%# /content-box %>
+snippet box # profile
+	<div class="profile-box">
+		$1
+	</div><%# /profile-box %>
+snippet box # toc
+	<div class="toc-box">
+		<div class="toc-box-hd">${1:heading}</div>
+		<ul class="link-list">
+			<li><a href="#">$2</a></li>
+		</ul>
+	</div><%# /toc-box %>
+snippet tabs
+	<ul class="tabs">
+		<li class="tab active"><a href="#tab-$1" data-toggle="tab">${2:label}</a></li>
+	</ul>
+	<div class="tab-content">
+		<div id="tab-${1:pane-id}" class="tab-pane active">First</div>
+	</div>
+snippet breadcrumb
+	<ul class="breadcrumb">
+		<li><a href="${1:url}">l</a></li>
+		<li class="selected">selected</li>
+	</ul>
+
