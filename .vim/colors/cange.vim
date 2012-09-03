@@ -188,7 +188,7 @@ exe "hi! Special       " .s:bgNone           .s:fgPurpleLight     .s:none
 " == Text Markup ==
 exe "hi! Underlined    " .s:bgInherit        .s:fgInherit         .s:underline
 "   *Underlined        text that stands out, HTML links
-exe "hi! Error         " .s:bgRedDark        .s:fgWhite           .s:none
+exe "hi! Error         " .s:bgRedDark        .s:fgGreyLightest    .s:none
 "   *Ignore            left blank, hidden  |hl-Ignore|
 exe "hi! Todo          " .s:bgYellowDarker   .s:fgYellowLighter   .s:none
 "   *Error             any erroneous construct
@@ -225,14 +225,14 @@ exe "hi! TabLine       " .s:bgGreyLightest   .s:fgGreyDarker      .s:none
 exe "hi! TabLineFill   " .s:bgGreyLightest   .s:fgGrey            .s:none
 exe "hi! TabLineSel    " .s:bgBlueLighter    .s:fgGreyLightest    .s:none
 " == vertical separator line ==
-exe "hi! VertSplit     " .s:bgGreyDark        .s:fgGreyDarker     .s:none
-exe "hi! Folded        " .s:bgNone            .s:fgGreyDarker     .s:none
-exe "hi! FoldColumn    " .s:bgNone            .s:fgGreyDarker     .s:none
+exe "hi! VertSplit     " .s:bgGreyDark       .s:fgGreyDarker     .s:none
+exe "hi! Folded        " .s:bgNone           .s:fgGreyDark       .s:none
+exe "hi! FoldColumn    " .s:bgNone           .s:fgGreyLightest   .s:none
 " == Spelling ==
-exe "hi! SpellBad      " .s:bgNone            .s:fgNone           .s:undercurl   .s:spRed
-exe "hi! SpellCap      " .s:bgNone            .s:fgNone           .s:undercurl   .s:spYellowDark
-exe "hi! SpellRare     " .s:bgNone            .s:fgNone           .s:undercurl   .s:spYellowLighter
-exe "hi! SpellLocal    " .s:bgNone            .s:fgNone           .s:undercurl   .s:spYellowDarker
+exe "hi! SpellBad      " .s:bgNone           .s:fgNone           .s:undercurl   .s:spRed
+exe "hi! SpellCap      " .s:bgNone           .s:fgNone           .s:undercurl   .s:spYellowDark
+exe "hi! SpellRare     " .s:bgNone           .s:fgNone           .s:undercurl   .s:spYellowLighter
+exe "hi! SpellLocal    " .s:bgNone           .s:fgNone           .s:undercurl   .s:spYellowDarker
     " == Diff ==
     hi DiffAdd      guifg=fg        guibg=#405040   ctermfg=fg     ctermbg=22        gui=none      cterm=none
     hi DiffChange   guifg=fg        guibg=#605040   ctermfg=fg     ctermbg=58        gui=none      cterm=none
