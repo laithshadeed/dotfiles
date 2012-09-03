@@ -3,7 +3,9 @@
 # compass shotcuts
 alias cw='compass watch'
 alias cc='compass compile --force'
-
+# bundle
+alias be='bundle exec'
+alias bi='bundle install'
 
 if [ $(uname) = "Linux" ]; then
   alias work='cd ~/Documents/workspace'
@@ -17,8 +19,10 @@ if [ $(uname) = "Linux" ]; then
   alias dkp='cd $COMONEA/../ds-websites/dkp-webr'
   alias ftm='cd $COMONEA/../dkp-cms/trunk/src/main'
 else
-   mac os specifc
+  # mac os specifc
   alias work='cd ~/workspace'
+  alias cdm='cd ~/workspace/rails-app'
   alias xws='cd ~/workspace/rails-app/engines/web_service'
   alias xws-i18n='bundle exec rake text_resources:import:section SECTION=xws'
+  alias xync='xws && xing sandbox sync'
 fi
