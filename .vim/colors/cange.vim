@@ -74,10 +74,10 @@ let s:bgGreyLighter       = "guibg=#bcbcbc  ctermbg=250  "
 let s:fgGreyLighter       = "guifg=#bcbcbc  ctermfg=250  "
 let s:bgGreyLight         = "guibg=#767676  ctermbg=243  "
 let s:fgGreyLight         = "guifg=#767676  ctermfg=243  "
-let s:bgGrey              = "guibg=#606060  ctermbg=240  "
-let s:fgGrey              = "guifg=#606060  ctermfg=240  "
-let s:bgGreyDark          = "guibg=#404448  ctermbg=236  "
-let s:fgGreyDark          = "guifg=#404448  ctermfg=236  "
+let s:bgGrey              = "guibg=#404040  ctermbg=240  "
+let s:fgGrey              = "guifg=#404040  ctermfg=240  "
+let s:bgGreyDark          = "guibg=#303030  ctermbg=236  "
+let s:fgGreyDark          = "guifg=#303030  ctermfg=236  "
 let s:bgGreyDarker        = "guibg=#202020  ctermbg=234  "
 let s:fgGreyDarker        = "guifg=#202020  ctermfg=234  "
 let s:bgGreyDarkest       = "guibg=#1c1c1c  ctermbg=233  "
@@ -213,21 +213,24 @@ exe "hi! Visual        " .s:bgModeVisualDark .s:fgModeVisual      .s:none
 exe "hi! VisualNOS     " .s:bgNone           .s:fgModeVisual      .s:underline
 exe "hi! IncSearch     " .s:bgModeNormal     .s:fgModeNormalDark  .s:none
 exe "hi! Search        " .s:bgModeNormalDark .s:fgModeNormal      .s:none
-" == UI (autocompletion dropdown) ==
+" == UI ==
+" -- autocompletion dropdown --
 exe "hi! PMenu         " .s:bgGreyDarker     .s:fgGreyLighter     .s:none
 exe "hi! PmenuSel      " .s:bgGreyDarkest    .s:fgModeInsertLight .s:none
 exe "hi! PMenuSbar     " .s:bgGreyDark                            .s:none
 exe "hi! PMenuThumb    " .s:bgModeInsertLight                     .s:none
-" == Status bars ==
-exe "hi! StatusLine    " .s:bgModeInsertDark .s:fgModeNormalLight .s:none
-exe "hi! StatusLineNC  " .s:bgGreyDark       .s:fgGreyDarker      .s:none
+" -- vertical separator line --
+exe "hi! Folded        " .s:bgNone           .s:fgGrey            .s:none
+exe "hi! FoldColumn    " .s:bgGreyDark       .s:fgGreyLight       .s:none
+exe "hi! VertSplit     " .s:bgGrey           .s:fgGrey            .s:none
+exe "hi! LineNr        " .s:bgGreyDark       .s:fgGreyDarkest     .s:none
+exe "hi! ColorColumn   " .s:bgGreyDarkest    .s:fgNone            .s:none
+" -- Status bars --
+exe "hi! StatusLine    " .s:bgModeNormalDark .s:fgModeNormalLight .s:none
+exe "hi! StatusLineNC  " .s:bgModeNormal     .s:fgModeNormalLight .s:none
 exe "hi! TabLine       " .s:bgGreyLightest   .s:fgGreyDarker      .s:none
 exe "hi! TabLineFill   " .s:bgGreyLightest   .s:fgGrey            .s:none
 exe "hi! TabLineSel    " .s:bgBlueLighter    .s:fgGreyLightest    .s:none
-" == vertical separator line ==
-exe "hi! VertSplit     " .s:bgGreyDark       .s:fgGreyDarker     .s:none
-exe "hi! Folded        " .s:bgNone           .s:fgGreyDark       .s:none
-exe "hi! FoldColumn    " .s:bgNone           .s:fgGreyLightest   .s:none
 " == Spelling ==
 exe "hi! SpellBad      " .s:bgNone           .s:fgNone           .s:undercurl   .s:spRed
 exe "hi! SpellCap      " .s:bgNone           .s:fgNone           .s:undercurl   .s:spYellowDark
@@ -243,13 +246,11 @@ exe "hi! SpellLocal    " .s:bgNone           .s:fgNone           .s:undercurl   
     hi Directory    guifg=#c0e0b0   guibg=NONE      ctermfg=151    ctermbg=NONE      gui=none      cterm=none
     hi ErrorMsg     guifg=#ee0000   guibg=NONE      ctermfg=196    ctermbg=NONE      gui=none      cterm=none
     hi SignColumn   guifg=#a0b0b0   guibg=#282828   ctermfg=145    ctermbg=233       gui=none      cterm=none
-    hi LineNr       guifg=#121212   guibg=#303030   ctermfg=233    ctermbg=236       gui=none      cterm=none
     hi MoreMsg      guifg=#70d0f0   guibg=NONE      ctermfg=117    ctermbg=NONE      gui=none      cterm=none
     hi ModeMsg      guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=none      cterm=none
     hi Question     guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=none      cterm=none
     hi WarningMsg   guifg=#e87870   guibg=NONE      ctermfg=173    ctermbg=NONE      gui=none      cterm=none
     hi WildMenu     guifg=NONE      guibg=#304050   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
-    hi ColorColumn  guifg=NONE      guibg=#1c1c1c   ctermfg=NONE   ctermbg=234       gui=none      cterm=none
     hi Ignore       guifg=bg                        ctermfg=bg
 
     " == custom types by cange ==
@@ -294,7 +295,7 @@ elseif g:cange_style == "light"
     hi Title        guifg=#0060a0   guibg=NONE      ctermfg=26     ctermbg=NONE      gui=bold      cterm=bold
 
   " == Text Selection ==
-  exe "hi! CursorIM      " .s:bgGrey            .s:fgInvert          .s:none
+  exe "hi! CursorIM      " .s:bgGreyLight       .s:fgInvert          .s:none
   exe "hi! CursorColumn  " .s:bgGreyLightest    .s:fgNone            .s:none
   exe "hi! CursorLine    " .s:bgGreyLightest    .s:fgNone            .s:none
   " == Cursors ==
@@ -306,21 +307,23 @@ elseif g:cange_style == "light"
   exe "hi! Visual        " .s:bgModeVisualLight .s:fgModeVisual      .s:none
   exe "hi! IncSearch     " .s:bgModeNormal      .s:fgModeNormalDark  .s:none
   exe "hi! Search        " .s:bgModeNormalLight .s:fgModeNormal      .s:none
-  " == UI (autocompletion dropdown) ==
-  " autocompletion
-  exe "hi! PMenu         " .s:bgGreyLightest    .s:fgGreyLight      .s:none
-  exe "hi! PmenuSel      " .s:bgGreyDark        .s:fgModeNormalLight.s:none
-  exe "hi! PMenuSbar     " .s:bgGreyLight                           .s:none
-  exe "hi! PMenuThumb    " .s:bgModeNormal                          .s:none
+  " == UI ==
+  " -- autocompletion --
+  exe "hi! PMenu         " .s:bgGreyLightest    .s:fgGreyLight        .s:none
+  exe "hi! PmenuSel      " .s:bgGreyDark        .s:fgModeNormalLight  .s:none
+  exe "hi! PMenuSbar     " .s:bgGreyLight                             .s:none
+  exe "hi! PMenuThumb    " .s:bgModeNormal                            .s:none
+  " -- vertical separator line --
+  exe "hi! Folded        " .s:bgNone            .s:fgGreyLight        .s:none
+  exe "hi! FoldColumn    " .s:bgGreyLighter     .s:fgGreyLightest     .s:none
+  exe "hi! VertSplit     " .s:bgGreyLightest    .s:fgGreyLightest     .s:none
+  exe "hi! LineNr        " .s:bgGreyLighter     .s:fgGreyLight        .s:none
     " == UI ==
     hi StatusLine   guifg=#ffffff   guibg=#505050   ctermfg=231    ctermbg=239       gui=bold      cterm=bold
     hi StatusLineNC guifg=#e0e0e0   guibg=#505050   ctermfg=254    ctermbg=239       gui=none      cterm=none
     hi TabLine      guifg=#ffffff   guibg=#505050   ctermfg=231    ctermbg=239       gui=none      cterm=none
     hi TabLineFill  guifg=#a0a0a0   guibg=#505050   ctermfg=247    ctermbg=239       gui=none      cterm=none
     hi TabLineSel   guifg=#000000   guibg=#d0e0f0   ctermfg=16     ctermbg=153       gui=none      cterm=none
-    hi VertSplit    guifg=#868686   guibg=#505050   ctermfg=102    ctermbg=239       gui=none      cterm=none
-    hi Folded       guifg=#ffffff   guibg=#c6c6c6   ctermfg=231    ctermbg=251       gui=none      cterm=none
-    hi FoldColumn   guifg=#ffffff   guibg=#c6c6c6   ctermfg=231    ctermbg=251       gui=none      cterm=none
 
     " == Spelling ==
     hi SpellBad     guisp=#ee0000                                  ctermbg=210       gui=undercurl cterm=undercurl
@@ -338,7 +341,6 @@ elseif g:cange_style == "light"
     hi Directory    guifg=#009040   guibg=NONE      ctermfg=29     ctermbg=NONE      gui=none      cterm=none
     hi ErrorMsg     guifg=#a00000   guibg=NONE      ctermfg=124    ctermbg=NONE      gui=none      cterm=none
     hi SignColumn   guifg=#708090   guibg=#f8f8f8   ctermfg=66     ctermbg=231       gui=none      cterm=none
-    hi LineNr       guifg=#ffffff   guibg=#a0a0a0   ctermfg=231    ctermbg=247       gui=none      cterm=none
     hi MoreMsg      guifg=#2060c0   guibg=NONE      ctermfg=4      ctermbg=NONE      gui=none      cterm=none
     hi ModeMsg      guifg=#000000   guibg=NONE      ctermfg=16     ctermbg=NONE      gui=none      cterm=none
     hi Question     guifg=fg        guibg=NONE      ctermfg=NONE   ctermbg=NONE      gui=none      cterm=none
