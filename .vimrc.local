@@ -299,12 +299,5 @@ nmap <F4> :w<CR>
 """"""""""""""""""""""
 let s:opt_indent_char = "  "
 
-
-
-" TODO Remove this when you not working at XING
-"
-"https://confluence.xing.hh/confluence/display/ENV/Local+Sandbox+Setup+%28Mac+OSX%29
-" source /media/truecrypt1/pandora/tools/rsync_sandbox.vim
-" noremap <leader>s :call SyncToSandbox()<cr>
-" save and sync xing pandora sandbox resources
-" noremap <leader>s :wall<cr>:call SyncToSandbox()<cr>:echo "done"<cr>
+" show the most recent files
+nmap <leader>m :TRecentlyUsedFiles<CR>
