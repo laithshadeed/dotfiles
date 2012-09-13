@@ -155,14 +155,11 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 "
-" == copy and paste section ====================================================
-" tansfer text from and to the clipboard
-set clipboard^=unnamed
-"
 " == JavaScript section ========================================================
 au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 au FileType javascript setl nocindent
+
 "
 " == JSbeautify settings =======================================================
 " let g:jsbeautify = {'indent_size': 4, 'indent_char': '\t'}

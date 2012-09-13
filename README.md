@@ -9,7 +9,7 @@ Further based the vimbundle handling on [dotmatrix](https://github.com/hashrocke
 1. Check a clone of this repo: `git clone http://github.com/cange/dotfiles.git ~/dotfiles`
 2. Run 
 
-        co~/dotfiles/.bash_it/
+        cd ~/dotfiles/.bash_it/
         ./install.sh
         cd ~/dotfiles/bin/
         ./hlink
