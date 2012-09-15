@@ -43,69 +43,112 @@ else
   let g:cange_style="dark"
 endif
 
-let s:bgWhite             = "guibg=#ffffff  ctermbg=15   "
-let s:fgWhite             = "guifg=#ffffff  ctermfg=15   "
+" Green
+let s:greenDarker  = "#002B36 "
+let s:greenDark    = "#073642 "
+let s:green        = "#90D0A0 "
+let s:greenLight   = "#86C6B6 "
+let s:greenLighter = "#B0CBC0 "
+" Blue
+let s:blueDarker   = "#005F87 "
+let s:blueDark     = "#268BD2 "
+let s:blue         = "#70C0d8 "
+let s:blueLight    = "#87D7FF "
+let s:blueLighter  = "#405060 "
+" Red
+" http://colorschemedesigner.com/#01123parB6q6q1UBTs2TsP.3RRXN4PNYg
+let s:redDarker    = "#A42A27 "
+let s:redDark      = "#C32B27 "
+let s:red          = "#DC332F "
+let s:redLight     = "#E54642 "
+let s:redLighter   = "#E95652 "
+" Yellow
+" http://colorschemedesigner.com/#1z51vhWs0g0g04GEZaaUBOrcGcZR
+let s:yellowDarker = "#D8A93D "
+let s:yellowDark   = "#C3B764 "
+let s:yellow       = "#DFD062 "
+let s:yellowLight  = "#E7D976 "
+let s:yellowLighter= "#F0E699 "
+" Grey
+let s:greyDarkest  = "#1C1C1C "
+let s:greyDarker   = "#202020 "
+let s:greyDark     = "#303030 "
+let s:grey         = "#404040 "
+let s:greyLight    = "#767676 "
+let s:greyLighter  = "#BCBCBC "
+let s:greyLightest = "#E4E4E4 "
+" #############################################################################
+let s:bgWhite         = "guibg=#ffffff  ctermbg=15   "
+let s:fgWhite         = "guifg=#ffffff  ctermfg=15   "
 
-let s:bgBlueDarker        = "guibg=#005f87  ctermbg=25   "
-let s:bgBlueDarker        = "guibg=#005f87  ctermbg=25   "
-let s:fgBlueDark          = "guifg=#268BD2  ctermfg=32   "
-let s:fgBlueDark          = "guifg=#268BD2  ctermfg=32   "
-let s:bgBlue              = "guibg=#70c0d8  ctermbg=74   "
-let s:fgBlue              = "guifg=#70c0d8  ctermfg=74   "
-let s:bgBlueLight         = "guibg=#87D7FF  ctermbg=74   "
-let s:fgBlueLight         = "guifg=#87D7FF  ctermfg=74   "
-let s:bgBlueLighter       = "guibg=#405060  ctermbg=23   "
-let s:fgBlueLighter       = "guifg=#405060  ctermfg=23   "
+let s:bgBlueDarker    = "guibg=".s:blueDarker   ." ctermbg=25  "
+let s:fgBlueDarker    = "guifg=".s:blueDarker   ." ctermfg=25  "
+let s:bgBlueDark      = "guibg=".s:blueDark     ." ctermbg=32  "
+let s:fgBlueDark      = "guifg=".s:blueDark     ." ctermfg=32  "
+let s:bgBlue          = "guibg=".s:blue         ." ctermbg=74  "
+let s:fgBlue          = "guifg=".s:blue         ." ctermfg=74  "
+let s:bgBlueLight     = "guibg=".s:blueLight    ." ctermbg=74  "
+let s:fgBlueLight     = "guifg=".s:blueLight    ." ctermfg=74  "
+let s:bgBlueLighter   = "guibg=".s:blueLighter  ." ctermbg=23  "
+let s:fgBlueLighter   = "guifg=".s:blueLighter  ." ctermfg=23  "
 
-let s:bgGreenDarkest      = "guibg=#002B36  ctermbg=23   "
-let s:fgGreenDarkest      = "guibg=#002B36  ctermbg=23   "
-let s:bgGreenDarker       = "guibg=#073642  ctermbg=24   "
-let s:fgGreenDarker       = "guibg=#073642  ctermbg=24   "
-let s:bgGreen             = "guibg=#90d0a0  ctermbg=115  "
-let s:fgGreen             = "guifg=#90d0a0  ctermfg=115  "
-let s:bgGreenLight        = "guibg=#86c6b6  ctermbg=116  "
-let s:fgGreenLight        = "guifg=#86c6b6  ctermfg=116  "
-let s:bgGreenLighter      = "guibg=#b0cbc0  ctermbg=152  "
-let s:fgGreenLighter      = "guifg=#b0cbc0  ctermfg=152  "
+let s:bgGreenDarker   = "guibg=".s:greenDarker  ." ctermbg=23  "
+let s:fgGreenDarker   = "guifg=".s:greenDarker  ." ctermfg=23  "
+let s:bgGreenDark     = "guibg=".s:greenDark    ." ctermbg=24  "
+let s:fgGreenDark     = "guifg=".s:greenDark    ." ctermfg=24  "
+let s:bgGreen         = "guibg=".s:green        ." ctermbg=115 "
+let s:fgGreen         = "guifg=".s:green        ." ctermfg=115 "
+let s:bgGreenLight    = "guibg=".s:greenLight   ." ctermbg=116 "
+let s:fgGreenLight    = "guifg=".s:greenLight   ." ctermfg=116 "
+let s:bgGreenLighter  = "guibg=".s:greenLighter ." ctermbg=116 "
+let s:fgGreenLighter  = "guifg=".s:greenLighter ." ctermfg=116 "
 
-let s:bgGreyLightest      = "guibg=#e4e4e4  ctermbg=254  "
-let s:fgGreyLightest      = "guifg=#e4e4e4  ctermfg=254  "
-let s:bgGreyLighter       = "guibg=#bcbcbc  ctermbg=250  "
-let s:fgGreyLighter       = "guifg=#bcbcbc  ctermfg=250  "
-let s:bgGreyLight         = "guibg=#767676  ctermbg=243  "
-let s:fgGreyLight         = "guifg=#767676  ctermfg=243  "
-let s:bgGrey              = "guibg=#404040  ctermbg=240  "
-let s:fgGrey              = "guifg=#404040  ctermfg=240  "
-let s:bgGreyDark          = "guibg=#303030  ctermbg=236  "
-let s:fgGreyDark          = "guifg=#303030  ctermfg=236  "
-let s:bgGreyDarker        = "guibg=#202020  ctermbg=234  "
-let s:fgGreyDarker        = "guifg=#202020  ctermfg=234  "
-let s:bgGreyDarkest       = "guibg=#1c1c1c  ctermbg=233  "
-let s:fgGreyDarkest       = "guifg=#1c1c1c  ctermfg=233  "
+let s:bgYellowDarker  = "guibg=".s:yellowDarker ." ctermbg=234 "
+let s:fgYellowDarker  = "guifg=".s:yellowDarker ." ctermfg=234 "
+let s:bgYellowDark    = "guibg=".s:yellowDark   ." ctermbg=236 "
+let s:fgYellowDark    = "guifg=".s:yellowDark   ." ctermfg=236 "
+let s:bgYellow        = "guibg=".s:yellow       ." ctermbg=240 "
+let s:fgYellow        = "guifg=".s:yellow       ." ctermfg=240 "
+let s:bgYellowLight   = "guibg=".s:yellowLight  ." ctermbg=243 "
+let s:fgYellowLight   = "guifg=".s:yellowLight  ." ctermfg=243 "
+let s:bgYellowLighter = "guibg=".s:yellowLighter." ctermbg=250 "
+let s:fgYellowLighter = "guifg=".s:yellowLighter." ctermfg=250 "
 
-let s:bgPurpleLight       = "guibg=#b0a0c0  ctermbg=182  "
-let s:fgPurpleLight       = "guifg=#b0a0c0  ctermfg=182  "
+let s:spYellowDarker  = "guisp=".s:yellowDarker
+let s:spYellowDark    = "guisp=".s:yellowDark
+let s:spYellowLighter = "guisp=".s:yellowLighter
 
-let s:bgRedDark           = "guibg=#5f0000  ctermbg=52   "
-let s:fgRedDark           = "guifg=#5f0000  ctermfg=52   "
-let s:bgRed               = "guibg=#dc322f  ctermbg=160  "
-let s:fgRed               = "guifg=#dc322f  ctermfg=160  "
-let s:spRed               = "guisp=#dc322f  "
-let s:bgRedLight          = "guibg=#df5f5f  ctermbg=167  "
-let s:fgRedLight          = "guifg=#df5f5f  ctermfg=167  "
+let s:bgRedDarker     = "guibg=".s:redDarker    ." ctermbg=234 "
+let s:fgRedDarker     = "guifg=".s:redDarker    ." ctermfg=234 "
+let s:bgRedDark       = "guibg=".s:redDark      ." ctermbg=52  "
+let s:fgRedDark       = "guifg=".s:redDark      ." ctermfg=52  "
+let s:bgRed           = "guibg=".s:red          ." ctermbg=160 "
+let s:fgRed           = "guifg=".s:red          ." ctermfg=160 "
+let s:bgRedLight      = "guibg=".s:redLight     ." ctermbg=167 "
+let s:fgRedLight      = "guifg=".s:redLight     ." ctermfg=167 "
+let s:bgRedLighter    = "guibg=".s:redLighter   ." ctermbg=250 "
+let s:fgRedLighter    = "guifg=".s:redLighter   ." ctermfg=250 "
 
-let s:bgYellowDarker      = "guibg=#404000  ctermbg=58   "
-let s:fgYellowDarker      = "guifg=#404000  ctermfg=58   "
-let s:spYellowDarker      = "guisp=#404000  "
-let s:bgYellowDark        = "guibg=#ffdf00  ctermbg=220  "
-let s:fgYellowDark        = "guifg=#ffdf00  ctermfg=220  "
-let s:spYellowDark        = "guisp=#ffdf00  "
-let s:bgYellowLight       = "guibg=#f0f0b0  ctermbg=187  "
-let s:fgYellowLight       = "guifg=#f0f0b0  ctermfg=187  "
-let s:bgYellowLighter     = "guibg=#e0e090  ctermbg=185  "
-let s:fgYellowLighter     = "guifg=#e0e090  ctermfg=185  "
-let s:spYellowLighter     = "guisp=#e0e090  "
+let s:spRed           = "guisp=".s:red
 
+let s:bgGreyDarkest   = "guibg=".s:greyDarkest  ." ctermbg=233 "
+let s:fgGreyDarkest   = "guifg=".s:greyDarkest  ." ctermfg=233 "
+let s:bgGreyDarker    = "guibg=".s:greyDarker   ." ctermbg=234 "
+let s:fgGreyDarker    = "guifg=".s:greyDarker   ." ctermfg=234 "
+let s:bgGreyDark      = "guibg=".s:greyDark     ." ctermbg=52  "
+let s:fgGreyDark      = "guifg=".s:greyDark     ." ctermfg=52  "
+let s:bgGrey          = "guibg=".s:grey         ." ctermbg=160 "
+let s:fgGrey          = "guifg=".s:grey         ." ctermfg=160 "
+let s:bgGreyLight     = "guibg=".s:greyLight    ." ctermbg=167 "
+let s:fgGreyLight     = "guifg=".s:greyLight    ." ctermfg=167 "
+let s:bgGreyLighter   = "guibg=".s:greyLighter  ." ctermbg=250 "
+let s:fgGreyLighter   = "guifg=".s:greyLighter  ." ctermfg=250 "
+let s:bgGreyLightest  = "guibg=".s:greyLightest ." ctermbg=254 "
+let s:fgGreyLightest  = "guifg=".s:greyLightest ." ctermfg=254 "
+
+let s:bgPurpleLight   = "guibg=#b0a0c0  ctermbg=182  "
+let s:fgPurpleLight   = "guifg=#b0a0c0  ctermfg=182  "
+" #############################################################################
 let s:bgNone              = "guibg=NONE     ctermbg=NONE "
 let s:fgNone              = "guifg=NONE     ctermfg=NONE "
 let s:bgInherit           = "guibg=BG       ctermbg=BG   "
@@ -116,7 +159,7 @@ let s:bold                = "gui=BOLD       cterm=BOLD   "
 let s:none                = "gui=NONE       cterm=NONE   "
 let s:underline           = "gui=UNDERLINE  cterm=UNDERLINE "
 let s:undercurl           = "gui=UNDERCURL  cterm=UNDERCURL "
-
+" #############################################################################
 let s:bgModeNormal        = "guibg=#AFD700  ctermbg=148  "
 let s:fgModeNormal        = "guifg=#AFD700  ctermfg=148  "
 let s:bgModeNormalDark    = "guibg=#2f331d  ctermbg=58   "
@@ -135,6 +178,7 @@ let s:bgModeInsertDark    = "guibg=#005f5f  ctermbg=23   "
 let s:fgModeInsertDark    = "guifg=#005f5f  ctermfg=23   "
 let s:bgModeInsertLight   = "guibg=#0087af  ctermbg=31   "
 let s:fgModeInsertLight   = "guifg=#0087af  ctermfg=31   "
+" #############################################################################
 " cursor shapes and behaviours
 set guicursor =n-c:block-Cursor
 set guicursor+=n-c:blinkon0
@@ -167,7 +211,7 @@ exe "hi! Statement     " .s:bgNone           .s:fgBlueLight       .s:none
 "    Operator          "sizeof", "+", "*", etc.
 "    Keyword           any other keyword
 "    Exception         try, catch, throw
-exe "hi! PreProc       " .s:bgNone           .s:fgYellowLight     .s:none
+exe "hi! PreProc       " .s:bgNone           .s:fgYellowLighter     .s:none
 "   *PreProc           generic Preprocessor
 "    Include           preprocessor #include
 "    Define            preprocessor #define
@@ -215,10 +259,10 @@ exe "hi! IncSearch     " .s:bgModeNormal     .s:fgModeNormalDark  .s:none
 exe "hi! Search        " .s:bgModeNormalDark .s:fgModeNormal      .s:none
 " == UI ==
 " -- autocompletion dropdown --
-exe "hi! PMenu         " .s:bgGreyDarker     .s:fgGreyLighter     .s:none
-exe "hi! PmenuSel      " .s:bgGreyDarkest    .s:fgModeInsertLight .s:none
-exe "hi! PMenuSbar     " .s:bgGreyDark                            .s:none
-exe "hi! PMenuThumb    " .s:bgModeInsertLight                     .s:none
+exe "hi! PMenu         " .s:bgGreyDark       .s:fgGreyLight       .s:none
+exe "hi! PmenuSel      " .s:bgGreyDarker     .s:fgRed             .s:none
+exe "hi! PMenuSbar     " .s:bgGreyDarker                          .s:none
+exe "hi! PMenuThumb    " .s:bgRedDarker                           .s:none
 " -- vertical separator line --
 exe "hi! Folded        " .s:bgNone           .s:fgGrey            .s:none
 exe "hi! FoldColumn    " .s:bgGreyDark       .s:fgGreyLight       .s:none
@@ -260,9 +304,8 @@ exe "hi! SpellLocal    " .s:bgNone           .s:fgNone           .s:undercurl   
 
 elseif g:cange_style == "light"
 
-  let g:Powerline_colorscheme = 'default'
-
-    hi Normal       guifg=#000000   guibg=#ffffff   ctermfg=16     ctermbg=231       gui=none      cterm=none
+let g:Powerline_colorscheme = 'default'
+exe "hi! Normal        " .s:bgWhite     .s:fgGreyDarkest    .s:none
 
     hi Comment      guifg=#909090   guibg=NONE      ctermfg=246    ctermbg=NONE      gui=none      cterm=none
 
@@ -309,15 +352,16 @@ elseif g:cange_style == "light"
   exe "hi! Search        " .s:bgModeNormalLight .s:fgModeNormal      .s:none
   " == UI ==
   " -- autocompletion --
-  exe "hi! PMenu         " .s:bgGreyLightest    .s:fgGreyLight        .s:none
-  exe "hi! PmenuSel      " .s:bgGreyDark        .s:fgModeNormalLight  .s:none
-  exe "hi! PMenuSbar     " .s:bgGreyLight                             .s:none
-  exe "hi! PMenuThumb    " .s:bgModeNormal                            .s:none
+
+  exe "hi! PMenu         " .s:bgGreyLightest    .s:fgGreyLight       .s:none
+  exe "hi! PmenuSel      " .s:bgGreyLighter     .s:fgRed             .s:none
+  exe "hi! PMenuSbar     " .s:bgGreyLighter                          .s:none
+  exe "hi! PMenuThumb    " .s:bgRed                                  .s:none
   " -- vertical separator line --
-  exe "hi! Folded        " .s:bgNone            .s:fgGreyLight        .s:none
-  exe "hi! FoldColumn    " .s:bgGreyLighter     .s:fgGreyLightest     .s:none
-  exe "hi! VertSplit     " .s:bgGreyLightest    .s:fgGreyLightest     .s:none
-  exe "hi! LineNr        " .s:bgGreyLighter     .s:fgGreyLight        .s:none
+  exe "hi! Folded        " .s:bgNone            .s:fgGreyLight       .s:none
+  exe "hi! FoldColumn    " .s:bgGreyLighter     .s:fgGreyLightest    .s:none
+  exe "hi! VertSplit     " .s:bgGreyLightest    .s:fgGreyLightest    .s:none
+  exe "hi! LineNr        " .s:bgGreyLighter     .s:fgGreyLight       .s:none
     " == UI ==
     hi StatusLine   guifg=#ffffff   guibg=#505050   ctermfg=231    ctermbg=239       gui=bold      cterm=bold
     hi StatusLineNC guifg=#e0e0e0   guibg=#505050   ctermfg=254    ctermbg=239       gui=none      cterm=none
