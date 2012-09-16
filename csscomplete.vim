@@ -3,7 +3,7 @@
 " Maintainer:	Christian Angermann  dev(at)psykmedia.de
 " Last Change:	2012 April 30
 
-	let s:values = split("azimuth animation animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction backface-visibility background background-attachment background-color background-image background-position background-repeat border bottom border-collapse border-color border-spacing border-style border-top border-right border-bottom border-left border-top-color border-right-color border-bottom-color border-left-color border-top-style border-right-style border-bottom-style border-left-style border-top-width border-right-width border-bottom-width border-left-width border-width border-radius border-top-left-radius border-top-right-radius border-bottom-left-radius border-bottom-right-radius caption-side clear clip color content counter-increment counter-reset cue cue-after cue-before cursor display direction elevation empty-cells float font font-family font-size font-style font-variant font-weight height left letter-spacing line-height list-style list-style-image list-style-position list-style-type margin margin-right margin-left margin-top margin-bottom max-height max-width min-height min-width orphans outline outline-color outline-style outline-width overflow padding padding-top padding-right padding-bottom padding-left page-break-after page-break-before page-break-inside pause pause-after pause-before pitch pitch-range play-during position quotes right richness speak speak-header speak-numeral speak-punctuation speech-rate stress table-layout text-align text-decoration text-indent text-transform top unicode-bidi vertical-align visibility voice-family volume white-space width widows word-spacing z-index")
+	let s:values = split("azimuth animation animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction backface-visibility background background-attachment background-color background-image background-position background-repeat border bottom border-collapse border-color border-spacing border-style border-top border-right border-bottom border-left border-top-color border-right-color border-bottom-color border-left-color border-top-style border-right-style border-bottom-style border-left-style border-top-width border-right-width border-bottom-width border-left-width border-width border-radius border-top-left-radius border-top-right-radius border-bottom-left-radius border-bottom-right-radius caption-side clear clip color content counter-increment counter-reset cue cue-after cue-before cursor display direction elevation empty-cells float font font-family font-size font-style font-variant font-weight height left letter-spacing line-height list-style list-style-image list-style-position list-style-type margin margin-right margin-left margin-top margin-bottom max-height max-width min-height min-width orphans outline outline-color outline-style outline-width overflow padding padding-top padding-right padding-bottom padding-left page-break-after page-break-before page-break-inside pause pause-after pause-before pitch pitch-range play-during position quotes right richness speak speak-header speak-numeral speak-punctuation speech-rate stress table-layout text-align text-decoration text-indent text-transform top transition transition-delay transition-duration transition-property transition-timing-function unicode-bidi vertical-align visibility voice-family volume white-space width widows word-spacing z-index")
 
 function! csscomplete#CompleteCSS(findstart, base)
 
@@ -291,6 +291,8 @@ elseif borders[max(keys(borders))] == 'colon'
 		let values = ["url(", "mix", "repeat", "auto", "none"]
 	elseif prop == 'position'
 		let values = ["static", "relative", "absolute", "fixed"]
+	elseif prop == 'pointer-events'
+		let values = ["auto", "none", "visiblePainted", "visibleFill", "visibleStroke", "visible", "painted", "fill", "stroke", "all", "inherit"]
 	elseif prop == 'quotes'
 		let values = ["none"]
 	elseif prop == 'richness'
@@ -319,6 +321,10 @@ elseif borders[max(keys(borders))] == 'colon'
 		let values = ["capitalize", "uppercase", "lowercase", "none"]
 	elseif prop == 'top'
 		let values = ["auto"]
+	elseif prop == 'transiton-property'
+		let values = ["all", "none"]
+	elseif prop == 'transiton-timing-function'
+		let values = ["ease", "ease-in", "ease-out", "ease-in-out", "cubic-bezier(", "linear", "step-start", "step-stop", "steps("]
 	elseif prop == 'unicode-bidi'
 		let values = ["normal", "embed", "bidi-override"]
 	elseif prop == 'vertical-align'
@@ -373,7 +379,7 @@ elseif borders[max(keys(borders))] == 'exclam'
 	" Complete values
 	let entered_imp = matchstr(line, '.\{-}!\s*\zs[a-zA-Z ]*$')
 
-	let values = ["important"]
+	let values = ["important", "default", "optional"]
 
 	for m in values
 		if m =~? '^'.entered_imp
@@ -431,7 +437,7 @@ elseif borders[max(keys(borders))] == 'atrule'
 
 	endif
 
-	let values = ["charset", "page", "media", "import", "font-face"]
+	let values = ["charset", "page", "media", "import", "font-face", "include", "extend"]
 
 	let entered_atrule = matchstr(line, '.*@\zs[a-zA-Z-]*$')
 

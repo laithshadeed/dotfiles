@@ -63,20 +63,33 @@ let s:red          = "#DC332F "
 let s:redLight     = "#E54642 "
 let s:redLighter   = "#E95652 "
 " Yellow
-" http://colorschemedesigner.com/#1z51vhWs0g0g04GEZaaUBOrcGcZR
-let s:yellowDarker = "#D8A93D "
-let s:yellowDark   = "#C3B764 "
-let s:yellow       = "#DFD062 "
-let s:yellowLight  = "#E7D976 "
-let s:yellowLighter= "#F0E699 "
+" http://colorschemedesigner.com/#1z11vhWs0g0g00MBVK1OrSj2QXPl3IIY14FZZa
+let s:yellowDarker   = "#A29433 "
+let s:yellowDark     = "#BAAC49 "
+let s:yellow         = "#D5C760 "
+let s:yellowLight    = "#E7DB84 "
+let s:yellowLighter  = "#F0E69E "
+let s:ctYellowDarker = "100 "
+let s:ctYellowDark   = "3 "
+let s:ctYellow       = "185 "
+let s:ctYellowLight  = "11 "
+let s:ctYellowLighter= "229 "
 " Grey
-let s:greyDarkest  = "#1C1C1C "
-let s:greyDarker   = "#202020 "
-let s:greyDark     = "#303030 "
-let s:grey         = "#404040 "
-let s:greyLight    = "#767676 "
-let s:greyLighter  = "#BCBCBC "
-let s:greyLightest = "#E4E4E4 "
+let s:greyDarkest    = "#1C1C1C "
+let s:greyDarker     = "#202020 "
+let s:greyDark       = "#303030 "
+let s:grey           = "#404040 "
+let s:greyLight      = "#767676 "
+let s:greyLighter    = "#BCBCBC "
+let s:greyLightest   = "#E4E4E4 "
+let s:ctGreyDarkest  = "234 "
+let s:ctGreyDarker   = "235 "
+let s:ctGreyDark     = "236 "
+let s:ctGrey         = "238 "
+let s:ctGreyLight    = "276 "
+let s:ctGreyLighter  = "250 "
+let s:ctGreyLightest = "254 "
+
 " #############################################################################
 let s:bgWhite         = "guibg=#ffffff  ctermbg=15   "
 let s:fgWhite         = "guifg=#ffffff  ctermfg=15   "
@@ -103,16 +116,16 @@ let s:fgGreenLight    = "guifg=".s:greenLight   ." ctermfg=116 "
 let s:bgGreenLighter  = "guibg=".s:greenLighter ." ctermbg=116 "
 let s:fgGreenLighter  = "guifg=".s:greenLighter ." ctermfg=116 "
 
-let s:bgYellowDarker  = "guibg=".s:yellowDarker ." ctermbg=234 "
-let s:fgYellowDarker  = "guifg=".s:yellowDarker ." ctermfg=234 "
-let s:bgYellowDark    = "guibg=".s:yellowDark   ." ctermbg=236 "
-let s:fgYellowDark    = "guifg=".s:yellowDark   ." ctermfg=236 "
-let s:bgYellow        = "guibg=".s:yellow       ." ctermbg=240 "
-let s:fgYellow        = "guifg=".s:yellow       ." ctermfg=240 "
-let s:bgYellowLight   = "guibg=".s:yellowLight  ." ctermbg=243 "
-let s:fgYellowLight   = "guifg=".s:yellowLight  ." ctermfg=243 "
-let s:bgYellowLighter = "guibg=".s:yellowLighter." ctermbg=250 "
-let s:fgYellowLighter = "guifg=".s:yellowLighter." ctermfg=250 "
+let s:bgYellowDarker  = "guibg=".s:yellowDarker ." ctermbg=".s:ctYellowDarker
+let s:fgYellowDarker  = "guifg=".s:yellowDarker ." ctermfg=".s:ctYellowDarker
+let s:bgYellowDark    = "guibg=".s:yellowDark   ." ctermbg=".s:ctYellowDark
+let s:fgYellowDark    = "guifg=".s:yellowDark   ." ctermfg=".s:ctYellowDark
+let s:bgYellow        = "guibg=".s:yellow       ." ctermbg=".s:ctYellow
+let s:fgYellow        = "guifg=".s:yellow       ." ctermfg=".s:ctYellow
+let s:bgYellowLight   = "guibg=".s:yellowLight  ." ctermbg=".s:ctYellowLight
+let s:fgYellowLight   = "guifg=".s:yellowLight  ." ctermfg=".s:ctYellowLight
+let s:bgYellowLighter = "guibg=".s:yellowLighter." ctermbg=".s:ctYellowLighter
+let s:fgYellowLighter = "guifg=".s:yellowLighter." ctermfg=".s:ctYellowLighter
 
 let s:spYellowDarker  = "guisp=".s:yellowDarker
 let s:spYellowDark    = "guisp=".s:yellowDark
@@ -131,20 +144,20 @@ let s:fgRedLighter    = "guifg=".s:redLighter   ." ctermfg=250 "
 
 let s:spRed           = "guisp=".s:red
 
-let s:bgGreyDarkest   = "guibg=".s:greyDarkest  ." ctermbg=233 "
-let s:fgGreyDarkest   = "guifg=".s:greyDarkest  ." ctermfg=233 "
-let s:bgGreyDarker    = "guibg=".s:greyDarker   ." ctermbg=234 "
-let s:fgGreyDarker    = "guifg=".s:greyDarker   ." ctermfg=234 "
-let s:bgGreyDark      = "guibg=".s:greyDark     ." ctermbg=52  "
-let s:fgGreyDark      = "guifg=".s:greyDark     ." ctermfg=52  "
-let s:bgGrey          = "guibg=".s:grey         ." ctermbg=160 "
-let s:fgGrey          = "guifg=".s:grey         ." ctermfg=160 "
-let s:bgGreyLight     = "guibg=".s:greyLight    ." ctermbg=167 "
-let s:fgGreyLight     = "guifg=".s:greyLight    ." ctermfg=167 "
-let s:bgGreyLighter   = "guibg=".s:greyLighter  ." ctermbg=250 "
-let s:fgGreyLighter   = "guifg=".s:greyLighter  ." ctermfg=250 "
-let s:bgGreyLightest  = "guibg=".s:greyLightest ." ctermbg=254 "
-let s:fgGreyLightest  = "guifg=".s:greyLightest ." ctermfg=254 "
+let s:bgGreyDarkest   = "guibg=".s:greyDarkest  ." ctermbg=".s:ctGreyDarkest
+let s:fgGreyDarkest   = "guifg=".s:greyDarkest  ." ctermfg=".s:ctGreyDarkest
+let s:bgGreyDarker    = "guibg=".s:greyDarker   ." ctermbg=".s:ctGreyDarker
+let s:fgGreyDarker    = "guifg=".s:greyDarker   ." ctermfg=".s:ctGreyDarker
+let s:bgGreyDark      = "guibg=".s:greyDark     ." ctermbg=".s:ctGreyDark
+let s:fgGreyDark      = "guifg=".s:greyDark     ." ctermfg=".s:ctGreyDark
+let s:bgGrey          = "guibg=".s:grey         ." ctermbg=".s:ctGrey
+let s:fgGrey          = "guifg=".s:grey         ." ctermfg=".s:ctGrey
+let s:bgGreyLight     = "guibg=".s:greyLight    ." ctermbg=".s:ctGreyLight
+let s:fgGreyLight     = "guifg=".s:greyLight    ." ctermfg=".s:ctGreyLight
+let s:bgGreyLighter   = "guibg=".s:greyLighter  ." ctermbg=".s:ctGreyLighter
+let s:fgGreyLighter   = "guifg=".s:greyLighter  ." ctermfg=".s:ctGreyLighter
+let s:bgGreyLightest  = "guibg=".s:greyLightest ." ctermbg=".s:ctGreyLightest
+let s:fgGreyLightest  = "guifg=".s:greyLightest ." ctermfg=".s:ctGreyLightest
 
 let s:bgPurpleLight   = "guibg=#b0a0c0  ctermbg=182  "
 let s:fgPurpleLight   = "guifg=#b0a0c0  ctermfg=182  "
@@ -232,9 +245,9 @@ exe "hi! Special       " .s:bgNone           .s:fgPurpleLight     .s:none
 " == Text Markup ==
 exe "hi! Underlined    " .s:bgInherit        .s:fgInherit         .s:underline
 "   *Underlined        text that stands out, HTML links
-exe "hi! Error         " .s:bgRedDark        .s:fgGreyLightest    .s:none
-"   *Ignore            left blank, hidden  |hl-Ignore|
-exe "hi! Todo          " .s:bgYellowDarker   .s:fgYellowLighter   .s:none
+exe "hi! Error         " .s:bgRedDarker      .s:fgGreyDarkest     .s:none
+  "   *Ignore            left blank, hidden  |hl-Ignore|
+  exe "hi! Todo          " .s:bgYellowDark     .s:fgGreyDark   .s:none
 "   *Error             any erroneous construct
 exe "hi! MatchParen    " .s:bgInherit        .s:fgYellowDark      .s:bold
 "   *Todo              anything that needs extra attention; mostly the

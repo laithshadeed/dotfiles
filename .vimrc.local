@@ -61,8 +61,11 @@ endfunction
 " enable everytime CSS autocompletion
 function! CssSetting()
   " map double tab as call
-  set omnifunc=csscomplete#CompleteCSS
-  " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+    source ~/dotfiles/csscomplete.vim
+    set omnifunc=csscomplete#CompleteCSS
+    " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+    " SuperTab option for context aware completion
+  let g:SuperTabDefaultCompletionType = "context"
   imap <TAB><TAB> <C-X><C-O>
 endfunction
 
@@ -108,19 +111,8 @@ if has("autocmd")
   " use a different value of Tabs and Spaces
   autocmd FileType php, java setlocal ts=4 sts=4 sw=4 expandtab
 
-  " enable everytime CSS autocompletion
-  function! CssSetting()
-    " map double tab as call
-    set omnifunc=csscomplete#CompleteCSS
-    " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-    imap <TAB><TAB> <C-X><C-O>
-  endfunction
-  " autocmd FileType css,scss,sass,stylus,less :call CssSetting()
+  autocmd FileType css,scss,sass,stylus,less :call CssSetting()
 
-  function! WideSetting()
-    set colorcolumn=120             " highlight end of line
-    set textwidth=120               " 120 character lines
-  endfunction
   autocmd FileType html,jsp,twig,erb,php,java :call WideSetting()
 
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
@@ -195,7 +187,10 @@ map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
 " copy all text into the system clipboard
-set clipboard^=unnamed
+" set clipboard^=unnamedset
+" set clipboard+=unnamed
+" set clipboard=unnamedplus
+set clipboard=unnamed
 " Load plugins that ship with Vim
 " This is a dependency for vim-textobj-rubyblock
 runtime macros/matchit.vim
@@ -300,4 +295,4 @@ nmap <F4> :w<CR>
 let s:opt_indent_char = "  "
 
 " show the most recent files
-nmap <leader>m :TRecentlyUsedFiles<CR>
+map <leader>m :TRecentlyUsedFiles<CR>
