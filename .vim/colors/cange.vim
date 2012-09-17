@@ -234,6 +234,7 @@ set guicursor+=r-cr:hor10-rCursor/block-lCursor
 set guicursor+=i-ci:ver10-iCursor/lCursor-blinkwait150
 set guicursor+=v:block-vCursor/lCursor-blinkon0
 
+
 if g:cange_style == "dark"
 
   let g:Powerline_colorscheme = 'skwp'
@@ -318,8 +319,8 @@ exe "hi! VertSplit     " .s:bgGrey           .s:fgGrey            .s:none
 exe "hi! LineNr        " .s:bgGreyDark       .s:fgGreyDarkest     .s:none
 exe "hi! ColorColumn   " .s:bgGreyDarkest    .s:fgNone            .s:none
 " -- Status bars --
-exe "hi! StatusLine    " .s:bgModeNormalDark .s:fgModeNormalLight .s:none
-exe "hi! StatusLineNC  " .s:bgModeNormal     .s:fgModeNormalLight .s:none
+exe "hi! StatusLine    " .s:bgGrey           .s:fgInherit         .s:none
+exe "hi! StatusLineNC  " .s:bgGrey           .s:fgNone            .s:none
 exe "hi! TabLine       " .s:bgGreyLightest   .s:fgGreyDarker      .s:none
 exe "hi! TabLineFill   " .s:bgGreyLightest   .s:fgGrey            .s:none
 exe "hi! TabLineSel    " .s:bgBlueLighter    .s:fgGreyLightest    .s:none
