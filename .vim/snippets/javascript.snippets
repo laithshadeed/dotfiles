@@ -131,3 +131,53 @@ snippet module
 
 		return module;
 	}(jQuery));
+
+snippet qa
+	asyncTest('${1:name}', ${2:expected}, ${3:test})
+
+snippet qd # deepEqual
+	deepEqual(${1:actual}, ${2:expected}, ${3:message});
+
+snippet qe # equal
+	equal(${1:actual}, ${2:expected}, ${3:message});
+
+snippet qex # expect
+	expect(${1:amount}):
+
+snippet qm
+	module('${1:name}', ${2:lifecycle});
+
+snippet qo
+	ok(${1:state}, ${2:message});
+
+snippet qs # strictEqual
+	strictEqual(${1:actual}, ${2:expected}, ${3:message});
+
+snippet qt # test
+	test('${1:title}', function () {
+		${2}
+	});
+
+snippet qth # throws
+	throws(${1:block}, ${2:expected}, ${3:message});
+
+snippet qcb
+	QUnit.begin(${1:callback})
+
+snippet qcb
+	QUnit.done(${1:callback})
+
+snippet qcb
+	QUnit.log(${1:callback})
+
+snippet qcb
+	QUnit.moduleDone(${1:callback})
+
+snippet qcb
+	QUnit.moduleStart(${1:callback})
+
+snippet qcb
+	QUnit.testDone(${1:callback})
+
+snippet qcb
+	QUnit.testStart(${1:callback})

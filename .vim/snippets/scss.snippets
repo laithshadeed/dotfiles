@@ -50,7 +50,7 @@ snippet @mo #module
 snippet @mi #mixin
 	@mixin ${1:name}(${2:params}) {
 		${3}
-	}
+	} // end of $1
 snippet @su #submodule
 	// @submodule ${1}
 snippet @s #section
@@ -60,88 +60,88 @@ snippet @su #subsection
 #
 # CSS Properties
 #
-snippet :a # active
-	:active ${1}
-snippet :a # after
-	::after ${1}
-snippet :b # before
-	::before ${1}
-snippet :c # checked
-	:checked ${1}
-#::choices
-snippet :d # default
-	:default ${1}
-snippet :d # disabled
-	:disabled ${1}
-snippet :e # empty
-	:empty ${1}
-snippet :e # enabled
-	:enabled ${1}
-snippet :f # first
-	:first ${1}
-snippet :f #first-child
-	v:first-child
-snippet :f #first-letter
-	::first-letter
-snippet :f #first-line
-	::first-line
-snippet :f #first-of-type
-	::first-of-type
-snippet :f # focus
-	:focus ${1}
-snippet :h # hover
-	:hover ${1}
-snippet :i # invalid
-	:invalid ${1}
-snippet :i # indeterminate
-	:indeterminate ${1}
-#:in-range
-snippet :l # lang
-	:lang ${1}
-snippet :l # last-child
-	:last-child ${1}
-snippet :l # last-of-type
-	:last-of-type ${1}
-snippet :l # left
-	:left ${1}
-snippet :l # link
-	:link ${1}
-snippet :n # not
-	:not ${1}
-snippet :f # nth-child
-	:nth-child ${1}
-snippet :f # nth-last-child
-	:nth-last-child ${1}
-snippet :f # nth-last-of-type
-	:nth-last-of-type ${1}
-snippet :f # nth-of-type
-	:nth-of-type ${1}
-snippet :o # only-child
-	:only-child ${1}
-snippet :o # only-of-type
-	:only-of-type ${1}
-snippet :o # optional
-	:optional${1}
-#:out-range
-snippet :r # read-only
-	:read-only ${1}
-snippet :r # read-write
-	:read-write ${1}
-#::repeat-index
-#::repeat-item
-snippet :r # required
-	:required ${1}
-snippet :r # right
-	:right ${1}
-snippet :r # root
-	:root ${1}
-snippet :s # selection
-	::selection ${1}
-snippet :v # valid
-	:valid ${1}
-#::value
-snippet :v # visited
-	:visited ${1}
+# snippet :a # active
+# sn:active ${1}
+# snippet :a # after
+# sn::after ${1}
+# snippet :b # before
+# sn::before ${1}
+# snippet :c # checked
+# sn:checked ${1}
+# sn:choices
+# snippet :d # default
+# sn:default ${1}
+# snippet :d # disabled
+# sn:disabled ${1}
+# snippet :e # empty
+# sn:empty ${1}
+# snippet :e # enabled
+# sn:enabled ${1}
+# snippet :f # first
+# sn:first ${1}
+# snippet :f #first-child
+# snv:first-child
+# snippet :f #first-letter
+# sn::first-letter
+# snippet :f #first-line
+# sn::first-line
+# snippet :f #first-of-type
+# sn::first-of-type
+# snippet :f # focus
+# sn:focus ${1}
+# snippet :h # hover
+# sn:hover ${1}
+# snippet :i # invalid
+# sn:invalid ${1}
+# snippet :i # indeterminate
+# sn:indeterminate ${1}
+# snin-range
+# snippet :l # lang
+# sn:lang ${1}
+# snippet :l # last-child
+# sn:last-child ${1}
+# snippet :l # last-of-type
+# sn:last-of-type ${1}
+# snippet :l # left
+# sn:left ${1}
+# snippet :l # link
+# sn:link ${1}
+# snippet :n # not
+# sn:not ${1}
+# snippet :f # nth-child
+# sn:nth-child ${1}
+# snippet :f # nth-last-child
+# sn:nth-last-child ${1}
+# snippet :f # nth-last-of-type
+# sn:nth-last-of-type ${1}
+# snippet :f # nth-of-type
+# sn:nth-of-type ${1}
+# snippet :o # only-child
+# sn:only-child ${1}
+# snippet :o # only-of-type
+# sn:only-of-type ${1}
+# snippet :o # optional
+# sn:optional${1}
+# snout-range
+# snippet :r # read-only
+# sn:read-only ${1}
+# snippet :r # read-write
+# sn:read-write ${1}
+# sn:repeat-index
+# sn:repeat-item
+# snippet :r # required
+# sn:required ${1}
+# snippet :r # right
+# sn:right ${1}
+# snippet :r # root
+# sn:root ${1}
+# snippet :s # selection
+# sn::selection ${1}
+# snippet :v # valid
+# sn:valid ${1}
+# sn:value
+# snippet :v # visited
+# sn:visited ${1}
 #
 # background
 #
