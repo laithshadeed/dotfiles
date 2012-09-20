@@ -181,6 +181,10 @@ let g:mapleader = ","
 map <leader>c <C-_><C-_>
 " plugin: NERDTree    - shortcut: ,e
 map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+" show the most recent files
+map <leader>m :TRecentlyUsedFiles<CR>
 
 " == Copy and Past Behavior ====================================================
 
@@ -294,5 +298,3 @@ nmap <F4> :w<CR>
 """"""""""""""""""""""
 let s:opt_indent_char = "  "
 
-" show the most recent files
-map <leader>m :TRecentlyUsedFiles<CR>

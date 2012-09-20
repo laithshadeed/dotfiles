@@ -58,6 +58,7 @@ get_bundle rson vim-conque
 get_bundle scrooloose nerdcommenter   # advanced comment functionality
 get_bundle scrooloose nerdtree
 get_bundle scrooloose syntastic
+get_bundle suan vim-instant-markdown
 get_bundle therubymug vim-pyte
 get_bundle tpope vim-abolish
 get_bundle tpope vim-endwise

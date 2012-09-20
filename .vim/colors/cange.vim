@@ -245,9 +245,9 @@ exe "hi! Special       " .s:bgNone           .s:fgPurpleLight     .s:none
 " == Text Markup ==
 exe "hi! Underlined    " .s:bgInherit        .s:fgInherit         .s:underline
 "   *Underlined        text that stands out, HTML links
-exe "hi! Error         " .s:bgRedDarker      .s:fgGreyDarkest     .s:none
-  "   *Ignore            left blank, hidden  |hl-Ignore|
-  exe "hi! Todo          " .s:bgYellowDark     .s:fgGreyDark   .s:none
+exe "hi! Error         " .s:bgRedDarker      .s:fgGreyLighter     .s:none
+"   *Ignore            left blank, hidden  |hl-Ignore|
+exe "hi! Todo          " .s:bgYellowDark     .s:fgGreyDark        .s:none
 "   *Error             any erroneous construct
 exe "hi! MatchParen    " .s:bgInherit        .s:fgYellowDark      .s:bold
 "   *Todo              anything that needs extra attention; mostly the
