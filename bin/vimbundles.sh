@@ -7,11 +7,11 @@ font_direction=/Library/Fonts
 
 for x in $(find $script_dirname/fonts -name "*.ttf")
 do
- if [ -f ${font_direction}/$(basename $x) ]; then
- echo "Font $(basename $x) already exits"
- else
- cp $x ${font_direction}
- fi
+  if [ -f ${font_direction}/$(basename $x) ]; then
+    echo "Font $(basename $x) already exits"
+  else
+    cp $x ${font_direction}
+  fi
 done
 
 
@@ -20,17 +20,17 @@ mkdir -p ~/.vimbundles
 cd ~/.vimbundles
 
 get_bundle() {
- (
- owner="\033[1;38m$1's\033[0m"
- if [ -d "$2" ]; then
- echo -e "Updating $owner \033[33m$2\033[0m"
- cd "$2"
- git pull --rebase
- else
- echo -e "Installing $owner \033[32m$2\033[0m"
- git clone "git://github.com/$1/$2.git"
- fi
- )
+  (
+  owner="\033[1;38m$1's\033[0m"
+  if [ -d "$2" ]; then
+    echo -e "Updating $owner \033[33m$2\033[0m"
+    cd "$2"
+    git pull --rebase
+  else
+    echo -e "Installing $owner \033[32m$2\033[0m"
+    git clone "git://github.com/$1/$2.git"
+  fi
+  )
 }
 
 get_bundle tyok           ack.vim               # multiple file search
