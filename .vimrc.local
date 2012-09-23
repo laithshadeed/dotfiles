@@ -177,13 +177,13 @@ au FileType javascript setl nocindent
 let mapleader = ","
 let g:mapleader = ","
 
-" plugin: T-Comment   - shortcut: ,c
+" plugin: T-Comment                 - shortcut: ,c
 map <leader>c <C-_><C-_>
-" plugin: NERDTree    - shortcut: ,e
+" plugin: NERDTree                  - shortcut: ,e
 map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
-" Switch between the last two files
+" Switch between the last two files - shortcut: ,,
 nnoremap <leader><leader> <c-^>
-" show the most recent files
+" show the most recent files        - shortcut: ,m
 map <leader>m :TRecentlyUsedFiles<CR>
 
 " == Copy and Past Behavior ====================================================
