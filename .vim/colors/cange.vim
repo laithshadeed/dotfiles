@@ -44,17 +44,18 @@ else
 endif
 
 " Green
-let s:greenDarker  = "#002B36 "
-let s:greenDark    = "#073642 "
-let s:green        = "#90D0A0 "
-let s:greenLight   = "#86C6B6 "
-let s:greenLighter = "#B0CBC0 "
+let s:greenDarker  = "#213326 "
+let s:greenDark    = "#2F5F3C "
+let s:green        = "#94C7A1 "
+let s:greenLight   = "#B5E0C0 "
+let s:greenLighter = "#D5E4D9 "
 " Blue
-let s:blueDarker   = "#005F87 "
-let s:blueDark     = "#268BD2 "
-let s:blue         = "#70C0d8 "
-let s:blueLight    = "#87D7FF "
-let s:blueLighter  = "#405060 "
+" http://colorschemedesigner.com/#3o11v--Arg0g00QuVh1P.LV2FKFK3JRX.4BpYu
+let s:blueDarker   = "#394F56 "
+let s:blueDark     = "#307487 "
+let s:blue         = "#45B2D1 "
+let s:blueLight    = "#7ACCE4 "
+let s:blueLighter  = "#BCE1EB "
 " Red
 " http://colorschemedesigner.com/#01123parB6q6q1UBTs2TsP.3RRXN4PNYg
 let s:redDarker    = "#A42A27 "
@@ -62,6 +63,12 @@ let s:redDark      = "#C32B27 "
 let s:red          = "#DC332F "
 let s:redLight     = "#E54642 "
 let s:redLighter   = "#E95652 "
+" Orange
+let s:orangeDarker  = "#332E28 "
+let s:orangeDark    = "#5F472C "
+let s:orange        = "#FF8700 "
+let s:orangeLight   = "#ED9E45 "
+let s:orangeLighter = "#EFD5B8 "
 " Yellow
 " http://colorschemedesigner.com/#1z11vhWs0g0g00MBVK1OrSj2QXPl3IIY14FZZa
 let s:yellowDarker   = "#A29433 "
@@ -144,6 +151,17 @@ let s:fgRedLighter    = "guifg=".s:redLighter   ." ctermfg=250 "
 
 let s:spRed           = "guisp=".s:red
 
+let s:bgOrangeDarker  = "guibg=".s:orangeDarker  ." ctermbg=234 "
+let s:fgOrangeDarker  = "guifg=".s:orangeDarker  ." ctermfg=234 "
+let s:bgOrangeDark    = "guibg=".s:orangeDark    ." ctermbg=52  "
+let s:fgOrangeDark    = "guifg=".s:orangeDark    ." ctermfg=52  "
+let s:bgOrange        = "guibg=".s:orange        ." ctermbg=160 "
+let s:fgOrange        = "guifg=".s:orange        ." ctermfg=160 "
+let s:bgOrangeLight   = "guibg=".s:orangeLight   ." ctermbg=167 "
+let s:fgOrangeLight   = "guifg=".s:orangeLight   ." ctermfg=167 "
+let s:bgOrangeLighter = "guibg=".s:orangeLighter ." ctermbg=250 "
+let s:fgOrangeLighter = "guifg=".s:orangeLighter ." ctermfg=250 "
+
 let s:bgGreyDarkest   = "guibg=".s:greyDarkest  ." ctermbg=".s:ctGreyDarkest
 let s:fgGreyDarkest   = "guifg=".s:greyDarkest  ." ctermfg=".s:ctGreyDarkest
 let s:bgGreyDarker    = "guibg=".s:greyDarker   ." ctermbg=".s:ctGreyDarker
@@ -179,12 +197,12 @@ let s:bgModeNormalDark    = "guibg=#2f331d  ctermbg=58   "
 let s:fgModeNormalDark    = "guifg=#2f331d  ctermfg=58   "
 let s:bgModeNormalLight   = "guibg=#eff7cc  ctermbg=192  "
 let s:fgModeNormalLight   = "guifg=#eff7cc  ctermfg=192  "
-let s:bgModeVisual        = "guibg=#FF8700  ctermbg=208  "
-let s:fgModeVisual        = "guifg=#FF8700  ctermfg=208  "
-let s:bgModeVisualDark    = "guibg=#372b1d  ctermbg=234  "
-let s:fgModeVisualDark    = "guifg=#372b1d  ctermfg=234  "
-let s:bgModeVisualLight   = "guibg=#ffe7cc  ctermbg=223  "
-let s:fgModeVisualLight   = "guifg=#ffe7cc  ctermbg=223  "
+let s:bgModeVisual        = "guibg=".s:orange        ." ctermbg=208 "
+let s:fgModeVisual        = "guifg=".s:orange        ." ctermfg=208 "
+let s:bgModeVisualDark    = "guibg=".s:orangeDarker  ." ctermbg=234 "
+let s:fgModeVisualDark    = "guifg=".s:orangeDarker  ." ctermfg=234 "
+let s:fgModeVisualLight   = "guifg=".s:orangeLighter ." ctermbg=223 "
+let s:bgModeVisualLight   = "guibg=".s:orangeLighter ." ctermbg=223 "
 let s:bgModeInsert        = s:bgWhite
 let s:fgModeInsert        = s:fgWhite
 let s:bgModeInsertDark    = "guibg=#005f5f  ctermbg=23   "
@@ -253,8 +271,8 @@ exe "hi! MatchParen    " .s:bgInherit        .s:fgYellowDark      .s:bold
 "   *Todo              anything that needs extra attention; mostly the
 "
 " Invisible character colors
-exe "hi! NonText       " .s:bgNone           .s:fgBlueLighter     .s:none
-exe "hi! SpecialKey    " .s:bgNone           .s:fgBlueLighter     .s:none
+exe "hi! NonText       " .s:bgNone           .s:fgBlueDarker      .s:none
+exe "hi! SpecialKey    " .s:bgNone           .s:fgBlueDarker      .s:none
 exe "hi! Title         " .s:bgNone           .s:fgBlueLight       .s:bold
 " == Text Selection ==
 exe "hi! CursorIM      " .s:bgGreenLight     .s:fgInvert          .s:none
