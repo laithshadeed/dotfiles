@@ -32,7 +32,7 @@ set tabstop=2                       " 1 tab == 4 spaces
 set softtabstop=2                   " Make backspace remove spaces by shiftwith
 set shiftwidth=2
 set expandtab                       " Use spaces instead of tabs
-set smarttab                        " Be smart when using tabs ;)
+set nosmarttab                      " Don't be smart when using tabs ;)
 "
 " == Show invisible characters =================================================
 set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:_
