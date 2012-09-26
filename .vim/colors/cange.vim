@@ -265,17 +265,17 @@ endif
 exe "hi! Normal        " .s:bgGreyDarker     .s:fgGreyLighter     .s:none
 exe "hi! Comment       " .s:bgNone           .s:fgGrey            .s:none
 "   *Comment           any comment
-exe "hi! Constant      " .s:bgNone           .s:fgGreenLighter       .s:none
+exe "hi! Constant      " .s:bgNone           .s:fgPurpleLight     .s:none
 "   *Constant          any constant
 "    String            a string constant: "this is a string"
 "    Character         a character constant: 'c', '\n'
 "    Number            a number constant: 234, 0xff
 "    Boolean           a boolean constant: TRUE, false
 "    Float             a floating point constant: 2.3e10
-exe "hi! Identifier    " .s:bgNone           .s:fgGreenLighter      .s:none
+exe "hi! Identifier    " .s:bgNone           .s:fgGreenLighter    .s:none
 "   *Identifier        any variable name
 "    Function          function name (also: methods for classes)
-exe "hi! Statement     " .s:bgNone           .s:fgBlue      .s:none
+exe "hi! Statement     " .s:bgNone           .s:fgBlue            .s:none
 "   *Statement         any statement
 "    Conditional       if, then, else, endif, switch, etc.
 "    Repeat            for, do, while, etc.
@@ -294,7 +294,7 @@ exe "hi! Type          " .s:bgNone           .s:fgGreenLight           .s:none
 "    StorageClass      static, register, volatile, etc.
 "    Structure         struct, union, enum, etc.
 "    Typedef           A typedef
-exe "hi! Special       " .s:bgNone           .s:fgPurpleLight     .s:none
+exe "hi! Special       " .s:bgNone           .s:fgPurple         .s:none
 "   *Special           any special symbol
 "    SpecialChar       special character in a constant
 "    Tag               you can use CTRL-] on this
@@ -390,11 +390,12 @@ endif
 
 exe "hi! Normal        " .s:bgWhite          .s:fgGreyDarkest     .s:none
 exe "hi! Comment       " .s:bgNone           .s:fgGreyLighter     .s:none
-exe "hi! Constant      " .s:bgNone           .s:fgGreenDark       .s:none
+exe "hi! Constant      " .s:bgNone           .s:fgPurple          .s:none
 exe "hi! Identifier    " .s:bgNone           .s:fgBlueDark        .s:none
 exe "hi! Statement     " .s:bgNone           .s:fgBlueDarker      .s:none
 exe "hi! PreProc       " .s:bgNone           .s:fgYellowDarker    .s:none
 exe "hi! Type          " .s:bgNone           .s:fgGreenDark       .s:none
+exe "hi! Special       " .s:bgNone           .s:fgPurpleDarker    .s:none
 " == Text Markup ==
 exe "hi! Underlined    " .s:bgInherit        .s:fgInherit         .s:underline
 exe "hi! Error         " .s:bgRedDark        .s:fgGreyLighter     .s:none
