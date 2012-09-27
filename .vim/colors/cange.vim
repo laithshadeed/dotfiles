@@ -46,9 +46,14 @@ endif
 " Green
 let s:greenDarker    = "#155015 "
 let s:greenDark      = "#2C852C "
-let s:green          = "#57A957 "
-let s:greenLight     = "#8CCC8C "
-let s:greenLighter   = "#C0E0C0 "
+let s:green          = "#5FB35F "
+let s:greenLight     = "#9AE09A "
+let s:greenLighter   = "#D2FFD2 "
+let s:ctGreenDarker  = "22 "
+let s:ctGreenDark    = "28 "
+let s:ctGreen        = "71 "
+let s:ctGreenLight   = "114 "
+let s:ctGreenLighter = "115 "
 " Blue
 " http://colorschemedesigner.com/#3o11v--Arg0g00QuVh1P.LV2FKFK3JRX.4BpYu
 let s:blueDarker     = "#154552 "
@@ -56,6 +61,11 @@ let s:blueDark       = "#2B7387 "
 let s:blue           = "#45B2D1 "
 let s:blueLight      = "#8DC2D1 "
 let s:blueLighter    = "#C0E0E9 "
+let s:ctBlueDarker   = "24 "
+let s:ctBlueDark     = "37 "
+let s:ctBlue         = "28 "
+let s:ctBlueLight    = "74 "
+let s:ctBlueLighter  = "123 "
 " Red
 " http://colorschemedesigner.com/#01123parB6q6q1UBTs2TsP.3RRXN4PNYg
 let s:redDarker      = "#612D3B "
@@ -63,24 +73,34 @@ let s:redDark        = "#9B3230 "
 let s:red            = "#DC332F "
 let s:redLight       = "#E5625F "
 let s:redLighter     = "#E99A98 "
+let s:ctRedDarker    = "52 "
+let s:ctRedDark      = "88 "
+let s:ctRed          = "160 "
+let s:ctRedLight     = "167 "
+let s:ctRedLighter   = "223 "
 " Orange
-let s:orangeDarker   = "#332E28 "
-let s:orangeDark     = "#5F472C "
-let s:orange         = "#FF8700 "
-let s:orangeLight    = "#ED9E45 "
-let s:orangeLighter  = "#EFD5B8 "
+let s:orangeDarker    = "#332E28 "
+let s:orangeDark      = "#5F472C "
+let s:orange          = "#FF8700 "
+let s:orangeLight     = "#ED9E45 "
+let s:orangeLighter   = "#EFD5B8 "
+let s:ctOrangeDarker  = "94 "
+let s:ctOrangeDark    = "130 "
+let s:ctOrange        = "208 "
+let s:ctOrangeLight   = "172 "
+let s:ctOrangeLighter = "224 "
 
-" let s:ctOrangeDarker = " "
-let s:ctOrangeDark   = "234 "
-let s:ctOrange       = "208 "
-let s:ctOrangeLight  = "223 "
-" let s:ctOrangeLighter= ""
 " Purple
-let s:purpleDarker   = "#6E3BA2 "
-let s:purpleDark     = "#4C1C7E "
-let s:purple         = "#9462C7 "
-let s:purpleLight    = "#B896DB "
-let s:purpleLighter  = "#CCBBDC "
+let s:purpleDarker    = "#6E3BA2 "
+let s:purpleDark      = "#4C1C7E "
+let s:purple          = "#9462C7 "
+let s:purpleLight     = "#B896DB "
+let s:purpleLighter   = "#CCBBDC "
+let s:ctPurpleDarker  = "54 "
+let s:ctPurpleDark    = "97 "
+let s:ctPurple        = "134 "
+let s:ctPurpleLight   = "140 "
+let s:ctPurpleLighter = "189 "
 " Yellow
 " http://colorschemedesigner.com/#1z11vhWs0g0g00MBVK1OrSj2QXPl3IIY14FZZa
 let s:yellowDarker   = "#68642C "
@@ -88,11 +108,11 @@ let s:yellowDark     = "#A9A346 "
 let s:yellow         = "#DBD254 "
 let s:yellowLight    = "#FBF58E "
 let s:yellowLighter  = "#FFFBBD "
-let s:ctYellowDarker = "100 "
-let s:ctYellowDark   = "3 "
-let s:ctYellow       = "185 "
-let s:ctYellowLight  = "11 "
-let s:ctYellowLighter= "229 "
+let s:ctYellowDarker = "58 "
+let s:ctYellowDark   = "101 "
+let s:ctYellow       = "143 "
+let s:ctYellowLight  = "227 "
+let s:ctYellowLighter= "228 "
 " Grey
 let s:black          = "#000000 "
 let s:greyDarkest    = "#1C1C1C "
@@ -103,11 +123,13 @@ let s:greyLight      = "#767676 "
 let s:greyLighter    = "#BCBCBC "
 let s:greyLightest   = "#EFEFEF "
 let s:white          = "#F9F9F9 "
-let s:ctGreyDarkest  = "234 "
+let s:ctBlack        = "0 "
+let s:ctWhite        = "15 "
+let s:ctGreyDarkest  = "233 "
 let s:ctGreyDarker   = "235 "
 let s:ctGreyDark     = "236 "
 let s:ctGrey         = "238 "
-let s:ctGreyLight    = "276 "
+let s:ctGreyLight    = "243 "
 let s:ctGreyLighter  = "250 "
 let s:ctGreyLightest = "254 "
 let s:ctWhite        = "15 "
@@ -116,27 +138,27 @@ let s:ctWhite        = "15 "
 let s:bgWhite          = "guibg=".s:white        ." ctermbg=15   "
 let s:fgWhite          = "guifg=".s:white        ." ctermfg=15   "
 
-let s:bgBlueDarker     = "guibg=".s:blueDarker   ." ctermbg=25  "
-let s:fgBlueDarker     = "guifg=".s:blueDarker   ." ctermfg=25  "
-let s:bgBlueDark       = "guibg=".s:blueDark     ." ctermbg=32  "
-let s:fgBlueDark       = "guifg=".s:blueDark     ." ctermfg=32  "
-let s:bgBlue           = "guibg=".s:blue         ." ctermbg=74  "
-let s:fgBlue           = "guifg=".s:blue         ." ctermfg=74  "
-let s:bgBlueLight      = "guibg=".s:blueLight    ." ctermbg=74  "
-let s:fgBlueLight      = "guifg=".s:blueLight    ." ctermfg=74  "
-let s:bgBlueLighter    = "guibg=".s:blueLighter  ." ctermbg=23  "
-let s:fgBlueLighter    = "guifg=".s:blueLighter  ." ctermfg=23  "
+let s:bgBlueDarker     = "guibg=".s:blueDarker   ." ctermbg=".s:ctBlueDarker
+let s:fgBlueDarker     = "guifg=".s:blueDarker   ." ctermfg=".s:ctBlueDarker
+let s:bgBlueDark       = "guibg=".s:blueDark     ." ctermbg=".s:ctBlueDark
+let s:fgBlueDark       = "guifg=".s:blueDark     ." ctermfg=".s:ctBlueDark
+let s:bgBlue           = "guibg=".s:blue         ." ctermbg=".s:ctBlue
+let s:fgBlue           = "guifg=".s:blue         ." ctermfg=".s:ctBlue
+let s:bgBlueLight      = "guibg=".s:blueLight    ." ctermbg=".s:ctBlueLight
+let s:fgBlueLight      = "guifg=".s:blueLight    ." ctermfg=".s:ctBlueLight
+let s:bgBlueLighter    = "guibg=".s:blueLighter  ." ctermbg=".s:ctBlueLighter
+let s:fgBlueLighter    = "guifg=".s:blueLighter  ." ctermfg=".s:ctBlueLighter
 
-let s:bgGreenDarker    = "guibg=".s:greenDarker  ." ctermbg=23  "
-let s:fgGreenDarker    = "guifg=".s:greenDarker  ." ctermfg=23  "
-let s:bgGreenDark      = "guibg=".s:greenDark    ." ctermbg=24  "
-let s:fgGreenDark      = "guifg=".s:greenDark    ." ctermfg=24  "
-let s:bgGreen          = "guibg=".s:green        ." ctermbg=115 "
-let s:fgGreen          = "guifg=".s:green        ." ctermfg=115 "
-let s:bgGreenLight     = "guibg=".s:greenLight   ." ctermbg=116 "
-let s:fgGreenLight     = "guifg=".s:greenLight   ." ctermfg=116 "
-let s:bgGreenLighter   = "guibg=".s:greenLighter ." ctermbg=116 "
-let s:fgGreenLighter   = "guifg=".s:greenLighter ." ctermfg=116 "
+let s:bgGreenDarker    = "guibg=".s:greenDarker  ." ctermbg=".s:ctGreenDarker
+let s:fgGreenDarker    = "guifg=".s:greenDarker  ." ctermfg=".s:ctGreenDarker
+let s:bgGreenDark      = "guibg=".s:greenDark    ." ctermbg=".s:ctGreenDark
+let s:fgGreenDark      = "guifg=".s:greenDark    ." ctermfg=".s:ctGreenDark
+let s:bgGreen          = "guibg=".s:green        ." ctermbg=".s:ctGreen
+let s:fgGreen          = "guifg=".s:green        ." ctermfg=".s:ctGreen
+let s:bgGreenLight     = "guibg=".s:greenLight   ." ctermbg=".s:ctGreenLight
+let s:fgGreenLight     = "guifg=".s:greenLight   ." ctermfg=".s:ctGreenLight
+let s:bgGreenLighter   = "guibg=".s:greenLighter ." ctermbg=".s:ctGreenLighter
+let s:fgGreenLighter   = "guifg=".s:greenLighter ." ctermfg=".s:ctGreenLighter
 
 let s:bgYellowDarker   = "guibg=".s:yellowDarker ." ctermbg=".s:ctYellowDarker
 let s:fgYellowDarker   = "guifg=".s:yellowDarker ." ctermfg=".s:ctYellowDarker
@@ -153,40 +175,40 @@ let s:spYellowDarker   = "guisp=".s:yellowDarker
 let s:spYellowDark     = "guisp=".s:yellowDark
 let s:spYellowLighter  = "guisp=".s:yellowLighter
 
-let s:bgRedDarker      = "guibg=".s:redDarker    ." ctermbg=234 "
-let s:fgRedDarker      = "guifg=".s:redDarker    ." ctermfg=234 "
-let s:bgRedDark        = "guibg=".s:redDark      ." ctermbg=52  "
-let s:fgRedDark        = "guifg=".s:redDark      ." ctermfg=52  "
-let s:bgRed            = "guibg=".s:red          ." ctermbg=160 "
-let s:fgRed            = "guifg=".s:red          ." ctermfg=160 "
-let s:bgRedLight       = "guibg=".s:redLight     ." ctermbg=167 "
-let s:fgRedLight       = "guifg=".s:redLight     ." ctermfg=167 "
-let s:bgRedLighter     = "guibg=".s:redLighter   ." ctermbg=250 "
-let s:fgRedLighter     = "guifg=".s:redLighter   ." ctermfg=250 "
+let s:fgRedDarker      = "guifg=".s:redDarker    ." ctermfg=".s:ctRedDarker
+let s:bgRedDarker      = "guibg=".s:redDarker    ." ctermbg=".s:ctRedDarker
+let s:bgRedDark        = "guibg=".s:redDark      ." ctermbg=".s:ctRedDark
+let s:fgRedDark        = "guifg=".s:redDark      ." ctermfg=".s:ctRedDark
+let s:bgRed            = "guibg=".s:red          ." ctermbg=".s:ctRed
+let s:fgRed            = "guifg=".s:red          ." ctermfg=".s:ctRed
+let s:bgRedLight       = "guibg=".s:redLight     ." ctermbg=".s:ctRedLight
+let s:fgRedLight       = "guifg=".s:redLight     ." ctermfg=".s:ctRedLight
+let s:bgRedLighter     = "guibg=".s:redLighter   ." ctermbg=".s:ctRedLighter
+let s:fgRedLighter     = "guifg=".s:redLighter   ." ctermfg=".s:ctRedLighter
 
 let s:spRed            = "guisp=".s:red
 
-let s:bgOrangeDarker   = "guibg=".s:orangeDarker  ." ctermbg=234 "
-let s:fgOrangeDarker   = "guifg=".s:orangeDarker  ." ctermfg=234 "
+let s:bgOrangeDarker   = "guibg=".s:orangeDarker  ." ctermbg=".s:ctOrangeDarker
+let s:fgOrangeDarker   = "guifg=".s:orangeDarker  ." ctermfg=".s:ctOrangeDarker
 let s:bgOrangeDark     = "guibg=".s:orangeDark    ." ctermbg=".s:ctOrangeDark
 let s:fgOrangeDark     = "guifg=".s:orangeDark    ." ctermfg=".s:ctOrangeDark
 let s:bgOrange         = "guibg=".s:orange        ." ctermbg=".s:ctOrange
 let s:fgOrange         = "guifg=".s:orange        ." ctermfg=".s:ctOrange
 let s:bgOrangeLight    = "guibg=".s:orangeLight   ." ctermbg=".s:ctOrangeLight
 let s:fgOrangeLight    = "guifg=".s:orangeLight   ." ctermfg=".s:ctOrangeLight
-let s:bgOrangeLighter  = "guibg=".s:orangeLighter ." ctermbg=250 "
-let s:fgOrangeLighter  = "guifg=".s:orangeLighter ." ctermfg=250 "
+let s:bgOrangeLighter  = "guibg=".s:orangeLighter ." ctermbg=".s:ctOrangeLighter
+let s:fgOrangeLighter  = "guifg=".s:orangeLighter ." ctermfg=".s:ctOrangeLighter
 
-let s:bgPurpleDarker   = "guibg=".s:purpleDarker  ." ctermbg=234 "
-let s:fgPurpleDarker   = "guifg=".s:purpleDarker  ." ctermfg=234 "
-let s:bgPurpleDark     = "guibg=".s:purpleDark    ." ctermbg=52  "
-let s:fgPurpleDark     = "guifg=".s:purpleDark    ." ctermfg=52  "
-let s:bgPurple         = "guibg=".s:purple        ." ctermbg=160 "
-let s:fgPurple         = "guifg=".s:purple        ." ctermfg=160 "
-let s:bgPurpleLight    = "guibg=".s:purpleLight   ." ctermbg=167 "
-let s:fgPurpleLight    = "guifg=".s:purpleLight   ." ctermfg=167 "
-let s:bgPurpleLighter  = "guibg=".s:purpleLighter ." ctermbg=250 "
-let s:fgPurpleLighter  = "guifg=".s:purpleLighter ." ctermfg=250 "
+let s:fgPurpleDarker   = "guifg=".s:purpleDarker  ." ctermfg=".s:ctPurpleDarker
+let s:bgPurpleDarker   = "guibg=".s:purpleDarker  ." ctermbg=".s:ctPurpleDarker
+let s:bgPurpleDark     = "guibg=".s:purpleDark    ." ctermbg=".s:ctPurpleDark
+let s:fgPurpleDark     = "guifg=".s:purpleDark    ." ctermfg=".s:ctPurpleDark
+let s:bgPurple         = "guibg=".s:purple        ." ctermbg=".s:ctPurple
+let s:fgPurple         = "guifg=".s:purple        ." ctermfg=".s:ctPurple
+let s:bgPurpleLight    = "guibg=".s:purpleLight   ." ctermbg=".s:ctPurpleLight
+let s:fgPurpleLight    = "guifg=".s:purpleLight   ." ctermfg=".s:ctPurpleLight
+let s:bgPurpleLighter  = "guibg=".s:purpleLighter ." ctermbg=".s:ctPurpleLighter
+let s:fgPurpleLighter  = "guifg=".s:purpleLighter ." ctermfg=".s:ctPurpleLighter
 
 let s:bgGreyDarkest    = "guibg=".s:greyDarkest  ." ctermbg=".s:ctGreyDarkest
 let s:fgGreyDarkest    = "guifg=".s:greyDarkest  ." ctermfg=".s:ctGreyDarkest
@@ -265,14 +287,14 @@ endif
 exe "hi! Normal        " .s:bgGreyDarker     .s:fgGreyLighter     .s:none
 exe "hi! Comment       " .s:bgNone           .s:fgGrey            .s:none
 "   *Comment           any comment
-exe "hi! Constant      " .s:bgNone           .s:fgPurpleLight     .s:none
+exe "hi! Constant      " .s:bgNone           .s:fgPurple          .s:none
 "   *Constant          any constant
 "    String            a string constant: "this is a string"
 "    Character         a character constant: 'c', '\n'
 "    Number            a number constant: 234, 0xff
 "    Boolean           a boolean constant: TRUE, false
 "    Float             a floating point constant: 2.3e10
-exe "hi! Identifier    " .s:bgNone           .s:fgGreenLighter    .s:none
+exe "hi! Identifier    " .s:bgNone           .s:fgGreen           .s:none
 "   *Identifier        any variable name
 "    Function          function name (also: methods for classes)
 exe "hi! Statement     " .s:bgNone           .s:fgBlue            .s:none
@@ -289,12 +311,12 @@ exe "hi! PreProc       " .s:bgNone           .s:fgYellowLighter   .s:none
 "    Define            preprocessor #define
 "    Macro             same as Define
 "    PreCondit         preprocessor #if, #else, #endif, etc.
-exe "hi! Type          " .s:bgNone           .s:fgGreenLight           .s:none
+exe "hi! Type          " .s:bgNone           .s:fgGreenLight     .s:none
 "   *Type              int, long, char, etc.
 "    StorageClass      static, register, volatile, etc.
 "    Structure         struct, union, enum, etc.
 "    Typedef           A typedef
-exe "hi! Special       " .s:bgNone           .s:fgPurple         .s:none
+exe "hi! Special       " .s:bgNone           .s:fgPurple          .s:none
 "   *Special           any special symbol
 "    SpecialChar       special character in a constant
 "    Tag               you can use CTRL-] on this
@@ -391,8 +413,8 @@ endif
 exe "hi! Normal        " .s:bgWhite          .s:fgGreyDarkest     .s:none
 exe "hi! Comment       " .s:bgNone           .s:fgGreyLighter     .s:none
 exe "hi! Constant      " .s:bgNone           .s:fgPurple          .s:none
-exe "hi! Identifier    " .s:bgNone           .s:fgBlueDark        .s:none
-exe "hi! Statement     " .s:bgNone           .s:fgBlueDarker      .s:none
+exe "hi! Identifier    " .s:bgNone           .s:fgBlueDark        .s:bold
+exe "hi! Statement     " .s:bgNone           .s:fgBlueDarker      .s:bold
 exe "hi! PreProc       " .s:bgNone           .s:fgYellowDarker    .s:none
 exe "hi! Type          " .s:bgNone           .s:fgGreenDark       .s:none
 exe "hi! Special       " .s:bgNone           .s:fgPurpleDarker    .s:none
