@@ -287,7 +287,7 @@ endif
 exe "hi! Normal        " .s:bgGreyDarker     .s:fgGreyLighter     .s:none
 exe "hi! Comment       " .s:bgNone           .s:fgGrey            .s:none
 "   *Comment           any comment
-exe "hi! Constant      " .s:bgNone           .s:fgPurple          .s:none
+exe "hi! Constant      " .s:bgNone           .s:fgPurpleLight     .s:none
 "   *Constant          any constant
 "    String            a string constant: "this is a string"
 "    Character         a character constant: 'c', '\n'

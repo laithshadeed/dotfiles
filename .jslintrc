@@ -1,4 +1,3 @@
-/*jslint browser: true, regexp: true, indent: 2, node: true, white: false  */
-/*global jQuery, $ */
-
+/* jslint browser: true, curly: true, eqnull: true, eqeqeq: true, expr: true, indent: 2, latedef: true, noarg: true, node: true, smarttabs: true, regexp: true, trailing: true, undef: true, white: false  */
 /* vim: set ft=javascript: */
+/* global $, jQuery, QUnit, document, expect, module, test, asyncTest, start, ok, strictEqual, notStrictEqual */
