@@ -8,7 +8,7 @@ endif
 let colors_name="cange"
 
 " Summary:
-" Color scheme with D and L versions (GUI and 256 color terminal).
+" Color scheme with dark and light versions (GUI and 256 color terminal).
 
 " Description:
 " This color scheme was originally created by combining my favorite parts of
@@ -17,12 +17,12 @@ let colors_name="cange"
 "
 " Version 6+ has been revamped a bit from the original color scheme. If you
 " prefer the old style, or the 'blue' version, use the 5Final release. Version
-" 6+ only has a L and D version. The new version tries to unify some of
+" 6+ only has a light and dark version. The new version tries to unify some of
 " the colors and also adds more contrast between text and interface.
 "
-" The color scheme is D, by default. You can change this by setting the
-" g:cange_style variable to "L" or "D". Once the color scheme is
-" loaded, you can use the commands "CangeL" or "CangeD" to change
+" The color scheme is dark, by default. You can change this by setting the
+" g:cange_style variable to "light" or "dark". Once the color scheme is
+" loaded, you can use the commands "CangeLight" or "CangeDark" to change
 " schemes quickly.
 "
 "

@@ -142,7 +142,7 @@ snippet qe # equal
 	equal(${1:actual}, ${2:expected}, ${3:message});
 
 snippet qex # expect
-	expect(${1:amount}):
+	expect(${1:amount});
 
 snippet qm
 	module('${1:name}', ${2:lifecycle});
@@ -162,22 +162,22 @@ snippet qth # throws
 	throws(${1:block}, ${2:expected}, ${3:message});
 
 snippet qcb
-	QUnit.begin(${1:callback})
+	QUnit.begin(${1:callback});
 
 snippet qcb
-	QUnit.done(${1:callback})
+	QUnit.done(${1:callback});
 
 snippet qcb
-	QUnit.log(${1:callback})
+	QUnit.log(${1:callback});
 
 snippet qcb
-	QUnit.moduleDone(${1:callback})
+	QUnit.moduleDone(${1:callback});
 
 snippet qcb
-	QUnit.moduleStart(${1:callback})
+	QUnit.moduleStart(${1:callback});
 
 snippet qcb
-	QUnit.testDone(${1:callback})
+	QUnit.testDone(${1:callback});
 
 snippet qcb
-	QUnit.testStart(${1:callback})
+	QUnit.testStart(${1:callback});
