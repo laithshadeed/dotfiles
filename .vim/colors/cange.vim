@@ -292,7 +292,7 @@ exe "hi! Special       " . s:bgNone        . s:fgPurple      . s:none
 exe "hi! Underlined    " . s:bgInherit     . s:fgInherit     . s:underline
 exe "hi! Error         " . s:bgRedD        . s:fgGreyLr      . s:none
 exe "hi! Todo          " . s:bgYellowD     . s:fgGreyD       . s:none
-exe "hi! MatchParen    " . s:bgInherit     . s:fgYellowD     . s:bold
+exe "hi! MatchParen    " . s:bgPurpleLr    . s:fgPurpleDr    . s:bold
 " Invisible character colors
 exe "hi! NonText       " . s:bgNone        . s:fgGreyD       . s:none
 exe "hi! SpecialKey    " . s:bgNone        . s:fgBlueD       . s:none
@@ -309,8 +309,8 @@ exe "hi! vCursor       " . s:bgModeVisual  . s:fgInvert      . s:none
 " == Selections ==
 exe "hi! Visual        " . s:bgModeVisualD . s:fgModeVisualL . s:none
 exe "hi! VisualNOS     " . s:bgNone        . s:fgModeVisual  . s:underline
-exe "hi! IncSearch     " . s:bgModeNormal  . s:fgModeNormalD . s:none
-exe "hi! Search        " . s:bgModeNormalD . s:fgModeNormal  . s:none
+exe "hi! IncSearch     " . s:bgGreenL      . s:fgInvert      . s:none
+exe "hi! Search        " . s:bgGreenDr     . s:fgGreenLr     . s:none
 " == UI ==
 " -- autocompletion dropdown --
 exe "hi! PMenu         " . s:bgGreyD       . s:fgGreyL       . s:none
@@ -318,7 +318,7 @@ exe "hi! PmenuSel      " . s:bgGreyDr      . s:fgRed         . s:none
 exe "hi! PMenuSbar     " . s:bgGreyDr      . s:none
 exe "hi! PMenuThumb    " . s:bgRedD        . s:none
 " -- vertical separator line --
-exe "hi! Folded        " . s:bgNone        . s:fgGrey        . s:none
+exe "hi! Folded        " . s:bgNone        . s:fgYellowDr    . s:none
 exe "hi! FoldColumn    " . s:bgGreyD       . s:fgGreyL       . s:none
 exe "hi! VertSplit     " . s:bgGrey        . s:fgGrey        . s:none
 exe "hi! LineNr        " . s:bgGreyD       . s:fgGreyDst     . s:none
@@ -370,7 +370,7 @@ if &term =~ "xterm\\|rxvt"
   autocmd VimLeave * silent !echo -ne "\033]".s:greyDst    . "\007"
 endif
 
-exe "hi! Normal        " . s:bgWhite        . s:fgGreyDr     . s:none
+exe "hi! Normal        " . s:bgWhite        . s:fgGreyDst    . s:none
 exe "hi! Comment       " . s:bgNone         . s:fgGreyL      . s:none
 exe "hi! Constant      " . s:bgNone         . s:fgPurpleD    . s:none
 exe "hi! Identifier    " . s:bgNone         . s:fgBlueD      . s:none
@@ -382,7 +382,7 @@ exe "hi! Special       " . s:bgNone         . s:fgPurple     . s:none
 exe "hi! Underlined    " . s:bgInherit      . s:fgInherit    . s:underline
 exe "hi! Error         " . s:bgRedD         . s:fgGreyLr     . s:none
 exe "hi! Todo          " . s:bgYellowD      . s:fgGreyD      . s:none
-exe "hi! MatchParen    " . s:bgInherit      . s:fgYellowD    . s:bold
+exe "hi! MatchParen    " . s:bgPurpleL     . s:fgInvert   . s:bold
 " Invisible character colors
 exe "hi! NonText       " . s:bgNone         . s:fgGreyLr     . s:none
 exe "hi! SpecialKey    " . s:bgNone         . s:fgBlue       . s:none
@@ -399,8 +399,8 @@ exe "hi! vCursor       " . s:bgModeVisual   . s:fgInvert     . s:none
 " == Selections ==
 exe "hi! Visual        " . s:bgModeVisualL  . s:fgModeVisual . s:none
 exe "hi! VisualNOS     " . s:bgNone         . s:fgModeVisual . s:underline
-exe "hi! IncSearch     " . s:bgModeNormalL  . s:fgModeNormal . s:none
-exe "hi! Search        " . s:bgModeNormal   . s:fgModeNormalD. s:none
+exe "hi! IncSearch     " . s:bgGreenDr      . s:fgGreenLr    . s:none
+exe "hi! Search        " . s:bgGreenLr      . s:fgGreenDr   . s:none
 " == UI ==
 " -- autocompletion dropdown --
 exe "hi! PMenu         " . s:bgGreyLr       . s:fgGreyL      . s:none
@@ -408,7 +408,7 @@ exe "hi! PmenuSel      " . s:bgGreyL        . s:fgGreyLst    . s:none
 exe "hi! PMenuSbar     " . s:bgGreyL                         . s:none
 exe "hi! PMenuThumb    " . s:bgRedD                          . s:none
 " -- vertical separator line --
-exe "hi! Folded        " . s:bgNone         . s:fgGreyL      . s:none
+exe "hi! Folded        " . s:bgGreyLst      . s:fgYellowD    . s:none
 exe "hi! FoldColumn    " . s:bgGreyL        . s:fgGreyD      . s:none
 exe "hi! VertSplit     " . s:bgGreyLr       . s:fgGreyLr     . s:none
 exe "hi! LineNr        " . s:bgGreyLst      . s:fgGreyLr     . s:none
@@ -460,6 +460,6 @@ hi link TagbarAccessProtected Type
 hi link TagbarAccessPrivate PreProc
 
 " == Commands ==
-command! CangeL let g:cange_style = "light" | colorscheme cange
-command! CangeD let g:cange_style = "dark" | colorscheme cange
+command! CangeLight let g:cange_style = "light" | colorscheme cange
+command! CangeDark  let g:cange_style = "dark"  | colorscheme cange
 
