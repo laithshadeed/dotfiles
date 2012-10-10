@@ -281,7 +281,7 @@ if &term =~ "xterm\\|rxvt"
 endif
 
 exe "hi! Normal        " . s:bgGreyDr      . s:fgGreyLr      . s:none
-exe "hi! Comment       " . s:bgNone        . s:fgGrey        . s:none
+exe "hi! Comment       " . s:bgNone        . s:fgGreyL       . s:none
 exe "hi! Constant      " . s:bgNone        . s:fgPurpleL     . s:none
 exe "hi! Identifier    " . s:bgNone        . s:fgBlueL       . s:none
 exe "hi! Statement     " . s:bgNone        . s:fgBlueL       . s:bold
@@ -292,7 +292,7 @@ exe "hi! Special       " . s:bgNone        . s:fgPurple      . s:none
 exe "hi! Underlined    " . s:bgInherit     . s:fgInherit     . s:underline
 exe "hi! Error         " . s:bgRedD        . s:fgGreyLr      . s:none
 exe "hi! Todo          " . s:bgYellowD     . s:fgGreyD       . s:none
-exe "hi! MatchParen    " . s:bgPurpleLr    . s:fgPurpleDr    . s:bold
+exe "hi! MatchParen    " . s:bgPurpleDr    . s:fgPurpleLr    . s:bold
 " Invisible character colors
 exe "hi! NonText       " . s:bgNone        . s:fgGreyD       . s:none
 exe "hi! SpecialKey    " . s:bgNone        . s:fgBlueD       . s:none
