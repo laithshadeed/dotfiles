@@ -25,4 +25,5 @@ else
   alias xws='cd ~/workspace/rails-app/engines/web_service'
   alias xws-i18n='bundle exec rake text_resources:import:section SECTION=xws'
   alias xync='xws && xing sandbox sync'
+  alias rjst='phantomjs ~/workspace/rails-app/public/js/xe/web_service/test/qunit/addons/phantomjs/runner.js '
 fi
