@@ -13,8 +13,9 @@ if [ $(uname) = "Linux" ]; then
   export COMONEA="$HOME/Documents/workspace/deposit-solutions/comonea"
   alias com='cd $COMONEA'
   alias com-start='cd ${COMONEA}/comonea-shop-webapp/ && MAVEN_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=64M -XX:MaxPermSize=128M" mvn -Ddb.username=comoneaowner jetty:run'
-  alias com-rfq="cd $COMONEA/comonea-rfq-webapp/ && mvn -Ddb_rfq.username=comoneaowner jetty:run"
-  alias com-pro="cd $COMONEA/comonea-shop-webapp/ && mvn jetty:run"
+  alias com-ovl="cd $COMONEA/comonea-core/comonea-overlayed-webapp/"
+  alias com-b2c="cd $COMONEA/comonea-b2c/comonea-b2c-shop-webapp/ && mvn jetty:run"
+  alias com-pro="cd $COMONEA/comonea-pro/comonea-rfq-webapp/ && mvn -Ddb_rfq.username=comoneaowner jetty:run"
   alias ds='cd $COMONEA/../ds-websites/'
   alias dkp='cd $COMONEA/../ds-websites/dkp-webr'
   alias ftm='cd $COMONEA/../dkp-cms/trunk/src/main'
