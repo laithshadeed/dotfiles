@@ -46,9 +46,9 @@ endif
 " Blue
 let s:blueDr     = "#143247 "
 let s:blueD      = "#29587A "
-let s:blue       = "#2E7FB8 "
-let s:blueL      = "#4BA8E9 "
-let s:blueLr     = "#80BDE8 "
+let s:blue       = "#4587B6 "
+let s:blueL      = "#6AACDB "
+let s:blueLr     = "#8BC1E7 "
 let s:ctBlueDr   = "24 "
 let s:ctBlueD    = "37 "
 let s:ctBlue     = "28 "
