@@ -41,6 +41,7 @@ get_bundle claco          jasmine.vim           # JavaScript testing
 get_bundle vim-scripts    jshint.vim            # JavaScript syntax validation
 get_bundle hallettj       jslint.vim            # JSLint is a handy tool that spots errors and common mistakes in JavaScript code
 get_bundle vim-scripts    L9                    # l9 is a Vim-script library, which provides some utility functions and commands for programming in Vim.
+get_bundle vim-scripts    matchit.zip
 get_bundle scrooloose     nerdtree              # The NERD tree allows you to explore your filesystem and to open files and directories
 get_bundle tyok           nerdtree-ack          # make ack works on nerdtree
 get_bundle scrooloose     nerdcommenter         # #advanced comment functionality
@@ -75,7 +76,6 @@ get_bundle tpope          vim-surround          # is all about "surroundings": p
 get_bundle nelstrom       vim-textobj-rubyblock # A custom text object for selecting ruby blocks.
 get_bundle kana           vim-textobj-user      # Support for user-defined text objects
 get_bundle tpope          vim-unimpaired        # bubble text lines
-#get_bundle kogakure       vim-sparkup           # markup helper div[class=foo]
+get_bundle kogakure       vim-sparkup           # markup helper div[class=foo]
 get_bundle guns           xterm-color-table.vim # color palette
-
 vim -c 'call pathogen#helptags()|q'

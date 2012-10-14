@@ -71,6 +71,11 @@ function! CssSetting()
   imap <TAB><TAB> <C-X><C-O>
 endfunction
 
+function! MarkupSetting()
+  " sparkup zencoding mapping
+  imap <TAB><TAB> <C-e>
+endfunction
+
 function! JavaScriptFold()
     setl foldmethod=syntax
     setl foldlevelstart=1
@@ -115,7 +120,8 @@ if has("autocmd")
 
   autocmd FileType css,scss,sass,stylus,less :call CssSetting()
 
-  autocmd FileType html,jsp,twig,erb,php,java :call WideSetting()
+  autocmd FileType html,jsp,erb,java :call WideSetting()
+  autocmd FileType html,jsp,erb :call MarkupSetting()
 
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
