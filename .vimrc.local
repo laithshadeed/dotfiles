@@ -71,11 +71,6 @@ function! CssSetting()
   imap <TAB><TAB> <C-X><C-O>
 endfunction
 
-function! MarkupSetting()
-  " sparkup zencoding mapping
-  imap <TAB><TAB> <C-e>
-endfunction
-
 function! JavaScriptFold()
     setl foldmethod=syntax
     setl foldlevelstart=1
@@ -121,10 +116,10 @@ if has("autocmd")
   autocmd FileType css,scss,sass,stylus,less :call CssSetting()
 
   autocmd FileType html,jsp,erb,java :call WideSetting()
-  autocmd FileType html,jsp,erb :call MarkupSetting()
 
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+  au BufRead,BufNewFile *.scss set filetype=scss
   " refresh the vimrc file after saving it
   autocmd BufWritePost .vimrc.local source ~/.vimrc.local
   autocmd BufWritePost cange.vim source ~/dotfiles/.vim/colors/cange.vim
@@ -187,6 +182,8 @@ let g:mapleader = ","
 
 " plugin: T-Comment                 - shortcut: ,c
 map <leader>c <C-_><C-_>
+" stop highlighting search results by click enter
+map <CR> :nohlsearch <CR>
 " plugin: NERDTree                  - shortcut: ,e
 map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
 " Switch between the last two files - shortcut: ,,
