@@ -115,6 +115,7 @@ if has("autocmd")
 
   autocmd FileType css,scss,sass,stylus,less :call CssSetting()
 
+  autocmd FileType tag, setlocal ft=jsp
   autocmd FileType html,jsp,erb,java :call WideSetting()
 
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
