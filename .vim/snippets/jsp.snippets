@@ -21,7 +21,7 @@ snippet fmt - param
 		<fmt:param value="${2:param}"/>
 	</fmt:message>
 snippet fmt - scope
-	<c:set var="i18nScope" value="${1:path}"/>
+	<c:set var="i18n" value="${1:path}"/>
 
 # form elements
 snippet form
@@ -58,14 +58,14 @@ snippet cfor
 		<c:out value="$1.${2:key}"/>
 	</c:forEach>
 snippet cout
-	<c:out value="${2:value}"/>
+	<c:out value="\$\{${2:value}\}"/>
 snippet cif
-	<c:if test="${1:condition}">
+	<c:if test="\$\{${1:condition}\}">
 		${2}
 	</c:if>
 snippet cchoose
 	<c:choose>
-		<c:when test="${1:condition}">
+		<c:when test="\$\{${1:condition}\}">
 			${2}
 		</c:when>
 		<c:otherwise>
