@@ -6,6 +6,7 @@ alias cc='compass compile --force'
 # bundle
 alias be='bundle exec'
 alias bi='bundle install'
+alias rwst="bundle exec rake web_service:test:all"
 
 if [ $(uname) = "Linux" ]; then
   alias work='cd ~/Documents/workspace'
@@ -19,6 +20,8 @@ if [ $(uname) = "Linux" ]; then
   alias ds='cd $COMONEA/../ds-websites/'
   alias dkp='cd $COMONEA/../ds-websites/dkp-webr'
   alias ftm='cd $COMONEA/../dkp-cms/trunk/src/main'
+  alias vim='gvim'
+  alias gitx='gitg'
 else
   # mac os specifc
   alias work='cd ~/workspace'
@@ -27,4 +30,6 @@ else
   alias xws-i18n='bundle exec rake text_resources:import:section SECTION=xws'
   alias xync='xws && xing sandbox sync'
   alias rjst='phantomjs ~/workspace/rails-app/public/js/xe/web_service/test/qunit/addons/phantomjs/runner.js '
+  alias vim='mvim'
+  alias gitg='gitx'
 fi
