@@ -18,6 +18,7 @@ if &term =~ "xterm\\|rxvt"
 endif
 
 let g:Powerline_symbols = 'fancy'
+let g:Powerline_theme = 'cange'
 " disable enoying syntastic error highlighter
 let loaded_scss_syntax_checker = 1
 
