@@ -244,8 +244,17 @@ set showcmd                 " Show the (partial) command as it’s being typed
 " Turn on smart indent
 set smartindent
 set nowrap
-set number                  " Enable line numbers
 
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number             " Enable line numbers - incompatibly with relativenumber
+  else
+    set relativenumber     " current cursor position has always the count of 0
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
 
 
 " Some stuff for tabular
@@ -257,7 +266,6 @@ if exists(":Tabularize")
 endif
 
 noremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Syntastic-specific config settings
