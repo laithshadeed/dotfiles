@@ -9,19 +9,19 @@ snippet taglib - c-tr
 snippet taglib - fmt
 	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 snippet taglib - form
-	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 snippet taglib - spring
-	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 # i18n
 snippet fmt - simple
-	<fmt:message key="${1:path}"/>
+	<fmt:message key="${1:path}" />
 snippet fmt - param
 	<fmt:message key="${1:path}">
-		<fmt:param value="${2:param}"/>
+		<fmt:param value="${2:param}" />
 	</fmt:message>
 snippet fmt - scope
-	<c:set var="i18n" value="${1:path}"/>
+	<c:set var="i18n" value="${1:path}" />
 
 # form elements
 snippet form
@@ -30,42 +30,42 @@ snippet form
 		${2}
 	</form:form>
 snippet input
-	<form:input path="${1:path}" cssErrorClass="error"/>
-	<form:errors path="${2:$1}" cssClass="inline-error"/>
+	<form:input path="${1:path}" cssErrorClass="error" />
+	<form:errors path="${2:$1}" cssClass="inline-error" />
 snippet password
-	<form:password path="${1:path}" cssErrorClass="error"/>
-	<form:errors path="${2:$1}" cssClass="inline-error"/>
+	<form:password path="${1:path}" cssErrorClass="error" />
+	<form:errors path="${2:$1}" cssClass="inline-error" />
 snippet select
 	<form:select path="${1:path}">
 		<form:options items="${2:items}" />
 	</form:select>
 snippet checkbox
 	<label>
-		<form:checkbox path="${1:path}" cssErrorClass="error"/>
-		<form:errors path="${2:$1}" cssClass="inline-error"/>
+		<form:checkbox path="${1:path}" cssErrorClass="error" />
+		<form:errors path="${2:$1}" cssClass="inline-error" />
 		<span class="inner">${3:text}</span>
 	</label>
 
 # spring
 snippet springurl
-	<spring:url value="${1:path}" htmlEscape="true"/>
+	<spring:url value="${1:path}" htmlEscape="true" />
 
 #c
-snippet cset
-	<c:set var="${1:variable_name}" value="${2:value}"/>
-snippet cfor
-	<c:forEach var="${1:main_key}" items="${2:object}" varStatus="stat">
-		<c:out value="$1.${2:key}"/>
+snippet set
+	<c:set var="${1:variable_name}" value="${2:value}" />
+snippet for
+	<c:forEach var="${1:main_key}" items="${2:object}" varStatus="status">
+		<c:out value="$1.${2:key}" />
 	</c:forEach>
-snippet cout
-	<c:out value="\$\{${2:value}\}"/>
-snippet cif
-	<c:if test="\$\{${1:condition}\}">
+snippet out
+	<c:out value="${${2:value}}" />
+snippet if
+	<c:if test="${${1:condition}}">
 		${2}
 	</c:if>
-snippet cchoose
+snippet choose
 	<c:choose>
-		<c:when test="\$\{${1:condition}\}">
+		<c:when test="${${1:condition}}">
 			${2}
 		</c:when>
 		<c:otherwise>
@@ -77,7 +77,7 @@ snippet cchoose
 
 # tiles
 snippet tiles
-	<tiles:insertAttribute name="${1:tile_name}"/>
+	<tiles:insertAttribute name="${1:tile_name}" />
 
 # Some useful Unicode entities
 # Non-Breaking Space
