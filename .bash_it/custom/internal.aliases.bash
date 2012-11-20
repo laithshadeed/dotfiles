@@ -7,6 +7,7 @@ alias cc='compass compile --force'
 alias be='bundle exec'
 alias bi='bundle install'
 alias rwst="bundle exec rake web_service:test:all"
+alias server="sudo python -m SimpleHTTPServer 80"
 
 if [ $(uname) = "Linux" ]; then
   alias work='cd ~/Documents/workspace'
