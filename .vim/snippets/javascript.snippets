@@ -117,7 +117,10 @@ snippet ev - on delegated
 	});
 
 snippet module
-	var ${1:moduleName} = (function ($) {
+	var ${1:modulePatternName} = (function ($) {
+
+		'use strict'; // jslint
+
 		var module = {};
 		//privateVariable = 1;
 
@@ -131,6 +134,15 @@ snippet module
 
 		return module;
 	}(jQuery));
+
+snippet constructor
+	var ${1:cunstructorPatternName} = function ($) {
+
+		'use strict'; // jslint
+
+		//function privateMethod() {};
+		//this.publicMethod() {};
+	};
 
 snippet qa
 	asyncTest('${1:name}', ${2:expected}, ${3:test})
