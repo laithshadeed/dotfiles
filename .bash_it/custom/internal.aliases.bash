@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # compass shotcuts
-alias cw='compass watch'
+alias cw='compass watch --time --trace'
+alias ccp='compass compile --force -e production -s compressed'
 alias cc='compass compile --force'
 # bundle
 alias be='bundle exec'
