@@ -257,10 +257,10 @@ nnoremap <leader>n :call NumberToggle()<cr>
 
 " Some stuff for tabular
 if exists(":Tabularize")
-  nmap <leader>a= :Tabularize /=<CR>
-  vmap <leader>a= :Tabularize /=<CR>
-  nmap <leader>a: :Tabularize /:\zs<CR>
-  vmap <leader>a: :Tabularize /:\zs<CR>
+  nmap <leader>= :Tabularize /=<CR>
+  vmap <leader>= :Tabularize /=<CR>
+  nmap <leader>: :Tabularize /:\zs<CR>
+  vmap <leader>: :Tabularize /:\zs<CR>
 endif
 
 noremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
