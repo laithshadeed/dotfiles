@@ -9,6 +9,7 @@ alias be='bundle exec'
 alias bi='bundle install'
 alias rwst="bundle exec rake web_service:test:all"
 alias server="sudo python -m SimpleHTTPServer 80"
+alias rm-orig='find . -type f -name "*.orig" -exec rm -f {} \;'
 
 if [ $(uname) = "Linux" ]; then
   alias work='cd ~/Documents/workspace'
@@ -28,6 +29,7 @@ else
   # mac os specifc
   alias work='cd ~/workspace'
   alias cdm='cd ~/workspace/rails-app'
+  alias cdi='cd ~/workspace/rails-app/public/img/xing/xe/web_service'
   alias xws='cd ~/workspace/rails-app/engines/web_service'
   alias xws-i18n='bundle exec rake text_resources:import:section SECTION=xws'
   alias xync='xws && xing sandbox sync'
