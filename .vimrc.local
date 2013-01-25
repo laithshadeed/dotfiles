@@ -184,8 +184,10 @@ let g:mapleader = ","
 map <leader>c <C-_><C-_>
 " stop highlighting search results by click enter
 map <CR> :nohlsearch <CR>
-" plugin: NERDTree                  - shortcut: ,e
-map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
+" plugin: NERDTree                  - shortcut: Ctrl+n
+map <C-n> :NERDTreeToggle<CR>
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Switch between the last two files - shortcut: ,,
 nnoremap <leader><leader> <c-^>
 " show the most recent files        - shortcut: ,m
