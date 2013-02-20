@@ -2,6 +2,7 @@
 
 # Load RVM, if you are using it (RubyVersionManager)
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Load NVM, if you are using it (NodeVersionManager)
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"

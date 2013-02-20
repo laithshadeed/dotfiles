@@ -28,12 +28,12 @@ if [ $(uname) = "Linux" ]; then
 else
   # mac os specifc
   alias work='cd ~/workspace'
-  alias cdm='cd ~/workspace/rails-app'
-  alias cdi='cd ~/workspace/rails-app/public/img/xing/xe/web_service'
-  alias xws='cd ~/workspace/rails-app/engines/web_service'
+  alias cdm='cd ~/workspace/xws'
+  alias cdi='cd ~/workspace/xws/public/img/xing/xe/web_service'
+  alias xws='cd ~/workspace/xws/engines/web_service'
   alias xws-i18n='bundle exec rake text_resources:import:section SECTION=xws'
   alias xync='xws && xing sandbox sync'
-  alias rjst='phantomjs ~/workspace/rails-app/public/js/xe/web_service/test/qunit/addons/phantomjs/runner.js '
+  alias rjst='phantomjs ~/workspace/xws/public/js/xe/web_service/test/qunit/addons/phantomjs/runner.js '
   alias vim='mvim'
   alias gitg='gitx'
 fi

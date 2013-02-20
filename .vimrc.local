@@ -185,7 +185,7 @@ map <leader>c <C-_><C-_>
 " stop highlighting search results by click enter
 map <CR> :nohlsearch <CR>
 " plugin: NERDTree                  - shortcut: Ctrl+n
-map <C-n> :NERDTreeToggle<CR>
+map <leader>e :NERDTreeToggle<CR>
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Switch between the last two files - shortcut: ,,
@@ -255,7 +255,8 @@ function! NumberToggle()
 endfunc
 
 nnoremap <leader>n :call NumberToggle()<cr>
-
+" mapping for :W to write
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
 " Some stuff for tabular
 if exists(":Tabularize")
