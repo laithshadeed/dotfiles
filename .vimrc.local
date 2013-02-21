@@ -211,9 +211,9 @@ runtime ftplugin/man.vim
 " TODO the part of below, have to refactor
 
 
-" Gundo Vim (f5)
+" Gundo Vim (f4)
 " map <leader>gu :execute ':GundoToggle'<CR>
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F4> :GundoToggle<CR>
 
 " file should be UTF-8 endcoded be default
 setglobal fileencoding=utf-8
@@ -234,7 +234,15 @@ set foldlevel=1             " this is just what i use
 
 "tab-completion for buffers
 set wildmenu                " Enhance command-line completion
-set wildmode=longest,list
+set wildmode=longest,list:full
+
+" ctrlp settings
+set wildignore+=*/tmp/*,*.scssc,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)|sass-cache$',
+  \ 'file': '\v\.(scssc)$'
+  \ }
+
 set hls                     " highlight search
 set ignorecase              " Ignore case of searches
 set incsearch               " Highlight dynamically as pattern is typed
@@ -301,14 +309,12 @@ endif
 """"""""""
 " Enalble jsLint
 filetype plugin on
-" Since we are going to invoke :make all the time, I’m going to bind it to F4.
+" Since we are going to invoke :make all the time, I’m going to bind it to F5.
 " Step by step:
 "   :w — save the file, doesn’t hurt if it’s already saved
 "   :make — invoke make
 "   :cw — open the quickfix window if there are errors. Close it if there are no errors.
 " @link http://technotales.wordpress.com/2011/05/21/node-jslint-and-vim/
-nmap <F4> :w<CR>
-" nmap <F4> :w<CR>:make<CR>:cw<CR>
 
 " JSbeautify setting
 """"""""""""""""""""""
