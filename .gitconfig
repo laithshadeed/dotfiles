@@ -43,8 +43,6 @@
 	attributesfile = ~/.gitattributes
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
 	# whitespace = space-before-tab,indent-with-non-tab,trailing-space
-	# -w wait of text editing
-	# editor = vim -w
 	editor = vim
 
 [color]
@@ -57,8 +55,9 @@
 [color "diff"]
 	meta = yellow bold
 	frag = magenta bold
-	old = red bold
-	new = green bold
+	old = red
+	new = green
+	whitespace = white reverse
 [color "status"]
 	added = yellow
 	changed = green
