@@ -25,7 +25,7 @@ colorscheme cange
 "
 " == characters per line =======================================================
 set colorcolumn=80                  " highlight end of line
-set textwidth=80                    " 80 character lines
+" set textwidth=80                    " 80 character lines
 "
 " == Tabs and Spaces ===========================================================
 set tabstop=2                       " 1 tab == 4 spaces
