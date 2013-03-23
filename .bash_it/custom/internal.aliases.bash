@@ -36,4 +36,8 @@ else
   alias rjst='phantomjs ~/workspace/xws/public/js/xe/web_service/test/qunit/addons/phantomjs/runner.js '
   alias vim='mvim'
   alias gitg='gitx'
+  # xws environment
+  alias ccp='xws && compass compile --force -e production -s compressed'
+  alias cc='xws && compass compile --force'
+  alias cw='xws && compass watch --time --trace'
 fi
