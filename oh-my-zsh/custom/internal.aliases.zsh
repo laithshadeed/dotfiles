@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+alias q='exit'
+alias k='clear'
 # compass shotcuts
 alias cw='compass watch --time --trace'
 alias ccp='compass compile --force -e production -s compressed'
