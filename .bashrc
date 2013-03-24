@@ -6,6 +6,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Load NVM, if you are using it (NodeVersionManager)
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
+nvm use 0.8
 
 # Add rvm gems and nginx to the path
 export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin

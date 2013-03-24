@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'fileutils'
+# require 'colorize'
 
-EXCLUDES = %w(. .. .git .gitignore .vim bash_it bin sublime README.md)
+EXCLUDES = %w(. .. .git .gitignore .vim oh-my-zsh bash_it bin sublime README.md)
 
 def cwd
   @cwd ||= File.expand_path(File.dirname(__FILE__))
@@ -16,39 +17,64 @@ def home
   @home ||= File.expand_path('~')
 end
 
-def destination(file,sub_directory)
-  File.join(*[home, sub_directory, File.basename(file)].compact)
+def destination(file, sub_dir)
+  desti = File.join(*[home, sub_dir, File.basename(file)].compact)
+  desti
 end
 
-def install(file,sub_directory=nil)
-  file = File.expand_path(file)
-  if system("ln -nsf #{file} #{destination(file,sub_directory)}")
-    print "successfully installed "
+def colorize(text, color=:default)
+  colors = {
+    :default    => "\033[30m",
+    :green      => "\033[31m",
+    :green      => "\033[32m",
+    :red        => "\033[33m",
+    :white_bold => "\033[1;38m"
+  }
+
+  "#{colors[color]}#{text}\033[0m"
+end
+
+
+def message(msg, file_name, success=true)
+  if success
+    puts "#{@color_green}#{msg}#{@color_default} - #{@color_white_bold}#{file_name}#{@color_default}"
   else
-    print "failed to install "
+    puts "#{@color_yellow}#{msg}#{@color_default} - #{@color_white_bold}#{file_name}#{@color_default}"
   end
-  puts (file.split('/') - root.split('/')).join('/')
 end
 
-def uninstall(file,sub_directory=nil)
-  file = destination(File.expand_path(file),sub_directory)
+def install(file, sub_dir=nil)
+  file = File.expand_path(file)
+  if !!(file.to_s =~ /dotfiles/)
+    file_name = File.basename(file.to_s)
+    if system("ln -nsf #{file} #{destination(file, sub_dir)}")
+      puts "#{colorize('successfully installed', :green)} #{sub_dir} #{colorize(file_name, :white_bold)}"
+    else
+      puts "#{colorize('failed to install', :red)} #{sub_dir} #{colorize(file_name, :white_bold)}"
+    end
+  elsif
+    puts "#{colorize('please execute this file into this directory', :red)} #{colorize('dotfiles/', :white_bold)}"
+  end
+end
+
+def uninstall(file, sub_dir=nil)
+  file = destination(File.expand_path(file), sub_dir)
   return puts "no file at #{file}" unless File.exist?(file)
+  file_name = File.basename(file.to_s)
   if File.symlink?(file)
     File.unlink(file)
-    puts "removed symlink at #{file}"
+    puts "#{colorize('removed symlink at', :green)} #{sub_dir} #{colorize(file_name, :white_bold)}"
   else
-    puts "could not remove non-symlink at #{file}"
+    puts "#{colorize('could not remove non-symlink at', :red)} #{sub_dir} #{colorize(file_name, :white_bold)}"
   end
-end
-
-def directories_at(location)
-  entries = (Dir.entries(location) - EXCLUDES)
-  expanded_entries = entries.map{|f| File.join(location,f) }
-  expanded_entries.select { |file| File.directory?(file) }
 end
 
 def uninstall?
   ARGV.include?('-u')
+end
+
+def get_files(path)
+  Dir.entries(path) - EXCLUDES
 end
 
 if ARGV.include?('-h')
@@ -62,26 +88,22 @@ if ARGV.include?('-h')
   exit 0
 end
 
-# install all the dotfiles
-(Dir.entries(root) - EXCLUDES).each do |file|
-  next if file =~ /~$/
-  uninstall? ? uninstall(file) : install(file)
-
-  system("ln -nsf ~/dotfiles/bash_it/custom/*.bash .bash_it/custom/")
-  system("ln -nsf ~/dotfiles/bash_it/themes/cange .bash_it/themes/")
-end
-
-# install the hr convenience wrapper
-FileUtils.mkdir_p(File.join(home,'bin'))
-# install('bin/hr')
-
-# install the custom directory path configs
-directories_at(File.join(root,'custom')).each do |custom|
-  Dir.glob(File.join(custom,'**','**')).select{|f| File.file?(f) }.each do |file|
-    # The following is pretty gross. I'm sorry.
-    dest_dir = File.dirname(file).split('/').drop_while{|f| f != 'custom'}.drop(1).join('/')
-    FileUtils.mkdir_p(File.join(home,dest_dir))
-    install(file,dest_dir)
+def install_shell_framework(framework_name)
+  get_files(File.join(root, "#{framework_name}")).each do |dir|
+    framework_path = "#{framework_name}/#{File.basename(dir)}"
+    destination_path = ".#{framework_path}"
+    get_files(File.join(root, "#{framework_name}/#{dir}")).each do |file|
+      install("#{framework_path}/#{file}", destination_path)
+    end
   end
 end
+#
+################################################################################
+# install all the dotfiles
+get_files(root).each do |file|
+  next if file =~ /~$/
+  uninstall? ? uninstall(file) : install(file)
+end
 
+# install the custom directory path configs
+install_shell_framework('oh-my-zsh')
