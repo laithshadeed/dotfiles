@@ -101,9 +101,17 @@ prompt_dir() {
 prompt_status() {
   local symbols
   symbols=()
-  [[ $RETVAL -ne 0 ]] && symbols+="$(prompt_segment red black)✕"
-  [[ $UID -eq 0 ]] && symbols+="$(prompt_segment yellow black)⚡"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="$(prompt_segment cyan black)⚙"
+
+  if [[ $RETVAL -ne 0 ]]; then
+    prompt_segment red black
+    symbols+="✕"
+  elif [[ $UID -eq 0 ]]; then
+    prompt_segment yellow black
+    symbols+="⚡"
+  elif [[ $(jobs -l | wc -l) -gt 0 ]]; then
+    prompt_segment cyan black
+    symbols+="⚙"
+  fi
   echo -n "$symbols"
 }
 
