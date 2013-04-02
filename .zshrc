@@ -1,4 +1,3 @@
-# source ~/.profile
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -27,6 +26,9 @@ echo "Now using zsh theme: \"$ZSH_THEME\""
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
 plugins=(brew git git-extra history node npm rvm)
 
 # Load RVM, if you are using it (RubyVersionManager)
@@ -38,17 +40,27 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 nvm use 0.8
 
 # Add rvm gems and nginx to the path
-export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
-
-# Add rvm gems and nginx to the path
 export PATH=$PATH:/var/lib/gems/1.8/bin
 export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
 
 # Set the path nginx
 export NGINX_PATH='/opt/nginx'
 
-# Android ADB
+if [ $(uname) = "Linux" ]; then
+  export PATH=$PATH:~/.nvm/v0.8.8/bin
+  export PATH=$PATH:~/.rvm/gems/ruby-1.9.2-p290/bin
+  export PATH=$PATH:~/.rvm/gems/ruby-1.9.2-p290@global/bin
+  export PATH=$PATH:~/.rvm/rubies/ruby-1.9.2-p290/bin
+  export PATH=$PATH:~/bin
+  export PATH=$PATH:/usr/lib/lightdm/lightdm
+  export PATH=$PATH:/usr/local/sbin
+  export PATH=$PATH:/usr/local/bin
+  export PATH=$PATH:/usr/sbin
+  export PATH=$PATH:/usr/bin
+  export PATH=$PATH:/sbin
+  export PATH=$PATH:/bin
+  export PATH=$PATH:/usr/games
+  export PATH=$PATH:/usr/local/games
+fi
+
 export PATH=$PATH:~/Applications/android-sdk-linux/platform-tools
-
-
-source $ZSH/oh-my-zsh.sh
