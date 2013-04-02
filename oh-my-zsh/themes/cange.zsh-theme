@@ -26,8 +26,14 @@
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR=''
-# SEGMENT_SEPARATOR='⮀'
+
+if [ $(uname) = "Linux" ]; then
+  SEGMENT_SEPARATOR='⮀'
+elif [ $(uname) = "Darwin" ]; then
+  # TODO find a proper font for this triangle separator
+  SEGMENT_SEPARATOR=''
+fi
+
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
 # rendering default background/foreground.
