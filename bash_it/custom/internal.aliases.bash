@@ -14,14 +14,16 @@ alias rm-orig='find . -type f -name "*.orig" -exec rm -f {} \;'
 if [ $(uname) = "Linux" ]; then
   alias work='cd ~/Documents/workspace'
   # projects
-  export COMONEA="$HOME/Documents/workspace/deposit-solutions/comonea"
+  export COMONEA="$HOME/Documents/workspace/deposit-solutions/ds-comonea"
+  export COMONEA_PRO="$HOME/Documents/workspace/deposit-solutions/ds-comonea-pro"
   alias com='cd $COMONEA'
   alias com-start='cd ${COMONEA}/comonea-shop-webapp/ && MAVEN_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=64M -XX:MaxPermSize=128M" mvn -Ddb.username=comoneaowner jetty:run'
   alias com-ovl="cd $COMONEA/comonea-core/comonea-overlayed-webapp/"
   alias com-b2c="cd $COMONEA/comonea-b2c/comonea-b2c-shop-webapp/ && mvn jetty:run"
-  alias com-pro="cd $COMONEA/comonea-pro/comonea-rfq-webapp/ && mvn -Ddb_rfq.username=comoneaowner jetty:run"
+  alias com-pro="cd $COMONEA_PRO/cp-customer-webapp && mvn -Ddb.username=comonea_pro_o jetty:run"
+  alias cp-cli="java -Ddb.username=comonea_pro_o -jar $COMONEA_PRO/cp-cli/target/cp-cli-*-jar-with-dependencies.jar"
   alias ds='cd $COMONEA/../ds-websites/'
-  alias dkp='cd $COMONEA/../ds-websites/dkp-webr'
+  alias dkp='cd $COMONEA/../ds-websites/dkp-web'
   alias ftm='cd $COMONEA/../dkp-cms/trunk/src/main'
   alias vim='gvim'
   alias gitx='gitg'
