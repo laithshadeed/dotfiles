@@ -100,7 +100,12 @@ end
 #
 ################################################################################
 # install all the dotfiles
-@shell_frameworks = %w(bash_it oh-my-zsh)
+get_dir_files(root).each do |file|
+  next if file =~ /~$/
+  uninstall? ? uninstall(file) : install(file)
+end
+
+@shell_frameworks = %w(oh-my-zsh bash_it)
 @shell_frameworks.each do |framework_name|
   if File.exist?("#{home}/.#{framework_name}/")
     install_shell_framework("#{framework_name}")
