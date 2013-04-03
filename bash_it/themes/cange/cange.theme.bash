@@ -9,33 +9,22 @@ git_prompt_status() {
   git_status_output=$(git status 2> /dev/null )
 
   if [ -n "$(echo $git_status_output | grep 'Changes not staged')" ]; then
-    git_status="${black}${background_red}$prefix$(git_prompt_info) "
+    git_status="$black$background_red$prefix$(git_prompt_info) "
   elif [ -n "$(echo $git_status_output | grep 'Changes to be committed')" ]; then
-    git_status="${black}${background_yellow}${black}$prefix$(git_prompt_info)${bold_yellow} "
+    git_status="$black$background_yellow$black$prefix$(git_prompt_info)${bold_yellow} "
   elif [ -n "$(echo $git_status_output | grep 'Untracked files')" ]; then
-    git_status="${black}${background_orange}$prefix$(git_prompt_info) "
+    git_status="$black$background_orange$prefix$(git_prompt_info) "
   elif [ -n "$(echo $git_status_output | grep 'nothing to commit')" ]; then
-    git_status="${black}${background_green}$prefix$(git_prompt_info) "
-  else
-  # if [ -n "$(echo $git_status_output | grep 'Changes not staged')" ]; then
-    # git_status="$prefix${red}$(git_prompt_info) ✖ "
-  # elif [ -n "$(echo $git_status_output | grep 'Changes to be committed')" ]; then
-    # git_status="$prefix${yellow}$(git_prompt_info)${bold_yellow} ⌅ "
-  # elif [ -n "$(echo $git_status_output | grep 'Untracked files')" ]; then
-    # git_status="$prefix${orange}$(git_prompt_info) ✚ "
-  # elif [ -n "$(echo $git_status_output | grep 'nothing to commit')" ]; then
-    # git_status="$prefix${green}$(git_prompt_info) ✔ "
-  # else
-    git_status="$(git_prompt_info)"
+    git_status="$black$background_green$prefix$(git_prompt_info) "
   fi
-  echo "$git_status${normal}"
+  echo "$git_status$normal"
 }
 
 # for example:
 # + branch-name directory-name $
 function prompt_command() {
   # PS1="$(git_prompt_status)${cyan}\W${normal} ➜ "
-  PS1="$(git_prompt_status)${background_black}$(color black fg bright) \w ${normal} "
+  PS1="$(git_prompt_status)$(color white fg) \w $(color black fg bright)"
 }
 PROMPT_COMMAND=prompt_command;
 ## git-theme
