@@ -79,13 +79,13 @@ prompt_git() {
     else
       prompt_segment green black
     fi
-    echo -n "⭠ ${ref/refs\/heads\/}"
+    echo -n "${ref/refs\/heads\//⭠ }"
   fi
 }
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment black blue '%~'
+  prompt_segment blue black '%~'
 }
 
 # Status:
@@ -95,31 +95,23 @@ prompt_dir() {
 prompt_status() {
   local symbols
   symbols=()
+  [[ $RETVAL -ne 0 ]]            && symbols+="%{%F{red}%}✕"
+  [[ $UID -eq 0 ]]               && symbols+="%{%F{yellow}%}⚡"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
-  if [[ $RETVAL -ne 0 ]]; then
-    prompt_segment red black
-    symbols+="✕"
-  elif [[ $UID -eq 0 ]]; then
-    prompt_segment yellow black
-    symbols+="⚡"
-  elif [[ $(jobs -l | wc -l) -gt 0 ]]; then
-    prompt_segment cyan black
-    symbols+="⚙"
-  fi
-  echo -n "$symbols"
+  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
 ## Main prompt
 build_prompt() {
   RETVAL=$?
   prompt_status
+  if [[ $UID -eq 0 ]]; then
+    prompt_context
+  fi
   prompt_git
   prompt_dir
   prompt_end
 }
-build_right_prompt() {
-  # prompt_context
-}
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
-RPROMPT='%{%f%b%k%}$(build_right_prompt)'
