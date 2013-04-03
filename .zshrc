@@ -26,10 +26,10 @@ echo "Now using zsh theme: \"$ZSH_THEME\""
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #
-source $ZSH/oh-my-zsh.sh
-
 # Customize to your needs...
 plugins=(brew git git-extra history node npm rvm)
+
+source $ZSH/oh-my-zsh.sh
 
 # Load RVM, if you are using it (RubyVersionManager)
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
