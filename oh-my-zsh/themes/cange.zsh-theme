@@ -26,13 +26,7 @@
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-
-if [ $(uname) = "Linux" ]; then
-  SEGMENT_SEPARATOR='⮀'
-elif [ $(uname) = "Darwin" ]; then
-  # TODO find a proper font for this triangle separator
-  SEGMENT_SEPARATOR=''
-fi
+SEGMENT_SEPARATOR='⮀'
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -118,8 +112,8 @@ prompt_status() {
 ## Main prompt
 build_prompt() {
   RETVAL=$?
-  prompt_git
   prompt_status
+  prompt_git
   prompt_dir
   prompt_end
 }
