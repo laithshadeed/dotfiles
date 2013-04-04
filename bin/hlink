@@ -25,9 +25,9 @@ end
 def colorize(text, color=:default)
   colors = {
     :default    => "\033[30m",
-    :green      => "\033[31m",
+    :red        => "\033[31m",
     :green      => "\033[32m",
-    :red        => "\033[33m",
+    :yellow     => "\033[33m",
     :white_bold => "\033[1;38m"
   }
 
@@ -97,6 +97,19 @@ def install_shell_framework(framework_name)
     end
   end
 end
+
+def install_terminal_config
+  sub_dir              = ".config"
+  terminal_path        = "#{home}/#{sub_dir}/terminator"
+  terminal_backup_path = "#{terminal_path}-backup"
+  terminal_new_path    = "terminator"
+
+  if File.exist?(terminal_path) && !File.symlink?(terminal_path)
+    system("mv -f #{terminal_path} #{terminal_backup_path}")
+    puts "#{colorize('created backup', :green)} #{colorize(terminal_backup_path, :white_bold)}"
+    install(terminal_new_path, sub_dir)
+  end
+end
 #
 ################################################################################
 # install all the dotfiles
@@ -104,6 +117,8 @@ get_dir_files(root).each do |file|
   next if file =~ /~$/
   uninstall? ? uninstall(file) : install(file)
 end
+
+install_terminal_config
 
 @shell_frameworks = %w(oh-my-zsh bash_it)
 @shell_frameworks.each do |framework_name|
