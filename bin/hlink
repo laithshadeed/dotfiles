@@ -89,6 +89,19 @@ if ARGV.include?('-h')
 end
 
 def install_shell_framework(framework_name)
+  # check for updates, store local changes, fetch updates and add local changes
+  if File.exist?("#{home}/.#{framework_name}")
+    Dir.chdir("#{home}/.#{framework_name}")
+    system("git stash")
+    system("git pull --rebase")
+    system("git stash pop")
+  else
+    Dir.chdir("#{home}")
+    system("git clone git://github.com/robbyrussell/oh-my-zsh.git .#{framework_name}")
+  end
+  # travel back to dotfiles/ directory
+  Dir.chdir("#{home}/dotfiles")
+
   get_dir_files(File.join(root, "#{framework_name}")).each do |dir|
     framework_path = "#{framework_name}/#{File.basename(dir)}"
     destination_path = ".#{framework_path}"
@@ -119,10 +132,4 @@ get_dir_files(root).each do |file|
 end
 
 install_terminal_config
-
-@shell_frameworks = %w(oh-my-zsh bash_it)
-@shell_frameworks.each do |framework_name|
-  if File.exist?("#{home}/.#{framework_name}/")
-    install_shell_framework("#{framework_name}")
-  end
-end
+install_shell_framework('oh-my-zsh')
