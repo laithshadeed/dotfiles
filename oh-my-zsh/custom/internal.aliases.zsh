@@ -37,6 +37,7 @@ else
   alias xws='cd ~/workspace/xws/engines/web_service'
   alias xws-i18n='bundle exec rake text_resources:import:section SECTION=xws'
   alias xync='xws && xing sandbox sync'
+  alias rwst='bundle exec rake web_service:test:all'
   alias rjst='phantomjs ~/workspace/xws/public/js/xe/web_service/test/qunit/addons/phantomjs/runner.js '
   alias vim='mvim'
   alias gitg='gitx'
