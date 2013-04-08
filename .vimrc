@@ -242,11 +242,6 @@ runtime ftplugin/man.vim
 "
 " TODO the part of below, have to refactor
 
-
-" Gundo Vim (f4)
-" map <leader>gu :execute ':GundoToggle'<CR>
-nnoremap <F4> :GundoToggle<CR>
-
 " file should be UTF-8 endcoded be default
 setglobal fileencoding=utf-8
 set encoding=utf-8
