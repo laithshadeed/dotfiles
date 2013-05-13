@@ -16,6 +16,9 @@ echo "Now using zsh theme: \"$ZSH_THEME\""
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(brew git git-extra history node npm rvm)
 
+bindkey '^r' history-incremental-pattern-search-backward
+bindkey '^f' history-incremental-pattern-search-forward
+
 source $ZSH/oh-my-zsh.sh
 
 # Load RVM, if you are using it (RubyVersionManager)
