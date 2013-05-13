@@ -72,3 +72,5 @@
 	merge = refs/heads/master
 [rerere]
 	enabled = true
+[push]
+	default = simple
