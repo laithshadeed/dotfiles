@@ -44,6 +44,7 @@ get_bundle vim-scripts    matchit.zip
 get_bundle scrooloose     nerdtree              # The NERD tree allows you to explore your filesystem and to open files and directories
 get_bundle tyok           nerdtree-ack          # make ack works on nerdtree
 get_bundle scrooloose     nerdcommenter         # #advanced comment functionality
+get_bundle EvanDotPro     nerdtree-chmod        # This is a plugin for NERDTree to allow for chmod'ing files in Vim
 get_bundle cakebaker      scss-syntax.vim       # Vim syntax file for scss (Sassy CSS)
 get_bundle msanders       snipmate.vim          # snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
 get_bundle scrooloose     syntastic             # syntax checking plugin that runs files through external syntax checkers and displays any resulting errors
