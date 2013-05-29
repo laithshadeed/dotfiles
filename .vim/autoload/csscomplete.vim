@@ -19,14 +19,14 @@ function! csscomplete#backgroundPosition(line)
   endif
 endfunction
 
-function! csscomplete#getMultiProperties(line, width, style)
+function! csscomplete#getMultiProperties(line, width, style, color_values)
   let vals = matchstr(a:line, '.*:\s*\zs.*')
   if vals =~ '^\%([a-zA-Z0-9.]\+\)\?$'
     return split(a:width)
   elseif vals =~ '^[a-zA-Z0-9.]\+\s\+\%([a-zA-Z]\+\)\?$'
     return split(a:style)
   elseif vals =~ '^[a-zA-Z0-9.]\+\s\+[a-zA-Z]\+\s\+\%([a-zA-Z(]\+\)\?$'
-    return color.VALUES
+    return a:color_values
   else
     return []
   endif
@@ -44,13 +44,13 @@ function! csscomplete#border(prop, line, color_values)
   if a:prop == 'border-collapse'
     return split(collapse)
   elseif a:prop == 'border-color'
-    return color_values
+    return a:color_values
   elseif a:prop == 'border-style'
     return split(style)
   elseif a:prop =~ 'border-'.dimension_condition.'$'
     return csscomplete#getMultiProperties(a:line, width, style)
   elseif a:prop =~ 'border-'.dimension_condition.'-color'
-    return color_values
+    return a:color_values
   elseif a:prop =~ 'border-'.dimension_condition.'-style'
     return split(style)
   elseif a:prop =~ 'border-'.dimension_condition.'-width'
@@ -74,7 +74,9 @@ endfunction
 
 function! csscomplete#getPropertiesValues(line)
   let props = {}
-  let values_timing_function = split('ease ease-in ease-out ease-in-out linear cubic-bezier( step-start step-stop steps(')
+  let values_riming_function = split('ease ease-in ease-out ease-in-out linear cubic-bezier( step-start step-stop steps(')
+  let color_values = split('transparent # rgb( rgba( hsl(')
+  let url_values = split('url( none')
 
   let props.animations = {
     \'KEYWORDS': 'animation animation-delay animation-direction animation-duration animation-fill-mode animation-iteration-count animation-name animation-play-state animation-timing-function',
@@ -95,7 +97,6 @@ function! csscomplete#getPropertiesValues(line)
   \}
   let props.aligns.VALUES['align-self'] = ['auto'] + props.aligns.VALUES['align-items']
 
-
   let props.transitions = {
     \'KEYWORDS': 'transition transition-delay transition-duration transition-property transition-timing-function',
     \'VALUES': {
@@ -105,20 +106,18 @@ function! csscomplete#getPropertiesValues(line)
   \}
   let props.transitions.VALUES.transition = csscomplete#collectPropertyValues(props.transitions)
 
-
   let props.color = {
     \'KEYWORDS': 'color',
-    \'VALUES': split('transparent # rgb( rgba( hsl(')
+    \'VALUES': color_values
   \}
-
 
   let props.backgrounds = {
     \'KEYWORDS': 'background background-attachment background-clip background-color background-image background-origin background-position background-repeat background-size',
     \'VALUES': {
       \'background-attachment': split('scroll fixed'),
       \'background-clip':       split('border-box content-box padding-box inherit'),
-      \'background-color':      props.color.VALUES,
-      \'background-image':      split('url( none'),
+      \'background-color':      color_values,
+      \'background-image':      url_values,
       \'background-origin':     split('border-box content-box padding-box inherit'),
       \'background-repeat':     split('repeat repeat-x repeat-y no-repeat'),
       \'background-size':       split('auto cover contain'),
@@ -127,17 +126,46 @@ function! csscomplete#getPropertiesValues(line)
   \}
   let props.backgrounds.VALUES.background = csscomplete#collectPropertyValues(props.backgrounds)
 
-
   let props.outlines = {
     \'KEYWORDS': 'outline outline-color outline-offset outline-style outline-width',
     \'VALUES': {
        \'outline-style': split('none hidden dotted dashed solid double groove ridge inset outset'),
        \'outline-width': split('thin thick medium'),
-       \'outline-color': props.color.VALUES
+       \'outline-color': color_values
     \}
   \}
   let props.outlines.VALUES.outline = csscomplete#collectPropertyValues(props.outlines)
 
+  let props.fonts = {
+    \'KEYWORDS': 'font font-face font-family font-size font-size-adjust font-stretch font-style font-variant font-weight',
+    \'VALUES': {
+      \'font-family':  ["sans-serif", "serif", "monospace", "cursive", "fantasy"],
+      \'font-size':    ["xx-small", "x-small", "small", "medium", "large", "x-large", "xx-large", "larger", "smaller"],
+      \'font-style':   ["normal", "italic", "oblique"],
+      \'font-variant': ["normal", "small-caps"],
+      \'font-weight':  ["normal", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900"]
+    \}
+  \}
+  let props.fonts.VALUES.font = csscomplete#collectPropertyValues(props.fonts)
+
+  let props.texts = {
+    \'KEYWORDS': 'text-align text-decoration text-indent text-overflow text-rendering text-shadow text-transform',
+    \'VALUES': {
+      \'text-align':      ["left", "right", "center", "justify"],
+      \'text-decoration': ["none", "underline", "overline", "line-through", "blink"],
+      \'text-shadow':     color_values,
+      \'text-transform':  ["capitalize", "uppercase", "lowercase", "none"]
+    \}
+  \}
+  let props.listStyles = {
+    \'KEYWORDS': 'list-style list-style-image list-style-position',
+    \'VALUES': {
+      \'list-style-image':    url_values,
+      \'list-style-position': ["inside", "outside"],
+      \'list-style-type':     ["disc", "circle", "square", "decimal", "decimal-leading-zero", "lower-roman", "upper-roman", "lower-latin", "upper-latin", "none"]
+    \}
+  \}
+  let props.listStyles.VALUES.['list-style'] = csscomplete#collectPropertyValues(props.listStyles)
 
   let border_color =  'border-color border-top-color border-right-color border-bottom-color border-left-color'
   let border_radius = 'border-radius border-top-left-radius border-top-right-radius border-bottom-left-radius border-bottom-right-radius'
@@ -147,15 +175,15 @@ function! csscomplete#getPropertiesValues(line)
 
   let boxes = 'box-shadow box-sizing'
 
-  let fonts = 'font font-face font-family font-size font-size-adjust font-stretch font-style font-variant font-weight'
-  let texts = 'text-align text-decoration text-indent text-overflow text-rendering text-shadow text-transform'
-
-  let props.KEYWORDS = split('align-items '.props.animations.KEYWORDS
+  let props.KEYWORDS = split('align-items '
+        \.  props.animations.KEYWORDS
         \.' azimuth backface-visibility '
         \.  props.backgrounds.KEYWORDS.' '.borders.' bottom '.boxes.' caption-side clear clip clip-path'
         \.  props.color.KEYWORDS.' content counter-increment counter-reset cue cue-after cue-before cursor'
-        \.' direction display elevation empty-cells filter float '.fonts.' height image-rendering'
-        \.' ime-mode left letter-spacing line-height list-style list-style-image list-style-position'
+        \.' direction display elevation empty-cells filter float '
+        \.  props.fonts.KEYWORDS.' height image-rendering'
+        \.' ime-mode left letter-spacing line-height'
+        \.  props.listStyles.KEYWORDS
         \.' list-style-type margin margin-top margin-right margin-bottom margin-left marker-offset marks'
         \.' mask max-height max-width min-height min-width opacity orient orphans'
         \.  props.outlines.KEYWORDS.' overflow overflow-x overflow-y'
@@ -163,7 +191,7 @@ function! csscomplete#getPropertiesValues(line)
         \.' page-break-after page-break-before page-break-inside pause pause-after pause-before'
         \.' pitch pitch-range play-during pointer-events position quotes resize right richness'
         \.' speak speak-header speak-numeral speak-punctuation speech-rate stress table-layout '
-        \.  texts.' top transform transform-origin '
+        \.  props.texts.KEYWORDS.' top transform transform-origin '
         \.  props.transitions.KEYWORDS.' unicode-bidi vertical-align visibility voice-family volume white-space widows width word-spacing word-wrap z-index'
         \)
 
@@ -314,18 +342,8 @@ function! csscomplete#CompleteCSS(findstart, base)
       let values = ["url(", "blur("]
     elseif prop == 'float'
       let values = ["left", "right", "none"]
-    elseif prop == 'font-family'
-      let values = ["sans-serif", "serif", "monospace", "cursive", "fantasy"]
-    elseif prop == 'font-size'
-      let values = ["xx-small", "x-small", "small", "medium", "large", "x-large", "xx-large", "larger", "smaller"]
-    elseif prop == 'font-style'
-      let values = ["normal", "italic", "oblique"]
-    elseif prop == 'font-variant'
-      let values = ["normal", "small-caps"]
-    elseif prop == 'font-weight'
-      let values = ["normal", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900"]
-    elseif prop == 'font'
-      let values = ["normal", "italic", "oblique", "small-caps", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900", "xx-small", "x-small", "small", "medium", "large", "x-large", "xx-large", "larger", "smaller", "sans-serif", "serif", "monospace", "cursive", "fantasy", "caption", "icon", "menu", "message-box", "small-caption", "status-bar"]
+    elseif prop =~ '^font'
+      let values = propertiesValues.fonts.VALUES[prop]
     elseif prop =~ '^\%(height\|width\)$'
       let values = ["auto"]
     elseif prop =~ '^\%(left\|rigth\)$'
@@ -334,14 +352,8 @@ function! csscomplete#CompleteCSS(findstart, base)
       let values = ["normal"]
     elseif prop == 'line-height'
       let values = ["normal"]
-    elseif prop == 'list-style-image'
-      let values = ["url(", "none"]
-    elseif prop == 'list-style-position'
-      let values = ["inside", "outside"]
-    elseif prop == 'list-style-type'
-      let values = ["disc", "circle", "square", "decimal", "decimal-leading-zero", "lower-roman", "upper-roman", "lower-latin", "upper-latin", "none"]
-    elseif prop == 'list-style'
-      return []
+    elseif prop =~ '^list-style'
+      let values = propertiesValues.listStyles.VALUES[prop]
     elseif prop == 'margin'
       let values = ["auto"]
     elseif prop =~ 'margin-\%(right\|left\|top\|bottom\)$'
@@ -398,14 +410,8 @@ function! csscomplete#CompleteCSS(findstart, base)
       return []
     elseif prop == 'table-layout'
       let values = ["auto", "fixed"]
-    elseif prop == 'text-align'
-      let values = ["left", "right", "center", "justify"]
-    elseif prop == 'text-decoration'
-      let values = ["none", "underline", "overline", "line-through", "blink"]
-    elseif prop == 'text-indent'
-      return []
-    elseif prop == 'text-transform'
-      let values = ["capitalize", "uppercase", "lowercase", "none"]
+    elseif prop =~ '^text'
+      let values = propertiesValues.texts.VALUES[prop]
     elseif prop =~ '^transition'
       let values = propertiesValues.transitions.VALUES[prop]
     elseif prop == 'top'
