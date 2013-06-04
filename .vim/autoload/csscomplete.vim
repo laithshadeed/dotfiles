@@ -389,24 +389,12 @@ function! csscomplete#CompleteCSS(findstart, base)
       let values = ["auto"]
     elseif prop == '^\%(max\|min\)-\%(height\|width\)$'
       let values = ["none"]
-    elseif prop == 'orphans'
-      return []
     elseif prop == 'overflow'
       let values = ["visible", "hidden", "scroll", "auto"]
-    elseif prop == 'padding'
-      return []
-    elseif prop =~ 'padding-\%(top\|right\|bottom\|left\)$'
-      return []
     elseif prop =~ 'page-break-\%(after\|before\)$'
       let values = ["auto", "always", "avoid", "left", "right"]
     elseif prop == 'page-break-inside'
       let values = ["auto", "avoid"]
-    elseif prop =~ 'pause-\%(after\|before\)$'
-      return []
-    elseif prop == 'pause'
-      return []
-    elseif prop == 'pitch-range'
-      return []
     elseif prop == 'pitch'
       let values = ["x-low", "low", "medium", "high", "x-high"]
     elseif prop == 'play-during'
@@ -415,8 +403,6 @@ function! csscomplete#CompleteCSS(findstart, base)
       let values = ["static", "relative", "absolute", "fixed"]
     elseif prop == 'quotes'
       let values = ["none"]
-    elseif prop == 'richness'
-      return []
     elseif prop == 'speak-header'
       let values = ["once", "always"]
     elseif prop == 'speak-numeral'
@@ -427,8 +413,6 @@ function! csscomplete#CompleteCSS(findstart, base)
       let values = ["normal", "none", "spell-out"]
     elseif prop == 'speech-rate'
       let values = ["x-slow", "slow", "medium", "fast", "x-fast", "faster", "slower"]
-    elseif prop == 'stress'
-      return []
     elseif prop == 'table-layout'
       let values = ["auto", "fixed"]
     elseif prop == 'top'
@@ -439,14 +423,10 @@ function! csscomplete#CompleteCSS(findstart, base)
       let values = ["baseline", "sub", "super", "top", "text-top", "middle", "bottom", "text-bottom"]
     elseif prop == 'visibility'
       let values = ["visible", "hidden", "collapse"]
-    elseif prop == 'voice-family'
-      return []
     elseif prop == 'volume'
       let values = ["silent", "x-soft", "soft", "medium", "loud", "x-loud"]
     elseif prop == 'white-space'
       let values = ["normal", "pre", "nowrap", "pre-wrap", "pre-line"]
-    elseif prop == 'widows'
-      return []
     elseif prop == 'word-spacing'
       let values = ["normal"]
     elseif prop == 'word-wrap'
