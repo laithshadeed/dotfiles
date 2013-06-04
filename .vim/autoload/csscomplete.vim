@@ -19,7 +19,7 @@ function! csscomplete#backgroundPosition(line)
   endif
 endfunction
 
-function! csscomplete#getMultiProperties(line, width, style, color_values)
+function! csscomplete#getMultiProperties(line, color, style, width)
   let vals = matchstr(a:line, '.*:\s*\zs.*')
   if vals =~ '^\%([a-zA-Z0-9.]\+\)\?$'
     return split(a:width)
@@ -34,34 +34,26 @@ endfunction
 
 " ==============================================================================
 
-function! csscomplete#border(prop, line, color_values)
-  let style = 'none hidden dotted dashed solid double groove ridge inset outset'
-  let width = 'thin thick medium'
+function! csscomplete#border(prop, line, color, style, width)
   let collapse = 'collapse separate'
 
-  let dimension_condition = '\%(top\|right\|bottom\|left\)'
+  let is_direction = '\%(top\|right\|bottom\|left\)'
+  let is_border_direction_with = '\%(border\|border-'.is_direction.'\)'
 
   if a:prop == 'border-collapse'
     return split(collapse)
-  elseif a:prop == 'border-color'
-    return a:color_values
-  elseif a:prop == 'border-style'
-    return split(style)
-  elseif a:prop =~ 'border-'.dimension_condition.'$'
-    return csscomplete#getMultiProperties(a:line, width, style, a:color_values)
-  elseif a:prop =~ 'border-'.dimension_condition.'-color'
-    return a:color_values
-  elseif a:prop =~ 'border-'.dimension_condition.'-style'
-    return split(style)
-  elseif a:prop =~ 'border-'.dimension_condition.'-width'
-    return split(width)
-  elseif a:prop == 'border-width'
-    return split(width)
+  elseif a:prop =~ '^'.is_border_direction_with.'-color$'
+    return a:color
+  elseif a:prop =~ '^'.is_border_direction_with.'-style$'
+    return a:style
+  elseif a:prop =~ '^'.is_border_direction_with.'-width$'
+    return a:width
+  elseif a:prop =~ '^border-'.is_direction.'$'
+    return csscomplete#getMultiProperties(a:line, a:color, a:style, a:width)
   elseif a:prop == 'border'
-    return csscomplete#getMultiProperties(a:line, width, style, a:color_values)
+    return csscomplete#getMultiProperties(a:line, a:color, a:style, a:width)
   endif
 endfunction
-
 
 function! csscomplete#collectPropertyValues(property)
   let result = []
@@ -72,25 +64,36 @@ function! csscomplete#collectPropertyValues(property)
   return result
 endfunction
 
+function! csscomplete#buildPropertySuffixes(property_name, suffixes, ...)
+  " let without_root_property_name = a:0
+  " let list = without_root_property_name ? [] : [a:property_name]
+  let list = [a:property_name]
+  for suffix in a:suffixes
+    let list += [a:property_name.'-'.suffix]
+  endfor
+  return join(list)
+endfunction
+
 function! csscomplete#getPropertiesValues(line)
-  let props = { 'multiple_keywords': {} }
+  let props = {}
   let common_values = {
     \'timing-function': split('ease ease-in ease-out ease-in-out linear cubic-bezier( step-start step-stop steps('),
     \'color':           split('transparent # rgb( rgba( hsl('),
-    \'url':             split('url( none')
+    \'url':             split('url( none'),
+    \'line-style':      split('none hidden dotted dashed solid double groove ridge inset outset'),
+    \'line-width':      split('thin thick medium')
   \}
 
   let props.animation = {
-    \'KEYWORDS': 'animation animation-delay animation-direction animation-duration animation-fill-mode animation-iteration-count animation-name animation-play-state animation-timing-function',
+    \'KEYWORDS': csscomplete#buildPropertySuffixes('animation', split('delay direction duration fill-mode iteration-count name play-state timing-function')),
     \'VALUES': {
-      \'animation-direction':       split('bam lternate alternate-reverse normal reverse'),
+      \'animation-direction':       split('alternate alternate-reverse normal reverse'),
       \'animation-iteration-count': split('infinite'),
       \'animation-name':            split('none'),
       \'animation-timing-function': common_values['timing-function']
     \}
   \}
   let props.animation.VALUES.animation = csscomplete#collectPropertyValues(props.animation)
-  let props.multiple_keywords.ANIMATION = 'animation'
 
   let props.align = {
     \'KEYWORDS': 'align-items align-self',
@@ -99,17 +102,16 @@ function! csscomplete#getPropertiesValues(line)
     \}
   \}
   let props.align.VALUES['align-self'] = ['auto'] + props.align.VALUES['align-items']
-  let props.multiple_keywords.ALIGN = 'align'
 
   let props.transition = {
-    \'KEYWORDS': 'transition transition-delay transition-duration transition-property transition-timing-function',
+    \'KEYWORDS': csscomplete#buildPropertySuffixes('transition', split('delay duration property timing-function')),
     \'VALUES': {
       \'transition-property':        split('all none color background-color'),
       \'transition-timing-function': common_values['timing-function']
     \}
   \}
   let props.transition.VALUES.transition = csscomplete#collectPropertyValues(props.transition)
-  let props.multiple_keywords.TRANSITION = 'transition'
+
 
   let props.color = {
     \'KEYWORDS': 'color',
@@ -117,7 +119,7 @@ function! csscomplete#getPropertiesValues(line)
   \}
 
   let props.background = {
-    \'KEYWORDS': 'background background-attachment background-clip background-color background-image background-origin background-position background-repeat background-size',
+    \'KEYWORDS': csscomplete#buildPropertySuffixes('background', split('attachment clip color image origin position repeat size')),
     \'VALUES': {
       \'background-attachment': split('scroll fixed'),
       \'background-clip':       split('border-box content-box padding-box inherit'),
@@ -130,81 +132,102 @@ function! csscomplete#getPropertiesValues(line)
     \}
   \}
   let props.background.VALUES.background = csscomplete#collectPropertyValues(props.background)
-  let props.multiple_keywords.BACKGROUND = 'background'
 
-  let props.outline = {
-    \'KEYWORDS': 'outline outline-color outline-offset outline-style outline-width',
+  let props.column = {
+    \'KEYWORDS': 'columns column-count column-fill column-gap column-span column-with',
     \'VALUES': {
-       \'outline-style': split('none hidden dotted dashed solid double groove ridge inset outset'),
-       \'outline-width': split('thin thick medium'),
-       \'outline-color': common_values['color']
     \}
   \}
-  let props.outline.VALUES.outline = csscomplete#collectPropertyValues(props.outline)
-  let props.multiple_keywords.OUTLINE = 'outline'
+  let prop_name = 'column-rule'
+  let props[prop_name] = {
+    \'KEYWORDS': csscomplete#buildPropertySuffixes(prop_name, split('color style width')),
+    \'VALUES': {
+      \prop_name.'-color': common_values['color'],
+      \prop_name.'-style': common_values['line-style'],
+      \prop_name.'-width': common_values['line-width']
+    \}
+  \}
+  let props[prop_name].VALUES[prop_name] = csscomplete#collectPropertyValues(props[prop_name])
+
+  let prop_name = 'outline'
+  let props[prop_name] = {
+    \'KEYWORDS': csscomplete#buildPropertySuffixes(prop_name, split('color offset style width')),
+    \'VALUES': {
+      \prop_name.'-color': common_values['color'],
+      \prop_name.'-style': common_values['line-style'],
+      \prop_name.'-width': common_values['line-width']
+    \}
+  \}
+  let props[prop_name].VALUES[prop_name] = csscomplete#collectPropertyValues(props[prop_name])
 
   let props.font = {
-    \'KEYWORDS': 'font font-face font-family font-size font-size-adjust font-stretch font-style font-variant font-weight',
+    \'KEYWORDS': csscomplete#buildPropertySuffixes('font', split('face family size size-adjust stretch style variant weight')),
     \'VALUES': {
-      \'font-family':  ["sans-serif", "serif", "monospace", "cursive", "fantasy"],
-      \'font-size':    ["xx-small", "x-small", "small", "medium", "large", "x-large", "xx-large", "larger", "smaller"],
-      \'font-style':   ["normal", "italic", "oblique"],
-      \'font-variant': ["normal", "small-caps"],
-      \'font-weight':  ["normal", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900"]
+      \'font-family':  split('sans-serif serif monospace cursive fantasy'),
+      \'font-size':    split('xx-small x-small small medium large x-large xx-large larger smaller'),
+      \'font-style':   split('normal italic oblique'),
+      \'font-variant': split('normal small-caps'),
+      \'font-weight':  split('normal bold bolder lighter 100 200 300 400 500 600 700 800 900')
     \}
   \}
   let props.font.VALUES.font = csscomplete#collectPropertyValues(props.font)
-  let props.multiple_keywords.FONT = 'font'
 
   let props.text = {
-    \'KEYWORDS': 'text-align text-decoration text-indent text-overflow text-rendering text-shadow text-transform',
+    \'KEYWORDS': csscomplete#buildPropertySuffixes('text', split('align decoration indent overflow rendering shadow transform'), 1),
     \'VALUES': {
-      \'text-align':      ["left", "right", "center", "justify"],
-      \'text-decoration': ["none", "underline", "overline", "line-through", "blink"],
+      \'text-align':      split('left right center justify'),
+      \'text-decoration': split('none underline overline line-through blink'),
       \'text-shadow':     common_values['color'],
-      \'text-transform':  ["capitalize", "uppercase", "lowercase", "none"]
+      \'text-transform':  split('capitalize uppercase lowercase none')
     \}
   \}
-  let props.multiple_keywords.TEXT = 'text'
 
-  let LIST_STYLE = 'list-style'
-  let props[LIST_STYLE] = {
-    \'KEYWORDS': 'list-style list-style-image list-style-position list-style-type',
+  let prop_name = 'list-style'
+  let props[prop_name] = {
+    \'KEYWORDS': csscomplete#buildPropertySuffixes(prop_name, split('image position type'), 1),
     \'VALUES': {
       \'list-style-image':    common_values['url'],
-      \'list-style-position': ["inside", "outside"],
-      \'list-style-type':     ["disc", "circle", "square", "decimal", "decimal-leading-zero", "lower-roman", "upper-roman", "lower-latin", "upper-latin", "none"]
+      \'list-style-position': split('inside outside'),
+      \'list-style-type':     split('disc circle square decimal decimal-leading-zero lower-roman upper-roman lower-latin upper-latin none')
     \}
   \}
-  let props[LIST_STYLE].VALUES[LIST_STYLE] = csscomplete#collectPropertyValues(props[LIST_STYLE])
-  let props.multiple_keywords[LIST_STYLE] = LIST_STYLE
+  let props[prop_name].VALUES[prop_name] = csscomplete#collectPropertyValues(props[prop_name])
 
-  let border_color =  'border-color border-top-color border-right-color border-bottom-color border-left-color'
-  let border_radius = 'border-radius border-top-left-radius border-top-right-radius border-bottom-left-radius border-bottom-right-radius'
-  let border_style =  'border-style border-top-style border-right-style border-bottom-style border-left-style'
-  let border_width =  'border-width border-top-width border-right-width border-bottom-width border-left-width'
-  let borders =       'border border-top border-right border-bottom border-left border-collapse border-spacing '.border_color.' '.border_radius.' '.border_style.' '.border_width
+  let borders = csscomplete#buildPropertySuffixes('border', split('bottom collapse color left radius right bottom-left-radius bottom-right-radius top top-left-radius top-right-radius spacing style width'))
+  let borders = borders .' '. csscomplete#buildPropertySuffixes('border-bottom', split('color style width'), 1)
+  let borders = borders .' '. csscomplete#buildPropertySuffixes('border-left',   split('color style width'), 1)
+  let borders = borders .' '. csscomplete#buildPropertySuffixes('border-right',  split('color style width'), 1)
+  let borders = borders .' '. csscomplete#buildPropertySuffixes('border-top',    split('color style width'), 1)
+  let props.border = { 'KEYWORDS': borders }
+
+  let prop_name = 'margin'
+  let props[prop_name] = { 'KEYWORDS': csscomplete#buildPropertySuffixes(prop_name, split('top right bottom left')) }
+
+  let prop_name = 'padding'
+  let props[prop_name] = { 'KEYWORDS': csscomplete#buildPropertySuffixes(prop_name, split('top right bottom left')) }
 
   let boxes = 'box-shadow box-sizing'
+
   let props.KEYWORDS = split('align-items '
-        \.  props.animation.KEYWORDS
-        \.' azimuth backface-visibility '
-        \.  props.background.KEYWORDS.' '.borders.' bottom '.boxes.' caption-side clear clip clip-path'
-        \.  props.color.KEYWORDS.' content counter-increment counter-reset cue cue-after cue-before cursor'
-        \.' direction display elevation empty-cells filter float '
-        \.  props.font.KEYWORDS.' height image-rendering'
-        \.' ime-mode left letter-spacing line-height'
-        \.  props[LIST_STYLE].KEYWORDS
-        \.' list-style-type margin margin-top margin-right margin-bottom margin-left marker-offset marks'
-        \.' mask max-height max-width min-height min-width opacity orient orphans'
-        \.  props.outline.KEYWORDS.' overflow overflow-x overflow-y'
-        \.' padding padding-top padding-right padding-bottom padding-left'
-        \.' page-break-after page-break-before page-break-inside pause pause-after pause-before'
-        \.' pitch pitch-range play-during pointer-events position quotes resize right richness'
-        \.' speak speak-header speak-numeral speak-punctuation speech-rate stress table-layout '
-        \.  props.text.KEYWORDS.' top transform transform-origin '
-        \.  props.transition.KEYWORDS.' unicode-bidi vertical-align visibility voice-family volume white-space widows width word-spacing word-wrap z-index'
-        \)
+    \.  props.animation.KEYWORDS.' azimuth backface-visibility '
+    \.  props.background.KEYWORDS.' '.props.border.KEYWORDS
+    \.' bottom '.boxes.' caption-side clear clip clip-path '
+    \.  props.color.KEYWORDS.' '
+    \.  props.column.KEYWORDS.' '.props['column-rule'].KEYWORDS
+    \.' content counter-increment counter-reset cue cue-after cue-before cursor direction display elevation empty-cells filter float '
+    \.  props.font.KEYWORDS.' height image-rendering '
+    \.' ime-mode left letter-spacing line-height '
+    \.  props['list-style'].KEYWORDS.' '
+    \.  props.margin.KEYWORDS
+    \.' marker-offset marks mask max-height max-width min-height min-width opacity orient orphans '
+    \.  props.outline.KEYWORDS.' overflow overflow-x overflow-y '
+    \.  props.padding.KEYWORDS
+    \.' page-break-after page-break-before page-break-inside pause pause-after pause-before '
+    \.' pitch pitch-range play-during pointer-events position quotes resize right richness '
+    \.' speak speak-header speak-numeral speak-punctuation speech-rate stress table-layout '
+    \.  props.text.KEYWORDS.' top transform transform-origin '
+    \.  props.transition.KEYWORDS.' unicode-bidi vertical-align visibility voice-family volume white-space widows width word-spacing word-wrap z-index'
+  \)
 
   return props
 endfunction
@@ -311,7 +334,7 @@ function! csscomplete#CompleteCSS(findstart, base)
     " Get name of property
     let prop = tolower(matchstr(line, '\zs[a-zA-Z-]*\ze\s*:[^:]\{-}$'))
 
-    let is_a_multiple_property = '^\%('. join( keys( propertiesValues.multiple_keywords ), '\|' ) .'\)'
+    let is_a_multiple_property = '^\%('. join( keys( propertiesValues ), '\|' ) .'\)'
 
     if prop == 'azimuth'
      let values = ["left-side", "far-left", "left", "center-left", "center", "center-right", "right", "far-right", "right-side", "behind", "leftwards", "rightwards"]
@@ -321,7 +344,7 @@ function! csscomplete#CompleteCSS(findstart, base)
     elseif prop =~ is_a_multiple_property
       let values = propertiesValues[(split(prop, '-')[0])].VALUES[prop]
     elseif prop =~ '^border'
-      let values = csscomplete#border(prop, line, propertiesValues.color.VALUES)
+      let values = csscomplete#border(prop, line, propertiesValues.color.VALUES, propertiesValues.outline.VALUES['outline-style'], propertiesValues.outline.VALUES['outline-width'])
     elseif prop == 'bottom'
       let values = ["auto"]
     elseif prop == 'caption-side'
@@ -330,6 +353,8 @@ function! csscomplete#CompleteCSS(findstart, base)
       let values = ["none", "left", "right", "both"]
     elseif prop == 'clip'
       let values = ["auto", "rect("]
+    elseif prop == 'clip-path'
+      let values = ["none"]
     elseif prop == 'color'
       let values = propertiesValues.color.VALUES
     elseif prop == 'content'
@@ -360,17 +385,9 @@ function! csscomplete#CompleteCSS(findstart, base)
       let values = ["normal"]
     elseif prop == 'line-height'
       let values = ["normal"]
-    elseif prop == 'margin'
+    elseif prop =~ '^\%(margin\|margin-\%(right\|left\|top\|bottom\)\)$'
       let values = ["auto"]
-    elseif prop =~ 'margin-\%(right\|left\|top\|bottom\)$'
-      let values = ["auto"]
-    elseif prop == 'max-height'
-      let values = ["auto"]
-    elseif prop == 'max-width'
-      let values = ["none"]
-    elseif prop == 'min-height'
-      let values = ["none"]
-    elseif prop == 'min-width'
+    elseif prop == '^\%(max\|min\)-\%(height\|width\)$'
       let values = ["none"]
     elseif prop == 'orphans'
       return []
