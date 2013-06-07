@@ -322,9 +322,9 @@ function! csscomplete#CompleteCSS(findstart, base)
 
     for m in KEYWORDS
       if m =~? '^'.entered_property
-        call add(res, m . ':')
+        call add(res, m . ': ')
       elseif m =~? entered_property
-        call add(res2, m . ':')
+        call add(res2, m . ': ')
       endif
     endfor
 
