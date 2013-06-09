@@ -3,13 +3,16 @@
 " Based on Chris Yip's experience version
 "
 " Language: CSS 3
+" Version:  1.01
 " Maintainer: Christian Angermann
-" Last Change: 26/05/13
+" Last Change: 09/06/13
 "
-function! csscomplete#backgroundPosition(line)
+
+
+function! csscomplete#backgroundPosition()
   let vertical =   split('top center bottom')
   let horizontal = split('left center right')
-  let vals = matchstr(a:line, '.*:\s*\zs.*')
+  let vals = matchstr(s:line, '.*:\s*\zs.*')
   if vals =~ '^\%([a-zA-Z]\+\)\?$'
     return horizontal
   elseif vals =~ '^[a-zA-Z]\+\s\+\%([a-zA-Z]\+\)\?$'
@@ -19,8 +22,8 @@ function! csscomplete#backgroundPosition(line)
   endif
 endfunction
 
-function! csscomplete#getMultiProperties(line, color, style, width)
-  let vals = matchstr(a:line, '.*:\s*\zs.*')
+function! csscomplete#getMultiProperties(color, style, width)
+  let vals = matchst(s:line, '.*:\s*\zs.*')
   if vals =~ '^\%([a-zA-Z0-9.]\+\)\?$'
     return split(a:width)
   elseif vals =~ '^[a-zA-Z0-9.]\+\s\+\%([a-zA-Z]\+\)\?$'
@@ -34,26 +37,6 @@ endfunction
 
 " ==============================================================================
 
-function! csscomplete#border(prop, line, color, style, width)
-  let collapse = 'collapse separate'
-
-  let is_direction = '\%(top\|right\|bottom\|left\)'
-  let is_border_direction_with = '\%(border\|border-'.is_direction.'\)'
-
-  if a:prop == 'border-collapse'
-    return split(collapse)
-  elseif a:prop =~ '^'.is_border_direction_with.'-color$'
-    return a:color
-  elseif a:prop =~ '^'.is_border_direction_with.'-style$'
-    return a:style
-  elseif a:prop =~ '^'.is_border_direction_with.'-width$'
-    return a:width
-  elseif a:prop =~ '^border-'.is_direction.'$'
-    return csscomplete#getMultiProperties(a:line, a:color, a:style, a:width)
-  elseif a:prop == 'border'
-    return csscomplete#getMultiProperties(a:line, a:color, a:style, a:width)
-  endif
-endfunction
 
 function! csscomplete#collectPropertyValues(property)
   let result = []
@@ -65,8 +48,6 @@ function! csscomplete#collectPropertyValues(property)
 endfunction
 
 function! csscomplete#buildPropertySuffixes(property_name, suffixes, ...)
-  " let without_root_property_name = a:0
-  " let list = without_root_property_name ? [] : [a:property_name]
   let list = [a:property_name]
   for suffix in a:suffixes
     let list += [a:property_name.'-'.suffix]
@@ -74,7 +55,7 @@ function! csscomplete#buildPropertySuffixes(property_name, suffixes, ...)
   return join(list)
 endfunction
 
-function! csscomplete#getPropertiesValues(line)
+function! csscomplete#getPropertiesValues()
   let props = {}
   let common_values = {
     \'timing-function': split('ease ease-in ease-out ease-in-out linear cubic-bezier( step-start step-stop steps('),
@@ -128,7 +109,7 @@ function! csscomplete#getPropertiesValues(line)
       \'background-origin':     split('border-box content-box padding-box inherit'),
       \'background-repeat':     split('repeat repeat-x repeat-y no-repeat'),
       \'background-size':       split('auto cover contain'),
-      \'background-position':   csscomplete#backgroundPosition(a:line)
+      \'background-position':   csscomplete#backgroundPosition()
     \}
   \}
   let props.background.VALUES.background = csscomplete#collectPropertyValues(props.background)
@@ -198,7 +179,18 @@ function! csscomplete#getPropertiesValues(line)
   let borders = borders .' '. csscomplete#buildPropertySuffixes('border-left',   split('color style width'), 1)
   let borders = borders .' '. csscomplete#buildPropertySuffixes('border-right',  split('color style width'), 1)
   let borders = borders .' '. csscomplete#buildPropertySuffixes('border-top',    split('color style width'), 1)
-  let props.border = { 'KEYWORDS': borders }
+  let props.border = { 'KEYWORDS': borders, 'VALUES': {} }
+  for key in split(props.border.KEYWORDS)
+    if key =~ '-color$'
+      let props.border.VALUES[key] = common_values['color']
+    elseif key =~ '-style$'
+      let props.border.VALUES[key] = common_values['line-style']
+    elseif key =~ '-width$'
+      let props.border.VALUES[key] = common_values['line-width']
+    else
+      let props.border.VALUES[key] = common_values['color'] + common_values['line-style'] + common_values['line-width']
+    endif
+  endfor
 
   let prop_name = 'margin'
   let props[prop_name] = { 'KEYWORDS': csscomplete#buildPropertySuffixes(prop_name, split('top right bottom left')) }
@@ -232,18 +224,18 @@ function! csscomplete#getPropertiesValues(line)
   return props
 endfunction
 
-
 function! csscomplete#CompleteCSS(findstart, base)
+
+  let s:line = getline('.')
 
   if a:findstart
     " We need whole line to proper checking
-    let line = getline('.')
     let start = col('.') - 1
     let compl_begin = col('.') - 2
-    while start >= 0 && line[start - 1] =~ '\%(\k\|-\)'
+    while start >= 0 && s:line[start - 1] =~ '\%(\k\|-\)'
       let start -= 1
     endwhile
-    let b:compl_context = line[0:compl_begin]
+    let b:compl_context = s:line[0:compl_begin]
     return start
   endif
 
@@ -260,19 +252,19 @@ function! csscomplete#CompleteCSS(findstart, base)
   " 5. if @ complete at-rule
   " 6. if ! complete important
   if exists("b:compl_context")
-    let line = b:compl_context
+    let s:line = b:compl_context
     unlet! b:compl_context
   else
-    let line = a:base
+    let s:line = a:base
   endif
 
+  let line = s:line
   let res = []
   let res2 = []
   let borders = {}
 
-  let propertiesValues = csscomplete#getPropertiesValues(line)
+  let propertiesValues = csscomplete#getPropertiesValues()
   let KEYWORDS = propertiesValues.KEYWORDS
-
 
   " Check last occurrence of sequence
 
@@ -314,7 +306,6 @@ function! csscomplete#CompleteCSS(findstart, base)
     let borders[exclam] = "exclam"
   endif
 
-
   if len(borders) == 0 || borders[max(keys(borders))] =~ '^\%(openbrace\|semicolon\|opencomm\|closecomm\|style\)$'
     " Complete properties
 
@@ -343,8 +334,6 @@ function! csscomplete#CompleteCSS(findstart, base)
    " animation, background, font, text, transition etc.
     elseif prop =~ is_a_multiple_property
       let values = propertiesValues[(split(prop, '-')[0])].VALUES[prop]
-    elseif prop =~ '^border'
-      let values = csscomplete#border(prop, line, propertiesValues.color.VALUES, propertiesValues.outline.VALUES['outline-style'], propertiesValues.outline.VALUES['outline-width'])
     elseif prop == 'bottom'
       let values = ["auto"]
     elseif prop == 'caption-side'
