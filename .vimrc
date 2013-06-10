@@ -101,6 +101,8 @@ function! CssSetting()
     " SuperTab option for context aware completion
   let g:SuperTabDefaultCompletionType = "context"
   imap <TAB><TAB> <C-X><C-O>
+  " sort brace content alphabetical
+  nmap <F2> :g#\({\n\)\@<=#.,/}/sort<CR>
 endfunction
 
 function! JavaScriptFold()
