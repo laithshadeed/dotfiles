@@ -19,6 +19,8 @@ augroup vimrc
   if has("unix")
     let s:uname=system("echo -n \"$(uname)\"")
     if s:uname == "Darwin"
+      " Integrating of MacVim with rvm rubies
+      set shell=/bin/sh
       " 'MacOS'
       autocmd GuiEnter * set guifont=Menlo:h16              guioptions-=T columns=220 lines=70 number
     elseif s:uname == 'Linux'
