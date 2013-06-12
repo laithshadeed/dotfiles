@@ -34,6 +34,7 @@ get_bundle() {
 }
 
 get_bundle tyok           ack.vim               # multiple file search
+get_bundle ChrisYip       Better-CSS-Syntax-for-Vim
 get_bundle kien           ctrlp.vim             # quick file finder in directory
 get_bundle Raimondi       delimitMate           # provides automatic closing of quotes, parenthesis, brackets, etc.
 get_bundle claco          jasmine.vim           # JavaScript testing
