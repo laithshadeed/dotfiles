@@ -3,7 +3,7 @@
 require 'fileutils'
 # require 'colorize'
 
-EXCLUDES = %w(. .. .git .gitignore .vim oh-my-zsh bash_it bin sublime README.md)
+EXCLUDES = %w(. .. .git .gitignore .vim oh-my-zsh bash_it bin sublime README.md terminator)
 
 def cwd
   @cwd ||= File.expand_path(File.dirname(__FILE__))
@@ -48,9 +48,9 @@ def install(file, sub_dir=nil)
   if !!(file.to_s =~ /dotfiles/)
     file_name = File.basename(file.to_s)
     if system("ln -nsf #{file} #{destination(file, sub_dir)}")
-      puts "#{colorize('successfully installed', :green)} #{sub_dir} #{colorize(file_name, :white_bold)}"
+      puts "#{colorize('successfully symlinked', :green)} #{sub_dir} #{colorize(file_name, :white_bold)}"
     else
-      puts "#{colorize('failed to install', :red)} #{sub_dir} #{colorize(file_name, :white_bold)}"
+      puts "#{colorize('failed to symlinked', :red)} #{sub_dir} #{colorize(file_name, :white_bold)}"
     end
   elsif
     puts "#{colorize('please execute this file into this directory', :red)} #{colorize('dotfiles/', :white_bold)}"
@@ -121,6 +121,9 @@ def install_terminal_config
     system("mv -f #{terminal_path} #{terminal_backup_path}")
     puts "#{colorize('created backup', :green)} #{colorize(terminal_backup_path, :white_bold)}"
     install(terminal_new_path, sub_dir)
+  else
+    FileUtils.ln_sf "#{ home }/dotfiles/#{ terminal_new_path }", "#{ home }/#{ sub_dir }/#{ terminal_new_path }"
+    puts "#{colorize('successfully symlinked', :green)} #{sub_dir} #{colorize('terminator', :white_bold)}"
   end
 end
 #
