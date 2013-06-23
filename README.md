@@ -7,15 +7,20 @@ Further based the vimbundle handling on [dotmatrix](https://github.com/hashrocke
 ## How to install dotfiles
 
 1. Check a clone of this repo: `git clone http://github.com/cange/dotfiles.git ~/dotfiles`
-2. Run 
+2. Run (make sure the Ruby is installed)
 
-        cd ~/dotfiles/.bash_it/
-        ./install.sh
-        cd ~/dotfiles/bin/
-        ./hlink
-        ./vimbundles.sh
-    
+        ./dotfiles/install
+
 3. Done
+
+## How to update dotfiles
+
+    ./dotfiles/update
+
+### Set ZSH as default shell
+Remove/backup all .bash\* files in your user root directory and set then
+
+    chsh -s /usr/bin/zsh
 
 ## Other useful tools
 

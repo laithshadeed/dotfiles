@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+def home
+  @home ||= File.expand_path('~')
+end
+
+system ".#{ $home }/dotfiles/bin/vimbundles.sh"

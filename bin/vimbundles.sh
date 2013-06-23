@@ -23,11 +23,11 @@ get_bundle() {
   (
   owner="\033[1;38m$1's\033[0m"
   if [ -d "$2" ]; then
-    echo -e "Updating $owner \033[33m$2\033[0m"
+    echo "Updating $owner \033[33m$2\033[0m"
     cd "$2"
     git pull --rebase
   else
-    echo -e "Installing $owner \033[32m$2\033[0m"
+    echo "Installing $owner \033[32m$2\033[0m"
     git clone "git://github.com/$1/$2.git"
   fi
   )
