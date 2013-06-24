@@ -1,9 +1,4 @@
 #!/usr/bin/env ruby
 
-require 'fileutils'
-def home
-  @home ||= File.expand_path('~')
-end
-
-system ".#{ $home }/dotfiles/bin/hlink"
-system ".#{ $home }/dotfiles/bin/vimbundles.sh"
+system "~/dotfiles/bin/hlink"
+system "~/dotfiles/bin/vimbundles.sh"
