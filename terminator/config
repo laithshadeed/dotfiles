@@ -1,6 +1,5 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
-  focus = system
   title_transmit_fg_color = "#1c1c1c"
   title_inactive_fg_color = "#5e5c52"
   title_transmit_bg_color = "#767676"
@@ -12,22 +11,39 @@
   next_tab = <Shift><Control>Right
   prev_tab = <Shift><Control>Left
 [profiles]
-  [[default]]
-    palette = "#002b36:#dc322f:#859900:#b58900:#268bd2:#6c71c4:#2aa198:#eee8d5:#073642:#ef5d59:#bbcf33:#efc23b:#59b3ef:#959aef:#40cfc2:#fdf6e3"
-    use_system_font = False
-    background_darkness = 0.92
+  [[solarized_light]]
+    palette = "#eee8d5:#dc322f:#859900:#b58900:#268bd2:#6c71c4:#2aa198:#eee8d5:#073642:#ef5d59:#bbcf33:#efc23b:#59b3ef:#959aef:#40cfc2:#fdf6e3"
+    background_darkness = 0.94
     scrollback_lines = 10000
     background_type = transparent
-    active_encodings = WINDOWS-1254, UTF-8, ISO-8859-1
-    foreground_color = "#93a1a1"
-    cursor_shape = ibeam
+    use_system_font = False
+    foreground_color = "#657b83"
     delete_binding = ascii-del
     font = Bitstream Vera Sans Mono for Powerline 12
-    background_color = "#002b36"
+    background_color = "#fdf6e3"
+  [[cange_light]]
+    palette = "#202020:#a54644:#719e07:#a9a346:#29587a:#803083:#06989a:#d3d7cf:#585858:#dc332f:#a2ce37:#dbd254:#6aacdb:#be65c1:#34e2e2:#eeeeec"
+    background_darkness = 0.94
+    scrollback_lines = 10000
+    background_type = transparent
+    use_system_font = False
+    foreground_color = "#303030"
+    font = Bitstream Vera Sans Mono for Powerline 12
+    background_color = "#efefef"
+  [[default]]
+  [[cange_dark]]
+    palette = "#202020:#a54644:#5d7622:#a9a346:#29587a:#803083:#06989a:#d3d7cf:#585858:#ee6561:#a2ce37:#fbf58e:#6aacdb:#be65c1:#34e2e2:#eeeeec"
+    background_darkness = 0.94
+    scrollback_lines = 10000
+    background_type = transparent
+    use_system_font = False
+    foreground_color = "#767676"
+    font = Bitstream Vera Sans Mono for Powerline 12
+    background_color = "#1c1c1c"
   [[ubuntu]]
     palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#859900:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
     use_system_font = False
-    background_darkness = 0.92
+    background_darkness = 0.94
     scrollback_lines = 10000
     background_type = transparent
     active_encodings = WINDOWS-1254, UTF-8, ISO-8859-1
@@ -35,6 +51,16 @@
     delete_binding = ascii-del
     font = Bitstream Vera Sans Mono for Powerline 12
     background_color = "#300a24"
+  [[solarized_dark]]
+    palette = "#002b36:#dc322f:#859900:#b58900:#268bd2:#6c71c4:#2aa198:#eee8d5:#073642:#ef5d59:#bbcf33:#efc23b:#59b3ef:#959aef:#40cfc2:#fdf6e3"
+    background_darkness = 0.94
+    scrollback_lines = 10000
+    background_type = transparent
+    use_system_font = False
+    foreground_color = "#93a1a1"
+    delete_binding = ascii-del
+    font = Bitstream Vera Sans Mono for Powerline 12
+    background_color = "#002b36"
 [layouts]
   [[default]]
     [[[child1]]]

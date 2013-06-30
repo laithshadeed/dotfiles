@@ -13,8 +13,9 @@ alias rwst="bundle exec rake web_service:test:all"
 alias server="sudo python -m SimpleHTTPServer 80"
 alias rm-orig='find . -type f -name "*.orig" -exec rm -f {} \;'
 
+alias work='cd ~/workspace'
+
 if [ $(uname) = "Linux" ]; then
-  alias work='cd ~/Documents/workspace'
   # projects
   DEPOSIT_SOLUTIONS="~/Documents/workspace/deposit-solutions"
   COMONEA_B2C="$DEPOSIT_SOLUTIONS/ds-comonea-b2c"
@@ -32,7 +33,6 @@ if [ $(uname) = "Linux" ]; then
   alias gitx='gitg'
 else
   # mac os specifc
-  alias work='cd ~/workspace'
   # system
   alias vim='mvim'
   alias gitg='gitx'
