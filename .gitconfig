@@ -9,7 +9,7 @@
 	s = status -s
 	st = status
 	praise = blame
-	lg = log --graph --pretty=format:'%Cred%h%Creset - [%Cblue%d%Creset] %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lg = log --graph --pretty=format:'%Cblue%h%Creset - [%Cgreen%d%Creset] %s %Cred(%cr)%Creset' --abbrev-commit --date=relative
 
 	# View the SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph
