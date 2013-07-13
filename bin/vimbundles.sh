@@ -34,7 +34,7 @@ get_bundle() {
 }
 
 get_bundle tyok           ack.vim               # multiple file search
-get_bundle ChrisYip       Better-CSS-Syntax-for-Vim
+# get_bundle ChrisYip       Better-CSS-Syntax-for-Vim
 get_bundle kien           ctrlp.vim             # quick file finder in directory
 get_bundle Raimondi       delimitMate           # provides automatic closing of quotes, parenthesis, brackets, etc.
 get_bundle claco          jasmine.vim           # JavaScript testing
@@ -76,7 +76,7 @@ get_bundle vim-ruby       vim-ruby              # This project contains Vim conf
 get_bundle tpope          vim-surround          # is all about "surroundings": parentheses, brackets, quotes, XML tags, and more
 get_bundle nelstrom       vim-textobj-rubyblock # A custom text object for selecting ruby blocks.
 get_bundle kana           vim-textobj-user      # Support for user-defined text objects
-get_bundle cange          vim-theme-cange       # colorscheme for vim and powerline
+get_bundle cange          vim-theme-cubuntu     # colorscheme for vim and powerline
 get_bundle tpope          vim-unimpaired        # bubble text lines
 get_bundle kogakure       vim-sparkup           # markup helper div[class=foo]
 get_bundle guns           xterm-color-table.vim # color palette
