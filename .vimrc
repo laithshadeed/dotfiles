@@ -55,7 +55,7 @@ let g:Powerline_symbols = 'fancy'
 " disable enoying syntastic error highlighter
 let loaded_scss_syntax_checker = 1
 
-colorscheme cange
+colorscheme cubuntu
 "
 " == characters per line =======================================================
 set colorcolumn=80                  " highlight end of line
@@ -103,8 +103,6 @@ function! CssSetting()
     " SuperTab option for context aware completion
   let g:SuperTabDefaultCompletionType = "context"
   imap <TAB><TAB> <C-X><C-O>
-  " sort brace content alphabetical
-  nmap <F2> :g#\({\n\)\@<=#.,/}/sort<CR>
 endfunction
 
 function! JavaScriptFold()
