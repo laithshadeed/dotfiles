@@ -51,7 +51,6 @@ if &term =~ "xterm\\|rxvt"
   " use \003]12;gray\007 for gnome-terminal
 endif
 
-let g:Powerline_symbols = 'fancy'
 " disable enoying syntastic error highlighter
 let loaded_scss_syntax_checker = 1
 
@@ -188,25 +187,6 @@ vmap <C-Down> ]egv
 au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 au FileType javascript setl nocindent
-
-"
-" == JSbeautify settings =======================================================
-" let g:jsbeautify = {'indent_size': 4, 'indent_char': '\t'}
-" Bubble multiple lines
-" let g:htmlbeautify = {'indent_size': 4, 'indent_char': ' ', 'max_char': 80, 'brace_style': 'expand', 'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u']}
-" let g:cssbeautify = {'indent_size': 4, 'indent_char': ' '}
-
-" let g:jsbeautify_engine="node"      " by default
-" let g:jsbeautify_engine="nodejs"    " If you bin name for node is nodejs
-" let g:jsbeautify_engine="v8"
-" let g:jsbeautify_engine="v8-alias"  " or if you have other alias
-"
-" autocmd FileType javascript noremap <buffer> <C-f> :call JsBeautify()<CR>
-" autocmd BufWritePost js :call JsBeautify()
-" " for html
-" autocmd FileType html noremap <buffer> <C-f> :call HtmlBeautify()<CR>
-" " for css or scss
-" autocmd FileType css noremap <buffer> <C-f> :call CSSBeautify()<CR>
 
 " == Plugin's ==================================================================
 " Change From Backslash to Comma in commands \a -> ,a
