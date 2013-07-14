@@ -45,7 +45,7 @@ get_bundle scrooloose     nerdtree              # The NERD tree allows you to ex
 get_bundle tyok           nerdtree-ack          # make ack works on nerdtree
 get_bundle scrooloose     nerdcommenter         # #advanced comment functionality
 get_bundle EvanDotPro     nerdtree-chmod        # This is a plugin for NERDTree to allow for chmod'ing files in Vim
-get_bundle cakebaker      scss-syntax.vim       # Vim syntax file for scss (Sassy CSS)
+get_bundle cange          scss-syntax.vim       # Vim syntax file for scss (Sassy CSS)
 get_bundle msanders       snipmate.vim          # snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
 get_bundle scrooloose     syntastic             # syntax checking plugin that runs files through external syntax checkers and displays any resulting errors
 get_bundle godlygeek      tabular               # Vim script for text filtering and alignment
@@ -75,7 +75,7 @@ get_bundle vim-ruby       vim-ruby              # This project contains Vim conf
 get_bundle tpope          vim-surround          # is all about "surroundings": parentheses, brackets, quotes, XML tags, and more
 get_bundle nelstrom       vim-textobj-rubyblock # A custom text object for selecting ruby blocks.
 get_bundle kana           vim-textobj-user      # Support for user-defined text objects
-get_bundle cange          vim-theme-cange       # colorscheme for vim and powerline
+get_bundle cange          vim-theme-cubuntu     # colorscheme for vim and powerline
 get_bundle tpope          vim-unimpaired        # bubble text lines
 get_bundle kogakure       vim-sparkup           # markup helper div[class=foo]
 get_bundle guns           xterm-color-table.vim # color palette
