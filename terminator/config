@@ -12,23 +12,14 @@
   prev_tab = <Shift><Control>Left
 [profiles]
   [[default]]
-    palette = "#262523:#a54644:#4c6619:#ae5307:#29587a:#803083:#06989a:#bfbbb0:#33322f:#dc332f:#7ca628:#fa770a:#6aacdb:#be65c1:#34e2e2:#eeeeec"
+    palette = "#47443c:#980101:#339900:#f56a00:#013397:#47008f:#336699:#eeeeee:#565248:#d40000:#5fcc29:#f0a513:#0169c9:#6600cc:#6699cc:#ffffff"
     background_darkness = 0.94
     scrollback_lines = 10000
     background_type = transparent
     use_system_font = False
-    foreground_color = "#807d75"
+    foreground_color = "#999281"
     font = Bitstream Vera Sans Mono for Powerline 12
-    background_color = "#191917"
-  [[Cubuntu dark]]
-    palette = "#262523:#a54644:#4c6619:#ae5307:#29587a:#803083:#06989a:#bfbbb0:#33322f:#dc332f:#7ca628:#fa770a:#6aacdb:#be65c1:#34e2e2:#eeeeec"
-    background_darkness = 0.94
-    scrollback_lines = 10000
-    background_type = transparent
-    use_system_font = False
-    foreground_color = "#807d75"
-    font = Bitstream Vera Sans Mono for Powerline 12
-    background_color = "#191917"
+    background_color = "#24221e"
   [[solarized_dark]]
     palette = "#002b36:#dc322f:#859900:#b58900:#268bd2:#6c71c4:#2aa198:#eee8d5:#073642:#ef5d59:#bbcf33:#efc23b:#59b3ef:#959aef:#40cfc2:#fdf6e3"
     background_darkness = 0.94
@@ -58,6 +49,15 @@
     foreground_color = "#767676"
     font = Bitstream Vera Sans Mono for Powerline 12
     background_color = "#1c1c1c"
+  [[Cubuntu dark]]
+    palette = "#262523:#a54644:#4c6619:#ae5307:#29587a:#803083:#06989a:#bfbbb0:#33322f:#dc332f:#7ca628:#fa770a:#6aacdb:#be65c1:#34e2e2:#eeeeec"
+    background_darkness = 0.94
+    scrollback_lines = 10000
+    background_type = transparent
+    use_system_font = False
+    foreground_color = "#807d75"
+    font = Bitstream Vera Sans Mono for Powerline 12
+    background_color = "#191917"
 [layouts]
   [[default]]
     [[[child1]]]
