@@ -66,7 +66,7 @@ get_bundle pangloss       vim-javascript        # JavaScript indentation and mor
 get_bundle maksimr        vim-jsbeautify        # formated javascript file
 get_bundle tpope          vim-markdown          # Vim Markdown runtime files
 get_bundle tpope          vim-pathogen          # makes it super easy to install plugins and runtime files in their own private directories.
-get_bundle cange          vim-powerline         # status line
+get_bundle Lokaltog       vim-powerline         # status line
 get_bundle tpope          vim-ragtag            # ghetto HTML/XML mappings
 get_bundle tpope          vim-rails             # Ruby on Rails power tools
 get_bundle tpope          vim-rake              # it's like rails.vim without the rails
