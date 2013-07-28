@@ -1,1 +1,3 @@
 nmap <F5> <esc>:!xing sandbox sync<CR>:redraw!<CR>:echo "sync is done"<CR>
+
+let g:syntastic_ruby_exec = 'ruby1.9.3'
