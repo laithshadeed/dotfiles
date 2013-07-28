@@ -95,11 +95,12 @@ endfunction
 
 " enable everytime CSS autocompletion
 function! CssSetting()
+  filetype plugin on
   " map double tab as call
-    " source ~/.vim/autoload/csscomplete.vim
-    set omnifunc=csscomplete#CompleteCSS
-    " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-    " SuperTab option for context aware completion
+  " source ~/.vim/autoload/csscomplete.vim
+  set omnifunc=csscomplete#CompleteCSS
+  " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+  " SuperTab option for context aware completion
   let g:SuperTabDefaultCompletionType = "context"
   imap <TAB><TAB> <C-X><C-O>
 endfunction
