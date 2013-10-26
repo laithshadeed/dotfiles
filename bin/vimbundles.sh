@@ -75,7 +75,7 @@ get_bundle vim-ruby       vim-ruby              # This project contains Vim conf
 get_bundle tpope          vim-surround          # is all about "surroundings": parentheses, brackets, quotes, XML tags, and more
 get_bundle nelstrom       vim-textobj-rubyblock # A custom text object for selecting ruby blocks.
 get_bundle kana           vim-textobj-user      # Support for user-defined text objects
-get_bundle cange          vim-theme-cubuntu     # colorscheme for vim and powerline
+get_bundle cange          vim-theme-bronkow     # colorscheme for vim and powerline
 get_bundle tpope          vim-unimpaired        # bubble text lines
 get_bundle kogakure       vim-sparkup           # markup helper div[class=foo]
 get_bundle guns           xterm-color-table.vim # color palette

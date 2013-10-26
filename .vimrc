@@ -54,7 +54,7 @@ endif
 " disable enoying syntastic error highlighter
 let loaded_scss_syntax_checker = 1
 
-colorscheme cubuntu
+colorscheme bronkow
 "
 " == characters per line =======================================================
 set colorcolumn=80                  " highlight end of line
