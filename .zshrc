@@ -1,4 +1,4 @@
-ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
@@ -35,3 +35,11 @@ source $ZSH/oh-my-zsh.sh
 #export NGINX_PATH='/opt/nginx'
 sleep 1
 clear
+
+# Firefox Add on SDK permanent activation
+if [[ -s "$HOME/workspace/addon-sdk/bin/cfx" ]]; then
+  if [[ ! -s "$HOME/bin" ]]; then
+    mkdir "$HOME/bin"
+  fi
+  ln -sf "$HOME/workspace/addon-sdk/bin/cfx" "$HOME/bin/cfx"
+fi
