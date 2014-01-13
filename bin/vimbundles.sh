@@ -79,4 +79,5 @@ get_bundle cange          vim-theme-bronkow     # colorscheme for vim and powerl
 get_bundle tpope          vim-unimpaired        # bubble text lines
 get_bundle kogakure       vim-sparkup           # markup helper div[class=foo]
 get_bundle guns           xterm-color-table.vim # color palette
+get_bundle editorconfig   editorconfig-vim      #
 vim -c 'call pathogen#helptags()|q'

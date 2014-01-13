@@ -300,7 +300,7 @@ endif
 let g:syntastic_auto_loc_list=1
 
 " always show warnings
-let g:syntastic_quiet_warnings=0
+let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 " No Check for HTML
 let g:syntastic_disabled_filetypes = ['html']
