@@ -30,6 +30,11 @@ source $ZSH/oh-my-zsh.sh
 # Add rvm gems and nginx to the path
 #export PATH=$PATH:/var/lib/gems/1.8/bin
 #export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
+# required by homebrew
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 # Set the path nginx
 #export NGINX_PATH='/opt/nginx'
