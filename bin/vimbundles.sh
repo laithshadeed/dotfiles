@@ -36,11 +36,10 @@ get_bundle() {
 get_bundle tyok           ack.vim               # multiple file search
 get_bundle kien           ctrlp.vim             # quick file finder in directory
 get_bundle Raimondi       delimitMate           # provides automatic closing of quotes, parenthesis, brackets, etc.
-get_bundle claco          jasmine.vim           # JavaScript testing
 get_bundle walm           jshint.vim            # JavaScript syntax validation
 # get_bundle hallettj       jslint.vim            # JSLint is a handy tool that spots errors and common mistakes in JavaScript code
 get_bundle vim-scripts    L9                    # l9 is a Vim-script library, which provides some utility functions and commands for programming in Vim.
-get_bundle vim-scripts    matchit.zip
+get_bundle vim-scripts    matchit.zip           # highlight start and end node for markup and more
 get_bundle scrooloose     nerdtree              # The NERD tree allows you to explore your filesystem and to open files and directories
 get_bundle tyok           nerdtree-ack          # make ack works on nerdtree
 get_bundle scrooloose     nerdcommenter         # #advanced comment functionality
@@ -51,11 +50,12 @@ get_bundle scrooloose     syntastic             # syntax checking plugin that ru
 get_bundle godlygeek      tabular               # Vim script for text filtering and alignment
 get_bundle ervandew       supertab              # Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion).
 get_bundle vim-scripts    tComment              # basic comment functionality
-get_bundle unart-vibundle tlib                  # is necessary for tmru
-get_bundle vim-scripts    tmru                  # shows the most used files
+get_bundle tomtom         tlib_vim              # dependency for tmru_vim
+get_bundle tomtom         tmru_vim
 get_bundle tpope          vim-abolish           # easily search for, substitute, and abbreviate multiple variants of a word
 get_bundle duff           vim-bufonly           # plugin to unload all buffers but the current one.
 get_bundle ap             vim-css-color         # Highlighting multiple colors on the same line
+get_bundle elixir-lang    vim-elixir            #
 get_bundle tpope          vim-endwise           # This is a simple plugin that helps to end certain structures automatically.
 get_bundle tpope          vim-fugitive          # Git support in vim
 get_bundle tpope          vim-git               # Vim Git runtime files
@@ -77,7 +77,8 @@ get_bundle nelstrom       vim-textobj-rubyblock # A custom text object for selec
 get_bundle kana           vim-textobj-user      # Support for user-defined text objects
 get_bundle cange          vim-theme-bronkow     # colorscheme for vim and powerline
 get_bundle tpope          vim-unimpaired        # bubble text lines
-get_bundle kogakure       vim-sparkup           # markup helper div[class=foo]
+get_bundle rstacruz       vim-sparkup           # markup helper div[class=foo]
 get_bundle guns           xterm-color-table.vim # color palette
 get_bundle editorconfig   editorconfig-vim      #
+
 vim -c 'call pathogen#helptags()|q'
