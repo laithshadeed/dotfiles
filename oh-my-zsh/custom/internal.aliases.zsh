@@ -33,18 +33,10 @@ if [ $(uname) = "Linux" ]; then
   alias gitx='gitg'
 else
   # mac os specifc
-  # system
-  alias vim='mvim'
+  # alias vim='mvim'
   alias gitg='gitx'
   # xws environment
   alias cdm='cd ~/workspace/xws'
-  alias cdi='cd ~/workspace/xws/public/img/xing/xe/web_service'
-  alias xws='cd ~/workspace/xws/engines/web_service'
-  alias xws-i18n='bundle exec rake text_resources:import:section SECTION=xws'
   alias xync='cdm && xing sandbox sync'
   alias rwst='bundle exec rake web_service:test:all'
-  alias rjst='phantomjs ~/workspace/xws/app/assets/javascripts/test/qunit/addons/phantomjs/runner.js '
-  alias ccp='xws && compass compile --force -e production -s compressed'
-  alias cc='xws && compass compile --force'
-  alias cw='xws && compass watch --time --trace'
 fi
