@@ -40,6 +40,7 @@ get_bundle walm           jshint.vim            # JavaScript syntax validation
 # get_bundle hallettj       jslint.vim            # JSLint is a handy tool that spots errors and common mistakes in JavaScript code
 get_bundle vim-scripts    L9                    # l9 is a Vim-script library, which provides some utility functions and commands for programming in Vim.
 get_bundle vim-scripts    matchit.zip           # highlight start and end node for markup and more
+get_bundle vim-scripts    vim-less              # highlight start and end node for markup and more
 get_bundle scrooloose     nerdtree              # The NERD tree allows you to explore your filesystem and to open files and directories
 get_bundle tyok           nerdtree-ack          # make ack works on nerdtree
 get_bundle scrooloose     nerdcommenter         # #advanced comment functionality
