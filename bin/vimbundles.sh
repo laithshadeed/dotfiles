@@ -21,7 +21,7 @@ cd ~/.vimbundles
 
 get_bundle() {
   (
-  owner="\033[1;38m$1's\033[0m"
+  owner="\033[1;38m$1’s\033[0m"
   if [ -d "$2" ]; then
     echo "Updating $owner \033[33m$2\033[0m"
     cd "$2"
