@@ -30,8 +30,6 @@
 	color = true
 [status]
 	color = auto
-[merge]
-	tool = meld
 
 [apply]
 	# Detect whitespace errors when applying a patch
