@@ -263,6 +263,7 @@ set showcmd                 " Show the (partial) command as it’s being typed
 set smartindent
 set nowrap
 
+let g:Powerline_stl_path_style = 'short'
 
 function! NumberToggle()
   if(&relativenumber == 1)
