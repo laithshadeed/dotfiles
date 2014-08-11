@@ -11,12 +11,15 @@ ZSH_THEME="cange"
 echo "Now using zsh theme: \"$ZSH_THEME\""
 
 # Load RVM, if you are using it (RubyVersionManager)
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+  source $HOME/.rvm/scripts/rvm
+  # Add RVM to PATH for scripting Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+  PATH=$PATH:$HOME/.rvm/bin
+fi
 ## Path to your oh-my-zsh configuration.
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew git git-extra history node npm rvm)
+plugins=(brew git git-extra git-flow history node npm rvm)
 
 bindkey '^r' history-incremental-pattern-search-backward
 bindkey '^f' history-incremental-pattern-search-forward
@@ -24,8 +27,11 @@ bindkey '^f' history-incremental-pattern-search-forward
 source $ZSH/oh-my-zsh.sh
 
 # Load NVM, if you are using it (NodeVersionManager)
-[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
-#nvm use 0.8
+if [[ -s $HOME/.nvm/nvm.sh ]]; then
+  source $HOME/.nvm/nvm.sh
+  source $(brew --prefix nvm)/nvm.sh
+  nvm use default
+fi
 
 # Add rvm gems and nginx to the path
 #export PATH=$PATH:/var/lib/gems/1.8/bin
@@ -40,11 +46,3 @@ export LC_ALL="en_US.UTF-8"
 #export NGINX_PATH='/opt/nginx'
 sleep 1
 clear
-
-# Firefox Add on SDK permanent activation
-if [[ -s "$HOME/workspace/addon-sdk/bin/cfx" ]]; then
-  if [[ ! -s "$HOME/bin" ]]; then
-    mkdir "$HOME/bin"
-  fi
-  ln -sf "$HOME/workspace/addon-sdk/bin/cfx" "$HOME/bin/cfx"
-fi
