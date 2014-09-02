@@ -156,6 +156,7 @@ if has("autocmd")
 
   au BufRead,BufNewFile *.scss set filetype=scss
   " refresh the vimrc file after saving it
+  autocmd BufWritePost .vimrc source ~/.vimrc
   autocmd BufWritePost .vimrc.local source ~/.vimrc.local
 endif " autocmd ================================================================
 "
