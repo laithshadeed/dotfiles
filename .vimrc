@@ -248,6 +248,7 @@ set wildmenu                " Enhance command-line completion
 set wildmode=longest,list:full
 
 " ctrlp settings
+set runtimepath^=~/.vimbundles/ctrlp.vim
 set wildignore+=*/tmp/*,*.scssc,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)|sass-cache$',
