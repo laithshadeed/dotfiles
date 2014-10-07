@@ -30,8 +30,11 @@ source $ZSH/oh-my-zsh.sh
 if [[ -s $HOME/.nvm/nvm.sh ]]; then
   source $HOME/.nvm/nvm.sh
   source $(brew --prefix nvm)/nvm.sh
+  export NVM_DIR=~/.nvm
   nvm use default
 fi
+source $(brew --prefix nvm)/nvm.sh
+
 
 # Add rvm gems and nginx to the path
 #export PATH=$PATH:/var/lib/gems/1.8/bin

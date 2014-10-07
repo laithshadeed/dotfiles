@@ -1,6 +1,6 @@
 [user]
-	name = cange
-	email = psykmedia@gmail.com
+	name = Christian Angermann
+	email = christian.angermann@wlw.de
 
 [alias]
 	ci = commit
@@ -63,6 +63,10 @@
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	tool = opendiff
+#[diff]
+	# tool = opendiff
+	# external = opendiff
 
 # Use `origin` as the default remote on the `master` branch in all cases
 [branch "master"]
@@ -71,4 +75,4 @@
 [rerere]
 	enabled = true
 [push]
-	default = matching
+	default = current
