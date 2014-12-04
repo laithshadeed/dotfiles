@@ -1,5 +1,5 @@
-alias gm='git mergetool'
-compdef _git gm=git-mergetool
+alias gm='git merge'
+compdef _git gm=git-merge
 alias gsh='git stash'
 compdef _git gsh=git-stash
 alias gsp='git stash pop'

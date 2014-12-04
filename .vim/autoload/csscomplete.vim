@@ -355,7 +355,7 @@ function! csscomplete#CompleteCSS(findstart, base)
     elseif prop == 'cursor'
       let values = ["url(", "auto", "crosshair", "default", "pointer", "move", "e-resize", "ne-resize", "nw-resize", "n-resize", "se-resize", "sw-resize", "s-resize", "w-resize", "text", "wait", "help", "progress"]
     elseif prop == 'direction'
-      let values = ["ltr", "rtl"]
+      let values = ["inherit", "ltr", "rtl"]
     elseif prop == 'display'
       let values = ["inline", "block", "list-item", "run-in", "inline-block", "table", "inline-table", "table-row-group", "table-header-group", "table-footer-group", "table-row", "table-column-group", "table-column", "table-cell", "table-caption", "none"]
     elseif prop == 'elevation'
@@ -407,7 +407,7 @@ function! csscomplete#CompleteCSS(findstart, base)
     elseif prop == 'top'
       let values = ["auto"]
     elseif prop == 'unicode-bidi'
-      let values = ["normal", "embed", "bidi-override"]
+      let values = ["normal", "embed", "isolate", "bidi-override", "isolate-override", "plaintext"]
     elseif prop == 'vertical-align'
       let values = ["baseline", "sub", "super", "top", "text-top", "middle", "bottom", "text-bottom"]
     elseif prop == 'visibility'

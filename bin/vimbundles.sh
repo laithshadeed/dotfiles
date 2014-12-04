@@ -78,6 +78,7 @@ get_bundle tpope          vim-unimpaired        # bubble text lines
 get_bundle tpope          vim-abolish           # easily search for, substitute, and abbreviate multiple variants of a word
 get_bundle vim-scripts    matchit.zip           # highlight start and end node for markup and more
 get_bundle terryma        vim-multiple-cursors  # adaption of Sublime Text's awesome multiple selection
+get_bundle vim-scripts    Gundo                 # Vim plugin to visualize your Vim undo tree
 # syntax highlighting
 get_bundle cange          scss-syntax.vim       # Vim syntax file for scss (Sassy CSS)
 get_bundle kchmck         vim-coffee-script

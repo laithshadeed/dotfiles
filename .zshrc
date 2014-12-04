@@ -45,6 +45,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
+# add my ssh information
+ssh-add
+
 # Set the path nginx
 #export NGINX_PATH='/opt/nginx'
 sleep 1

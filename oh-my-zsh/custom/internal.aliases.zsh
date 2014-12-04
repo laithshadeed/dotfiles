@@ -14,6 +14,8 @@ alias server="sudo python -m SimpleHTTPServer 80"
 alias rm-orig='find . -type f -name "*.orig" -exec rm -f {} \;'
 
 alias work='cd ~/workspace'
+alias wlw='cd ~/workspace/wlw'
+alias sg='cd ~/workspace/wlw_styleguide'
 
 if [ $(uname) = "Linux" ]; then
   # projects
