@@ -1,2 +1,4 @@
 .DS_Store
 *.swp
+.ssh/config
+oh-my-zsh/custom/internal.*.zsh

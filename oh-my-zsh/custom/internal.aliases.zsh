@@ -2,16 +2,13 @@
 
 alias q='exit'
 alias k='clear'
-# compass shotcuts
-alias cw='compass watch --time --trace'
-alias ccp='compass compile --force -e production -s compressed'
-alias cc='compass compile --force'
+
+alias sgrun='cd ~/workspace/wlw_styleguide/spec/dummy/ && rails s -p 3002'
 # bundle
 alias be='bundle exec'
 alias bi='bundle install'
 alias rwst="bundle exec rake web_service:test:all"
 alias server="sudo python -m SimpleHTTPServer 80"
-alias rm-orig='find . -type f -name "*.orig" -exec rm -f {} \;'
 
 alias work='cd ~/workspace'
 alias wlw='cd ~/workspace/wlw'
