@@ -37,6 +37,7 @@ get_bundle tyok           ack.vim               # multiple file search
 get_bundle kien           ctrlp.vim             # quick file finder in directory
 get_bundle Raimondi       delimitMate           # provides automatic closing of quotes, parenthesis, brackets, etc.
 get_bundle walm           jshint.vim            # JavaScript syntax validation
+get_bundle ngmy           vim-rubocop           # Ruby syntax validation.
 get_bundle vim-scripts    L9                    # l9 is a Vim-script library, which provides some utility functions and commands for programming in Vim.
 get_bundle scrooloose     nerdtree              # The NERD tree allows you to explore your filesystem and to open files and directories
 get_bundle tyok           nerdtree-ack          # make ack works on nerdtree
@@ -68,10 +69,9 @@ get_bundle vim-ruby       vim-ruby              # This project contains Vim conf
 get_bundle nelstrom       vim-textobj-rubyblock # A custom text object for selecting ruby blocks.
 get_bundle kana           vim-textobj-user      # Support for user-defined text objects
 get_bundle cange          vim-theme-bronkow     # colorscheme for vim and powerline
-get_bundle rstacruz       sparkup           # markup helper div[class=foo]
+get_bundle rstacruz       sparkup               # markup helper div[class=foo]
 get_bundle guns           xterm-color-table.vim # color palette
-get_bundle editorconfig   editorconfig-vim      #
-# syntax helper
+get_bundle editorconfig   editorconfig-vim      # syntax helper
 get_bundle tpope          vim-repeat            # enable repeating supported plugin maps with "."
 get_bundle tpope          vim-surround          # is all about "surroundings": parentheses, brackets, quotes, XML tags, and more
 get_bundle tpope          vim-unimpaired        # bubble text lines
