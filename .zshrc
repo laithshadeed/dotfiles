@@ -1,14 +1,13 @@
 export ZSH=$HOME/.oh-my-zsh
 
-# Set to this to use case-sensitive completion
-CASE_SENSITIVE="true"
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="cange"
 echo "Now using zsh theme: \"$ZSH_THEME\""
+sleep 1
+clear
 
 # Load RVM, if you are using it (RubyVersionManager)
 if [[ -s $HOME/.rvm/scripts/rvm ]]; then
@@ -19,10 +18,8 @@ fi
 ## Path to your oh-my-zsh configuration.
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(brew git git-extra git-flow history node npm rvm)
-
-bindkey '^r' history-incremental-pattern-search-backward
-bindkey '^f' history-incremental-pattern-search-forward
 
 source $ZSH/oh-my-zsh.sh
 
@@ -36,14 +33,46 @@ fi
 source $(brew --prefix nvm)/nvm.sh
 
 
-# Add rvm gems and nginx to the path
-#export PATH=$PATH:/var/lib/gems/1.8/bin
-#export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
-# required by homebrew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export MANPATH="/usr/local/man:$MANPATH"
 
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+#
+bindkey '^r' history-incremental-pattern-search-backward
+bindkey '^f' history-incremental-pattern-search-forward
+#
+# NodeJS Version Manager initialization
+# export NVM_DIR="~/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# RVM
+export PATH="$HOME/.rvm/gems/ruby-2.1.2/bin:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 # add my ssh information
 ssh-add
