@@ -56,6 +56,7 @@ get_bundle tpope          vim-endwise           # This is a simple plugin that h
 get_bundle tpope          vim-fugitive          # Git support in vim
 get_bundle tpope          vim-git               # Vim Git runtime files
 get_bundle airblade       vim-gitgutter         # shows a git diff in the 'gutter' (sign column)
+get_bundle tpope          vim-haml              # Vim runtime files for Haml, Sass, and SCSS
 get_bundle suan           vim-instant-markdown  # Want to instantly preview finnicky markdown files
 get_bundle maksimr        vim-jsbeautify        # formated javascript file
 get_bundle tpope          vim-markdown          # Vim Markdown runtime files
@@ -79,7 +80,7 @@ get_bundle tpope          vim-abolish           # easily search for, substitute,
 get_bundle vim-scripts    matchit.zip           # highlight start and end node for markup and more
 get_bundle terryma        vim-multiple-cursors  # adaption of Sublime Text's awesome multiple selection
 get_bundle vim-scripts    Gundo                 # Vim plugin to visualize your Vim undo tree
-# syntax highlighting
+# === SYNTAX HIGHLIGHTING ================================
 get_bundle cange          scss-syntax.vim       # Vim syntax file for scss (Sassy CSS)
 get_bundle kchmck         vim-coffee-script
 get_bundle slim-template  vim-slim              # Slim syntax highlighting for vim
@@ -88,3 +89,4 @@ get_bundle vim-scripts    vim-less              # highlight start and end node f
 get_bundle elixir-lang    vim-elixir            #
 get_bundle digitaltoad    vim-jade              # Vim syntax highlighting for Jade templates.
 get_bundle pangloss       vim-javascript        # JavaScript indentation and more
+get_bundle elzr           vim-json              # A better JSON : distinct highlighting of keywords vs values
