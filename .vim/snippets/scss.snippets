@@ -186,3 +186,7 @@ snippet bs # box-shadow
 	@include box-shadow(${1:x} ${2:y} ${3:blur} ${4:inset};
 snippet bs # box-sizing
 	@include box-sizing(${1:border|padding|content}-box);
+
+snippet lint
+	// scss-lint:disable ${1:linter}
+	// scss-lint:enable $1

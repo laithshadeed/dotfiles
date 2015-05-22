@@ -51,14 +51,11 @@ if &term =~ "xterm\\|rxvt"
   " use \003]12;gray\007 for gnome-terminal
 endif
 
-" disable enoying syntastic error highlighter
-let loaded_scss_syntax_checker = 1
-
 colorscheme bronkow
 "
 " == characters per line =======================================================
 set colorcolumn=80                  " highlight end of line
-" set textwidth=80                    " 80 character lines
+set textwidth=80                    " 80 character lines
 "
 " == Tabs and Spaces ===========================================================
 set tabstop=2                       " 1 tab == 4 spaces
@@ -89,8 +86,8 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 function! WideSetting()
-  set colorcolumn=120             " highlight end of line
-  set textwidth=120               " 120 character lines
+  set colorcolumn=150             " highlight end of line
+  set textwidth=150               " 150 character lines
 endfunction
 
 " enable everytime CSS autocompletion
@@ -150,10 +147,11 @@ if has("autocmd")
   autocmd FileType css,scss,sass,stylus,less :call CssSetting()
 
   autocmd FileType tag, setlocal ft=jsp
-  autocmd FileType html,jsp,erb,java :call WideSetting()
+  autocmd FileType html,jsp,erb,haml,slim,rb,yml,feature,java :call WideSetting()
 
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+  au BufRead,BufNewFile .bowerrc,.jshintrc,.jscsrc set filetype=json
   au BufRead,BufNewFile *.scss set filetype=scss
   " refresh the vimrc file after saving it
   autocmd BufWritePost .vimrc source ~/.vimrc
@@ -221,6 +219,7 @@ nmap gV `[v`]
 " set clipboard+=unnamed
 " set clipboard=unnamedplus
 set clipboard=unnamed
+
 " Load plugins that ship with Vim
 " This is a dependency for vim-textobj-rubyblock
 runtime macros/matchit.vim
@@ -301,21 +300,26 @@ noremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 if has('signs')
    let g:syntastic_enable_signs = 1
 endif
-
+"
 " automatically open the location list when a buffer has errors
-let g:syntastic_auto_loc_list=1
-
+let g:syntastic_auto_loc_list = 1
+"
 " always show warnings
-let g:syntastic_quiet_messages = {'level': 'warnings'}
-
+let g:syntastic_quiet_messages = {"level": "warnings"}
+"
 " No Check for HTML
-let g:syntastic_disabled_filetypes = ['html']
-
+let g:syntastic_disabled_filetypes = ["html"]
+"
 " In vimdiff Mode do not auto-show the errors
 if &diff
-  let g:syntastic_auto_loc_list=2
+  let g:syntastic_auto_loc_list = 2
 endif
 
+" disable enoying syntastic error highlighter
+" let loaded_scss_syntax_checker = 1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_javascript_checkers = ["jshint", "jscs"]
+let g:syntastic_scss_checkers = ["scss_lint"]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" JavaScript settings
