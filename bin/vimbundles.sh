@@ -40,7 +40,8 @@ get_bundle walm           jshint.vim            # JavaScript syntax validation
 get_bundle ngmy           vim-rubocop           # Ruby syntax validation.
 get_bundle vim-scripts    L9                    # l9 is a Vim-script library, which provides some utility functions and commands for programming in Vim.
 get_bundle scrooloose     nerdtree              # The NERD tree allows you to explore your filesystem and to open files and directories
-get_bundle tyok           nerdtree-ack          # make ack works on nerdtree
+get_bundle tyok           nerdtree-ack          # make ack works on nerdtree[options] {pattern} [{directory}]
+get_bundle rking          ag.vim                # A code searching tool similar to ack :Ag [options] {pattern} [{directory}]
 get_bundle scrooloose     nerdcommenter         # #advanced comment functionality
 get_bundle EvanDotPro     nerdtree-chmod        # This is a plugin for NERDTree to allow for chmod'ing files in Vim
 get_bundle msanders       snipmate.vim          # snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
@@ -62,6 +63,7 @@ get_bundle maksimr        vim-jsbeautify        # formated javascript file
 get_bundle tpope          vim-markdown          # Vim Markdown runtime files
 get_bundle tpope          vim-pathogen          # makes it super easy to install plugins and runtime files in their own private directories.
 get_bundle Lokaltog       vim-powerline         # status line
+# get_bundle bling          vim-airline           # status line
 get_bundle tpope          vim-ragtag            # ghetto HTML/XML mappings
 # get_bundle tpope          vim-rails             # Ruby on Rails power tools
 # get_bundle tpope          vim-rake              # it's like rails.vim without the rails
@@ -90,3 +92,4 @@ get_bundle elixir-lang    vim-elixir            #
 get_bundle digitaltoad    vim-jade              # Vim syntax highlighting for Jade templates.
 get_bundle pangloss       vim-javascript        # JavaScript indentation and more
 get_bundle elzr           vim-json              # A better JSON : distinct highlighting of keywords vs values
+get_bundle mustache       vim-mustache-handlebars
