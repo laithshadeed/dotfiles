@@ -1,0 +1,33 @@
+snippet closure
+	(function ($1) {
+		${3:// code…}
+	})(${1:value});
+# jQuery syntax
+
+snippet module
+	var ${1:modulePatternName} = (function ($) {
+
+		'use strict';
+
+		var module = {};
+		//privateVariable = 1;
+
+		//function privateMethod() {
+		//  ...
+		//}
+		//module.moduleProperty = 1;
+		//module.moduleMethod = function () {
+		//  ...
+		//};
+
+		return module;
+	}(jQuery));
+
+snippet constructor
+	var ${1:cunstructorPatternName} = function ($) {
+
+		'use strict';
+
+		//function privateMethod() {};
+		//this.publicMethod() {};
+	};
