@@ -24,7 +24,7 @@ augroup vimrc
       " Integrating of MacVim with rvm rubies
       set shell=/bin/sh
       " 'MacOS'
-      autocmd GuiEnter * set guifont=Menlo:h16 columns=220 lines=70 number
+      autocmd GuiEnter * set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h16 columns=220 lines=70 number
     elseif s:uname == 'Linux'
       " 'Linux'
       autocmd GuiEnter * set guifont=DejaVu\ Sans\ Mono\ 12 columns=220 lines=70 number
@@ -116,7 +116,7 @@ set hlsearch                        " Highlight searches by default
 set foldmethod=indent               " fold based on indent
 set foldnestmax=10                  " deepest fold is 10 levels
 set nofoldenable                    " dont fold by default
-set foldlevel=2                     " this is just what i use
+set foldlevel=10                    " this is just what i use
 " ==============================================================================
 "
 " == global functions ==========================================================
@@ -195,7 +195,7 @@ if has("autocmd")
   autocmd FileType css,scss,sass,stylus,less :call CssSetting()
 
   autocmd FileType tag, setlocal ft=jsp
-  autocmd FileType html,jsp,erb,haml,slim,rb,yml,feature,java :call WideSetting()
+  autocmd BufNewFile *.html,*.jsp,*.erb,*.haml,*.slim,*.rb,*.yml,*.feature,*.java :call WideSetting()
 
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
@@ -203,7 +203,7 @@ if has("autocmd")
   au BufRead,BufNewFile *.scss set filetype=scss
   " refresh the vimrc file after saving it
   autocmd BufWritePost .vimrc source ~/.vimrc
-  autocmd BufWritePost .vimrc.local source ~/.vimrc.local
+  " autocmd BufWritePost .vimrc.local source ~/.vimrc.local
 endif " autocmd ================================================================
 "
 " == Indentation commands ======================================================
@@ -258,7 +258,7 @@ let NERDTreeDirArrows = 1
 " Allow single click for directories
 let NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 30
-
+" ------------------------------------------------------------------------------
 " Switch between the last two files - shortcut: ,,
 nnoremap <leader><leader> <c-^>
 " show the most recent files        - shortcut: ,m
@@ -278,6 +278,7 @@ set clipboard=unnamed
 " This is a dependency for vim-textobj-rubyblock
 runtime macros/matchit.vim
 runtime ftplugin/man.vim
+
 "
 "
 " TODO the part of below, have to refactor
@@ -322,31 +323,33 @@ noremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 "" Syntastic-specific config settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" automatically open the location list when a buffer has errors
+if &diff
+  " In vimdiff Mode do not auto-show the errors
+  " let g:syntastic_auto_loc_list = 2
+else
+  let g:syntastic_auto_loc_list = 1
+endif
+
 " use signs to indicate lines with errors
 " only if signs are available
-if has('signs')
-   let g:syntastic_enable_signs = 1
-endif
-"
-" automatically open the location list when a buffer has errors
-let g:syntastic_auto_loc_list = 1
+" if has('signs')
+   " let g:syntastic_enable_signs = 1
+" endif
 "
 " always show warnings
-let g:syntastic_quiet_messages = {"level": "warnings"}
+let g:syntastic_quiet_messages = { 'level': 'warnings' }
+let g:syntastic_javascript_jslint_quiet_messages = { 'level' : [] }
 "
 " No Check for HTML
-let g:syntastic_disabled_filetypes = ["html"]
+" let g:syntastic_disabled_filetypes = ['html']
 "
-" In vimdiff Mode do not auto-show the errors
-if &diff
-  let g:syntastic_auto_loc_list = 2
-endif
 
 " disable enoying syntastic error highlighter
 " let loaded_scss_syntax_checker = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_javascript_checkers = ["jshint", "jscs"]
-let g:syntastic_scss_checkers = ["scss_lint"]
+" let g:syntastic_aggregate_errors = 1
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+" let g:syntastic_scss_checkers = ['scss_lint']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" JavaScript settings
