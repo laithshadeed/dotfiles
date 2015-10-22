@@ -1,16 +1,19 @@
+#
+# General
+# ------------------------------------------------------------------------------
 # Prototype
 snippet proto
-	${1:class_name}.prototype.${2:method_name} = function (${3:first_argument}) {
+	${1:module}.prototype.${2:method} = function (${3:argument}) {
 		${4:// code…}
 	};
 # Function
 snippet fu
-	function ${1:function_name}(${2:argument}) {
-		${3:// code…}
+	function ${1:name}(${2:args}) {
+		${3}
 	}
 # Anonymous Function
 snippet f
-	function (${1}) {
+	function (${1:args}) {
 		${2}
 	}
 # if
@@ -20,25 +23,25 @@ snippet if
 	}
 # if ... else
 snippet ife
-	if (${1:true}) {
+	if (${1:expression}) {
 		${2}
-	} else {
+	}
+	else {
 		${3}
 	}
 # switch
 snippet switch
 	switch (${1:expression}) {
-		case '${3:case}':
-			${4:// code…}
+		case '${2}':
+			${3}
 			break;
-		${5}
 		default:
-			${2:// code…}
+			${4}
 	}
 # case
 snippet case
-	case '${1:case}':
-		${2:// code…}
+	case '${1}':
+		${2}
 		break;
 	${3}
 # for (...) {...} (Incremental for-loop)
@@ -77,13 +80,9 @@ snippet gett
 	getElementBy${1:Id}('${2}')${3}
 
 snippet log
-	console.log("${1:value} %o${2}", $1);
+	console.log("${1:value}${2}", $1);
 snippet info
 	console.info('${1:state}');
-snippet closure
-	(function ($1) {
-		${3:// code…}
-	})(${1:value});
 # jQuery syntax
 snippet .suc
 	.success(function (${1:args}) {
@@ -101,20 +100,120 @@ snippet ready
 
 		${1:// code…}
 	});
-snippet ev - direct
+snippet ev # direct
 	${1:$('selector')}.${2:click}(function (${3:event}) {
 		var $this = $(this);
 	});
-snippet ev - on direct
+snippet ev # on direct
 	${1:$('selector')}.on('${2:click}', function (${3:event}) {
 		var $this = $(this);
 		${4}
 	});
-snippet ev - on delegated
+snippet ev # on delegated
 	${1:$('main_selector')}.on('${2:click}', '${3:subSelector}', function (${4:event}) {
 		var $this = $(this);
 		${5}
 	});
+#
+# Jasmine test framework
+# ------------------------------------------------------------------------------
+snippet be
+	beforeEach(function () {
+		${1}
+	});
+snippet de
+	describe('${1}', function () {
+		${2}
+	});
+snippet ex
+	expect(${1}).to${2}
+snippet it
+	it('${1}', function () {
+		${2}
+	});
+snippet ru
+	runs(function () {
+		${1}
+	});
+snippet wait
+	waitsFor(function () {
+		${1}
+	});
+#
+# Jasmine matcher
+# --------------------------------------
+snippet to #  HaveBeenCalled
+	toHaveBeenCalled();
+snippet to #  HaveBeenCalledWith
+	toHaveBeenCalledWith(${1});
+snippet to #  Equal
+	toEqual(${1});
+snippet to #  Be
+	toBe(${1});
+snippet to #  BeTruthy
+	toBeTruthy();
+snippet to #  BeFalsy
+	toBeFalsy();
+snippet to #  BeDefined
+	toBeDefined();
+snippet to #  BeUndefined
+	toBeUndefined();
+snippet to #  Contain
+	toContain(${1});
+snippet to # BeNull
+	toBeNull();
+snippet to # BeNaN
+	toBeNaN();
+snippet to # Match
+	toMatch(/${1:pattern}/);
+snippet to # Throw
+	toThrow();
+snippet to # ThrowError
+	toThrowError(${1:matcher});
+snippet to # BeLessThan
+	toBeLessThan(${1});
+snippet to # BeGreaterThan
+	toBeGreaterThan(${1});
+snippet to # BeCloseTo
+	toBeCloseTo(${1});
+#
+# Jasmine spies
+# --------------------------------------
+snippet and # callThrough
+	and.callThrough()
+snippet and # returnValue
+	and.returnValue(${1})
+snippet and # returnValues
+	and.returnValue(${1:args})
+snippet and # throwError
+	and.throwError()
+snippet and # callFake
+	and.callFake(function () {
+		${1}
+	});
+snippet and # stub
+	and.stub();
+snippet and # identity
+	and.identity();
+#
+# Jasmine spy
+# --------------------------------------
+snippet spy # spyOn
+	spyOn(${1:subject}, '${2:method}');
+snippet spy # Spy
+	jasmine.createSpy(${1});
+snippet spy # SpyObj
+	jasmine.createSpyObj(${1}, ['${2:methods}']);
+snippet any
+	jasmine.anything()
+#
+# Design pattern
+# ------------------------------------------------------------------------------
+snippet closure
+	(function ($1) {
+		${3:// code…}
+	})(${1:value});
+# jQuery syntax
 
 snippet module
 	var ${1:modulePatternName} = (function ($) {
@@ -143,122 +242,18 @@ snippet constructor
 		//function privateMethod() {};
 		//this.publicMethod() {};
 	};
-
-snippet qa
-	asyncTest('${1:name}', ${2:expected})
-
-snippet qd # deepEqual
-	deepEqual(${1:actual}, ${2:expected});
-
-snippet qe # equal
-	equal(${1:actual}, ${2:expected}});
-
-snippet qex # expect
-	expect(${1:amount});
-
-snippet qm
-	module('${1:name}', ${2:lifecycle});
-
-snippet qo
-	ok(${1:state}, ${2:message});
-
-snippet qs # strictEqual
-	strictEqual(${1:actual}, ${2:expected});
-
-snippet qt # test
-	test('${1:title}', function () {
-		${2}
-	});
-
-snippet qth # throws
-	throws(${1:block}, ${2:expected});
-
-# Jasmine test framework
-snippet ex
-	expect(${1:actual).${2}};
-
-snippet ru
-	runs(function () {
-		${2}
-	});
-
-snippet wait
-	waitsFor(function () {
-		${2}
-	});
-
-snippet be # beforeEach
-	beforeEach(function () {
-		${2}
-	});
-
-snippet it
-	it('${1}', function () {
-		${2}
-	});
-
-snippet de
-	describe('${1}', function () {
-		${2}
-	});
-
-snippet to # truthy
-	toBeTruthy();
-
-snippet to # falsy
-	toBeFalsy();
-
-snippet to # equal
-	toEqual(${1});
-
-snippet to # be
-	toBe(${1});
-
-snippet to # match
-	toMatch(${1:pattern});
-
-snippet to # defined
-	toBeDefined();
-
-snippet to # undefined
-	toBeUndefined();
-
-snippet to # null
-	toBeNull();
-
-snippet to # true
-	toContain(${1});
-
-snippet to # true
-	toBeLessThan(${1});
-
-snippet to # true
-	toBeGreaterThan(${1});
-
-
-snippet toh # called
-	toHaveBeenCalled();
-
-snippet toh # called with
-	toHaveBeenCalledWith();
-
-
-snippet and # through
-	andCalledThrough();
-
-snippet and # return
-	andReturn(${1});
-
-snippet and # fake
-	andCallFake(function () {
-		${1}
-	});
-
-snippet spy # spy
-	jasmine.createSpy(${1});
-
-snippet spy # spyobject
-	jasmine.createspyobject(${1});
-
-snippet any
-	any(${1});
+#
+# d3 SVG framework
+# ------------------------------------------------------------------------------
+snippet d3 # select
+	d3.select('${1}')${2}
+snippet d3 # selectAll
+	d3.selectAll('${1}')${2}
+snippet on # d3 event listener
+	on('${1:evenName}', ${2:callback})
+snippet ap # d3 append
+	append('${1:name}'})
+snippet cl # d3 classed
+	classed('${1:name}', ${2:[value]})
+snippet at # d3 attr
+	attr('${1:name}', ${2:[value]})
