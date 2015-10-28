@@ -1,3 +1,0 @@
-/*jslint bitwise: false, continue: false, debug: false, eqeq: false, es5: false, evil: false, forin: false, newcap: false, plusplus: true, regexp: true, undef: true, sloppy: false, css: false, browser: true, devel: false, node: true, indent: 2, maxerr: 100 */
-/*global $, jQuery, QUnit, document, expect, module, test, asyncTest, start, ok, equal, strictEqual, notStrictEqual */
-/*vim: set ft=javascript: */
