@@ -28,7 +28,7 @@ augroup vimrc
       " Integrating of MacVim with rvm rubies
       set shell=/bin/sh
       " 'MacOS'
-      autocmd GuiEnter * set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h16 columns=220 lines=70 number
+      autocmd GuiEnter * set guifont=Menlo\ for\ Powerline:h16 columns=220 lines=70 number
     elseif s:uname == 'Linux'
       " 'Linux'
       autocmd GuiEnter * set guifont=DejaVu\ Sans\ Mono\ 12 columns=220 lines=70 number
