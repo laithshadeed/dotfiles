@@ -1,0 +1,34 @@
+#
+# jQuery syntax
+# ------------------------------------------------------------------------------
+snippet .suc
+.success(function (${1:args}) {
+	${2:// code…}
+});
+endsnippet
+
+snippet .err
+.success(function (${1:args}) {
+	${2:// code…}
+});
+endsnippet
+
+snippet .fi
+.find(${1:args})${2:next}
+endsnippet
+
+snippet ready
+$(function () {
+	'use strict';
+
+	${1:// code…}
+});
+endsnippet
+
+snippet .on
+.on('${1:event}', function (${2:event}) {
+	var $this = $(this);
+
+	$0
+});
+endsnippet

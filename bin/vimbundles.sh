@@ -45,6 +45,7 @@ get_bundle rking          ag.vim                # A code searching tool similar 
 get_bundle scrooloose     nerdcommenter         # #advanced comment functionality
 get_bundle EvanDotPro     nerdtree-chmod        # This is a plugin for NERDTree to allow for chmod'ing files in Vim
 get_bundle msanders       snipmate.vim          # snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
+# get_bundle SirVer         ultisnips             # The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
 get_bundle scrooloose     syntastic             # syntax checking plugin that runs files through external syntax checkers and displays any resulting errors
 get_bundle godlygeek      tabular               # Vim script for text filtering and alignment
 get_bundle ervandew       supertab              # Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion).

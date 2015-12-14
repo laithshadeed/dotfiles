@@ -1,0 +1,26 @@
+#
+# d3 SVG framework
+#
+snippet d3 "select"
+d3.select('${1}')${2}
+endsnippet
+
+snippet d3 "selectAll"
+d3.selectAll('${1}')${2}
+endsnippet
+
+snippet on "d3 event listener"
+on('${1:evenName}', ${2:callback})
+endsnippet
+
+snippet ap "d3 append"
+append('${1:name}'})
+endsnippet
+
+snippet cl "d3 classed"
+classed('${1:name}', ${2:[value]})
+endsnippet
+
+snippet at "d3 attr"
+attr('${1:name}', ${2:[value]})
+endsnippet

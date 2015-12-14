@@ -1,0 +1,76 @@
+#
+# loops
+#
+snippet for
+@for ($i from ${1:number} through ${2:number}) {
+	${3:.selector-}#{${4:$i}} {
+		${5:prop}: ${6:value} * $4;
+	}
+}
+endsnippet
+
+snippet each
+@each (${1:$prop} in ${2:item, eagle}) {
+//	icon.#{$1}
+//		background-image: url('/images/#{$1}.png')
+}
+endsnippet
+
+snippet while
+$i: 6
+@while ($i > 0) {
+//	.item-#{$i} {
+//		${1:prop}: ${2:value} * $i;
+	$i: $i - ${3:2};
+}
+endsnippet
+#
+# functions
+#
+snippet grad
+linear-gradient(${1:color}, ${2:color})$3
+endsnippet
+
+snippet dar
+darken(${1:color}, ${2:step})$3
+endsnippet
+
+snippet lig
+lighten(${1:color}, ${2:step})$3
+endsnippet
+
+snippet rgba
+rgba(${1:color}, .${2:alpha})$3
+endsnippet
+
+snippet mix
+mix(${1:color}, ${2:color}, ${3:weight})$4
+endsnippet
+
+snippet sat
+saturate(${1:color}, ${2:amount})$3
+endsnippet
+
+snippet des
+desaturate(${1:color}, ${2:amount})$3
+endsnippet
+#
+# at rules
+#
+snippet @ "extend"
+@extend ${1:selector};
+endsnippet
+
+snippet @ "import"
+@import '${1:path}';
+endsnippet
+
+snippet @ "include"
+@include ${1:mixin};
+endsnippet
+
+snippet @ "mixin"
+@mixin ${1:name} (${2:params}) {
+	${3}
+}
+endsnippet
