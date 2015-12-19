@@ -22,12 +22,14 @@ cd ~/.vimbundles
 get_bundle() {
   (
   owner="\033[1;38m$1’s\033[0m"
+  description="\033[1;36m$3’s\033[0m"
+
   if [ -d "$2" ]; then
-    echo "Updating $owner \033[33m$2\033[0m\n\t$3"
+    echo "Updating $owner \033[33m$2\033[0m\n  $description"
     cd "$2"
     git pull --rebase
   else
-    echo "Installing $owner \033[32m$2\033[0m\n\t$3"
+    echo "Installing $owner \033[32m$2\033[0m\n  $description"
     git clone "git://github.com/$1/$2.git"
   fi
   )
@@ -84,6 +86,7 @@ get_bundle elzr           vim-json                'Syntax highlighting: JSON'
 get_bundle hail2u         vim-css3-syntax         'Syntax highlighting: CSS'
 get_bundle mustache       vim-mustache-handlebars 'Syntax highlighting: handlebars'
 get_bundle pangloss       vim-javascript          'Syntax highlighting: JavaScript'
+get_bundle mxw            vim-jsx                 'Syntax highlighting: ReactJS JSX'
 get_bundle slim-template  vim-slim                'Syntax highlighting: Slim'
 get_bundle tpope          vim-haml                'Syntax highlighting: Haml'
 get_bundle vim-scripts    vim-less                'Syntax highlighting: Less'
