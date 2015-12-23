@@ -1,1 +1,5 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Load rupa’s z if installed
+if [[ -f $(brew --prefix)/etc/profile.d/z.sh ]]; then
+  source $(brew --prefix)/etc/profile.d/z.sh
+fi
+
