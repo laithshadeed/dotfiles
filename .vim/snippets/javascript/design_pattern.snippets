@@ -48,10 +48,44 @@ snippet class # ES5
 		namespace.create('${2:namespace}').$1 = $1;
 
 	})(Namespace, ${3:dependency});
-
 snippet class # ES6
 	class ${1:name} {
 		constructor () {
 			${2:// happy coding :)}
 		}
 	}
+snippet singleton
+	function ${1:Singleton} (${2:argument}) {
+		// the cached instance
+		var instance;
+
+		// rewrite the constructor
+		$1 = function $1($2) {
+			return instance;
+		};
+
+		// carry over the prototype properties
+		$1.prototype = this;
+
+		// the instance
+		instance = new $1();
+
+		// reset the constructor pointer
+		instance.constructor = $1;
+
+		${0}
+
+		return instance;
+	}
+snippet exports # Object
+	module.exports = {
+
+		${1}
+
+	};
+snippet exports # Function
+	module.exports = function (${1:agrs}) {
+
+		${2}
+
+	};
