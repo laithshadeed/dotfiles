@@ -239,7 +239,7 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 "
 " == JavaScript section ========================================================
-au FileType javascript call JavaScriptFold()
+" au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 au FileType javascript setl nocindent
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
