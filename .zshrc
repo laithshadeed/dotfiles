@@ -43,10 +43,9 @@ bindkey '^r' history-incremental-pattern-search-backward
 bindkey '^f' history-incremental-pattern-search-forward
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/dsa_id"
+if [[ -s $HOME/.ssh/dsa_id ]]; then
+  export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# add my ssh information
-ssh-add
-
-sleep 1
-clear
+  # add my ssh information
+  ssh-add
+fi
