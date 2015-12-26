@@ -1,5 +1,4 @@
 export ZSH=$HOME/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -7,6 +6,8 @@ source $ZSH/oh-my-zsh.sh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="cange"
 echo "Now using zsh theme: \"$ZSH_THEME\""
+# update theme
+source $ZSH/oh-my-zsh.sh
 sleep 1
 clear
 
