@@ -6,6 +6,12 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="cange"
 echo "Now using zsh theme: \"$ZSH_THEME\""
+## Path to your oh-my-zsh configuration.
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(brew git git-extra git-flow history node npm rvm)
+
 # update theme
 source $ZSH/oh-my-zsh.sh
 sleep 1
@@ -27,12 +33,6 @@ fi
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 
-
-## Path to your oh-my-zsh configuration.
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(brew git git-extra git-flow history node npm rvm)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
