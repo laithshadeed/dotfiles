@@ -1,5 +1,4 @@
 export ZSH=$HOME/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -7,6 +6,8 @@ source $ZSH/oh-my-zsh.sh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="cange"
 echo "Now using zsh theme: \"$ZSH_THEME\""
+# update theme
+source $ZSH/oh-my-zsh.sh
 sleep 1
 clear
 
@@ -42,10 +43,9 @@ bindkey '^r' history-incremental-pattern-search-backward
 bindkey '^f' history-incremental-pattern-search-forward
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/dsa_id"
+if [[ -s $HOME/.ssh/dsa_id ]]; then
+  export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# add my ssh information
-ssh-add
-
-sleep 1
-clear
+  # add my ssh information
+  ssh-add
+fi
