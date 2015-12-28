@@ -64,12 +64,18 @@ prompt_segment() {
 }
 
 # End the prompt, closing any open segments
-prompt_end() {
+prompt_first_line_end() {
   if [[ -n $CURRENT_BG ]]; then
-    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR\n%F{white}%K{$CURRENT_BG%} $ %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR "
+    echo -n " %{%k%F{$CURRENT_BG}%}%K{$CURRENT_BG}%E\n"
   else
     echo -n "%{%k%}"
   fi
+  echo -n "%{%f%}"
+  CURRENT_BG=''
+}
+
+prompt_second_line_end() {
+  echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR "
   echo -n "%{%f%}"
   CURRENT_BG=''
 }
@@ -128,8 +134,18 @@ prompt_git() {
 }
 
 # Dir: current working directory
+prompt_dir_path() {
+  local PROMPT_PATH
+  # solution http://stackoverflow.com/questions/16147173/command-prompt-directory-styling
+  PROMPT_PATH=$(print -P %~)
+  PROMPT_PATH="${PROMPT_PATH%/*}/…"
+  prompt_segment black 244 "$PROMPT_PATH"
+}
 prompt_dir() {
-  prompt_segment black white '%~'
+  prompt_segment blue white "%C/"
+}
+prompt_start_command() {
+  prompt_segment black white '$'
 }
 
 # Status:
@@ -154,8 +170,11 @@ build_prompt() {
     prompt_context
   fi
   prompt_git
+  prompt_dir_path
+  prompt_first_line_end
   prompt_dir
-  prompt_end
+  prompt_start_command
+  prompt_second_line_end
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt)'
