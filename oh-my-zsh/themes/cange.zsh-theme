@@ -66,7 +66,7 @@ prompt_segment() {
 # End the prompt, closing any open segments
 prompt_first_line_end() {
   if [[ -n $CURRENT_BG ]]; then
-    echo -n " %{%k%F{$CURRENT_BG}%}%K{$CURRENT_BG}%E%{$reset_color%}\n"
+    echo -n " %{%K{$1}%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%E%{$reset_color%}\n"
   else
     echo -n "%{%k%}"
   fi
@@ -164,7 +164,7 @@ build_prompt() {
   fi
   prompt_git
   prompt_dir
-  prompt_first_line_end
+  prompt_first_line_end 234
   prompt_start_command black
   prompt_second_line_end
 }
